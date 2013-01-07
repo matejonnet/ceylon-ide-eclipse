@@ -109,6 +109,7 @@ import com.redhat.ceylon.compiler.typechecker.tree.Tree;
 import com.redhat.ceylon.compiler.typechecker.util.ModuleManagerFactory;
 import com.redhat.ceylon.eclipse.core.classpath.CeylonClasspathContainer;
 import com.redhat.ceylon.eclipse.core.model.CeylonSourceFile;
+import com.redhat.ceylon.eclipse.core.model.ProjectSourceFile;
 import com.redhat.ceylon.eclipse.core.model.loader.JDTClass;
 import com.redhat.ceylon.eclipse.core.model.loader.JDTModelLoader;
 import com.redhat.ceylon.eclipse.core.model.loader.JDTModuleManager;
@@ -986,7 +987,7 @@ public class CeylonBuilder extends IncrementalProjectBuilder {
         parserErrors.clear();
         
         
-        PhasedUnit newPhasedUnit = new CeylonSourceFile(file, srcDir, cu, pkg, 
+        PhasedUnit newPhasedUnit = new ProjectSourceFile(file, srcDir, cu, pkg, 
                 moduleManager, typeChecker, tokens);
         
         return newPhasedUnit;
