@@ -474,8 +474,17 @@ public class JDTModelLoader extends AbstractModelLoader {
                 }
             }
         }
+        // TODO : what about source java classes ??? are they corectly managed by the following code ?
         unit = new ExternalUnit();
         unit.setFilename(jdtClass.getFileName());
+        StringBuilder sb = new StringBuilder();
+        List<String> parts = pkg.getName();
+        for (int i = 0; i < parts.size(); i++) {
+            sb.append(parts.get(i));
+            sb.append('/');
+        }
+        unit.setRelativePath(sb.toString() + unit.getFilename());
+        unit.setFullPath(jdtClass.getFullPath());
         unit.setPackage(pkg);
         return unit;
     }
