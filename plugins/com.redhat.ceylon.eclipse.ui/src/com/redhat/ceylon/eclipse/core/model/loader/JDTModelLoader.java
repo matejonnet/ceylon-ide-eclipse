@@ -99,7 +99,9 @@ import com.redhat.ceylon.compiler.typechecker.model.Unit;
 import com.redhat.ceylon.compiler.typechecker.tree.Tree;
 import com.redhat.ceylon.compiler.typechecker.tree.Visitor;
 import com.redhat.ceylon.eclipse.core.builder.CeylonBuilder;
-import com.redhat.ceylon.eclipse.core.model.CeylonDeclaration;
+import com.redhat.ceylon.eclipse.core.model.CeylonBinaryUnit;
+import com.redhat.ceylon.eclipse.core.model.JavaClassFile;
+import com.redhat.ceylon.eclipse.core.model.JavaCompilationUnit;
 
 /**
  * A model loader which uses the JDT model.
@@ -468,14 +470,24 @@ public class JDTModelLoader extends AbstractModelLoader {
         JDTClass jdtClass = (JDTClass)classMirror;
         String unitName = jdtClass.getFileName();
         if (!jdtClass.isBinary()) {
+            // This search is for source Java classes since several classes mmight have the same file name 
+            //  and live inside the same Java source file => into the same Unit
             for (Unit unitToTest : pkg.getUnits()) {
                 if (unitToTest.getFilename().equals(unitName)) {
                     return unitToTest;
                 }
             }
+            unit = new JavaCompilationUnit();
         }
-        // TODO : what about source java classes ??? are they corectly managed by the following code ?
-        unit = new ExternalUnit();
+        else {
+            if (jdtClass.isCeylon()) {
+                unit = new CeylonBinaryUnit();
+            }
+            else {
+                unit = new JavaClassFile();
+            }
+        }
+
         unit.setFilename(jdtClass.getFileName());
         StringBuilder sb = new StringBuilder();
         List<String> parts = pkg.getName();
@@ -531,7 +543,7 @@ public class JDTModelLoader extends AbstractModelLoader {
         }
     }
     
-    private final Map<String, CeylonDeclaration> sourceDeclarations = new TreeMap<String, CeylonDeclaration>();
+    private final Map<String, SourceDeclarationHolder> sourceDeclarations = new TreeMap<String, SourceDeclarationHolder>();
     
     public synchronized Set<String> getSourceDeclarations() {
         Set<String> declarations  = new HashSet<String>();
@@ -568,7 +580,7 @@ public class JDTModelLoader extends AbstractModelLoader {
                             String name = Util.quoteIfJavaKeyword(decl.getIdentifier().getText());
                             String fqn = getQualifiedName(pkgName, name);
                             if (! sourceDeclarations.containsKey(fqn)) {
-                                sourceDeclarations.put(fqn, new CeylonDeclaration(unit, decl, isSourceToCompile));
+                                sourceDeclarations.put(fqn, new SourceDeclarationHolder(unit, decl, isSourceToCompile));
                             }
                         }
                     }
@@ -648,8 +660,8 @@ public class JDTModelLoader extends AbstractModelLoader {
     }
     
     public synchronized void completeFromClasses() {
-        for (Entry<String, CeylonDeclaration> entry : sourceDeclarations.entrySet()) {
-            CeylonDeclaration declaration = entry.getValue();
+        for (Entry<String, SourceDeclarationHolder> entry : sourceDeclarations.entrySet()) {
+            SourceDeclarationHolder declaration = entry.getValue();
             if (mustCompleteFromClasses(declaration)) {
                 ClassMirror classMirror = buildClassMirror(entry.getKey());
                 if (classMirror == null) {
@@ -738,7 +750,7 @@ public class JDTModelLoader extends AbstractModelLoader {
         }
     }
 
-    private boolean mustCompleteFromClasses(CeylonDeclaration d) {
+    private boolean mustCompleteFromClasses(SourceDeclarationHolder d) {
         return !d.isSourceToCompile() && d.getPhasedUnit().getUnit().getPackage().getQualifiedNameString().startsWith("ceylon.language");
     }
  

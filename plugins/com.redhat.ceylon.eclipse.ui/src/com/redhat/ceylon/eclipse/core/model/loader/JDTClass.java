@@ -190,6 +190,10 @@ public class JDTClass implements ClassMirror {
         return isAnnotationPresent(com.redhat.ceylon.compiler.java.metadata.Method.class);
     }
 
+    public boolean isCeylon() {
+        return isAnnotationPresent(com.redhat.ceylon.compiler.java.metadata.Ceylon.class);
+    }
+
     @Override
     public List<FieldMirror> getDirectFields() {
         if (fields == null) {
