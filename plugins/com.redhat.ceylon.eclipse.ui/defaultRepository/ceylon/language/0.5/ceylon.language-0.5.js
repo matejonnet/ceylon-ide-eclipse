@@ -1,11 +1,11 @@
 (function(define) {
 define(function(require, exports, module) {
 //the Ceylon language module
-$$metamodel$$={"$mod-name":"ceylon.language","$mod-version":"0.5","ceylon.language":{"Iterator":{"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"see":["Iterable"],"doc":["\"Produces elements of an `Iterable` object. Classes that \nimplement this interface should be immutable.\""],"by":["\"Gavin\""]},"$m":{"next":{"$t":{"comp":"u","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Finished"}]},"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"The next element, or `finished` if there are no \nmore elements to be iterated.\""]},"$nm":"next"}},"$nm":"Iterator"},"Callable":{"$mt":"ifc","$tp":[{"variance":"out","$nm":"Return"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"variance":"in","$nm":"Arguments"}],"$an":{"shared":[],"doc":["\"A reference to a method or function.\""]},"$nm":"Callable"},"Castable":{"$mt":"ifc","$tp":[{"variance":"in","$nm":"Types"}],"$an":{"shared":[],"see":["Integer"],"doc":["\"Abstract supertype for types which can be automatically\nwidened to a different type in numeric operator \nexpressions. The type argument is a union of wider \ntypes to which the subtype can be cast. \n\nFor example, `Integer` satisfies `Castable<Integer|Float>`,\n so `Integer` can be promoted to `Float` in an \n expression like `-1\/2.0`.\""],"by":["\"Gavin\""]},"$m":{"castTo":{"$t":{"$nm":"CastValue"},"$mt":"mthd","$tp":[{"satisfies":[{"$nm":"Types"}],"$nm":"CastValue"}],"$an":{"shared":[],"formal":[],"doc":["\"Cast this object to the given type.\""]},"$nm":"castTo"}},"$nm":"Castable"},"copyArray":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"},"$mt":"prm","$pt":"v","$nm":"source"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"},"$mt":"prm","$pt":"v","$nm":"target"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"native":[],"doc":["\"Efficiently copy the elements of one array to another \narray.\""]},"$nm":"copyArray"},"Array":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"}],"$pk":"ceylon.language","$nm":"Cloneable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"}],"$pk":"ceylon.language","$nm":"Ranged"}],"$mt":"cls","$tp":[{"$nm":"Element"}],"$an":{"abstract":[],"shared":[],"doc":["\"A fixed-size array of elements. An array may have zero\nsize (an empty array). Arrays are mutable. Any element\nof an array may be set to a new value.\n\nThis class is provided primarily to support interoperation \nwith Java, and for some performance-critical low-level \nprogramming tasks.\""]},"$m":{"setItem":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Replace the existing element at the specified index \nwith the given element. Does nothing if the specified \nindex is negative or larger than the index of the \nlast element in the array.\""]},"$nm":"setItem"}},"$at":{"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Reverse this array, returning a new array.\""],"actual":[]},"$nm":"reversed"}},"$nm":"Array"},"Singleton":{"super":{"$pk":"ceylon.language","$nm":"Object"},"$ps":[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"}],"$mt":"cls","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Element"}],"$an":{"shared":[],"doc":["\"A sequence with exactly one element.\""]},"$m":{"sort":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"a"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"b"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"sort"},"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns the contained element, if the specified \nindex is `0`.\""],"actual":[]},"$nm":"get"},"count":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns `1` if this Singleton's element\nsatisfies the predicate, or `0` otherwise.\""],"actual":[]},"$nm":"count"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"A `Singleton` can be equal to another `List` if \nthat `List` has only one element which is equal to \nthis `Singleton`'s element.\""],"actual":[]},"$nm":"equals"},"segment":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Empty"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns a `Singleton` if the given starting index \nis `0` and the given `length` is greater than `0`.\nOtherwise, returns an instance of `Empty`.\""],"actual":[]},"$nm":"segment"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns `true` if the specified element is this \n`Singleton`'s element.\""],"actual":[]},"$nm":"contains"},"every":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"every"},"fold":{"$t":{"$nm":"Result"},"$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"initial"},{"$t":"Result","$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"partial"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"accumulating"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"actual":[]},"$nm":"fold"},"taking":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"take"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"taking"},"spanTo":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Empty"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanTo"},"any":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"any"},"map":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Result"}],"$pk":"ceylon.language","$nm":"Sequence"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"actual":[]},"$nm":"map"},"findLast":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"findLast"},"spanFrom":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Empty"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanFrom"},"skipping":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"skip"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"skipping"},"filter":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"filter"},"find":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"find"},"span":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Empty"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns a `Singleton` if the given starting index \nis `0`. Otherwise, returns an instance of `Empty`.\""],"actual":[]},"$nm":"span"}},"$at":{"lastIndex":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns `0`.\""],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns a `Singleton` with the same element.\""],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"iterator"},"last":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns the element contained in this `Singleton`.\""],"actual":[]},"$nm":"last"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"hash"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"},"coalesced":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns the Singleton itself, since a Singleton\ncannot contain a null.\""],"actual":[]},"$nm":"coalesced"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},"$mt":"attr","$an":{"shared":[],"doc":["\"Return this singleton.\""],"actual":[]},"$nm":"reversed"},"rest":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns `Empty`.\""],"actual":[]},"$nm":"rest"},"first":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns the element contained in this `Singleton`.\""],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns `1`.\""],"actual":[]},"$nm":"size"}},"$nm":"Singleton"},"byKey":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Key","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Key","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}],[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"x"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Key"}],"$an":{"shared":[],"see":["byItem"],"doc":["\"A comparator for `Entry`s which compares their keys \naccording to the given `comparing()` function.\""]},"$nm":"byKey"},"Comparable":{"of":[{"$nm":"Other"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Comparable"}],"variance":"in","$nm":"Other"}],"$an":{"shared":[],"doc":["\"The general contract for values whose magnitude can be \ncompared. `Comparable` imposes a total ordering upon\ninstances of any type that satisfies the interface.\nIf a type `T` satisfies `Comparable<T>`, then instances\nof `T` may be compared using the comparison operators\n`<`, `>`, `<=`, >=`, and `<=>`.\n\nThe total order of a type must be consistent with the \ndefinition of equality for the type. That is, there\nare three mutually exclusive possibilities:\n\n- `x<y`,\n- `x>y`, or\n- `x==y`\""],"by":["\"Gavin\""]},"$m":{"compare":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["equals"],"doc":["\"Compares this value with the given value. \nImplementations must respect the constraints that: \n\n- `x==y` if and only if `x<=>y == equal` \n   (consistency with `equals()`), \n- if `x>y` then `y<x` (symmetry), and \n- if `x>y` and `y>z` then `x>z` (transitivity).\""]},"$nm":"compare"}},"$nm":"Comparable","$st":"Other"},"Comparison":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"ceylon.language","$nm":"larger"},{"$pk":"ceylon.language","$nm":"smaller"},{"$pk":"ceylon.language","$nm":"equal"}],"$ps":[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"see":["Comparable"],"doc":["\"The result of a comparison between two `Comparable` \nobjects.\""],"by":["\"Gavin\""]},"$m":{"largerThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"largerThan"},"equal":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"equal"},"asSmallAs":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"asSmallAs"},"asLargeAs":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"asLargeAs"},"smallerThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"smallerThan"},"unequal":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"unequal"}},"$nm":"Comparison"},"Empty":{"of":[{"$pk":"ceylon.language","$nm":"empty"}],"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Sequential"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Ranged"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$an":{"shared":[],"see":["Sequence"],"doc":["\"A sequence with no elements. The type `Empty` may be\nabbreviated `[]`, and an instance is produced by the \nexpression `[]`. That is, in the following expression,\n`e` has type `[]` and refers to the value `[]`:\n\n    [] none = [];\n\n(Whether the syntax `[]` refers to the type or the \nvalue depends upon how it occurs grammatically.)\""]},"$m":{"sort":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"a"},{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"b"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"sort"},"get":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns `null` for any given index.\""],"actual":[]},"$nm":"get"},"count":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns 0 for any given predicate.\""],"actual":[]},"$nm":"count"},"select":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"select"},"segment":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns an `Empty` for any given segment.\""],"actual":[]},"$nm":"segment"},"by":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"step"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"by"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns `false` for any given element.\""],"actual":[]},"$nm":"contains"},"every":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"every"},"fold":{"$t":{"$nm":"Result"},"$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"initial"},{"$t":"Result","$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"partial"},{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"accumulating"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"actual":[]},"$nm":"fold"},"taking":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"take"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"taking"},"withTrailing":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Tuple"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"actual":[]},"$nm":"withTrailing"},"defines":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"defines"},"spanTo":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns an `Empty` for any given span.\""],"actual":[]},"$nm":"spanTo"},"chain":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$tp":[{"$nm":"Other"}],"$an":{"shared":[],"doc":["\"Returns `other`.\""],"actual":[]},"$nm":"chain"},"any":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"any"},"map":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":"Result","$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"collecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"actual":[]},"$nm":"map"},"withLeading":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Tuple"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"actual":[]},"$nm":"withLeading"},"spanFrom":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns an `Empty` for any given span.\""],"actual":[]},"$nm":"spanFrom"},"skipping":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"skip"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"skipping"},"find":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"find"},"filter":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"filter"},"collect":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":"Result","$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"collecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"actual":[]},"$nm":"collect"},"span":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Returns an `Empty` for any given span.\""],"actual":[]},"$nm":"span"}},"$at":{"lastIndex":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns `null`.\""],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns an `Empty`.\""],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns an iterator that is already exhausted.\""],"actual":[]},"$nm":"iterator"},"last":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns `null`.\""],"actual":[]},"$nm":"last"},"indexed":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns an `Empty`.\""],"actual":[]},"$nm":"indexed"},"sequence":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns an `Empty`.\""],"actual":[]},"$nm":"sequence"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns a string description of the empty sequence: \n`{}`.\""],"actual":[]},"$nm":"string"},"coalesced":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns an `Empty`.\""],"actual":[]},"$nm":"coalesced"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns `true`.\""],"actual":[]},"$nm":"empty"},"rest":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns an `Empty`.\""],"actual":[]},"$nm":"rest"},"reversed":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns an `Empty`.\""],"actual":[]},"$nm":"reversed"},"first":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns `null`.\""],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns 0.\""],"actual":[]},"$nm":"size"}},"$nm":"Empty"},"Enumerable":{"of":[{"$nm":"Other"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Ordinal"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Enumerable"}],"variance":"out","$nm":"Other"}],"$an":{"shared":[],"doc":["\"Abstraction of ordinal types whose instances can be \nmapped to the integers or to a range of integers.\""]},"$at":{"integerValue":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The corresponding integer. The implementation must\nsatisfy these constraints:\n\n    (x.successor).integerValue = x.integerValue+1\n    (x.predecessor).integerValue = x.integerValue-1\n\nfor every instance `x` of the enumerable type.\""]},"$nm":"integerValue"}},"$nm":"Enumerable","$st":"Other"},"empty":{"super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$pk":"ceylon.language","$nm":"Empty"}],"$mt":"obj","$an":{"shared":[],"doc":["\"A sequence with no elements, abbreviated `[]`. The \nunique instance of the type `[]`.\""]},"$nm":"empty"},"combine":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Result"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"},{"$t":"OtherElement","$mt":"prm","$pt":"v","$nm":"otherElement"}]],"$mt":"prm","$pt":"f","$nm":"combination"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"OtherElement"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"otherElements"}]],"$mt":"mthd","$tp":[{"$nm":"Result"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$nm":"Absent"},{"$nm":"Element"},{"$nm":"OtherElement"}],"$an":{"shared":[],"doc":["\"Applies a function to each element of two `Iterable`s\nand returns an `Iterable` with the results.\""],"by":["\"Gavin\"","\"Enrique Zamudio\"","\"Tako\""]},"$nm":"combine"},"compose":{"$t":{"$tp":[{"$mt":"tpm","$nm":"X"},{"$mt":"tpm","$nm":"Args"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"X"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Y"},{"$mt":"tpm","$nm":"Y"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Tuple"}],"$pk":"ceylon.language","$nm":"Callable"},"$mt":"prm","$pt":"v","$nm":"x"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Y"},{"$mt":"tpm","$nm":"Args"}],"$pk":"ceylon.language","$nm":"Callable"},"$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"$nm":"X"},{"$nm":"Y"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"Args"}],"$an":{"shared":[]},"$nm":"compose"},"false":{"super":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"obj","$an":{"shared":[],"doc":["\"A value representing falsity in Boolean logic.\""],"by":["\"Gavin\""]},"$at":{"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"}},"$nm":"false"},"Sequential":{"of":[{"$pk":"ceylon.language","$nm":"Empty"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$pk":"ceylon.language","$nm":"Ranged"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"see":["Tuple"],"doc":["\"A possibly-empty, immutable sequence of values. The \ntype `Sequential<Element>` may be abbreviated \n`[Element*]` or `Element[]`. \n\n`Sequential` has two enumerated subtypes:\n\n- `Empty`, abbreviated `[]`, represents an empty \n   sequence, and\n- `Sequence<Element>`, abbreviated `[Element+]` \n   represents a non-empty sequence, and has the very\n   important subclass `Tuple`.\""]},"$at":{"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"clone"},"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"This sequence.\""],"actual":[]},"$nm":"sequence"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"A string of form `\"[ x, y, z ]\"` where `x`, `y`, \nand `z` are the `string` representations of the \nelements of this collection, as produced by the\niterator of the collection, or the string `\"{}\"` \nif this collection is empty. If the collection \niterator produces the value `null`, the string\nrepresentation contains the string `\"null\"`.\""],"actual":[]},"$nm":"string"},"rest":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The rest of the sequence, without the first \nelement.\""],"actual":[]},"$nm":"rest"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Reverse this sequence, returning a new sequence.\""],"actual":[]},"$nm":"reversed"}},"$nm":"Sequential"},"Finished":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"ceylon.language","$nm":"finished"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"see":["Iterator"],"doc":["\"The type of the value that indicates that \nan `Iterator` is exhausted and has no more \nvalues to return.\""]},"$nm":"Finished"},"coalesce":{"$t":{"$tp":[{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Object"}]},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"doc":["\"Return a sequence containing the given values which are\nnot null. If there are no values which are not null,\nreturn an empty sequence.\""]},"$nm":"coalesce"},"plus":{"$t":{"$nm":"Value"},"$ps":[[{"$t":"Value","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Value","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Summable"}],"$nm":"Value"}],"$an":{"shared":[],"see":["times","sum"],"doc":["\"Add the given `Summable` values.\""]},"$nm":"plus"},"Entry":{"super":{"$pk":"ceylon.language","$nm":"Object"},"$ps":[{"$t":"Key","$hdn":"1","$mt":"prm","$pt":"v","$nm":"key"},{"$t":"Item","$hdn":"1","$mt":"prm","$pt":"v","$nm":"item"}],"$mt":"cls","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Key"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Item"}],"$an":{"shared":[],"doc":["\"A pair containing a _key_ and an associated value called \nthe _item_. Used primarily to represent the elements of \na `Map`. The type `Entry<Key,Item>` may be abbreviated \n`Key->Item`. An instance of `Entry` may be constructed \nusing the `->` operator:\n\n    String->Person entry = person.name->person;\n\""],"by":["\"Gavin\""]},"$m":{"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Determines if this entry is equal to the given\nentry. Two entries are equal if they have the same\nkey and the same value.\""],"actual":[]},"$nm":"equals"}},"$at":{"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"hash"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns a description of the entry in the form \n`key->item`.\""],"actual":[]},"$nm":"string"},"item":{"$t":{"$nm":"Item"},"$mt":"attr","$an":{"shared":[],"doc":["\"The value associated with the key.\""]},"$nm":"item"},"key":{"$t":{"$nm":"Key"},"$mt":"attr","$an":{"shared":[],"doc":["\"The key used to access the entry.\""]},"$nm":"key"}},"$nm":"Entry"},"Cloneable":{"of":[{"$nm":"Clone"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Clone"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"variance":"out","$nm":"Clone"}],"$an":{"shared":[],"doc":["\"Abstract supertype of objects whose value can be \ncloned.\""]},"$at":{"clone":{"$t":{"$nm":"Clone"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Obtain a clone of this object. For a mutable \nobject, this should return a copy of the object. \nFor an immutable object, it is acceptable to return\nthe object itself.\""]},"$nm":"clone"}},"$nm":"Cloneable","$st":"Clone"},"Invertable":{"$mt":"ifc","$tp":[{"variance":"out","$nm":"Inverse"}],"$an":{"shared":[],"see":["Integer","Float"],"doc":["\"Abstraction of types which support a unary additive inversion\noperation. For a numeric type, this should return the \nnegative of the argument value. Note that the type \nparameter of this interface is not restricted to be a \nself type, in order to accommodate the possibility of \ntypes whose additive inverse can only be expressed in terms of \na wider type.\""],"by":["\"Gavin\""]},"$at":{"positiveValue":{"$t":{"$nm":"Inverse"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The value itself, expressed as an instance of the\nwider type.\""]},"$nm":"positiveValue"},"negativeValue":{"$t":{"$nm":"Inverse"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The additive inverse of the value, which may be expressed\nas an instance of a wider type.\""]},"$nm":"negativeValue"}},"$nm":"Invertable"},"Ordinal":{"of":[{"$nm":"Other"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Ordinal"}],"variance":"out","$nm":"Other"}],"$an":{"shared":[],"see":["Character","Integer","Integral","Range"],"doc":["\"Abstraction of ordinal types, that is, types with \nsuccessor and predecessor operations, including\n`Integer` and other `Integral` numeric types.\n`Character` is also considered an ordinal type. \n`Ordinal` types may be used to generate a `Range`.\""],"by":["\"Gavin\""]},"$at":{"predecessor":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"throws":["OverflowException","\"if this is the minimum value\""],"doc":["\"The predecessor of this value.\""]},"$nm":"predecessor"},"successor":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"throws":["OverflowException","\"if this is the maximum value\""],"doc":["\"The successor of this value.\""]},"$nm":"successor"}},"$nm":"Ordinal","$st":"Other"},"largest":{"$t":{"$nm":"Element"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"see":["Comparable","smallest","max"],"doc":["\"Given two `Comparable` values, return largest of the\ntwo.\""]},"$nm":"largest"},"unflatten":{"$t":{"$nm":"Return"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$nm":"Args"}],"$pk":"ceylon.language","$nm":"Callable"},"$mt":"prm","$pt":"v","$nm":"flatFunction"}],[{"$t":"Args","$mt":"prm","$pt":"v","$nm":"args"}]],"$mt":"mthd","$tp":[{"$nm":"Return"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"Args"}],"$an":{"shared":[],"native":[]},"$nm":"unflatten"},"native":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to mark a member whose implementation is \nbe provided by platform-native code.\""]},"$nm":"native"},"greaterThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"val"}],[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"doc":["\"Returns a partial function that will compare an element\nto any other element and returns true if the compared\nelement is greater than its element.\nThis is useful in conjunction with methods that receive\na predicate function.\""]},"$nm":"greaterThan"},"Identifiable":{"$mt":"ifc","$an":{"shared":[],"doc":["\"The abstract supertype of all types with a well-defined\nnotion of identity. Values of type `Identifiable` may \nbe compared using the `===` operator to determine if \nthey are references to the same object instance. For\nthe sake of convenience, this interface defines a\ndefault implementation of value equality equivalent\nto identity. Of course, subtypes are encouraged to\nrefine this implementation.\""],"by":["\"Gavin\""]},"$m":{"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Identity equality comparing the identity of the two \nvalues. May be refined by subtypes for which value \nequality is more appropriate. Implementations must\nrespect the constraint that if `x===y` then `x==y` \n(equality is consistent with identity).\""],"actual":[]},"$nm":"equals"}},"$at":{"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"default":[],"see":["identityHash"],"doc":["\"The system-defined identity hash value of the \ninstance. Subtypes which refine `equals()` must \nalso refine `hash`, according to the general \ncontract defined by `Object`.\""],"actual":[]},"$nm":"hash"}},"$nm":"Identifiable"},"language":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$mt":"obj","$an":{"shared":[],"native":[],"doc":["\"Contains information about the language\""],"by":["\"The Ceylon Team\""]},"$at":{"majorVersion":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The Ceylon language major version.\""]},"$nm":"majorVersion"},"majorVersionBinary":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The major version of the code generated for the underlying runtime.\""]},"$nm":"majorVersionBinary"},"minorVersion":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The Ceylon language minor version.\""]},"$nm":"minorVersion"},"versionName":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The Ceylon language release name.\""]},"$nm":"versionName"},"releaseVersion":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The Ceylon language release version.\""]},"$nm":"releaseVersion"},"minorVersionBinary":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The minor version of the code generated for the underlying runtime.\""]},"$nm":"minorVersionBinary"},"version":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The Ceylon language version.\""]},"$nm":"version"}},"$nm":"language"},"Null":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Anything"},"of":[{"$pk":"ceylon.language","$nm":"null"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"see":["null"],"doc":["'The type of the `null` value. Any union type of form \n`Null|T` is considered an optional type, whose values\ninclude `null`. Any type of this form may be written as\n`T?` for convenience.\n\nThe `if (exists ... )` construct, or, alternatively,\nthe `assert (exists ...)` construct, may be used to\nnarrow an optional type to a _definite_ type, that is,\na subtype of `Object`:\n\n    String? firstArg = process.arguments.first;\n    if (exists firstArg) {\n        print(\"hello \" + firstArg);\n    }\n\nThe `else` operator evaluates its second operand if \nand only if its first operand is `null`:\n\n    String name = process.arguments.first else \"world\";\n\nThe `then` operator evaluates its second operand when\nits first operand evaluates to `true`, and to `null` \notherwise:\n\n    Float? diff = x>=y then x-y;\n\n'"],"by":["\"Gavin\""]},"$nm":"Null"},"array":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"native":[],"doc":["\"Create an array containing the given elements. If no\nelements are provided, create an empty array of the\ngiven element type.\""]},"$nm":"array"},"sort":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"see":["Comparable"],"doc":["\"Sort a given elements, returning a new sequence.\""]},"$nm":"sort"},"equalTo":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"val"}],[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Element"}],"$an":{"shared":[],"doc":["\"Returns a partial function that will compare an element\nto any other element and returns true if they're equal.\nThis is useful in conjunction with methods that receive\na predicate function.\""]},"$nm":"equalTo"},"arrayOfSize":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"size"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"native":[],"doc":["\"Create an array of the specified size, populating every \nindex with the given element. If the specified size is\nsmaller than `1`, return an empty array of the given\nelement type.\""]},"$nm":"arrayOfSize"},"Ranged":{"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Index"}],"$pk":"ceylon.language","$nm":"Comparable"}],"variance":"in","$nm":"Index"},{"variance":"out","$nm":"Span"}],"$an":{"shared":[],"see":["List","Sequence","String"],"doc":["\"Abstract supertype of ranged objects which map a range\nof `Comparable` keys to ranges of values. The type\nparameter `Span` abstracts the type of the resulting\nrange.\n\nA span may be obtained from an instance of `Ranged`\nusing the span operator:\n\n    print(\"hello world\"[0..5])\n\""]},"$m":{"spanTo":{"$t":{"$nm":"Span"},"$ps":[[{"$t":"Index","$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Obtain a span containing the mapped values between\nthe start of the receiver and the end index.\""]},"$nm":"spanTo"},"segment":{"$t":{"$nm":"Span"},"$ps":[[{"$t":"Index","$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Obtain a segment containing the mapped values\nstarting from the given index, with the given \nlength.\""]},"$nm":"segment"},"spanFrom":{"$t":{"$nm":"Span"},"$ps":[[{"$t":"Index","$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Obtain a span containing the mapped values between\nthe starting index and the end of the receiver.\""]},"$nm":"spanFrom"},"span":{"$t":{"$nm":"Span"},"$ps":[[{"$t":"Index","$mt":"prm","$pt":"v","$nm":"from"},{"$t":"Index","$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Obtain a span containing the mapped values between \nthe two given indices.\""]},"$nm":"span"}},"$nm":"Ranged"},"times":{"$t":{"$nm":"Value"},"$ps":[[{"$t":"Value","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Value","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Numeric"}],"$nm":"Value"}],"$an":{"shared":[],"see":["plus","product"],"doc":["\"Multiply the given `Numeric` values.\""]},"$nm":"times"},"entries":{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Object"}]}],"$pk":"ceylon.language","$nm":"Entry"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"doc":["\"Produces a sequence of each index to element `Entry` \nfor the given sequence of values.\""]},"$nm":"entries"},"license":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"url"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to specify the URL of the license of a module \nor package.\""]},"$nm":"license"},"null":{"super":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"obj","$an":{"shared":[],"doc":["\"The null value.\""],"by":["\"Gavin\""]},"$nm":"null"},"Object":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"cls","$an":{"abstract":[],"shared":[],"see":["Basic","Null"],"doc":["\"The abstract supertype of all types representing \ndefinite values. Any two `Object`s may be compared\nfor value equality using the `==` and `!=` operators:\n\n    true==false\n    1==\"hello world\"\n    \"hello\"+ \" \" + \"world\"==\"hello world\"\n    Singleton(\"hello world\")=={ \"hello world\" }\n\nHowever, since `Null` is not a subtype of `Object`, the \nvalue `null` cannot be compared to any other value\nusing `==`. Thus, value equality is not defined for \noptional types. This neatly voids the problem of \ndeciding the value of the expression `null==null`, \nwhich is simply illegal.\""],"by":["\"Gavin\""]},"$m":{"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Determine if two values are equal. Implementations\nshould respect the constraints that:\n\n- if `x===y` then `x==y` (reflexivity), \n- if `x==y` then `y==x` (symmetry), \n- if `x==y` and `y==z` then `x==z` (transitivity).\n\nFurthermore it is recommended that implementations\nensure that if `x==y` then `x` and `y` have the\nsame concrete class.\""]},"$nm":"equals"}},"$at":{"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The hash value of the value, which allows the value\nto be an element of a hash-based set or key of a\nhash-based map. Implementations must respect the\nconstraint that if `x==y` then `x.hash==y.hash`.\""]},"$nm":"hash"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"A developer-friendly string representing the \ninstance. Concatenates the name of the concrete \nclass of the instance with the `hash` of the \ninstance. Subclasses are encouraged to refine this \nimplementation to produce a more meaningful \nrepresentation.\""]},"$nm":"string"}},"$nm":"Object"},"Float":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Float"}],"$pk":"ceylon.language","$nm":"Scalar"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Float"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Float"}],"$pk":"ceylon.language","$nm":"Exponentiable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Float"}],"$pk":"ceylon.language","$nm":"Castable"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["\"A 64-bit floating point number. A `Float` is capable of\napproximately representing numeric values between\n2<sup>-1022<\/sup> and (2-2<sup>-52<\/sup>)×2<sup>1023<\/sup>,\nalong with the special values `infinity` and `-infinity`, \nand undefined values (Not a Number). Zero is represented \nby distinct instances `+0`, `-0`, but these instances \nare equal. An undefined value is not equal to any other\nvalue, not even to itself.\""]},"$at":{"strictlyNegative":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determines if this value is a negative number,\n`-0`, or `-infinity`. Produces `false` for a\npositive number, `+0`, or undefined.\""]},"$nm":"strictlyNegative"},"sign":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The sign of this value. Produces `1` for a positive \nnumber or `infinity`. Produces `-1` for a negative\nnumber or `-infinity`. Produces `0` for `+0`, `-0`, \nor undefined.\""],"actual":[]},"$nm":"sign"},"infinite":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"see":["infinity","finite"],"doc":["\"Determines whether this value is infinite in magnitude\nProduces `true` for `infinity` and `-infinity`.\nProduces `false` for a finite number, `+0`, `-0`, or\nundefined.\""]},"$nm":"infinite"},"undefined":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"doc":["\"Determines whether this value is undefined (that is, Not a Number or NaN).\nThe undefined value has the property that it is not equal (`==`) \nto itself, as a consequence the undefined value cannot sensibly be \nused in most collections.\""]},"$nm":"undefined"},"strictlyPositive":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determines if this value is a positive number,\n`+0`, or `infinity`. Produces `false` for a \nnegative number, `-0`, or undefined.\""]},"$nm":"strictlyPositive"},"negative":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determines if this value is a negative number or\n`-infinity`. Produces `false` for a positive number, \n`+0`, `-0`, or undefined.\""],"actual":[]},"$nm":"negative"},"positive":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determines if this value is a positive number or\n`infinity`. Produces `false` for a negative number, \n`+0`, `-0`, or undefined.\""],"actual":[]},"$nm":"positive"},"finite":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"see":["infinite","infinity"],"doc":["\"Determines whether this value is finite. Produces\n`false` for `infinity`, `-infinity`, and undefined.\""]},"$nm":"finite"}},"$nm":"Float"},"min":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Value"}]},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$nm":"Absent"}],"$an":{"shared":[],"see":["Comparable","max","smallest"],"doc":["\"Given a nonempty sequence of `Comparable` values, \nreturn the smallest value in the sequence.\""]},"$nm":"min"},"LazySet":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elems"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Set"}],"$mt":"cls","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Element"}],"$an":{"shared":[],"doc":["\"An implementation of Set that wraps an `Iterable` of\nelements. All operations on this Set are performed\non the `Iterable`.\""],"by":["\"Enrique Zamudio\""]},"$m":{"complement":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"actual":[]},"$nm":"complement"},"intersection":{"$t":{"$tp":[{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"actual":[]},"$nm":"intersection"},"exclusiveUnion":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"actual":[]},"$nm":"exclusiveUnion"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"equals"},"union":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"actual":[]},"$nm":"union"}},"$at":{"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"LazySet"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"iterator"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"actual":[]},"$nm":"size"}},"$nm":"LazySet"},"Collection":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},{"$pk":"ceylon.language","$nm":"Category"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Collection"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"see":["List","Map","Set"],"doc":["\"Represents an iterable collection of elements of finite \nsize. `Collection` is the abstract supertype of `List`,\n`Map`, and `Set`.\n\nA `Collection` forms a `Category` of its elements.\n\nAll `Collection`s are `Cloneable`. If a collection is\nimmutable, it is acceptable that `clone` produce a\nreference to the collection itself. If a collection is\nmutable, `clone` should produce an immutable collection\ncontaining references to the same elements, with the\nsame structure as the original collection&mdash;that \nis, it should produce an immutable shallow copy of the\ncollection.\""]},"$m":{"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Return `true` if the given object is an element of\nthis collection. In this default implementation,\nand in most refining implementations, return `false`\notherwise. An acceptable refining implementation\nmay return `true` for objects which are not \nelements of the collection, but this is not \nrecommended. (For example, the `contains()` method \nof `String` returns `true` for any substring of the\nstring.)\""],"actual":[]},"$nm":"contains"}},"$at":{"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"A string of form `\"{ x, y, z }\"` where `x`, `y`, \nand `z` are the `string` representations of the \nelements of this collection, as produced by the\niterator of the collection, or the string `\"{}\"` \nif this collection is empty. If the collection \niterator produces the value `null`, the string\nrepresentation contains the string `\"null\"`.\""],"actual":[]},"$nm":"string"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"Determine if the collection is empty, that is, if \nit has no elements.\""],"actual":[]},"$nm":"empty"}},"$nm":"Collection"},"deprecated":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$mt":"prm","$pt":"v","$def":"1","$nm":"reason"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to mark program elements which should not be \nused anymore.\""]},"$nm":"deprecated"},"Range":{"super":{"$pk":"ceylon.language","$nm":"Object"},"$ps":[{"$t":"Element","$hdn":"1","$mt":"prm","$pt":"v","$nm":"first"},{"$t":"Element","$hdn":"1","$mt":"prm","$pt":"v","$nm":"last"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},{"$pk":"ceylon.language","$nm":"Category"}],"$mt":"cls","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Ordinal"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"doc":["\"Represents the range of totally ordered, ordinal values \ngenerated by two endpoints of type `Ordinal` and \n`Comparable`. If the first value is smaller than the\nlast value, the range is increasing. If the first value\nis larger than the last value, the range is decreasing.\nIf the two values are equal, the range contains exactly\none element. The range is always nonempty, containing \nat least one value.\n\nA range may be produced using the `..` operator:\n\n    for (i in min..max) { ... }\n    if (char in `A`..`Z`) { ... }\n\""],"by":["\"Gavin\""]},"$m":{"count":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"count"},"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"n"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"The element of the range that occurs `n` values after\nthe start of the range. Note that this operation \nis inefficient for large ranges.\""],"actual":[]},"$nm":"get"},"spanTo":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanTo"},"segment":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"segment"},"next":{"$t":{"$nm":"Element"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"}]],"$mt":"mthd","$nm":"next"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Determines if the range includes the given object.\""],"actual":[]},"$nm":"contains"},"includes":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Determines if the range includes the given value.\""]},"$nm":"includes"},"spanFrom":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanFrom"},"taking":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"take"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"taking"},"skipping":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"skip"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"skipping"},"span":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"span"}},"$at":{"lastIndex":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"doc":["\"The index of the end of the range.\""],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns the range itself, since ranges are \nimmutable.\""],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"gttr","$an":{"shared":[],"doc":["\"An iterator for the elements of the range.\""],"actual":[]},"$nm":"iterator"},"decreasing":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"doc":["\"Determines if the range is decreasing.\""]},"$nm":"decreasing"},"last":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"doc":["\"The end of the range.\""],"actual":[]},"$nm":"last"},"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns this range.\""],"actual":[]},"$nm":"sequence"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"},"coalesced":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns the range itself, since a Range cannot\ncontain nulls.\""],"actual":[]},"$nm":"coalesced"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},"$mt":"attr","$an":{"shared":[],"doc":["\"Reverse this range, returning a new range.\""],"actual":[]},"$nm":"reversed"},"rest":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"gttr","$an":{"shared":[],"doc":["\"The rest of the range, without the start of the\nrange.\""],"actual":[]},"$nm":"rest"},"first":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"doc":["\"The start of the range.\""],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"doc":["\"The nonzero number of elements in the range.\""],"actual":[]},"$nm":"size"}},"$nm":"Range"},"Integral":{"of":[{"$nm":"Other"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Numeric"},{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Enumerable"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Integral"}],"$nm":"Other"}],"$an":{"shared":[],"see":["Integer"],"doc":["\"Abstraction of integral numeric types. That is, types \nwith no fractional part, including `Integer`. The \ndivision operation for integral numeric types results \nin a remainder. Therefore, integral numeric types have \nan operation to determine the remainder of any division \noperation.\""],"by":["\"Gavin\""]},"$m":{"remainder":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["divided"],"doc":["\"The remainder, after dividing this number by the \ngiven number.\""]},"$nm":"remainder"}},"$at":{"unit":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if the number is one.\""]},"$nm":"unit"},"zero":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if the number is zero.\""]},"$nm":"zero"}},"$nm":"Integral","$st":"Other"},"max":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Value"}]},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$nm":"Absent"}],"$an":{"shared":[],"see":["Comparable","min","largest"],"doc":["\"Given a nonempty sequence of `Comparable` values, \nreturn the largest value in the sequence.\""]},"$nm":"max"},"SequenceAppender":{"super":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"SequenceBuilder"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"prm","$pt":"v","$nm":"elements"}],"$mt":"cls","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"native":[],"see":["SequenceBuilder"],"doc":["\"This class is used for constructing a new nonempty \nsequence by incrementally appending elements to an\nexisting nonempty sequence. The existing sequence is\nnot modified, since `Sequence`s are immutable. This \nclass is mutable but threadsafe.\""]},"$at":{"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The resulting nonempty sequence. If no elements \nhave been appended, the original nonempty \nsequence.\""],"actual":[]},"$nm":"sequence"}},"$nm":"SequenceAppender"},"RecursiveInitializationException":{"super":{"$pk":"ceylon.language","$nm":"Exception"},"$mt":"cls","$an":{"shared":[],"doc":["\"Thrown when name could not be initialized due to recursive access during initialization.\""]},"$nm":"RecursiveInitializationException"},"byIncreasing":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Value","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"comparable"}],[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"$nm":"Element"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Value"}],"$an":{"shared":[],"see":["byDecreasing"],"doc":["\"A comparator which orders elements in increasing order \naccording to the `Comparable` returned by the given \n`comparable()` function.\""]},"$nm":"byIncreasing"},"larger":{"super":{"$pk":"ceylon.language","$nm":"Comparison"},"$mt":"obj","$an":{"shared":[],"doc":["\"The value is larger than the given value.\""],"by":["\"Gavin\""]},"$nm":"larger"},"smallest":{"$t":{"$nm":"Element"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"see":["Comparable","largest","min"],"doc":["\"Given two `Comparable` values, return smallest of the\ntwo.\""]},"$nm":"smallest"},"true":{"super":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"obj","$an":{"shared":[],"doc":["\"A value representing truth in Boolean logic.\""],"by":["\"Gavin\""]},"$at":{"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"}},"$nm":"true"},"join":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"iterables"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"see":["SequenceBuilder"],"doc":["\"Given a list of iterable objects, return a new sequence \nof all elements of the all given objects. If there are\nno arguments, or if none of the arguments contains any\nelements, return the empty sequence.\""]},"$nm":"join"},"Exponentiable":{"of":[{"$nm":"This"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"This"}],"$pk":"ceylon.language","$nm":"Numeric"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"This"},{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Exponentiable"}],"$nm":"This"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Numeric"}],"$nm":"Other"}],"$an":{"shared":[],"see":["Integer","Float"],"doc":["\"Abstraction of numeric types that may be raised to a\npower. Note that the type of the exponent may be\ndifferent to the numeric type which can be \nexponentiated.\""]},"$m":{"power":{"$t":{"$nm":"This"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"The result of raising this number to the given\npower.\""]},"$nm":"power"}},"$nm":"Exponentiable","$st":"This"},"curry":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Argument"},{"$mt":"tpm","$nm":"First"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Tuple"}],"$pk":"ceylon.language","$nm":"Callable"},"$mt":"prm","$pt":"v","$nm":"f"}],[{"$t":"First","$mt":"prm","$pt":"v","$nm":"first"}]],"$mt":"mthd","$tp":[{"$nm":"Return"},{"$nm":"Argument"},{"satisfies":[{"$nm":"Argument"}],"$nm":"First"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Argument"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"Rest"}],"$an":{"shared":[]},"$nm":"curry"},"forKey":{"$t":{"$nm":"Result"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Key","$mt":"prm","$pt":"v","$nm":"key"}]],"$mt":"prm","$pt":"f","$nm":"resulting"}],[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"entry"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Key"},{"$nm":"Result"}],"$an":{"shared":[],"see":["forItem"],"doc":["\"A function that returns the result of the given `resulting()` function \non the key of a given `Entry`.\""]},"$nm":"forKey"},"Character":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"}],"$pk":"ceylon.language","$nm":"Comparable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"}],"$pk":"ceylon.language","$nm":"Enumerable"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"see":["String"],"doc":["\"A 32-bit Unicode character.\""],"by":["\"Gavin\""]},"$at":{"digit":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if this character is a numeric digit.\""]},"$nm":"digit"},"uppercase":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if this is an uppercase representation of\nthe character.\""]},"$nm":"uppercase"},"control":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if this character is an ISO control \ncharacter.\""]},"$nm":"control"},"integer":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The code point of the character.\""]},"$nm":"integer"},"letter":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if this character is a letter.\""]},"$nm":"letter"},"lowercase":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if this is a lowercase representation of\nthe character.\""]},"$nm":"lowercase"},"lowercased":{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The lowercase representation of this character.\""]},"$nm":"lowercased"},"uppercased":{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The uppercase representation of this character.\""]},"$nm":"uppercased"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"A string containg just this character.\""],"actual":[]},"$nm":"string"},"whitespace":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if this character is a whitespace \ncharacter.\""]},"$nm":"whitespace"},"titlecased":{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The title case representation of this character.\""]},"$nm":"titlecased"},"titlecase":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if this is a title case representation of\nthe character.\""]},"$nm":"titlecase"}},"$nm":"Character"},"Keys":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Correspondence"},"$mt":"prm","$pt":"v","$nm":"correspondence"}],"satisfies":[{"$pk":"ceylon.language","$nm":"Category"}],"$mt":"cls","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"in","$nm":"Key"},{"variance":"out","$nm":"Item"}],"$an":{"native":[]},"$m":{"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"key"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"contains"}},"$nm":"Keys"},"process":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$mt":"obj","$an":{"shared":[],"native":[],"doc":["\"Represents the current process (instance of the virtual\nmachine).\""],"by":["\"Gavin\"","\"Tako\""]},"$m":{"readLine":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Read a line of input text from the standard input \nof the virtual machine process.\""]},"$nm":"readLine"},"writeErrorLine":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$def":"1","$nm":"line"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Print a line to the standard error of the \nvirtual machine process.\""]},"$nm":"writeErrorLine"},"writeError":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Print a string to the standard error of the \nvirtual machine process.\""]},"$nm":"writeError"},"propertyValue":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"The value of the given system property of the virtual\nmachine, if any.\""]},"$nm":"propertyValue"},"namedArgumentValue":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"The value of the first argument of form `-name=value`, \n`--name=value`, or `-name value` specified among the \ncommand line arguments to the virtual machine, if\nany.\""]},"$nm":"namedArgumentValue"},"write":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Print a string to the standard output of the \nvirtual machine process.\""]},"$nm":"write"},"namedArgumentPresent":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Determine if an argument of form `-name` or `--name` \nwas specified among the command line arguments to \nthe virtual machine.\""]},"$nm":"namedArgumentPresent"},"writeLine":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$def":"1","$nm":"line"}]],"$mt":"mthd","$an":{"shared":[],"see":["print"],"doc":["\"Print a line to the standard output of the \nvirtual machine process.\""]},"$nm":"writeLine"},"exit":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"code"}]],"$mt":"mthd","$an":{"shared":[],"native":[]},"$nm":"exit"}},"$at":{"os":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"Returns the name of the operating system this process is running on.\""]},"$nm":"os"},"vmVersion":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"Returns the version of the virtual machine this process is running on.\""]},"$nm":"vmVersion"},"vm":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"Returns the name of the virtual machine this process is running on.\""]},"$nm":"vm"},"osVersion":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"Returns the version of the operating system this process is running on.\""]},"$nm":"osVersion"},"newline":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The line ending character sequence on this platform.\""]},"$nm":"newline"},"arguments":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The command line arguments to the virtual machine.\""]},"$nm":"arguments"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"},"nanoseconds":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The elapsed time in nanoseconds since an arbitrary\nstarting point.\""]},"$nm":"nanoseconds"},"milliseconds":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The elapsed time in milliseconds since midnight, \n1 January 1970.\""]},"$nm":"milliseconds"}},"$nm":"process"},"product":{"$t":{"$nm":"Value"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Numeric"}],"$nm":"Value"}],"$an":{"shared":[],"see":["sum"],"doc":["\"Given a nonempty sequence of `Numeric` values, return \nthe product of the values.\""]},"$nm":"product"},"forItem":{"$t":{"$nm":"Result"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Item","$mt":"prm","$pt":"v","$nm":"item"}]],"$mt":"prm","$pt":"f","$nm":"resulting"}],[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"entry"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Item"},{"$nm":"Result"}],"$an":{"shared":[],"see":["forKey"],"doc":["\"A function that returns the result of the given `resulting()` function \non the item of a given `Entry`.\""]},"$nm":"forItem"},"shuffle":{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Result"},{"$mt":"tpm","$nm":"FirstArgs"}],"$pk":"ceylon.language","$nm":"Callable"},{"$mt":"tpm","$nm":"SecondArgs"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Result"},{"$mt":"tpm","$nm":"SecondArgs"}],"$pk":"ceylon.language","$nm":"Callable"},{"$mt":"tpm","$nm":"FirstArgs"}],"$pk":"ceylon.language","$nm":"Callable"},"$mt":"prm","$pt":"v","$nm":"f"}]],"$mt":"mthd","$tp":[{"$nm":"Result"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"FirstArgs"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"SecondArgs"}],"$an":{"shared":[]},"$nm":"shuffle"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"characters"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Create a new string containing the given characters.\""]},"$nm":"string"},"nothing":{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"gttr","$an":{"shared":[],"doc":["\"A value that is assignable to any type, but that \nresults in an exception when evaluated. This is most \nuseful for generating members in an IDE.\""]},"$nm":"nothing"},"doc":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"description"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to specify API documentation of a program\nelement.\""]},"$nm":"doc"},"Scalar":{"of":[{"$nm":"Other"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Numeric"},{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Comparable"},{"$pk":"ceylon.language","$nm":"Number"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Scalar"}],"$nm":"Other"}],"$an":{"shared":[],"see":["Integer","Float"],"doc":["\"Abstraction of numeric types representing scalar\nvalues, including `Integer` and `Float`.\""],"by":["\"Gavin\""]},"$at":{"magnitude":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The magnitude of this number.\""],"actual":[]},"$nm":"magnitude"},"wholePart":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The integral value of the number after truncation \nof the fractional part. For integral numeric types,\nthe integral value of a number is the number \nitself.\""],"actual":[]},"$nm":"wholePart"},"fractionalPart":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The fractional part of the number, after truncation \nof the integral part. For integral numeric types,\nthe fractional part is always zero.\""],"actual":[]},"$nm":"fractionalPart"}},"$nm":"Scalar","$st":"Other"},"tagged":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"tags"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to categorize the API by tag.\""]},"$nm":"tagged"},"ifExists":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"val"}]],"$mt":"prm","$pt":"f","$nm":"predicate"}],[{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$pt":"v","$nm":"val"}]],"$mt":"mthd","$nm":"ifExists"},"SequenceBuilder":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$mt":"cls","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"native":[],"see":["SequenceAppender","join","Singleton"],"doc":["\"Since sequences are immutable, this class is used for\nconstructing a new sequence by incrementally appending \nelements to the empty sequence. This class is mutable\nbut threadsafe.\""]},"$m":{"append":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"SequenceBuilder"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Append an element to the sequence and return this \n`SequenceBuilder`\""]},"$nm":"append"},"appendAll":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"SequenceBuilder"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Append multiple elements to the sequence and return \nthis `SequenceBuilder`\""]},"$nm":"appendAll"}},"$at":{"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"default":[],"native":[],"doc":["\"The resulting sequence. If no elements have been\nappended, the empty sequence.\""]},"$nm":"sequence"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"doc":["\"Determine if the resulting sequence is empty.\""]},"$nm":"empty"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"doc":["\"The size of the resulting sequence.\""]},"$nm":"size"}},"$nm":"SequenceBuilder"},"variable":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to mark an attribute as variable. A `variable` \nattribute must be assigned with `=` and may be \nreassigned over time.\""]},"$nm":"variable"},"Correspondence":{"$mt":"ifc","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"in","$nm":"Key"},{"variance":"out","$nm":"Item"}],"$an":{"shared":[],"see":["Map","List","Category"],"doc":["\"Abstract supertype of objects which associate values \nwith keys. `Correspondence` does not satisfy `Category`,\nsince in some cases&mdash;`List`, for example&mdash;it is \nconvenient to consider the subtype a `Category` of its\nvalues, and in other cases&mdash;`Map`, for example&mdash;it \nis convenient to treat the subtype as a `Category` of its\nentries.\n\nThe item corresponding to a given key may be obtained \nfrom a `Correspondence` using the item operator:\n\n    value bg = settings[\"backgroundColor\"] else white;\n\nThe `get()` operation and item operator result in an\noptional type, to reflect the possibility that there is\nno item for the given key.\""],"by":["\"Gavin\""]},"$m":{"definesAny":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"keys"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["defines"],"doc":["\"Determines if this `Correspondence` defines a value\nfor any one of the given keys.\""]},"$nm":"definesAny"},"defines":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Key","$mt":"prm","$pt":"v","$nm":"key"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["definesAny","definesEvery","keys"],"doc":["\"Determines if there is a value defined for the \ngiven key.\""]},"$nm":"defines"},"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Item"}]},"$ps":[[{"$t":"Key","$mt":"prm","$pt":"v","$nm":"key"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["items"],"doc":["\"Returns the value defined for the given key, or \n`null` if there is no value defined for the given \nkey.\""]},"$nm":"get"},"items":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Item"}]}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"keys"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["get"],"doc":["\"Returns the items defined for the given keys, in\nthe same order as the corresponding keys.\""]},"$nm":"items"},"definesEvery":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"keys"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["defines"],"doc":["\"Determines if this `Correspondence` defines a value\nfor every one of the given keys.\""]},"$nm":"definesEvery"}},"$at":{"keys":{"$t":{"$pk":"ceylon.language","$nm":"Category"},"$mt":"attr","$an":{"shared":[],"default":[],"see":["defines"],"doc":["\"The `Category` of all keys for which a value is \ndefined by this `Correspondence`.\""]},"$nm":"keys"}},"$nm":"Correspondence"},"NonemptyContainer":{"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"deprecated":["\"Will be removed in Ceylon 1.0.\""],"doc":["\"A nonempty container.\""]},"$alias":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Container"},"$nm":"NonemptyContainer"},"count":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Boolean"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"A count of the number of `true` items in the given values.\""]},"$nm":"count"},"internalFirst":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Value"}]},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$nm":"Absent"}],"$an":{"shared":[],"native":[]},"$nm":"internalFirst"},"byItem":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Item","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Item","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}],[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"x"},{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Item"}],"$an":{"shared":[],"see":["byKey"],"doc":["\"A comparator for `Entry`s which compares their items \naccording to the given `comparing()` function.\""]},"$nm":"byItem"},"by":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"authors"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to specify API authors.\""]},"$nm":"by"},"every":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Boolean"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$an":{"shared":[],"see":["any"],"doc":["\"Determines if every one of the given boolean values \n(usually a comprehension) is `true`.\""]},"$nm":"every"},"$pkg-shared":"1","Tuple":{"super":{"$pk":"ceylon.language","$nm":"Object"},"$ps":[{"$t":"First","$hdn":"1","$mt":"prm","$pt":"v","$nm":"first"},{"$t":"Rest","$hdn":"1","$mt":"prm","$pt":"v","$nm":"rest"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"First"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Tuple"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"cls","$tp":[{"variance":"out","$nm":"Element"},{"satisfies":[{"$nm":"Element"}],"variance":"out","$nm":"First"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$def":{"$pk":"ceylon.language","$nm":"Empty"},"variance":"out","$nm":"Rest"}],"$an":{"shared":[],"doc":["\"A _tuple_ is a typed linked list. Each instance of \n`Tuple` represents the value and type of a single link.\nThe attributes `first` and `rest` allow us to retrieve\na value form the list without losing its static type \ninformation.\n\n    value point = Tuple(0.0, Tuple(0.0, Tuple(\"origin\")));\n    Float x = point.first;\n    Float y = point.rest.first;\n    String label = point.rest.rest.first;\n\nUsually, we abbreviate code involving tuples.\n\n    [Float,Float,String] point = [0.0, 0.0, \"origin\"];\n    Float x = point[0];\n    Float y = point[1];\n    String label = point[2];\n\nA list of types enclosed in brackets is an abbreviated \ntuple type. An instance of `Tuple` may be constructed \nby surrounding a value list in brackets:\n\n    [String,String] words = [\"hello\", \"world\"];\n\nThe index operator with a literal integer argument is a \nshortcut for a chain of evaluations of `rest` and \n`first`. For example, `point[1]` means `point.rest.first`.\n\nA _terminated_ tuple type is a tuple where the type of\nthe last link in the chain is `Empty`. An _unterminated_ \ntuple type is a tuple where the type of the last link\nin the chain is `Sequence` or `Sequential`. Thus, a \nterminated tuple type has a length that is known\nstatically. For an unterminated tuple type only a lower\nbound on its length is known statically.\n\nHere, `point` is an unterminated tuple:\n\n    String[] labels = ... ;\n    [Float,Float,String*] point = [0.0, 0.0, *labels];\n    Float x = point[0];\n    Float y = point[1];\n    String? firstLabel = point[2];\n    String[] allLabels = point[2...];\n\n\""],"by":["\"Gavin\""]},"$m":{"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"get"},"spanTo":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanTo"},"segment":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"segment"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"contains"},"spanFrom":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanFrom"},"span":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"end"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"span"}},"$at":{"lastIndex":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"First"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Tuple"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"iterator"},"last":{"$t":{"$nm":"Element"},"$mt":"gttr","$an":{"shared":[],"actual":[]},"$nm":"last"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"reversed"},"rest":{"$t":{"$nm":"Rest"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"rest"},"first":{"$t":{"$nm":"First"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"size"}},"$nm":"Tuple"},"lessThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"val"}],[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"doc":["\"Returns a partial function that will compare an element\nto any other element and returns true if the compared\nelement is less than its element.\nThis is useful in conjunction with methods that receive\na predicate function.\""]},"$nm":"lessThan"},"identityHash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Identifiable"},"$mt":"prm","$pt":"v","$nm":"x"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"see":["identical"],"doc":["\"Return the system-defined identity hash value of the \ngiven value. This hash value is consistent with \nidentity equality.\""]},"$nm":"identityHash"},"uncurry":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Argument"},{"$mt":"tpm","$nm":"First"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Tuple"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":"First","$mt":"prm","$pt":"v","$nm":"first"}]],"$mt":"prm","$pt":"f","$nm":"f"}]],"$mt":"mthd","$tp":[{"$nm":"Return"},{"$nm":"Argument"},{"satisfies":[{"$nm":"Argument"}],"$nm":"First"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Argument"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"Rest"}],"$an":{"shared":[]},"$nm":"uncurry"},"optional":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[]},"$nm":"optional"},"any":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Boolean"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$an":{"shared":[],"see":["every"],"doc":["\"Determines if any one of the given boolean values \n(usually a comprehension) is `true`.\""]},"$nm":"any"},"Summable":{"of":[{"$nm":"Other"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Summable"}],"$nm":"Other"}],"$an":{"shared":[],"see":["String","Numeric"],"doc":["\"Abstraction of types which support a binary addition\noperator. For numeric types, this is just familiar \nnumeric addition. For strings, it is string \nconcatenation. In general, the addition operation \nshould be a binary associative operation.\""],"by":["\"Gavin\""]},"$m":{"plus":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"The result of adding the given value to this value. \nThis operation should never perform any kind of \nmutation upon either the receiving value or the \nargument value.\""]},"$nm":"plus"}},"$nm":"Summable","$st":"Other"},"EmptyContainer":{"$mt":"ifc","$an":{"shared":[],"deprecated":["\"Will be removed in Ceylon 1.0.\""],"doc":["\"An empty container.\""]},"$alias":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Container"},"$nm":"EmptyContainer"},"Set":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Collection"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Set"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Element"}],"$an":{"shared":[],"doc":["\"A collection of unique elements.\n\nA `Set` is a `Collection` of its elements.\n\nSets may be the subject of the binary union, \nintersection, exclusive union, and complement operators \n`|`, `&`, `^`, and `~`.\""]},"$m":{"complement":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"formal":[],"doc":["\"Returns a new `Set` containing all the elements in \nthis `Set` that are not contained in the given\n`Set`.\""]},"$nm":"complement"},"subset":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Determines if this `Set` is a subset of the given \n`Set`, that is, if the given set contains all of \nthe elements in this set.\""]},"$nm":"subset"},"intersection":{"$t":{"$tp":[{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"formal":[],"doc":["\"Returns a new `Set` containing only the elements \nthat are present in both this `Set` and the given \n`Set`.\""]},"$nm":"intersection"},"exclusiveUnion":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"formal":[],"doc":["\"Returns a new `Set` containing only the elements \ncontained in either this `Set` or the given `Set`, \nbut no element contained in both sets.\""]},"$nm":"exclusiveUnion"},"superset":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Determines if this `Set` is a superset of the \nspecified Set, that is, if this `Set` contains all \nof the elements in the specified `Set`.\""]},"$nm":"superset"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Two `Set`s are considered equal if they have the \nsame size and if every element of the first set is\nalso an element of the second set, as determined\nby `contains()`.\""],"actual":[]},"$nm":"equals"},"union":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"formal":[],"doc":["\"Returns a new `Set` containing all the elements of \nthis `Set` and all the elements of the given `Set`.\""]},"$nm":"union"}},"$at":{"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"}},"$nm":"Set"},"Sequence":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Iterable"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"see":["Empty"],"doc":["\"A nonempty, immutable sequence of values. The type \n`Sequence<Element>`, may be abbreviated `[Element+]`.\n\nGiven a possibly-empty sequence of type `[Element*], \nthe `if (nonempty ...)` construct, or, alternatively,\nthe `assert (nonempty ...)` construct, may be used to \nnarrow to a nonempty sequence type:\n\n    [Integer*] nums = ... ;\n    if (nonempty nums) {\n        Integer first = nums.first;\n        Integer max = max(nums);\n        [Integer+] squares = nums.collect((Integer i) i**2));\n        [Integer+] sorted = nums.sort(byIncreasing((Integer i) i));\n    }\n\nOperations like `first`, `max()`, `collect()`, and \n`sort()`, which polymorphically produce a nonempty or \nnon-null output when given a nonempty input are called \n_emptiness-preserving_.\""],"by":["\"Gavin\""]},"$m":{"sort":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"A nonempty sequence containing the elements of this\ncontainer, sorted according to a function \nimposing a partial order upon the elements.\""],"actual":[]},"$nm":"sort"},"collect":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Result"}],"$pk":"ceylon.language","$nm":"Sequence"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"collecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"default":[],"doc":["\"A nonempty sequence containing the results of \napplying the given mapping to the elements of this\nsequence.\""],"actual":[]},"$nm":"collect"}},"$at":{"lastIndex":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"see":["size"],"doc":["\"The index of the last element of the sequence.\""],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"attr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"clone"},"last":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The last element of the sequence, that is, the\nelement with index `sequence.lastIndex`.\""],"actual":[]},"$nm":"last"},"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"This sequence.\""],"actual":[]},"$nm":"sequence"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns `false`, since every `Sequence` contains at\nleast one element.\""],"actual":[]},"$nm":"empty"},"rest":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The rest of the sequence, without the first \nelement.\""],"actual":[]},"$nm":"rest"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Reverse this sequence, returning a new nonempty\nsequence.\""],"actual":[]},"$nm":"reversed"},"first":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The first element of the sequence, that is, the\nelement with index `0`.\""],"actual":[]},"$nm":"first"}},"$nm":"Sequence"},"StringBuilder":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$mt":"cls","$an":{"shared":[],"native":[],"doc":["\"Since strings are immutable, this class is used for\nconstructing a string by incrementally appending \ncharacters to the empty string. This class is mutable \nbut threadsafe.\""]},"$m":{"append":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Append the characters in the given string.\""]},"$nm":"append"},"appendSpace":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$mt":"mthd","$an":{"shared":[],"doc":["\"Append a space character.\""]},"$nm":"appendSpace"},"delete":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"pos"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"count"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Deletes the specified number of characters from the\ncurrent content, starting at the specified position.\nIf the position is beyond the end of the current content,\nnothing is deleted. If the number of characters to delete\nis greater than the available characters from the given\nposition, the content is truncated at the given position.\""]},"$nm":"delete"},"reset":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Remove all content and return to initial state.\""]},"$nm":"reset"},"appendAll":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"strings"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Append the characters in the given strings.\""]},"$nm":"appendAll"},"insert":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"pos"},{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Character"},{"$pk":"ceylon.language","$nm":"String"}]},"$mt":"prm","$pt":"v","$nm":"content"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Insert a String or Character at the specified position.\nIf the position is beyond the end of the current\nstring, the new content is simply appended to the\ncurrent content. If the position is a negative number,\nthe new content is inserted at index 0.\""]},"$nm":"insert"},"appendNewline":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$mt":"mthd","$an":{"shared":[],"doc":["\"Append a newline character.\""]},"$nm":"appendNewline"},"appendCharacter":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"prm","$pt":"v","$nm":"character"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Append the given character.\""]},"$nm":"appendCharacter"}},"$at":{"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"The resulting string. If no characters have been\nappended, the empty string.\""],"actual":[]},"$nm":"string"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["\"Returns the size of the current content.\""]},"$nm":"size"}},"$nm":"StringBuilder"},"emptyOrSingleton":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Element"}],"$an":{"shared":[],"see":["Singleton","Empty"],"doc":["\"A `Singleton` if the given element is non-null, otherwise `Empty`.\""]},"$nm":"emptyOrSingleton"},"shared":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to mark a type or member as shared. A `shared` \nmember is visible outside the block of code in which it\nis declared.\""]},"$nm":"shared"},"Binary":{"of":[{"$nm":"Other"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Binary"}],"$nm":"Other"}],"$an":{"shared":[],"see":["Integer"],"doc":["\"Abstraction of numeric types that consist in\na sequence of bits, like `Integer`.\""],"by":["\"Stef\""]},"$m":{"clear":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Returns a new number with the given bit set to 0.\nBits are indexed from right to left.\""]},"$nm":"clear"},"xor":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Performs a logical exclusive OR operation.\""]},"$nm":"xor"},"get":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Retrieves a given bit from this bit sequence. Bits are indexed from\nright to left.\""]},"$nm":"get"},"leftLogicalShift":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"shift"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Performs a left logical shift. Sign is not preserved. Padded with zeros.\""]},"$nm":"leftLogicalShift"},"set":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"},{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$pt":"v","$def":"1","$nm":"bit"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Returns a new number with the given bit set to the given value.\nBits are indexed from right to left.\""]},"$nm":"set"},"or":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Performs a logical inclusive OR operation.\""]},"$nm":"or"},"rightArithmeticShift":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"shift"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Performs a right arithmetic shift. Sign is preserved. Padded with zeros.\""]},"$nm":"rightArithmeticShift"},"rightLogicalShift":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"shift"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Performs a right logical shift. Sign is not preserved. Padded with zeros.\""]},"$nm":"rightLogicalShift"},"flip":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Returns a new number with the given bit flipped to its opposite value.\nBits are indexed from right to left.\""]},"$nm":"flip"},"and":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Performs a logical AND operation.\""]},"$nm":"and"}},"$at":{"not":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The binary complement of this sequence of bits.\""]},"$nm":"not"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The number of bits (0 or 1) that this sequence of bits can hold.\""]},"$nm":"size"}},"$nm":"Binary","$st":"Other"},"commaList":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$nm":"commaList"},"Number":{"$mt":"ifc","$an":{"shared":[],"see":["Numeric"],"doc":["\"Abstraction of numbers. Numeric operations are provided\nby the subtype `Numeric`. This type defines operations\nwhich can be expressed without reference to the self\ntype `Other` of `Numeric`.\""],"by":["\"Gavin\""]},"$at":{"sign":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The sign of this number. Returns `1` if the number \nis positive, `-1` if it is negative, or `0` if it \nis zero.\""]},"$nm":"sign"},"integer":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"throws":["OverflowException","\"if the number is too large to be represented \nas an `Integer`\""],"doc":["\"The number, represented as an `Integer`, after \ntruncation of any fractional part.\""]},"$nm":"integer"},"magnitude":{"$t":{"$pk":"ceylon.language","$nm":"Number"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The magnitude of the number.\""]},"$nm":"magnitude"},"wholePart":{"$t":{"$pk":"ceylon.language","$nm":"Number"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The integral value of the number after truncation \nof the fractional part.\""]},"$nm":"wholePart"},"negative":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if the number is negative.\""]},"$nm":"negative"},"positive":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if the number is positive.\""]},"$nm":"positive"},"fractionalPart":{"$t":{"$pk":"ceylon.language","$nm":"Number"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The fractional part of the number, after truncation \nof the integral part.\""]},"$nm":"fractionalPart"},"float":{"$t":{"$pk":"ceylon.language","$nm":"Float"},"$mt":"attr","$an":{"shared":[],"formal":[],"throws":["OverflowException","\"if the number is too large to be represented \nas a `Float`\""],"doc":["\"The number, represented as a `Float`.\""]},"$nm":"float"}},"$nm":"Number"},"LazyMap":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"entries"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Map"}],"$mt":"cls","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Key"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Item"}],"$an":{"shared":[],"doc":["\"A Map implementation that wraps an `Iterable` of \nentries. All operations, such as lookups, size, etc. \nare performed on the `Iterable`.\""],"by":["\"Enrique Zamudio\""]},"$m":{"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Item"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"key"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"get"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"equals"}},"$at":{"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"LazyMap"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"iterator"},"last":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"}]},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"last"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"},"first":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"}]},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"size"}},"$nm":"LazyMap"},"Map":{"satisfies":[{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"}],"$pk":"ceylon.language","$nm":"Collection"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Correspondence"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Map"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Key"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Item"}],"$an":{"shared":[],"see":["Entry","forKey","forItem","byItem","byKey"],"doc":["\"Represents a collection which maps _keys_ to _items_,\nwhere a key can map to at most one item. Each such \nmapping may be represented by an `Entry`.\n\nA `Map` is a `Collection` of its `Entry`s, and a \n`Correspondence` from keys to items.\n\nThe prescence of an entry in a map may be tested\nusing the `in` operator:\n\n    if (\"lang\"->\"en_AU\" in settings) { ... }\n\nThe entries of the map may be iterated using `for`:\n\n    for (key->item in settings) { ... }\n\nThe item for a key may be obtained using the item\noperator:\n\n    String lang = settings[\"lang\"] else \"en_US\";\""]},"$m":{"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Two `Map`s are considered equal iff they have the \nsame _entry sets_. The entry set of a `Map` is the\nset of `Entry`s belonging to the map. Therefore, the\nmaps are equal iff they have same set of `keys`, and \nfor every key in the key set, the maps have equal\nitems.\""],"actual":[]},"$nm":"equals"},"mapItems":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Result"}],"$pk":"ceylon.language","$nm":"Map"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Key","$mt":"prm","$pt":"v","$nm":"key"},{"$t":"Item","$mt":"prm","$pt":"v","$nm":"item"}]],"$mt":"prm","$pt":"f","$nm":"mapping"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Result"}],"$an":{"shared":[],"default":[],"doc":["\"Returns a `Map` with the same keys as this map. For\nevery key, the item is the result of applying the\ngiven transformation function.\""]},"$nm":"mapItems"}},"$at":{"values":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Collection"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"Returns all the values stored in this `Map`. An \nelement can be stored under more than one key in \nthe map, and so it can be contained more than once \nin the resulting collection.\""]},"$nm":"values"},"inverse":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Item"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"}],"$pk":"ceylon.language","$nm":"Set"}],"$pk":"ceylon.language","$nm":"Map"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"Returns a `Map` in which every key is an `Item` in \nthis map, and every value is the set of keys that \nstored the `Item` in this map.\""]},"$nm":"inverse"},"keys":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"Returns the set of keys contained in this `Map`.\""],"actual":[]},"$nm":"keys"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"}},"$nm":"Map"},"Numeric":{"of":[{"$nm":"Other"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Summable"},{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Invertable"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Numeric"}],"$nm":"Other"}],"$an":{"shared":[],"see":["Integer","Float","Comparable"],"doc":["\"Abstraction of numeric types supporting addition,\nsubtraction, multiplication, and division, including\n`Integer` and `Float`. Additionally, a numeric type \nis expected to define a total order via an \nimplementation of `Comparable`.\""],"by":["\"Gavin\""]},"$m":{"minus":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"The difference between this number and the given \nnumber.\""]},"$nm":"minus"},"times":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"The product of this number and the given number.\""]},"$nm":"times"},"divided":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["Integral"],"doc":["\"The quotient obtained by dividing this number by \nthe given number. For integral numeric types, this \noperation results in a remainder.\""]},"$nm":"divided"}},"$nm":"Numeric","$st":"Other"},"throws":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$pt":"v","$nm":"type"},{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$mt":"prm","$pt":"v","$def":"1","$nm":"when"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to mark a program element that throws an \nexception.\""]},"$nm":"throws"},"Closeable":{"$mt":"ifc","$an":{"shared":[],"doc":["\"Abstract supertype of types which may appear\nas the expression type of a resource expression\nin a `try` statement.\""]},"$m":{"open":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Called before entry to a `try` block.\""]},"$nm":"open"},"close":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Exception"}]},"$mt":"prm","$pt":"v","$nm":"exception"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Called after completion of a `try` block.\""]},"$nm":"close"}},"$nm":"Closeable"},"byDecreasing":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Value","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"comparable"}],[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"$nm":"Element"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Value"}],"$an":{"shared":[],"see":["byIncreasing"],"doc":["\"A comparator which orders elements in decreasing order \naccording to the `Comparable` returned by the given \n`comparable()` function.\""]},"$nm":"byDecreasing"},"formal":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to mark a member whose implementation must \nbe provided by subtypes.\""]},"$nm":"formal"},"default":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to mark a member whose implementation may be \nrefined by subtypes. Non-`default` declarations may not \nbe refined.\""]},"$nm":"default"},"String":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"}],"$pk":"ceylon.language","$nm":"Sequential"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Comparable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Summable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Ranged"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Castable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"native":[],"see":["string"],"doc":["\"A string of characters. Each character in the string is \na 32-bit Unicode character. The internal UTF-16 \nencoding is hidden from clients.\n\nA string is a `Category` of its `Character`s, and of\nits substrings:\n\n    `w` in greeting \n    \"hello\" in greeting\n\nStrings are summable:\n\n    String greeting = \"hello\" + \" \" + \"world\";\n\nThey are efficiently iterable:\n\n    for (char in \"hello world\") { ... }\n\nThey are `List`s of `Character`s:\n\n    value char = \"hello world\"[5];\n\nThey are ranged:\n\n    String who = \"hello world\"[6...];\n\nNote that since `string[index]` evaluates to the \noptional type `Character?`, it is often more convenient\nto write `string[index..index]`, which evaluates to a\n`String` containing a single character, or to the empty\nstring \"\" if `index` refers to a position outside the\nstring.\n\nThe `string()` function makes it possible to use \ncomprehensions to transform strings:\n\n    string(for (s in \"hello world\") if (s.letter) s.uppercased)\n\nSince a `String` has an underlying UTF-16 encoding, \ncertain operations are expensive, requiring iteration\nof the characters of the string. In particular, `size`\nrequires iteration of the whole string, and `get()`,\n`span()`, and `segment()` require iteration from the \nbeginning of the string to the given index.\""],"by":["\"Gavin\""]},"$m":{"plus":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Returns the concatenation of this string with the\ngiven string.\""],"actual":[]},"$nm":"plus"},"firstCharacterOccurrence":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"The first index at which the given character occurs\nwithin this string, or `null` if the character does\nnot occur in this string.\""]},"$nm":"firstCharacterOccurrence"},"startsWith":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Determines if this string starts with the given \nsubstring.\""]},"$nm":"startsWith"},"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Character"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Returns the character at the given index in the \nstring, or `null` if the index is past the end of\nstring. The first character in the string occurs at\nindex zero. The last character in the string occurs\nat index `string.size-1`.\""],"actual":[]},"$nm":"get"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Determines if the given object is a string, and if\nso, if this string has the same length, and the \nsame characters, in the same order, as the given \nstring.\""],"actual":[]},"$nm":"equals"},"segment":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Select the characters of this string beginning at \nthe given index, returning a string no longer than \nthe given length. If the portion of this string\nstarting at the given index is shorter than \nthe given length, return the portion of this string\nfrom the given index until the end of this string. \nOtherwise return a string of the given length. If \nthe start index is larger than the last index of the \nstring, return the empty string.\""],"actual":[]},"$nm":"segment"},"compare":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Compare this string with the given string \nlexicographically, according to the Unicode values\nof the characters.\""],"actual":[]},"$nm":"compare"},"lastCharacterOccurrence":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"The last index at which the given character occurs\nwithin this string, or `null` if the character does\nnot occur in this string.\""]},"$nm":"lastCharacterOccurrence"},"longerThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["size"],"doc":["\"Determines if this string is longer than the given\nlength. This is a more efficient operation than\n`string.size>length`.\""]},"$nm":"longerThan"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Determines if the given object is a `String` and, \nif so, if it occurs as a substring of this string,\nor if the object is a `Character` that occurs in\nthis string. That is to say, a string is considered \na `Category` of its substrings and of its \ncharacters.\""],"actual":[]},"$nm":"contains"},"repeat":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"times"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Returns a string formed by repeating this string\nthe given number of times.\""]},"$nm":"repeat"},"join":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"strings"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Join the given strings, using this string as a \nseparator.\""]},"$nm":"join"},"replace":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"},{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"replacement"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Returns a string formed by replacing every \noccurrence in this string of the given substring\nwith the given replacement string, working from \nthe start of this string to the end.\""]},"$nm":"replace"},"firstOccurrence":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"The first index at which the given substring occurs\nwithin this string, or `null` if the substring does\nnot occur in this string.\""]},"$nm":"firstOccurrence"},"terminal":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Select the last characters of the string, \nreturning a string no longer than the given \nlength. If this string is shorter than the given\nlength, return this string. Otherwise return a\nstring of the given length.\""]},"$nm":"terminal"},"shorterThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["size"],"doc":["\"Determines if this string is shorter than the given\nlength. This is a more efficient operation than\n`string.size>length`.\""]},"$nm":"shorterThan"},"spanTo":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanTo"},"initial":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Select the first characters of this string, \nreturning a string no longer than the given \nlength. If this string is shorter than the given\nlength, return this string. Otherwise return a\nstring of the given length.\""]},"$nm":"initial"},"occurrences":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"The character indexes at which the given substring\noccurs within this string. Occurrences do not \noverlap.\""]},"$nm":"occurrences"},"lastOccurrence":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"The last index at which the given substring occurs\nwithin this string, or `null` if the substring does\nnot occur in this string.\""]},"$nm":"lastOccurrence"},"split":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Boolean"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Tuple"}],"$pk":"ceylon.language","$nm":"Callable"}]},"$mt":"prm","$pt":"v","$def":"1","$nm":"separator"},{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$pt":"v","$def":"1","$nm":"discardSeparators"},{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$pt":"v","$def":"1","$nm":"groupSeparators"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Split the string into tokens, using the given\npredicate to determine which characters are \nseparator characters.\""]},"$nm":"split"},"endsWith":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Determines if this string ends with the given \nsubstring.\""]},"$nm":"endsWith"},"spanFrom":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanFrom"},"span":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Select the characters between the given indexes.\nIf the start index is the same as the end index,\nreturn a string with a single character.\nIf the start index is larger than the end index, \nreturn the characters in the reverse order from\nthe order in which they appear in this string.\nIf both the start index and the end index are \nlarger than the last index in the string, return \nthe empty string. Otherwise, if the last index is \nlarger than the last index in the sequence, return\nall characters from the start index to last \ncharacter of the string.\""],"actual":[]},"$nm":"span"}},"$at":{"normalized":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"This string, after collapsing strings of whitespace \ninto single space characters and discarding whitespace \nfrom the beginning and end of the string.\""]},"$nm":"normalized"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"An iterator for the characters of the string.\""],"actual":[]},"$nm":"iterator"},"lowercased":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"This string, with all characters in lowercase.\""]},"$nm":"lowercased"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"actual":[]},"$nm":"hash"},"uppercased":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"This string, with all characters in uppercase.\""]},"$nm":"uppercased"},"coalesced":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns this string.\""],"actual":[]},"$nm":"coalesced"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"see":["longerThan","shorterThan"],"doc":["\"The length of the string (the number of characters\nit contains). In the case of the empty string, the\nstring has length zero. Note that this operation is\npotentially costly for long strings, since the\nunderlying representation of the characters uses a\nUTF-16 encoding.\""],"actual":[]},"$nm":"size"},"lastIndex":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$mt":"gttr","$an":{"shared":[],"doc":["\"The index of the last character in the string, or\n`null` if the string has no characters. Note that \nthis operation is potentially costly for long \nstrings, since the underlying representation of the \ncharacters uses a UTF-16 encoding.\""],"actual":[]},"$nm":"lastIndex"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns the string itself.\""],"actual":[]},"$nm":"string"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"see":["size"],"doc":["\"Determines if this string has no characters, that\nis, if it has zero `size`. This is a more efficient \noperation than `string.size==0`.\""],"actual":[]},"$nm":"empty"},"lines":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Split the string into lines of text.\""]},"$nm":"lines"},"trimmed":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"This string, after discarding whitespace from the \nbeginning and end of the string.\""]},"$nm":"trimmed"},"reversed":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"This string, with the characters in reverse order.\""],"actual":[]},"$nm":"reversed"},"characters":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The characters in this string.\""]},"$nm":"characters"}},"$nm":"String"},"identical":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Identifiable"},"$mt":"prm","$pt":"v","$nm":"x"},{"$t":{"$pk":"ceylon.language","$nm":"Identifiable"},"$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$an":{"shared":[],"see":["identityHash"],"doc":["\"Determine if the arguments are identical. Equivalent to\n`x===y`. Only instances of `Identifiable` have \nwell-defined identity.\""]},"$nm":"identical"},"late":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to disable definite initialization analysis\nfor a simple attribute.\""]},"$nm":"late"},"emptyIterator":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Iterator"}],"$mt":"obj","$an":{"shared":[],"doc":["\"An iterator that returns no elements.\""]},"$nm":"emptyIterator"},"parseFloat":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Float"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"The `Float` value of the given string representation of \na decimal number or `null` if the string does not represent \na decimal number.\n\nThe syntax accepted by this method is the same as the \nsyntax for a `Float` literal in the Ceylon language except \nthat it may optionally begin with a sign character (`+` or \n`-`).\""]},"$nm":"parseFloat"},"Anything":{"abstract":"1","of":[{"$pk":"ceylon.language","$nm":"Object"},{"$pk":"ceylon.language","$nm":"Null"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["\"The abstract supertype of all types. A value of type \n`Anything` may be a definite value of type `Object`, or \nit may be the `null` value. A method declared `void` is \nconsidered to have the return type `Anything`.\n\nNote that the type `Nothing`, representing the \nintersection of all types, is a subtype of all types.\""],"by":["\"Gavin\""]},"$nm":"Anything"},"Exception":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$hdn":"1","$mt":"prm","$pt":"v","$def":"1","$nm":"description"},{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Exception"}]},"$hdn":"1","$mt":"prm","$pt":"v","$def":"1","$nm":"cause"}],"$mt":"cls","$an":{"shared":[],"native":[],"doc":["\"The supertype of all exceptions. A subclass represents\na more specific kind of problem, and may define \nadditional attributes which propagate information about\nproblems of that kind.\""],"by":["\"Gavin\"","\"Tom\""]},"$m":{"printStackTrace":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Print the stack trace to the standard error of\nthe virtual machine process.\""]},"$nm":"printStackTrace"}},"$at":{"message":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"default":[],"see":["description","cause"],"doc":["\"A message describing the problem. This default \nimplementation returns the description, if any, or \notherwise the message of the cause, if any.\""]},"$nm":"message"},"cause":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Exception"}]},"$mt":"attr","$an":{"shared":[],"doc":["\"The underlying cause of this exception.\""]},"$nm":"cause"},"description":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$mt":"attr","$an":{"doc":["\"A description of the problem.\""]},"$nm":"description"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"string"}},"$nm":"Exception"},"internalSort":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"prm","$pt":"f","$nm":"comparing"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"native":[]},"$nm":"internalSort"},"OverflowException":{"super":{"$pk":"ceylon.language","$nm":"Exception"},"$mt":"cls","$an":{"shared":[],"doc":["\"Thrown when a mathematical operation caused a number to overflow from its bounds.\""]},"$nm":"OverflowException"},"parseInteger":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"The `Integer` value of the given string representation of an \ninteger, or `null` if the string does not represent an integer \nor if the mathematical integer it represents is too large in magnitude \nto be represented by an `Integer`.\n\nThe syntax accepted by this method is the same as the syntax for an \n`Integer` literal in the Ceylon language except that it may optionally \nbegin with a sign character (`+` or `-`).\""]},"$nm":"parseInteger"},"sum":{"$t":{"$nm":"Value"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Summable"}],"$nm":"Value"}],"$an":{"shared":[],"see":["product"],"doc":["\"Given a nonempty sequence of `Summable` values, return \nthe sum of the values.\""]},"$nm":"sum"},"infinity":{"$t":{"$pk":"ceylon.language","$nm":"Float"},"$mt":"attr","$an":{"shared":[],"doc":["\"An instance of `Float` representing \npositive infinity ∞.\""]},"$nm":"infinity"},"smaller":{"super":{"$pk":"ceylon.language","$nm":"Comparison"},"$mt":"obj","$an":{"shared":[],"doc":["\"The value is smaller than the given value.\""],"by":["\"Gavin\""]},"$nm":"smaller"},"flatten":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$nm":"Args"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":"Return","$ps":[[{"$t":"Args","$mt":"prm","$pt":"v","$nm":"tuple"}]],"$mt":"prm","$pt":"f","$nm":"tupleFunction"}]],"$mt":"mthd","$tp":[{"$nm":"Return"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"Args"}],"$an":{"shared":[],"native":[]},"$nm":"flatten"},"Iterable":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Container"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$def":{"$pk":"ceylon.language","$nm":"Null"},"variance":"out","$nm":"Absent"}],"$an":{"shared":[],"native":[],"see":["Collection"],"doc":["\"Abstract supertype of containers whose elements may be \niterated. An iterable container need not be finite, but\nits elements must at least be countable. There may not\nbe a well-defined iteration order, and so the order of\niterated elements may not be stable.\n\nThe type `Iterable<Element,Null>`, usually abbreviated\n`{Element*}` represents a possibly-empty iterable \ncontainer. The type `Iterable<Element,Nothing>`, \nusually abbreviated `{Element+}` represents a nonempty \niterable container.\n\nAn instance of `Iterable` may be constructed by \nsurrounding a value list in braces:\n\n    {String+} words = { \"hello\", \"world\" };\n\nAn instance of `Iterable` may be iterated using a `for`\nloop:\n\n    for (c in \"hello world\") { ... }\n\n`Iterable` and its subtypes define various operations\nthat return other iterable objects. Such operations \ncome in two flavors:\n\n- _Lazy_ operations return a \"view\" of the receiving\n  iterable object. If the underlying iterable object is\n  mutable, then changes to the underlying object will\n  be reflected in the resulting view. Lazy operations\n  are usually efficient, avoiding memory allocation or\n  iteration of the receiving iterable object.\n  \n- _Eager_ operations return an immutable object. If the\n  receiving iterable object is mutable, changes to this\n  object will not be reflected in the resulting \n  immutable object. Eager operations are often \n  expensive, involving memory allocation and iteration\n  of the receiving iterable object.\n\nLazy operations are preferred, because they can be \nefficiently chained. For example:\n\n    string.filter((Character c) => c.letter)\n          .map((Character c) => c.uppercased)\n\nis much less expensive than:\n\n    string.select((Character c) => c.letter)\n          .collect((Character c) => c.uppercased)\n\nFurthermore, it is always easy to produce a new \nimmutable iterable object given the view produced by a\nlazy operation. For example:\n\n    [ string.filter((Character c) => c.letter)\n            .map((Character c) => c.uppercased)... ]\n\nLazy operations normally return an instance of \n`Iterable` or `Map`.\n\nHowever, there are certain scenarios where an eager \noperation is more useful, more convenient, or no more \nexpensive than a lazy operation, including:\n\n- sorting operations, which are eager by nature,\n- operations which preserve emptiness\/nonemptiness of\n  the receiving iterable object.\n\nEager operations normally return a sequence.\""],"by":["\"Gavin\""]},"$m":{"sort":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["byIncreasing","byDecreasing"],"doc":["\"A sequence containing the elements of this\ncontainer, sorted according to a function \nimposing a partial order upon the elements.\n\nFor convenience, the functions `byIncreasing()` \nand `byDecreasing()` produce a suitable \ncomparison function:\n\n    \"Hello World!\".sort(byIncreasing((Character c) => c.lowercased))\n\nThis operation is eager by nature.\""]},"$nm":"sort"},"count":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Return the number of elements in this `Iterable` \nthat satisfy the predicate function.\""]},"$nm":"count"},"select":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["filter"],"doc":["\"A sequence containing the elements of this \ncontainer that satisfy the given predicate. An \neager counterpart to `filter()`.\""]},"$nm":"select"},"by":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"step"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"throws":["Exception","\"if the given step size is nonpositive, \ni.e. `step<1`\""],"doc":["\"Produce an `Iterable` containing every `step`th \nelement of this iterable object. If the step size \nis `1`, the `Iterable` contains the same elements \nas this iterable object. The step size must be \ngreater than zero. The expression\n\n    (0..10).by(3)\n\nresults in an iterable object with the elements\n`0`, `3`, `6`, and `9` in that order.\""]},"$nm":"by"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"contains"},"fold":{"$t":{"$nm":"Result"},"$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"initial"},{"$t":"Result","$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"partial"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"accumulating"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"default":[],"doc":["\"The result of applying the accumulating function to \neach element of this container in turn.\""]},"$nm":"fold"},"every":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Return `true` if all elements satisfy the predicate\nfunction.\""]},"$nm":"every"},"taking":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"take"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Produce an `Iterable` containing the first `take`\nelements of this iterable object. If the specified \nnumber of elements is larger than the number of \nelements of this iterable object, the `Iterable` \ncontains the same elements as this iterable object.\""]},"$nm":"taking"},"chain":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$tp":[{"$nm":"Other"}],"$an":{"shared":[],"default":[],"doc":["\"The elements of this iterable object, in their\noriginal order, followed by the elements of the \ngiven iterable object also in their original\norder.\""]},"$nm":"chain"},"any":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Return `true` if at least one element satisfies the\npredicate function.\""]},"$nm":"any"},"map":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Result"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"collecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"default":[],"see":["collect"],"doc":["\"An `Iterable` containing the results of applying\nthe given mapping to the elements of to this \ncontainer.\""]},"$nm":"map"},"findLast":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"The last element which satisfies the given\npredicate, if any, or `null` otherwise.\""]},"$nm":"findLast"},"filter":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["select"],"doc":["\"An `Iterable` containing the elements of this \ncontainer that satisfy the given predicate.\""]},"$nm":"filter"},"find":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"The first element which satisfies the given \npredicate, if any, or `null` otherwise.\""]},"$nm":"find"},"skipping":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"skip"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Produce an `Iterable` containing the elements of\nthis iterable object, after skipping the first \n`skip` elements. If this iterable object does not \ncontain more elements than the specified number of \nelements, the `Iterable` contains no elements.\""]},"$nm":"skipping"},"collect":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Result"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"collecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"default":[],"see":["map"],"doc":["\"A sequence containing the results of applying the\ngiven mapping to the elements of this container. An \neager counterpart to `map()`.\""]},"$nm":"collect"}},"$at":{"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"An iterator for the elements belonging to this \ncontainer.\""]},"$nm":"iterator"},"last":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Element"}]},"$mt":"gttr","$an":{"shared":[],"default":[],"doc":["\"The last element returned by the iterator, if any.\nIterables are potentially infinite, so calling this\nmight never return; also, this implementation will\niterate through all the elements, which might be\nvery time-consuming.\""],"actual":[]},"$nm":"last"},"indexed":{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Object"}]}],"$pk":"ceylon.language","$nm":"Entry"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"gttr","$an":{"shared":[],"default":[],"doc":["\"All entries of form `index->element` where `index` \nis the position at which `element` occurs, for every\nnon-null element of this `Iterable`, ordered by\nincreasing `index`. For a null element at a given\nposition in the original `Iterable`, there is no \nentry with the corresponding index in the resulting \niterable object. The expression \n\n    { \"hello\", null, \"world\" }.indexed\n    \nresults in an iterable object with the entries\n`0->\"hello\"` and `2->\"world\"`.\""]},"$nm":"indexed"},"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"A sequence containing the elements returned by the\niterator.\""]},"$nm":"sequence"},"coalesced":{"$t":{"$tp":[{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Object"}]},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"The non-null elements of this `Iterable`, in their\noriginal order. For null elements of the original \n`Iterable`, there is no entry in the resulting \niterable object.\""]},"$nm":"coalesced"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"Determines if the iterable object is empty, that is\nto say, if the iterator returns no elements.\""],"actual":[]},"$nm":"empty"},"rest":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"Returns an iterable object containing all but the \nfirst element of this container.\""]},"$nm":"rest"},"first":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"The first element returned by the iterator, if any.\nThis should always produce the same value as\n`iterable.iterator.head`.\""],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"default":[]},"$nm":"size"}},"$nm":"Iterable"},"LazyList":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elems"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"}],"$mt":"cls","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"doc":["\"An implementation of List that wraps an `Iterable` of\nelements. All operations on this List are performed on \nthe Iterable.\""],"by":["\"Enrique Zamudio\""]},"$m":{"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"get"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"equals"},"spanTo":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanTo"},"segment":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"segment"},"findLast":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"findLast"},"spanFrom":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanFrom"},"span":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"span"}},"$at":{"lastIndex":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$mt":"gttr","$an":{"shared":[],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"iterator"},"last":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"last"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$mt":"attr","$an":{"shared":[],"doc":["\"Returns a `List` with the elements of this `List` \nin reverse order. This operation will create copy \nthe elements to a new `List`, so changes to the \noriginal `Iterable` will no longer be reflected in \nthe new `List`.\""],"actual":[]},"$nm":"reversed"},"first":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"first"}},"$nm":"LazyList"},"className":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"obj"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["\"Return the name of the concrete class of the given \nobject.\""]},"$nm":"className"},"List":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Collection"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Correspondence"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"}],"$pk":"ceylon.language","$nm":"Ranged"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"see":["Sequence","Empty","Array"],"doc":["\"Represents a collection in which every element has a \nunique non-negative integer index.\n\nA `List` is a `Collection` of its elements, and a \n`Correspondence` from indices to elements.\n\nDirect access to a list element by index produces a\nvalue of optional type. The following idiom may be\nused instead of upfront bounds-checking, as long as \nthe list element type is a non-`null` type:\n\n    value char = \"hello world\"[index];\n    if (exists char) { \/*do something*\/ }\n    else { \/*out of bounds*\/ }\n\nTo iterate the indexes of a `List`, use the following\nidiom:\n\n    for (i->char in \"hello world\".indexed) { ... }\n\n\""]},"$m":{"withTrailing":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Sequence"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"$nm":"Other"}],"$an":{"shared":[],"default":[],"doc":["\"Returns a new `List` that contains the specified\nelement appended to the end of this `List`s'\nelements.\""]},"$nm":"withTrailing"},"defines":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Determines if the given index refers to an element\nof this sequence, that is, if\n`index<=sequence.lastIndex`.\""],"actual":[]},"$nm":"defines"},"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["\"Returns the element of this sequence with the given\nindex, or `null` if the given index is past the end\nof the sequence, that is, if\n`index>sequence.lastIndex`. The first element of\nthe sequence has index `0`.\""],"actual":[]},"$nm":"get"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["\"Two `List`s are considered equal iff they have the \nsame `size` and _entry sets_. The entry set of a \nlist `l` is the set of elements of `l.indexed`. \nThis definition is equivalent to the more intuitive \nnotion that two lists are equal iff they have the \nsame `size` and for every index either:\n\n- the lists both have the element `null`, or\n- the lists both have a non-null element, and the\n  two elements are equal.\""],"actual":[]},"$nm":"equals"},"withLeading":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Sequence"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"$nm":"Other"}],"$an":{"shared":[],"default":[],"doc":["\"Returns a new `List` that starts with the specified\nelement, followed by the elements of this `List`.\""]},"$nm":"withLeading"}},"$at":{"lastIndex":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$mt":"attr","$an":{"shared":[],"formal":[],"see":["size"],"doc":["\"The index of the last element of the list, or\nnull if the list is empty.\""]},"$nm":"lastIndex"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"iterator"},"last":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$mt":"gttr","$an":{"shared":[],"default":[],"doc":["\"Returns the last element of this `List`, if any.\""],"actual":[]},"$nm":"last"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Reverse this list, returning a new list.\""]},"$nm":"reversed"},"first":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["\"Returns the first element of this `List`, if any.\""],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"default":[],"see":["lastIndex"],"doc":["\"The number of elements in this sequence, always\n`sequence.lastIndex+1`.\""],"actual":[]},"$nm":"size"}},"$nm":"List"},"Container":{"satisfies":[{"$pk":"ceylon.language","$nm":"Category"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$def":{"$pk":"ceylon.language","$nm":"Null"},"variance":"out","$nm":"Absent"}],"$an":{"shared":[],"deprecated":["\"Will be removed in Ceylon 1.0.\""],"see":["Category"],"doc":["\"Abstract supertype of objects which may or may not\ncontain one of more other values, called *elements*,\nand provide an operation for accessing the first \nelement, if any. A container which may or may not be \nempty is a `Container<Element,Null>`. A container which \nis always empty is a `Container<Nothing,Null>`. A \ncontainer which is never empty is a \n`Container<Element,Nothing>`.\""],"by":["\"Gavin\""]},"$at":{"last":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The last element. Should produce `null` if the\ncontainer is empty, that is, for any instance for\nwhich `empty` evaluates to `true`.\""]},"$nm":"last"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"Determine if the container is empty, that is, if\nit has no elements.\""]},"$nm":"empty"},"first":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The first element. Should produce `null` if the \ncontainer is empty, that is, for any instance for\nwhich `empty` evaluates to `true`.\""]},"$nm":"first"}},"$nm":"Container"},"abstract":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to mark a class as abstract. An `abstract` \nclass may not be directly instantiated. An `abstract`\nclass may have enumerated cases.\""]},"$nm":"abstract"},"zip":{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"keys"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Item"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"items"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Key"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Item"}],"$an":{"shared":[],"doc":["\"Given two sequences, form a new sequence consisting of\nall entries where, for any given index in the resulting\nsequence, the key of the entry is the element occurring \nat the same index in the first sequence, and the item \nis the element occurring at the same index in the second \nsequence. The length of the resulting sequence is the \nlength of the shorter of the two given sequences. \n\nThus:\n\n    zip(xs,ys)[i]==xs[i]->ys[i]\n\nfor every `0<=i<min({xs.size,ys.size})`.\""]},"$nm":"zip"},"export":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[]},"$nm":"export"},"equal":{"super":{"$pk":"ceylon.language","$nm":"Comparison"},"$mt":"obj","$an":{"shared":[],"doc":["\"The value is exactly equal to the given value.\""],"by":["\"Gavin\""]},"$nm":"equal"},"finished":{"super":{"$pk":"ceylon.language","$nm":"Finished"},"$mt":"obj","$an":{"shared":[],"see":["Iterator"],"doc":["\"A value that indicates that an `Iterator`\nis exhausted and has no more values to \nreturn.\""]},"$at":{"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"}},"$nm":"finished"},"Boolean":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"ceylon.language","$nm":"true"},{"$pk":"ceylon.language","$nm":"false"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["\"A type capable of representing the values true and\nfalse of Boolean logic.\""],"by":["\"Gavin\""]},"$nm":"Boolean"},"print":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$pt":"v","$nm":"line"}]],"$mt":"mthd","$an":{"shared":[],"see":[],"doc":["\"Print a line to the standard output of the virtual \nmachine process, printing the given value's `string`, \nor `«null»` if the value is `null`.\n\nThis method is a shortcut for:\n\n    process.writeLine(line?.string else \"«null»\")\n\nand is intended mainly for debugging purposes.\""],"by":["\"Gavin\""]},"$nm":"print"},"ChainedIterator":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"first"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"second"}],"satisfies":[{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Iterator"}],"$mt":"cls","$tp":[{"variance":"out","$nm":"Element"},{"variance":"out","$nm":"Other"}],"$an":{"shared":[],"doc":["\"An `Iterator` that returns the elements of two\n`Iterable`s, as if they were chained together.\""],"by":["\"Enrique Zamudio\""]},"$m":{"next":{"$t":{"comp":"u","$ts":[{"$nm":"Element"},{"$nm":"Other"},{"$pk":"ceylon.language","$nm":"Finished"}]},"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"next"}},"$at":{"more":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"var":"1","$mt":"attr","$an":{"variable":[]},"$nm":"more"},"iter":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Iterator"},"var":"1","$mt":"attr","$an":{"variable":[]},"$nm":"iter"}},"$nm":"ChainedIterator"},"Basic":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$pk":"ceylon.language","$nm":"Identifiable"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["\"The default superclass when no superclass is explicitly\nspecified using `extends`. For the sake of convenience, \nthis class inherits a default definition of value\nequality from `Identifiable`.\""],"by":["\"Gavin\""]},"$nm":"Basic"},"Category":{"$mt":"ifc","$an":{"shared":[],"see":["Container"],"doc":["\"Abstract supertype of objects that contain other \nvalues, called *elements*, where it is possible to \nefficiently determine if a given value is an element. \n`Category` does not satisfy `Container`, because it is \nconceptually possible to have a `Category` whose \nemptiness cannot be computed.\n\nThe `in` operator may be used to determine if a value\nbelongs to a `Category`:\n\n    if (\"hello\" in \"hello world\") { ... }\n    if (69 in 0..100) { ... }\n    if (key->value in { for (n in 0..100) n.string->n**2 }) { ... }\n\nOrdinarily, `x==y` implies that `x in cat == y in cat`.\nBut this contract is not required since it is possible\nto form a meaningful `Category` using a different\nequivalence relation. For example, an `IdentitySet` is\na meaningful `Category`.\""],"by":["\"Gavin\""]},"$m":{"containsAny":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["contains"],"doc":["\"Determines if any one of the given values belongs \nto this `Category`\""]},"$nm":"containsAny"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["containsEvery","containsAny"],"doc":["\"Determines if the given value belongs to this\n`Category`, that is, if it is an element of this\n`Category`.\n\nFor most `Category`s, if `x==y`, then \n`category.contains(x)` evaluates to the same\nvalue as `category.contains(y)`. However, it is\npossible to form a `Category` consistent with some \nother equivalence relation, for example `===`. \nTherefore implementations of `contains()` which do \nnot satisfy this relationship are tolerated.\""]},"$nm":"contains"},"containsEvery":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["contains"],"doc":["\"Determines if every one of the given values belongs\nto this `Category`.\""]},"$nm":"containsEvery"}},"$nm":"Category"},"see":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"programElements"}]],"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to specify API references to other related \nprogram elements.\""]},"$nm":"see"},"NegativeNumberException":{"super":{"$pk":"ceylon.language","$nm":"Exception"},"$mt":"cls","$an":{"shared":[],"doc":["\"Thrown when a negative number is not allowed.\""]},"$nm":"NegativeNumberException"},"actual":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["\"Annotation to mark a member of a type as refining a \nmember of a supertype.\""]},"$nm":"actual"},"Integer":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"}],"$pk":"ceylon.language","$nm":"Scalar"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"}],"$pk":"ceylon.language","$nm":"Integral"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"}],"$pk":"ceylon.language","$nm":"Binary"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"}],"$pk":"ceylon.language","$nm":"Exponentiable"},{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$pk":"ceylon.language","$nm":"Integer"},{"$pk":"ceylon.language","$nm":"Float"}]}],"$pk":"ceylon.language","$nm":"Castable"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["\"A 64-bit integer (or the closest approximation to a 64-bit integer \nprovided by the underlying platform).\""]},"$at":{"character":{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["\"The UTF-32 character with this UCS code point.\""]},"$nm":"character"}},"$nm":"Integer"},"first":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Value"}]},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$nm":"Absent"}],"$an":{"shared":[],"doc":["\"The first of the given elements (usually a comprehension),\nif any.\""]},"$nm":"first"}},"ceylon.language.metamodel":{"sequencedAnnotations":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"SequencedAnnotation"}],"$pk":"ceylon.language.metamodel","$nm":"Type"},"$mt":"prm","$pt":"v","$nm":"annotationType"},{"$t":"ProgramElement","$mt":"prm","$pt":"v","$nm":"programElement"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"SequencedAnnotation"}],"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"$nm":"ProgramElement"}],"$an":{"shared":[]},"$nm":"sequencedAnnotations"},"SequencedAnnotation":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Sequential"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"ConstrainedAnnotation"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language.metamodel","$nm":"Annotation"}],"variance":"out","$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"variance":"in","$nm":"ProgramElement"}],"$an":{"shared":[],"doc":["\"An annotation that may occur multiple times\nat a single program element.\""]},"$nm":"SequencedAnnotation"},"optionalAnnotation":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Value"}]},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"OptionalAnnotation"}],"$pk":"ceylon.language.metamodel","$nm":"Type"},"$mt":"prm","$pt":"v","$nm":"annotationType"},{"$t":"ProgramElement","$mt":"prm","$pt":"v","$nm":"programElement"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"OptionalAnnotation"}],"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"$nm":"ProgramElement"}],"$an":{"shared":[]},"$nm":"optionalAnnotation"},"OptionalAnnotation":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"},{"comp":"u","$mt":"tpm","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Value"}]},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"ConstrainedAnnotation"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language.metamodel","$nm":"Annotation"}],"variance":"out","$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"variance":"in","$nm":"ProgramElement"}],"$an":{"shared":[],"doc":["\"An annotation that may occur at most once\nat a single program element.\""]},"$nm":"OptionalAnnotation"},"Type":{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Instance"}],"$an":{"shared":[]},"$nm":"Type"},"Annotation":{"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language.metamodel","$nm":"Annotation"}],"variance":"out","$nm":"Value"}],"$an":{"shared":[],"doc":["\"An annotation.\""]},"$nm":"Annotation"},"ConstrainedAnnotation":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language.metamodel","$nm":"Annotation"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language.metamodel","$nm":"Annotation"}],"variance":"out","$nm":"Value"},{"variance":"out","$nm":"Values"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"variance":"in","$nm":"ProgramElement"}],"$an":{"shared":[],"doc":["\"An annotation. This interface encodes\nconstraints upon the annotation in its\ntype arguments.\""]},"$m":{"occurs":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language.metamodel","$nm":"Annotated"},"$mt":"prm","$pt":"v","$nm":"programElement"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"occurs"}},"$nm":"ConstrainedAnnotation"},"annotations":{"$t":{"$nm":"Values"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Values"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"ConstrainedAnnotation"}],"$pk":"ceylon.language.metamodel","$nm":"Type"},"$mt":"prm","$pt":"v","$nm":"annotationType"},{"$t":"ProgramElement","$mt":"prm","$pt":"v","$nm":"programElement"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Values"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"ConstrainedAnnotation"}],"$nm":"Value"},{"$nm":"Values"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"$nm":"ProgramElement"}],"$an":{"shared":[]},"$nm":"annotations"},"Annotated":{"$mt":"ifc","$an":{"shared":[],"doc":["\"A program element that can\nbe annotated.\""]},"$nm":"Annotated"}}};
+$$metamodel$$={"$mod-name":"ceylon.language","$mod-version":"0.5","ceylon.language":{"Iterator":{"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"see":["Iterable"],"doc":["Produces elements of an `Iterable` object. Classes that \nimplement this interface should be immutable."],"by":["Gavin"]},"$m":{"next":{"$t":{"comp":"u","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Finished"}]},"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["The next element, or `finished` if there are no \nmore elements to be iterated."]},"$nm":"next"}},"$nm":"Iterator"},"Callable":{"$mt":"ifc","$tp":[{"variance":"out","$nm":"Return"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"variance":"in","$nm":"Arguments"}],"$an":{"shared":[],"doc":["A reference to a method or function."]},"$nm":"Callable"},"copyArray":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"},"$mt":"prm","$pt":"v","$nm":"source"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"},"$mt":"prm","$pt":"v","$nm":"target"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"native":[],"doc":["Efficiently copy the elements of one array to another \narray."]},"$nm":"copyArray"},"Array":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"}],"$pk":"ceylon.language","$nm":"Cloneable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"}],"$pk":"ceylon.language","$nm":"Ranged"}],"$mt":"cls","$tp":[{"$nm":"Element"}],"$an":{"abstract":[],"shared":[],"doc":["A fixed-size array of elements. An array may have zero\nsize (an empty array). Arrays are mutable. Any element\nof an array may be set to a new value.\n\nThis class is provided primarily to support interoperation \nwith Java, and for some performance-critical low-level \nprogramming tasks."]},"$m":{"setItem":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Replace the existing element at the specified index \nwith the given element. Does nothing if the specified \nindex is negative or larger than the index of the \nlast element in the array."]},"$nm":"setItem"}},"$at":{"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Reverse this array, returning a new array."],"actual":[]},"$nm":"reversed"}},"$nm":"Array"},"byKey":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Key","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Key","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}],[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"x"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Key"}],"$an":{"shared":[],"see":["byItem"],"doc":["A comparator for `Entry`s which compares their keys \naccording to the given `comparing()` function."]},"$nm":"byKey"},"Singleton":{"super":{"$pk":"ceylon.language","$nm":"Object"},"$ps":[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"}],"$mt":"cls","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Element"}],"$an":{"shared":[],"doc":["A sequence with exactly one element."]},"$m":{"sort":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"a"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"b"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"sort"},"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns the contained element, if the specified \nindex is `0`."],"actual":[]},"$nm":"get"},"count":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns `1` if this `Singleton`'s element\nsatisfies the predicate, or `0` otherwise."],"actual":[]},"$nm":"count"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"doc":["A `Singleton` can be equal to another `List` if \nthat `List` has only one element which is equal to \nthis `Singleton`'s element."],"actual":[]},"$nm":"equals"},"segment":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Empty"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns a `Singleton` if the given starting index \nis `0` and the given `length` is greater than `0`.\nOtherwise, returns an instance of `Empty`."],"actual":[]},"$nm":"segment"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns `true` if the specified element is this \n`Singleton`'s element."],"actual":[]},"$nm":"contains"},"every":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"every"},"fold":{"$t":{"$nm":"Result"},"$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"initial"},{"$t":"Result","$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"partial"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"accumulating"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"actual":[]},"$nm":"fold"},"taking":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"take"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"taking"},"spanTo":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Empty"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanTo"},"any":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"any"},"map":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Result"}],"$pk":"ceylon.language","$nm":"Sequence"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"actual":[]},"$nm":"map"},"findLast":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"findLast"},"spanFrom":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Empty"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanFrom"},"skipping":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"skip"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"skipping"},"filter":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"filter"},"find":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"find"},"span":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Empty"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns a `Singleton` if the given starting index \nis `0`. Otherwise, returns an instance of `Empty`."],"actual":[]},"$nm":"span"}},"$at":{"lastIndex":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"doc":["Returns `0`."],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},"$mt":"attr","$an":{"shared":[],"doc":["Returns a `Singleton` with the same element."],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"iterator"},"last":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"doc":["Returns the element contained in this `Singleton`."],"actual":[]},"$nm":"last"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"hash"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"},"coalesced":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},"$mt":"attr","$an":{"shared":[],"doc":["Returns the Singleton itself, since a Singleton\ncannot contain a null."],"actual":[]},"$nm":"coalesced"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Singleton"},"$mt":"attr","$an":{"shared":[],"doc":["Return this singleton."],"actual":[]},"$nm":"reversed"},"rest":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["Returns `Empty`."],"actual":[]},"$nm":"rest"},"first":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"doc":["Returns the element contained in this `Singleton`."],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"doc":["Returns `1`."],"actual":[]},"$nm":"size"}},"$nm":"Singleton"},"Comparable":{"of":[{"$nm":"Other"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Comparable"}],"variance":"in","$nm":"Other"}],"$an":{"shared":[],"doc":["The general contract for values whose magnitude can be \ncompared. `Comparable` imposes a total ordering upon\ninstances of any type that satisfies the interface.\nIf a type `T` satisfies `Comparable<T>`, then instances\nof `T` may be compared using the comparison operators\n`<`, `>`, `<=`, >=`, and `<=>`.\n\nThe total order of a type must be consistent with the \ndefinition of equality for the type. That is, there\nare three mutually exclusive possibilities:\n\n- `x<y`,\n- `x>y`, or\n- `x==y`"],"by":["Gavin"]},"$m":{"compare":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["equals"],"doc":["Compares this value with the given value. \nImplementations must respect the constraints that: \n\n- `x==y` if and only if `x<=>y == equal` \n   (consistency with `equals()`), \n- if `x>y` then `y<x` (symmetry), and \n- if `x>y` and `y>z` then `x>z` (transitivity)."]},"$nm":"compare"}},"$nm":"Comparable","$st":"Other"},"Comparison":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"ceylon.language","$nm":"larger"},{"$pk":"ceylon.language","$nm":"smaller"},{"$pk":"ceylon.language","$nm":"equal"}],"$ps":[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"see":["Comparable"],"doc":["The result of a comparison between two `Comparable` \nobjects."],"by":["Gavin"]},"$m":{"largerThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"largerThan"},"equal":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"equal"},"asSmallAs":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"asSmallAs"},"asLargeAs":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"asLargeAs"},"smallerThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"smallerThan"},"unequal":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"mthd","$an":{"shared":[],"deprecated":[]},"$nm":"unequal"}},"$nm":"Comparison"},"Empty":{"of":[{"$pk":"ceylon.language","$nm":"empty"}],"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Sequential"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Ranged"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$an":{"shared":[],"see":["Sequence"],"doc":["A sequence with no elements. The type `Empty` may be\nabbreviated `[]`, and an instance is produced by the \nexpression `[]`. That is, in the following expression,\n`e` has type `[]` and refers to the value `[]`:\n\n    [] none = [];\n\n(Whether the syntax `[]` refers to the type or the \nvalue depends upon how it occurs grammatically.)"]},"$m":{"sort":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"a"},{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"b"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"sort"},"get":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns `null` for any given index."],"actual":[]},"$nm":"get"},"count":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns 0 for any given predicate."],"actual":[]},"$nm":"count"},"select":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"select"},"segment":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns an `Empty` for any given segment."],"actual":[]},"$nm":"segment"},"by":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"step"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"by"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns `false` for any given element."],"actual":[]},"$nm":"contains"},"every":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"every"},"fold":{"$t":{"$nm":"Result"},"$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"initial"},{"$t":"Result","$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"partial"},{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"accumulating"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"actual":[]},"$nm":"fold"},"taking":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"take"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"taking"},"withTrailing":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Tuple"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"actual":[]},"$nm":"withTrailing"},"defines":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"defines"},"spanTo":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns an `Empty` for any given span."],"actual":[]},"$nm":"spanTo"},"chain":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$tp":[{"$nm":"Other"}],"$an":{"shared":[],"doc":["Returns `other`."],"actual":[]},"$nm":"chain"},"any":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"any"},"map":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":"Result","$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"collecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"actual":[]},"$nm":"map"},"withLeading":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Tuple"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"actual":[]},"$nm":"withLeading"},"spanFrom":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns an `Empty` for any given span."],"actual":[]},"$nm":"spanFrom"},"skipping":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"skip"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"skipping"},"find":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"find"},"filter":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"filter"},"collect":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":"Result","$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"collecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"actual":[]},"$nm":"collect"},"span":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Returns an `Empty` for any given span."],"actual":[]},"$nm":"span"}},"$at":{"lastIndex":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"attr","$an":{"shared":[],"doc":["Returns `null`."],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["Returns an `Empty`."],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"doc":["Returns an iterator that is already exhausted."],"actual":[]},"$nm":"iterator"},"last":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"attr","$an":{"shared":[],"doc":["Returns `null`."],"actual":[]},"$nm":"last"},"indexed":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["Returns an `Empty`."],"actual":[]},"$nm":"indexed"},"sequence":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["Returns an `Empty`."],"actual":[]},"$nm":"sequence"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"doc":["Returns a string description of the empty sequence: \n`{}`."],"actual":[]},"$nm":"string"},"coalesced":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["Returns an `Empty`."],"actual":[]},"$nm":"coalesced"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"doc":["Returns `true`."],"actual":[]},"$nm":"empty"},"rest":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["Returns an `Empty`."],"actual":[]},"$nm":"rest"},"reversed":{"$t":{"$pk":"ceylon.language","$nm":"Empty"},"$mt":"attr","$an":{"shared":[],"doc":["Returns an `Empty`."],"actual":[]},"$nm":"reversed"},"first":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"attr","$an":{"shared":[],"doc":["Returns `null`."],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"doc":["Returns 0."],"actual":[]},"$nm":"size"}},"$nm":"Empty"},"Enumerable":{"of":[{"$nm":"Other"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Ordinal"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Enumerable"}],"variance":"out","$nm":"Other"}],"$an":{"shared":[],"doc":["Abstraction of ordinal types whose instances can be \nmapped to the integers or to a range of integers."]},"$at":{"integerValue":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The corresponding integer. The implementation must\nsatisfy these constraints:\n\n    (x.successor).integerValue = x.integerValue+1\n    (x.predecessor).integerValue = x.integerValue-1\n\nfor every instance `x` of the enumerable type."]},"$nm":"integerValue"}},"$nm":"Enumerable","$st":"Other"},"combine":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Result"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"},{"$t":"OtherElement","$mt":"prm","$pt":"v","$nm":"otherElement"}]],"$mt":"prm","$pt":"f","$nm":"combination"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"OtherElement"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"otherElements"}]],"$mt":"mthd","$tp":[{"$nm":"Result"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$nm":"Absent"},{"$nm":"Element"},{"$nm":"OtherElement"}],"$an":{"shared":[],"doc":["Applies a function to each element of two `Iterable`s\nand returns an `Iterable` with the results."],"by":["Gavin","Enrique Zamudio","Tako"]},"$nm":"combine"},"empty":{"super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$pk":"ceylon.language","$nm":"Empty"}],"$mt":"obj","$an":{"shared":[],"doc":["A sequence with no elements, abbreviated `[]`. The \nunique instance of the type `[]`."]},"$nm":"empty"},"compose":{"$t":{"$tp":[{"$mt":"tpm","$nm":"X"},{"$mt":"tpm","$nm":"Args"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"X"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Y"},{"$mt":"tpm","$nm":"Y"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Tuple"}],"$pk":"ceylon.language","$nm":"Callable"},"$mt":"prm","$pt":"v","$nm":"x"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Y"},{"$mt":"tpm","$nm":"Args"}],"$pk":"ceylon.language","$nm":"Callable"},"$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"$nm":"X"},{"$nm":"Y"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"Args"}],"$an":{"shared":[]},"$nm":"compose"},"false":{"super":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"obj","$an":{"shared":[],"doc":["A value representing falsity in Boolean logic."],"by":["Gavin"]},"$at":{"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"}},"$nm":"false"},"Sequential":{"of":[{"$pk":"ceylon.language","$nm":"Empty"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$pk":"ceylon.language","$nm":"Ranged"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"see":["Tuple"],"doc":["A possibly-empty, immutable sequence of values. The \ntype `Sequential<Element>` may be abbreviated \n`[Element*]` or `Element[]`. \n\n`Sequential` has two enumerated subtypes:\n\n- `Empty`, abbreviated `[]`, represents an empty \n   sequence, and\n- `Sequence<Element>`, abbreviated `[Element+]` \n   represents a non-empty sequence, and has the very\n   important subclass `Tuple`."]},"$at":{"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"clone"},"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["This sequence."],"actual":[]},"$nm":"sequence"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["A string of form `\"[ x, y, z ]\"` where `x`, `y`, \nand `z` are the `string` representations of the \nelements of this collection, as produced by the\niterator of the collection, or the string `\"{}\"` \nif this collection is empty. If the collection \niterator produces the value `null`, the string\nrepresentation contains the string `\"null\"`."],"actual":[]},"$nm":"string"},"rest":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The rest of the sequence, without the first \nelement."],"actual":[]},"$nm":"rest"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Reverse this sequence, returning a new sequence."],"actual":[]},"$nm":"reversed"}},"$nm":"Sequential"},"Finished":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"ceylon.language","$nm":"finished"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"see":["Iterator"],"doc":["The type of the value that indicates that \nan `Iterator` is exhausted and has no more \nvalues to return."]},"$nm":"Finished"},"coalesce":{"$t":{"$tp":[{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Object"}]},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"doc":["Return a sequence containing the given values which are\nnot null. If there are no values which are not null,\nreturn an empty sequence."]},"$nm":"coalesce"},"plus":{"$t":{"$nm":"Value"},"$ps":[[{"$t":"Value","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Value","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Summable"}],"$nm":"Value"}],"$an":{"shared":[],"see":["times","sum"],"doc":["Add the given `Summable` values."]},"$nm":"plus"},"Entry":{"super":{"$pk":"ceylon.language","$nm":"Object"},"$ps":[{"$t":"Key","$hdn":"1","$mt":"prm","$pt":"v","$nm":"key"},{"$t":"Item","$hdn":"1","$mt":"prm","$pt":"v","$nm":"item"}],"$mt":"cls","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Key"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Item"}],"$an":{"shared":[],"doc":["A pair containing a _key_ and an associated value called \nthe _item_. Used primarily to represent the elements of \na `Map`. The type `Entry<Key,Item>` may be abbreviated \n`Key->Item`. An instance of `Entry` may be constructed \nusing the `->` operator:\n\n    String->Person entry = person.name->person;\n"],"by":["Gavin"]},"$m":{"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Determines if this entry is equal to the given\nentry. Two entries are equal if they have the same\nkey and the same value."],"actual":[]},"$nm":"equals"}},"$at":{"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"hash"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"doc":["Returns a description of the entry in the form \n`key->item`."],"actual":[]},"$nm":"string"},"item":{"$t":{"$nm":"Item"},"$mt":"attr","$an":{"shared":[],"doc":["The value associated with the key."]},"$nm":"item"},"key":{"$t":{"$nm":"Key"},"$mt":"attr","$an":{"shared":[],"doc":["The key used to access the entry."]},"$nm":"key"}},"$nm":"Entry"},"Invertable":{"$mt":"ifc","$tp":[{"variance":"out","$nm":"Inverse"}],"$an":{"shared":[],"see":["Integer","Float"],"doc":["Abstraction of types which support a unary additive inversion\noperation. For a numeric type, this should return the \nnegative of the argument value. Note that the type \nparameter of this interface is not restricted to be a \nself type, in order to accommodate the possibility of \ntypes whose additive inverse can only be expressed in terms of \na wider type."],"by":["Gavin"]},"$at":{"positiveValue":{"$t":{"$nm":"Inverse"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The value itself, expressed as an instance of the\nwider type."]},"$nm":"positiveValue"},"negativeValue":{"$t":{"$nm":"Inverse"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The additive inverse of the value, which may be expressed\nas an instance of a wider type."]},"$nm":"negativeValue"}},"$nm":"Invertable"},"Cloneable":{"of":[{"$nm":"Clone"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Clone"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"variance":"out","$nm":"Clone"}],"$an":{"shared":[],"doc":["Abstract supertype of objects whose value can be \ncloned."]},"$at":{"clone":{"$t":{"$nm":"Clone"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Obtain a clone of this object. For a mutable \nobject, this should return a copy of the object. \nFor an immutable object, it is acceptable to return\nthe object itself."]},"$nm":"clone"}},"$nm":"Cloneable","$st":"Clone"},"Ordinal":{"of":[{"$nm":"Other"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Ordinal"}],"variance":"out","$nm":"Other"}],"$an":{"shared":[],"see":["Character","Integer","Integral","Range"],"doc":["Abstraction of ordinal types, that is, types with \nsuccessor and predecessor operations, including\n`Integer` and other `Integral` numeric types.\n`Character` is also considered an ordinal type. \n`Ordinal` types may be used to generate a `Range`."],"by":["Gavin"]},"$at":{"predecessor":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"throws":["OverflowException","if this is the minimum value"],"doc":["The predecessor of this value."]},"$nm":"predecessor"},"successor":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"throws":["OverflowException","if this is the maximum value"],"doc":["The successor of this value."]},"$nm":"successor"}},"$nm":"Ordinal","$st":"Other"},"largest":{"$t":{"$nm":"Element"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"see":["Comparable","smallest","max"],"doc":["Given two `Comparable` values, return largest of the\ntwo."]},"$nm":"largest"},"unflatten":{"$t":{"$nm":"Return"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$nm":"Args"}],"$pk":"ceylon.language","$nm":"Callable"},"$mt":"prm","$pt":"v","$nm":"flatFunction"}],[{"$t":"Args","$mt":"prm","$pt":"v","$nm":"args"}]],"$mt":"mthd","$tp":[{"$nm":"Return"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"Args"}],"$an":{"shared":[],"native":[]},"$nm":"unflatten"},"native":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to mark a member whose implementation is \nbe provided by platform-native code."]},"$nm":"native"},"greaterThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"val"}],[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"doc":["Returns a partial function that will compare an element\nto any other element and returns true if the compared\nelement is greater than its element.\nThis is useful in conjunction with methods that receive\na predicate function."]},"$nm":"greaterThan"},"Identifiable":{"$mt":"ifc","$an":{"shared":[],"doc":["The abstract supertype of all types with a well-defined\nnotion of identity. Values of type `Identifiable` may \nbe compared using the `===` operator to determine if \nthey are references to the same object instance. For\nthe sake of convenience, this interface defines a\ndefault implementation of value equality equivalent\nto identity. Of course, subtypes are encouraged to\nrefine this implementation."],"by":["Gavin"]},"$m":{"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Identity equality comparing the identity of the two \nvalues. May be refined by subtypes for which value \nequality is more appropriate. Implementations must\nrespect the constraint that if `x===y` then `x==y` \n(equality is consistent with identity)."],"actual":[]},"$nm":"equals"}},"$at":{"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"default":[],"see":["identityHash"],"doc":["The system-defined identity hash value of the \ninstance. Subtypes which refine `equals()` must \nalso refine `hash`, according to the general \ncontract defined by `Object`."],"actual":[]},"$nm":"hash"}},"$nm":"Identifiable"},"language":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$mt":"obj","$an":{"shared":[],"native":[],"doc":["Contains information about the language"],"by":["The Ceylon Team"]},"$at":{"majorVersion":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The Ceylon language major version."]},"$nm":"majorVersion"},"majorVersionBinary":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The major version of the code generated for the underlying runtime."]},"$nm":"majorVersionBinary"},"minorVersion":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The Ceylon language minor version."]},"$nm":"minorVersion"},"versionName":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The Ceylon language release name."]},"$nm":"versionName"},"releaseVersion":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The Ceylon language release version."]},"$nm":"releaseVersion"},"minorVersionBinary":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The minor version of the code generated for the underlying runtime."]},"$nm":"minorVersionBinary"},"version":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The Ceylon language version."]},"$nm":"version"}},"$nm":"language"},"Null":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Anything"},"of":[{"$pk":"ceylon.language","$nm":"null"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"see":["null"],"doc":["The type of the `null` value. Any union type of form \n`Null|T` is considered an optional type, whose values\ninclude `null`. Any type of this form may be written as\n`T?` for convenience.\n\nThe `if (exists ... )` construct, or, alternatively,\nthe `assert (exists ...)` construct, may be used to\nnarrow an optional type to a _definite_ type, that is,\na subtype of `Object`:\n\n    String? firstArg = process.arguments.first;\n    if (exists firstArg) {\n        print(\"hello \" + firstArg);\n    }\n\nThe `else` operator evaluates its second operand if \nand only if its first operand is `null`:\n\n    String name = process.arguments.first else \"world\";\n\nThe `then` operator evaluates its second operand when\nits first operand evaluates to `true`, and to `null` \notherwise:\n\n    Float? diff = x>=y then x-y;\n\n"],"by":["Gavin"]},"$nm":"Null"},"array":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"native":[],"doc":["Create an array containing the given elements. If no\nelements are provided, create an empty array of the\ngiven element type."]},"$nm":"array"},"sort":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"see":["Comparable"],"doc":["Sort a given elements, returning a new sequence."]},"$nm":"sort"},"equalTo":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"val"}],[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Element"}],"$an":{"shared":[],"doc":["Returns a partial function that will compare an element\nto any other element and returns true if they're equal.\nThis is useful in conjunction with methods that receive\na predicate function."]},"$nm":"equalTo"},"AssertionException":{"super":{"$pk":"ceylon.language","$nm":"Exception"},"$ps":[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"message"}],"$mt":"cls","$an":{"shared":[],"doc":["An exception that occurs when an assertion fails, that\nis, when a condition in an `assert` statement evaluates\nto false at runtime."]},"$nm":"AssertionException"},"arrayOfSize":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Array"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"size"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"native":[],"doc":["Create an array of the specified size, populating every \nindex with the given element. If the specified size is\nsmaller than `1`, return an empty array of the given\nelement type."]},"$nm":"arrayOfSize"},"Ranged":{"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Index"}],"$pk":"ceylon.language","$nm":"Comparable"}],"variance":"in","$nm":"Index"},{"variance":"out","$nm":"Span"}],"$an":{"shared":[],"see":["List","Sequence","String"],"doc":["Abstract supertype of ranged objects which map a range\nof `Comparable` keys to ranges of values. The type\nparameter `Span` abstracts the type of the resulting\nrange.\n\nA span may be obtained from an instance of `Ranged`\nusing the span operator:\n\n    print(\"hello world\"[0..5])\n"]},"$m":{"spanTo":{"$t":{"$nm":"Span"},"$ps":[[{"$t":"Index","$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Obtain a span containing the mapped values between\nthe start of the receiver and the end index."]},"$nm":"spanTo"},"segment":{"$t":{"$nm":"Span"},"$ps":[[{"$t":"Index","$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Obtain a segment containing the mapped values\nstarting from the given index, with the given \nlength."]},"$nm":"segment"},"spanFrom":{"$t":{"$nm":"Span"},"$ps":[[{"$t":"Index","$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Obtain a span containing the mapped values between\nthe starting index and the end of the receiver."]},"$nm":"spanFrom"},"span":{"$t":{"$nm":"Span"},"$ps":[[{"$t":"Index","$mt":"prm","$pt":"v","$nm":"from"},{"$t":"Index","$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Obtain a span containing the mapped values between \nthe two given indices."]},"$nm":"span"}},"$nm":"Ranged"},"times":{"$t":{"$nm":"Value"},"$ps":[[{"$t":"Value","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Value","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Numeric"}],"$nm":"Value"}],"$an":{"shared":[],"see":["plus","product"],"doc":["Multiply the given `Numeric` values."]},"$nm":"times"},"entries":{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Object"}]}],"$pk":"ceylon.language","$nm":"Entry"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"doc":["Produces a sequence of each index to element `Entry` \nfor the given sequence of values."]},"$nm":"entries"},"license":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"url"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to specify the URL of the license of a module \nor package."]},"$nm":"license"},"null":{"super":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"obj","$an":{"shared":[],"doc":["The null value."],"by":["Gavin"]},"$nm":"null"},"Object":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"cls","$an":{"abstract":[],"shared":[],"see":["Basic","Null"],"doc":["The abstract supertype of all types representing \ndefinite values. Any two `Object`s may be compared\nfor value equality using the `==` and `!=` operators:\n\n    true==false\n    1==\"hello world\"\n    \"hello\"+ \" \" + \"world\"==\"hello world\"\n    Singleton(\"hello world\")=={ \"hello world\" }\n\nHowever, since `Null` is not a subtype of `Object`, the \nvalue `null` cannot be compared to any other value\nusing `==`. Thus, value equality is not defined for \noptional types. This neatly voids the problem of \ndeciding the value of the expression `null==null`, \nwhich is simply illegal."],"by":["Gavin"]},"$m":{"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Determine if two values are equal. Implementations\nshould respect the constraints that:\n\n- if `x===y` then `x==y` (reflexivity), \n- if `x==y` then `y==x` (symmetry), \n- if `x==y` and `y==z` then `x==z` (transitivity).\n\nFurthermore it is recommended that implementations\nensure that if `x==y` then `x` and `y` have the\nsame concrete class."]},"$nm":"equals"}},"$at":{"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The hash value of the value, which allows the value\nto be an element of a hash-based set or key of a\nhash-based map. Implementations must respect the\nconstraint that if `x==y` then `x.hash==y.hash`."]},"$nm":"hash"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["A developer-friendly string representing the \ninstance. Concatenates the name of the concrete \nclass of the instance with the `hash` of the \ninstance. Subclasses are encouraged to refine this \nimplementation to produce a more meaningful \nrepresentation."]},"$nm":"string"}},"$nm":"Object"},"min":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Value"}]},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$nm":"Absent"}],"$an":{"shared":[],"see":["Comparable","max","smallest"],"doc":["Given a nonempty sequence of `Comparable` values, \nreturn the smallest value in the sequence."]},"$nm":"min"},"Float":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Float"}],"$pk":"ceylon.language","$nm":"Scalar"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Float"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Float"}],"$pk":"ceylon.language","$nm":"Exponentiable"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["A 64-bit floating point number. A `Float` is capable of\napproximately representing numeric values between\n2<sup>-1022<\/sup> and \n(2-2<sup>-52<\/sup>)×2<sup>1023<\/sup>, along with \nthe special values `infinity` and `-infinity`, and \nundefined values (Not a Number). Zero is represented by \ndistinct instances `+0`, `-0`, but these instances are \nequal. An undefined value is not equal to any other\nvalue, not even to itself."]},"$at":{"strictlyNegative":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determines if this value is a negative number, `-0`, \nor `-infinity`. Produces `false` for a positive \nnumber, `+0`, or undefined."]},"$nm":"strictlyNegative"},"sign":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The sign of this value. Produces `1` for a positive \nnumber or `infinity`. Produces `-1` for a negative\nnumber or `-infinity`. Produces `0` for `+0`, `-0`, \nor undefined."],"actual":[]},"$nm":"sign"},"infinite":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"see":["infinity","finite"],"doc":["Determines whether this value is infinite in \nmagnitude. Produces `true` for `infinity` and \n`-infinity`. Produces `false` for a finite number, \n`+0`, `-0`, or undefined."]},"$nm":"infinite"},"undefined":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"doc":["Determines whether this value is undefined (that is, \nNot a Number or NaN). The undefined value has the \nproperty that it is not equal (`==`) to itself, as \na consequence the undefined value cannot sensibly \nbe used in most collections."]},"$nm":"undefined"},"strictlyPositive":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determines if this value is a positive number, `+0`, \nor `infinity`. Produces `false` for a negative \nnumber, `-0`, or undefined."]},"$nm":"strictlyPositive"},"negative":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determines if this value is a negative number or\n`-infinity`. Produces `false` for a positive number, \n`+0`, `-0`, or undefined."],"actual":[]},"$nm":"negative"},"positive":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determines if this value is a positive number or\n`infinity`. Produces `false` for a negative number, \n`+0`, `-0`, or undefined."],"actual":[]},"$nm":"positive"},"finite":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"see":["infinite","infinity"],"doc":["Determines whether this value is finite. Produces\n`false` for `infinity`, `-infinity`, and undefined."]},"$nm":"finite"}},"$nm":"Float"},"LazySet":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elems"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Set"}],"$mt":"cls","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Element"}],"$an":{"shared":[],"doc":["An implementation of Set that wraps an `Iterable` of\nelements. All operations on this Set are performed\non the `Iterable`."],"by":["Enrique Zamudio"]},"$m":{"complement":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"actual":[]},"$nm":"complement"},"intersection":{"$t":{"$tp":[{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"actual":[]},"$nm":"intersection"},"exclusiveUnion":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"actual":[]},"$nm":"exclusiveUnion"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"equals"},"union":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"actual":[]},"$nm":"union"}},"$at":{"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"LazySet"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"iterator"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"actual":[]},"$nm":"size"}},"$nm":"LazySet"},"deprecated":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$mt":"prm","$pt":"v","$def":"1","$nm":"reason"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to mark program elements which should not be \nused anymore."]},"$nm":"deprecated"},"Collection":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},{"$pk":"ceylon.language","$nm":"Category"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Collection"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"see":["List","Map","Set"],"doc":["Represents an iterable collection of elements of finite \nsize. `Collection` is the abstract supertype of `List`,\n`Map`, and `Set`.\n\nA `Collection` forms a `Category` of its elements.\n\nAll `Collection`s are `Cloneable`. If a collection is\nimmutable, it is acceptable that `clone` produce a\nreference to the collection itself. If a collection is\nmutable, `clone` should produce an immutable collection\ncontaining references to the same elements, with the\nsame structure as the original collection&mdash;that \nis, it should produce an immutable shallow copy of the\ncollection."]},"$m":{"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Return `true` if the given object is an element of\nthis collection. In this default implementation,\nand in most refining implementations, return `false`\notherwise. An acceptable refining implementation\nmay return `true` for objects which are not \nelements of the collection, but this is not \nrecommended. (For example, the `contains()` method \nof `String` returns `true` for any substring of the\nstring.)"],"actual":[]},"$nm":"contains"}},"$at":{"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["A string of form `\"{ x, y, z }\"` where `x`, `y`, \nand `z` are the `string` representations of the \nelements of this collection, as produced by the\niterator of the collection, or the string `\"{}\"` \nif this collection is empty. If the collection \niterator produces the value `null`, the string\nrepresentation contains the string `\"null\"`."],"actual":[]},"$nm":"string"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["Determine if the collection is empty, that is, if \nit has no elements."],"actual":[]},"$nm":"empty"}},"$nm":"Collection"},"Range":{"super":{"$pk":"ceylon.language","$nm":"Object"},"$ps":[{"$t":"Element","$hdn":"1","$mt":"prm","$pt":"v","$nm":"first"},{"$t":"Element","$hdn":"1","$mt":"prm","$pt":"v","$nm":"last"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},{"$pk":"ceylon.language","$nm":"Category"}],"$mt":"cls","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Ordinal"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"doc":["Represents the range of totally ordered, ordinal values \ngenerated by two endpoints of type `Ordinal` and \n`Comparable`. If the first value is smaller than the\nlast value, the range is increasing. If the first value\nis larger than the last value, the range is decreasing.\nIf the two values are equal, the range contains exactly\none element. The range is always nonempty, containing \nat least one value.\n\nA range may be produced using the `..` operator:\n\n    for (i in min..max) { ... }\n    if (char in `A`..`Z`) { ... }\n"],"by":["Gavin"]},"$m":{"count":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"count"},"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"n"}]],"$mt":"mthd","$an":{"shared":[],"doc":["The element of the range that occurs `n` values after\nthe start of the range. Note that this operation \nis inefficient for large ranges."],"actual":[]},"$nm":"get"},"spanTo":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanTo"},"segment":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"segment"},"next":{"$t":{"$nm":"Element"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"}]],"$mt":"mthd","$nm":"next"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Determines if the range includes the given object."],"actual":[]},"$nm":"contains"},"by":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"step"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"by"},"includes":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Determines if the range includes the given value."]},"$nm":"includes"},"spanFrom":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanFrom"},"taking":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"take"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"taking"},"skipping":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"skip"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"skipping"},"span":{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},{"$pk":"ceylon.language","$nm":"Empty"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"span"}},"$at":{"lastIndex":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"doc":["The index of the end of the range."],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},"$mt":"attr","$an":{"shared":[],"doc":["Returns the range itself, since ranges are \nimmutable."],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"gttr","$an":{"shared":[],"doc":["An iterator for the elements of the range."],"actual":[]},"$nm":"iterator"},"decreasing":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"doc":["Determines if the range is decreasing."]},"$nm":"decreasing"},"last":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"doc":["The end of the range."],"actual":[]},"$nm":"last"},"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},"$mt":"attr","$an":{"shared":[],"doc":["Returns this range."],"actual":[]},"$nm":"sequence"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"},"coalesced":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},"$mt":"attr","$an":{"shared":[],"doc":["Returns the range itself, since a Range cannot\ncontain nulls."],"actual":[]},"$nm":"coalesced"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},"$mt":"attr","$an":{"shared":[],"doc":["Reverse this range, returning a new range."],"actual":[]},"$nm":"reversed"},"rest":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"gttr","$an":{"shared":[],"doc":["The rest of the range, without the start of the\nrange."],"actual":[]},"$nm":"rest"},"first":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"doc":["The start of the range."],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"doc":["The nonzero number of elements in the range."],"actual":[]},"$nm":"size"}},"$nm":"Range"},"Integral":{"of":[{"$nm":"Other"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Numeric"},{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Enumerable"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Integral"}],"$nm":"Other"}],"$an":{"shared":[],"see":["Integer"],"doc":["Abstraction of integral numeric types. That is, types \nwith no fractional part, including `Integer`. The \ndivision operation for integral numeric types results \nin a remainder. Therefore, integral numeric types have \nan operation to determine the remainder of any division \noperation."],"by":["Gavin"]},"$m":{"remainder":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["divided"],"doc":["The remainder, after dividing this number by the \ngiven number."]},"$nm":"remainder"}},"$at":{"unit":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if the number is one."]},"$nm":"unit"},"zero":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if the number is zero."]},"$nm":"zero"}},"$nm":"Integral","$st":"Other"},"max":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Value"}]},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$nm":"Absent"}],"$an":{"shared":[],"see":["Comparable","min","largest"],"doc":["Given a nonempty sequence of `Comparable` values, \nreturn the largest value in the sequence."]},"$nm":"max"},"SequenceAppender":{"super":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"SequenceBuilder"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"prm","$pt":"v","$nm":"elements"}],"$mt":"cls","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"native":[],"see":["SequenceBuilder"],"doc":["This class is used for constructing a new nonempty \nsequence by incrementally appending elements to an\nexisting nonempty sequence. The existing sequence is\nnot modified, since `Sequence`s are immutable. This \nclass is mutable but threadsafe."]},"$at":{"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The resulting nonempty sequence. If no elements \nhave been appended, the original nonempty \nsequence."],"actual":[]},"$nm":"sequence"}},"$nm":"SequenceAppender"},"RecursiveInitializationException":{"super":{"$pk":"ceylon.language","$nm":"Exception"},"$mt":"cls","$an":{"shared":[],"doc":["Thrown when name could not be initialized due to recursive access during initialization."]},"$nm":"RecursiveInitializationException"},"byIncreasing":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Value","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"comparable"}],[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"$nm":"Element"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Value"}],"$an":{"shared":[],"see":["byDecreasing"],"doc":["A comparator which orders elements in increasing order \naccording to the `Comparable` returned by the given \n`comparable()` function."]},"$nm":"byIncreasing"},"larger":{"super":{"$pk":"ceylon.language","$nm":"Comparison"},"$mt":"obj","$an":{"shared":[],"doc":["The value is larger than the given value."],"by":["Gavin"]},"$nm":"larger"},"smallest":{"$t":{"$nm":"Element"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"see":["Comparable","largest","min"],"doc":["Given two `Comparable` values, return smallest of the\ntwo."]},"$nm":"smallest"},"true":{"super":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"obj","$an":{"shared":[],"doc":["A value representing truth in Boolean logic."],"by":["Gavin"]},"$at":{"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"}},"$nm":"true"},"join":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"iterables"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"see":["SequenceBuilder"],"doc":["Given a list of iterable objects, return a new sequence \nof all elements of the all given objects. If there are\nno arguments, or if none of the arguments contains any\nelements, return the empty sequence."]},"$nm":"join"},"Exponentiable":{"of":[{"$nm":"This"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"This"}],"$pk":"ceylon.language","$nm":"Numeric"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"This"},{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Exponentiable"}],"$nm":"This"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Numeric"}],"$nm":"Other"}],"$an":{"shared":[],"see":["Integer","Float"],"doc":["Abstraction of numeric types that may be raised to a\npower. Note that the type of the exponent may be\ndifferent to the numeric type which can be \nexponentiated."]},"$m":{"power":{"$t":{"$nm":"This"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["The result of raising this number to the given\npower."]},"$nm":"power"}},"$nm":"Exponentiable","$st":"This"},"curry":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Argument"},{"$mt":"tpm","$nm":"First"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Tuple"}],"$pk":"ceylon.language","$nm":"Callable"},"$mt":"prm","$pt":"v","$nm":"f"}],[{"$t":"First","$mt":"prm","$pt":"v","$nm":"first"}]],"$mt":"mthd","$tp":[{"$nm":"Return"},{"$nm":"Argument"},{"satisfies":[{"$nm":"Argument"}],"$nm":"First"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Argument"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"Rest"}],"$an":{"shared":[]},"$nm":"curry"},"forKey":{"$t":{"$nm":"Result"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Key","$mt":"prm","$pt":"v","$nm":"key"}]],"$mt":"prm","$pt":"f","$nm":"resulting"}],[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"entry"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Key"},{"$nm":"Result"}],"$an":{"shared":[],"see":["forItem"],"doc":["A function that returns the result of the given `resulting()` function \non the key of a given `Entry`."]},"$nm":"forKey"},"Keys":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Correspondence"},"$mt":"prm","$pt":"v","$nm":"correspondence"}],"satisfies":[{"$pk":"ceylon.language","$nm":"Category"}],"$mt":"cls","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"in","$nm":"Key"},{"variance":"out","$nm":"Item"}],"$an":{"native":[]},"$m":{"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"key"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"contains"}},"$nm":"Keys"},"Character":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"}],"$pk":"ceylon.language","$nm":"Comparable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"}],"$pk":"ceylon.language","$nm":"Enumerable"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"see":["String"],"doc":["A 32-bit Unicode character."],"by":["Gavin"]},"$at":{"digit":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if this character is a numeric digit."]},"$nm":"digit"},"uppercase":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if this is an uppercase representation of\nthe character."]},"$nm":"uppercase"},"control":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if this character is an ISO control \ncharacter."]},"$nm":"control"},"integer":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The code point of the character."]},"$nm":"integer"},"letter":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if this character is a letter."]},"$nm":"letter"},"lowercase":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if this is a lowercase representation of\nthe character."]},"$nm":"lowercase"},"lowercased":{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The lowercase representation of this character."]},"$nm":"lowercased"},"uppercased":{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The uppercase representation of this character."]},"$nm":"uppercased"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["A string containg just this character."],"actual":[]},"$nm":"string"},"whitespace":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if this character is a whitespace \ncharacter."]},"$nm":"whitespace"},"titlecased":{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The title case representation of this character."]},"$nm":"titlecased"},"titlecase":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if this is a title case representation of\nthe character."]},"$nm":"titlecase"}},"$nm":"Character"},"process":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$mt":"obj","$an":{"shared":[],"native":[],"doc":["Represents the current process (instance of the virtual\nmachine)."],"by":["Gavin","Tako"]},"$m":{"readLine":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Read a line of input text from the standard input \nof the virtual machine process."]},"$nm":"readLine"},"writeErrorLine":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$def":"1","$nm":"line"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Print a line to the standard error of the \nvirtual machine process."]},"$nm":"writeErrorLine"},"writeError":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Print a string to the standard error of the \nvirtual machine process."]},"$nm":"writeError"},"propertyValue":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["The value of the given system property of the virtual\nmachine, if any."]},"$nm":"propertyValue"},"namedArgumentValue":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["The value of the first argument of form `-name=value`, \n`--name=value`, or `-name value` specified among the \ncommand line arguments to the virtual machine, if\nany."]},"$nm":"namedArgumentValue"},"write":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Print a string to the standard output of the \nvirtual machine process."]},"$nm":"write"},"namedArgumentPresent":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"name"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Determine if an argument of form `-name` or `--name` \nwas specified among the command line arguments to \nthe virtual machine."]},"$nm":"namedArgumentPresent"},"writeLine":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$def":"1","$nm":"line"}]],"$mt":"mthd","$an":{"shared":[],"see":["print"],"doc":["Print a line to the standard output of the \nvirtual machine process."]},"$nm":"writeLine"},"exit":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"code"}]],"$mt":"mthd","$an":{"shared":[],"native":[]},"$nm":"exit"}},"$at":{"os":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["Returns the name of the operating system this \nprocess is running on."]},"$nm":"os"},"vmVersion":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["Returns the version of the virtual machine this \nprocess is running on."]},"$nm":"vmVersion"},"vm":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["Returns the name of the virtual machine this \nprocess is running on."]},"$nm":"vm"},"osVersion":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["Returns the version of the operating system this \nprocess is running on."]},"$nm":"osVersion"},"newline":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The line ending character sequence on this platform."]},"$nm":"newline"},"arguments":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The command line arguments to the virtual machine."]},"$nm":"arguments"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"},"nanoseconds":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The elapsed time in nanoseconds since an arbitrary\nstarting point."]},"$nm":"nanoseconds"},"milliseconds":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The elapsed time in milliseconds since midnight, \n1 January 1970."]},"$nm":"milliseconds"}},"$nm":"process"},"product":{"$t":{"$nm":"Value"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Numeric"}],"$nm":"Value"}],"$an":{"shared":[],"see":["sum"],"doc":["Given a nonempty sequence of `Numeric` values, return \nthe product of the values."]},"$nm":"product"},"forItem":{"$t":{"$nm":"Result"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Item","$mt":"prm","$pt":"v","$nm":"item"}]],"$mt":"prm","$pt":"f","$nm":"resulting"}],[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"entry"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Item"},{"$nm":"Result"}],"$an":{"shared":[],"see":["forKey"],"doc":["A function that returns the result of the given `resulting()` function \non the item of a given `Entry`."]},"$nm":"forItem"},"shuffle":{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Result"},{"$mt":"tpm","$nm":"FirstArgs"}],"$pk":"ceylon.language","$nm":"Callable"},{"$mt":"tpm","$nm":"SecondArgs"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Result"},{"$mt":"tpm","$nm":"SecondArgs"}],"$pk":"ceylon.language","$nm":"Callable"},{"$mt":"tpm","$nm":"FirstArgs"}],"$pk":"ceylon.language","$nm":"Callable"},"$mt":"prm","$pt":"v","$nm":"f"}]],"$mt":"mthd","$tp":[{"$nm":"Result"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"FirstArgs"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"SecondArgs"}],"$an":{"shared":[]},"$nm":"shuffle"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"characters"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Create a new string containing the given characters."]},"$nm":"string"},"nothing":{"$t":{"$pk":"ceylon.language","$nm":"Nothing"},"$mt":"gttr","$an":{"shared":[],"doc":["A value that is assignable to any type, but that \nresults in an exception when evaluated. This is most \nuseful for generating members in an IDE."]},"$nm":"nothing"},"doc":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"description"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to specify API documentation of a program\nelement."]},"$nm":"doc"},"Scalar":{"of":[{"$nm":"Other"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Numeric"},{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Comparable"},{"$pk":"ceylon.language","$nm":"Number"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Scalar"}],"$nm":"Other"}],"$an":{"shared":[],"see":["Integer","Float"],"doc":["Abstraction of numeric types representing scalar\nvalues, including `Integer` and `Float`."],"by":["Gavin"]},"$at":{"magnitude":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The magnitude of this number."],"actual":[]},"$nm":"magnitude"},"wholePart":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The integral value of the number after truncation \nof the fractional part. For integral numeric types,\nthe integral value of a number is the number \nitself."],"actual":[]},"$nm":"wholePart"},"fractionalPart":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The fractional part of the number, after truncation \nof the integral part. For integral numeric types,\nthe fractional part is always zero."],"actual":[]},"$nm":"fractionalPart"}},"$nm":"Scalar","$st":"Other"},"ifExists":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"val"}]],"$mt":"prm","$pt":"f","$nm":"predicate"}],[{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$pt":"v","$nm":"val"}]],"$mt":"mthd","$nm":"ifExists"},"SequenceBuilder":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$mt":"cls","$tp":[{"$nm":"Element"}],"$an":{"shared":[],"native":[],"see":["SequenceAppender","join","Singleton"],"doc":["Since sequences are immutable, this class is used for\nconstructing a new sequence by incrementally appending \nelements to the empty sequence. This class is mutable\nbut threadsafe."]},"$m":{"append":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"SequenceBuilder"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Append an element to the sequence and return this \n`SequenceBuilder`"]},"$nm":"append"},"appendAll":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"SequenceBuilder"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Append multiple elements to the sequence and return \nthis `SequenceBuilder`"]},"$nm":"appendAll"}},"$at":{"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"default":[],"native":[],"doc":["The resulting sequence. If no elements have been\nappended, the empty sequence."]},"$nm":"sequence"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"doc":["Determine if the resulting sequence is empty."]},"$nm":"empty"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"doc":["The size of the resulting sequence."]},"$nm":"size"}},"$nm":"SequenceBuilder"},"tagged":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"tags"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to categorize the API by tag."]},"$nm":"tagged"},"variable":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to mark an attribute as variable. A `variable` \nattribute must be assigned with `=` and may be \nreassigned over time."]},"$nm":"variable"},"Correspondence":{"$mt":"ifc","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"in","$nm":"Key"},{"variance":"out","$nm":"Item"}],"$an":{"shared":[],"see":["Map","List","Category"],"doc":["Abstract supertype of objects which associate values \nwith keys. `Correspondence` does not satisfy `Category`,\nsince in some cases&mdash;`List`, for example&mdash;it is \nconvenient to consider the subtype a `Category` of its\nvalues, and in other cases&mdash;`Map`, for example&mdash;it \nis convenient to treat the subtype as a `Category` of its\nentries.\n\nThe item corresponding to a given key may be obtained \nfrom a `Correspondence` using the item operator:\n\n    value bg = settings[\"backgroundColor\"] else white;\n\nThe `get()` operation and item operator result in an\noptional type, to reflect the possibility that there is\nno item for the given key."],"by":["Gavin"]},"$m":{"definesAny":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"keys"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["defines"],"doc":["Determines if this `Correspondence` defines a value\nfor any one of the given keys."]},"$nm":"definesAny"},"defines":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Key","$mt":"prm","$pt":"v","$nm":"key"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["definesAny","definesEvery","keys"],"doc":["Determines if there is a value defined for the \ngiven key."]},"$nm":"defines"},"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Item"}]},"$ps":[[{"$t":"Key","$mt":"prm","$pt":"v","$nm":"key"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["items"],"doc":["Returns the value defined for the given key, or \n`null` if there is no value defined for the given \nkey."]},"$nm":"get"},"items":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Item"}]}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"keys"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["get"],"doc":["Returns the items defined for the given keys, in\nthe same order as the corresponding keys."]},"$nm":"items"},"definesEvery":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"keys"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["defines"],"doc":["Determines if this `Correspondence` defines a value\nfor every one of the given keys."]},"$nm":"definesEvery"}},"$at":{"keys":{"$t":{"$pk":"ceylon.language","$nm":"Category"},"$mt":"attr","$an":{"shared":[],"default":[],"see":["defines"],"doc":["The `Category` of all keys for which a value is \ndefined by this `Correspondence`."]},"$nm":"keys"}},"$nm":"Correspondence"},"count":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Boolean"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$an":{"shared":[],"doc":["A count of the number of `true` items in the given values."]},"$nm":"count"},"NonemptyContainer":{"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"deprecated":["Will be removed in Ceylon 1.0."],"doc":["A nonempty container."]},"$alias":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Container"},"$nm":"NonemptyContainer"},"internalFirst":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Value"}]},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$nm":"Absent"}],"$an":{"shared":[],"native":[]},"$nm":"internalFirst"},"byItem":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Item","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Item","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}],[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"x"},{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"},"$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Item"}],"$an":{"shared":[],"see":["byKey"],"doc":["A comparator for `Entry`s which compares their items \naccording to the given `comparing()` function."]},"$nm":"byItem"},"by":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"authors"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to specify API authors."]},"$nm":"by"},"every":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Boolean"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$an":{"shared":[],"see":["any"],"doc":["Determines if every one of the given boolean values \n(usually a comprehension) is `true`."]},"$nm":"every"},"$pkg-shared":"1","Tuple":{"super":{"$pk":"ceylon.language","$nm":"Object"},"$ps":[{"$t":"First","$hdn":"1","$mt":"prm","$pt":"v","$nm":"first"},{"$t":"Rest","$hdn":"1","$mt":"prm","$pt":"v","$nm":"rest"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"First"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Tuple"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"cls","$tp":[{"variance":"out","$nm":"Element"},{"satisfies":[{"$nm":"Element"}],"variance":"out","$nm":"First"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$def":{"$pk":"ceylon.language","$nm":"Empty"},"variance":"out","$nm":"Rest"}],"$an":{"shared":[],"doc":["A _tuple_ is a typed linked list. Each instance of \n`Tuple` represents the value and type of a single link.\nThe attributes `first` and `rest` allow us to retrieve\na value form the list without losing its static type \ninformation.\n\n    value point = Tuple(0.0, Tuple(0.0, Tuple(\"origin\")));\n    Float x = point.first;\n    Float y = point.rest.first;\n    String label = point.rest.rest.first;\n\nUsually, we abbreviate code involving tuples.\n\n    [Float,Float,String] point = [0.0, 0.0, \"origin\"];\n    Float x = point[0];\n    Float y = point[1];\n    String label = point[2];\n\nA list of types enclosed in brackets is an abbreviated \ntuple type. An instance of `Tuple` may be constructed \nby surrounding a value list in brackets:\n\n    [String,String] words = [\"hello\", \"world\"];\n\nThe index operator with a literal integer argument is a \nshortcut for a chain of evaluations of `rest` and \n`first`. For example, `point[1]` means `point.rest.first`.\n\nA _terminated_ tuple type is a tuple where the type of\nthe last link in the chain is `Empty`. An _unterminated_ \ntuple type is a tuple where the type of the last link\nin the chain is `Sequence` or `Sequential`. Thus, a \nterminated tuple type has a length that is known\nstatically. For an unterminated tuple type only a lower\nbound on its length is known statically.\n\nHere, `point` is an unterminated tuple:\n\n    String[] labels = ... ;\n    [Float,Float,String*] point = [0.0, 0.0, *labels];\n    Float x = point[0];\n    Float y = point[1];\n    String? firstLabel = point[2];\n    String[] allLabels = point[2...];\n\n"],"by":["Gavin"]},"$m":{"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"get"},"spanTo":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanTo"},"segment":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"segment"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"contains"},"spanFrom":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanFrom"},"span":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"end"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"span"}},"$at":{"lastIndex":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"First"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Tuple"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"iterator"},"last":{"$t":{"$nm":"Element"},"$mt":"gttr","$an":{"shared":[],"actual":[]},"$nm":"last"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"reversed"},"rest":{"$t":{"$nm":"Rest"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"rest"},"first":{"$t":{"$nm":"First"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"size"}},"$nm":"Tuple"},"lessThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"val"}],[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"shared":[],"doc":["Returns a partial function that will compare an element\nto any other element and returns true if the compared\nelement is less than its element.\nThis is useful in conjunction with methods that receive\na predicate function."]},"$nm":"lessThan"},"identityHash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Identifiable"},"$mt":"prm","$pt":"v","$nm":"x"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"see":["identical"],"doc":["Return the system-defined identity hash value of the \ngiven value. This hash value is consistent with \nidentity equality."]},"$nm":"identityHash"},"uncurry":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Argument"},{"$mt":"tpm","$nm":"First"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Tuple"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$nm":"Rest"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":"First","$mt":"prm","$pt":"v","$nm":"first"}]],"$mt":"prm","$pt":"f","$nm":"f"}]],"$mt":"mthd","$tp":[{"$nm":"Return"},{"$nm":"Argument"},{"satisfies":[{"$nm":"Argument"}],"$nm":"First"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Argument"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"Rest"}],"$an":{"shared":[]},"$nm":"uncurry"},"optional":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[]},"$nm":"optional"},"any":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Boolean"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$an":{"shared":[],"see":["every"],"doc":["Determines if any one of the given boolean values \n(usually a comprehension) is `true`."]},"$nm":"any"},"Summable":{"of":[{"$nm":"Other"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Summable"}],"$nm":"Other"}],"$an":{"shared":[],"see":["String","Numeric"],"doc":["Abstraction of types which support a binary addition\noperator. For numeric types, this is just familiar \nnumeric addition. For strings, it is string \nconcatenation. In general, the addition operation \nshould be a binary associative operation."],"by":["Gavin"]},"$m":{"plus":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["The result of adding the given value to this value. \nThis operation should never perform any kind of \nmutation upon either the receiving value or the \nargument value."]},"$nm":"plus"}},"$nm":"Summable","$st":"Other"},"EmptyContainer":{"$mt":"ifc","$an":{"shared":[],"deprecated":["Will be removed in Ceylon 1.0."],"doc":["An empty container."]},"$alias":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Container"},"$nm":"EmptyContainer"},"Set":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Collection"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Set"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Element"}],"$an":{"shared":[],"doc":["A collection of unique elements.\n\nA `Set` is a `Collection` of its elements.\n\nSets may be the subject of the binary union, \nintersection, exclusive union, and complement operators \n`|`, `&`, `^`, and `~`."]},"$m":{"complement":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"formal":[],"doc":["Returns a new `Set` containing all the elements in \nthis `Set` that are not contained in the given\n`Set`."]},"$nm":"complement"},"subset":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Determines if this `Set` is a subset of the given \n`Set`, that is, if the given set contains all of \nthe elements in this set."]},"$nm":"subset"},"intersection":{"$t":{"$tp":[{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"formal":[],"doc":["Returns a new `Set` containing only the elements \nthat are present in both this `Set` and the given \n`Set`."]},"$nm":"intersection"},"exclusiveUnion":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"formal":[],"doc":["Returns a new `Set` containing only the elements \ncontained in either this `Set` or the given `Set`, \nbut no element contained in both sets."]},"$nm":"exclusiveUnion"},"superset":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Determines if this `Set` is a superset of the \nspecified Set, that is, if this `Set` contains all \nof the elements in the specified `Set`."]},"$nm":"superset"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Two `Set`s are considered equal if they have the \nsame size and if every element of the first set is\nalso an element of the second set, as determined\nby `contains()`."],"actual":[]},"$nm":"equals"},"union":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Set"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"prm","$pt":"v","$nm":"set"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Other"}],"$an":{"shared":[],"formal":[],"doc":["Returns a new `Set` containing all the elements of \nthis `Set` and all the elements of the given `Set`."]},"$nm":"union"}},"$at":{"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"}},"$nm":"Set"},"Sequence":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Iterable"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"see":["Empty"],"doc":["A nonempty, immutable sequence of values. The type \n`Sequence<Element>`, may be abbreviated `[Element+]`.\n\nGiven a possibly-empty sequence of type `[Element*], \nthe `if (nonempty ...)` construct, or, alternatively,\nthe `assert (nonempty ...)` construct, may be used to \nnarrow to a nonempty sequence type:\n\n    [Integer*] nums = ... ;\n    if (nonempty nums) {\n        Integer first = nums.first;\n        Integer max = max(nums);\n        [Integer+] squares = nums.collect((Integer i) i**2));\n        [Integer+] sorted = nums.sort(byIncreasing((Integer i) i));\n    }\n\nOperations like `first`, `max()`, `collect()`, and \n`sort()`, which polymorphically produce a nonempty or \nnon-null output when given a nonempty input are called \n_emptiness-preserving_."],"by":["Gavin"]},"$m":{"sort":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["A nonempty sequence containing the elements of this\ncontainer, sorted according to a function \nimposing a partial order upon the elements."],"actual":[]},"$nm":"sort"},"collect":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Result"}],"$pk":"ceylon.language","$nm":"Sequence"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"collecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"default":[],"doc":["A nonempty sequence containing the results of \napplying the given mapping to the elements of this\nsequence."],"actual":[]},"$nm":"collect"}},"$at":{"lastIndex":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"see":["size"],"doc":["The index of the last element of the sequence."],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"attr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"clone"},"last":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The last element of the sequence, that is, the\nelement with index `sequence.lastIndex`."],"actual":[]},"$nm":"last"},"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["This sequence."],"actual":[]},"$nm":"sequence"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"doc":["Returns `false`, since every `Sequence` contains at\nleast one element."],"actual":[]},"$nm":"empty"},"rest":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The rest of the sequence, without the first \nelement."],"actual":[]},"$nm":"rest"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequence"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Reverse this sequence, returning a new nonempty\nsequence."],"actual":[]},"$nm":"reversed"},"first":{"$t":{"$nm":"Element"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The first element of the sequence, that is, the\nelement with index `0`."],"actual":[]},"$nm":"first"}},"$nm":"Sequence"},"StringBuilder":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$mt":"cls","$an":{"shared":[],"native":[],"doc":["Since strings are immutable, this class is used for\nconstructing a string by incrementally appending \ncharacters to the empty string. This class is mutable \nbut threadsafe."]},"$m":{"append":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Append the characters in the given string."]},"$nm":"append"},"appendSpace":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$mt":"mthd","$an":{"shared":[],"doc":["Append a space character."]},"$nm":"appendSpace"},"delete":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"pos"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"count"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Deletes the specified number of characters from the\ncurrent content, starting at the specified position.\nIf the position is beyond the end of the current content,\nnothing is deleted. If the number of characters to delete\nis greater than the available characters from the given\nposition, the content is truncated at the given position."]},"$nm":"delete"},"reset":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Remove all content and return to initial state."]},"$nm":"reset"},"appendAll":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"strings"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Append the characters in the given strings."]},"$nm":"appendAll"},"insert":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"pos"},{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Character"},{"$pk":"ceylon.language","$nm":"String"}]},"$mt":"prm","$pt":"v","$nm":"content"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Insert a String or Character at the specified position.\nIf the position is beyond the end of the current\nstring, the new content is simply appended to the\ncurrent content. If the position is a negative number,\nthe new content is inserted at index 0."]},"$nm":"insert"},"appendNewline":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$mt":"mthd","$an":{"shared":[],"doc":["Append a newline character."]},"$nm":"appendNewline"},"appendCharacter":{"$t":{"$pk":"ceylon.language","$nm":"StringBuilder"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"prm","$pt":"v","$nm":"character"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Append the given character."]},"$nm":"appendCharacter"}},"$at":{"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["The resulting string. If no characters have been\nappended, the empty string."],"actual":[]},"$nm":"string"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"native":[],"doc":["Returns the size of the current content."]},"$nm":"size"}},"$nm":"StringBuilder"},"emptyOrSingleton":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Element"}],"$an":{"shared":[],"see":["Singleton","Empty"],"doc":["A `Singleton` if the given element is non-null, otherwise `Empty`."]},"$nm":"emptyOrSingleton"},"shared":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to mark a type or member as shared. A `shared` \nmember is visible outside the block of code in which it\nis declared."]},"$nm":"shared"},"Binary":{"of":[{"$nm":"Other"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Binary"}],"$nm":"Other"}],"$an":{"shared":[],"see":["Integer"],"doc":["Abstraction of numeric types that consist in\na sequence of bits, like `Integer`."],"by":["Stef"]},"$m":{"clear":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Returns a new number with the given bit set to 0.\nBits are indexed from right to left."]},"$nm":"clear"},"xor":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Performs a logical exclusive OR operation."]},"$nm":"xor"},"get":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Retrieves a given bit from this bit sequence. Bits are indexed from\nright to left."]},"$nm":"get"},"leftLogicalShift":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"shift"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Performs a left logical shift. Sign is not preserved. Padded with zeros."]},"$nm":"leftLogicalShift"},"set":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"},{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$pt":"v","$def":"1","$nm":"bit"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Returns a new number with the given bit set to the given value.\nBits are indexed from right to left."]},"$nm":"set"},"or":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Performs a logical inclusive OR operation."]},"$nm":"or"},"rightArithmeticShift":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"shift"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Performs a right arithmetic shift. Sign is preserved. Padded with zeros."]},"$nm":"rightArithmeticShift"},"rightLogicalShift":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"shift"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Performs a right logical shift. Sign is not preserved. Padded with zeros."]},"$nm":"rightLogicalShift"},"flip":{"$t":{"$nm":"Other"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Returns a new number with the given bit flipped to its opposite value.\nBits are indexed from right to left."]},"$nm":"flip"},"and":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Performs a logical AND operation."]},"$nm":"and"}},"$at":{"not":{"$t":{"$nm":"Other"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The binary complement of this sequence of bits."]},"$nm":"not"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The number of bits (0 or 1) that this sequence of bits can hold."]},"$nm":"size"}},"$nm":"Binary","$st":"Other"},"commaList":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$nm":"commaList"},"Number":{"$mt":"ifc","$an":{"shared":[],"see":["Numeric"],"doc":["Abstraction of numbers. Numeric operations are provided\nby the subtype `Numeric`. This type defines operations\nwhich can be expressed without reference to the self\ntype `Other` of `Numeric`."],"by":["Gavin"]},"$at":{"sign":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The sign of this number. Returns `1` if the number \nis positive, `-1` if it is negative, or `0` if it \nis zero."]},"$nm":"sign"},"integer":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"throws":["OverflowException","if the number is too large to be represented \nas an `Integer`"],"doc":["The number, represented as an `Integer`, after \ntruncation of any fractional part."]},"$nm":"integer"},"magnitude":{"$t":{"$pk":"ceylon.language","$nm":"Number"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The magnitude of the number."]},"$nm":"magnitude"},"wholePart":{"$t":{"$pk":"ceylon.language","$nm":"Number"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The integral value of the number after truncation \nof the fractional part."]},"$nm":"wholePart"},"negative":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if the number is negative."]},"$nm":"negative"},"positive":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if the number is positive."]},"$nm":"positive"},"fractionalPart":{"$t":{"$pk":"ceylon.language","$nm":"Number"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The fractional part of the number, after truncation \nof the integral part."]},"$nm":"fractionalPart"},"float":{"$t":{"$pk":"ceylon.language","$nm":"Float"},"$mt":"attr","$an":{"shared":[],"formal":[],"throws":["OverflowException","if the number is too large to be represented \nas a `Float`"],"doc":["The number, represented as a `Float`."]},"$nm":"float"}},"$nm":"Number"},"LazyMap":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"entries"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Map"}],"$mt":"cls","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Key"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Item"}],"$an":{"shared":[],"doc":["A Map implementation that wraps an `Iterable` of \nentries. All operations, such as lookups, size, etc. \nare performed on the `Iterable`."],"by":["Enrique Zamudio"]},"$m":{"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Item"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"key"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"get"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"equals"}},"$at":{"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"LazyMap"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"iterator"},"last":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"}]},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"last"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"},"first":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"}]},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"size"}},"$nm":"LazyMap"},"Map":{"satisfies":[{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"}],"$pk":"ceylon.language","$nm":"Collection"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Correspondence"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Map"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Key"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"variance":"out","$nm":"Item"}],"$an":{"shared":[],"see":["Entry","forKey","forItem","byItem","byKey"],"doc":["Represents a collection which maps _keys_ to _items_,\nwhere a key can map to at most one item. Each such \nmapping may be represented by an `Entry`.\n\nA `Map` is a `Collection` of its `Entry`s, and a \n`Correspondence` from keys to items.\n\nThe prescence of an entry in a map may be tested\nusing the `in` operator:\n\n    if (\"lang\"->\"en_AU\" in settings) { ... }\n\nThe entries of the map may be iterated using `for`:\n\n    for (key->item in settings) { ... }\n\nThe item for a key may be obtained using the item\noperator:\n\n    String lang = settings[\"lang\"] else \"en_US\";"]},"$m":{"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Two `Map`s are considered equal iff they have the \nsame _entry sets_. The entry set of a `Map` is the\nset of `Entry`s belonging to the map. Therefore, the\nmaps are equal iff they have same set of `keys`, and \nfor every key in the key set, the maps have equal\nitems."],"actual":[]},"$nm":"equals"},"mapItems":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Result"}],"$pk":"ceylon.language","$nm":"Map"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Key","$mt":"prm","$pt":"v","$nm":"key"},{"$t":"Item","$mt":"prm","$pt":"v","$nm":"item"}]],"$mt":"prm","$pt":"f","$nm":"mapping"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Result"}],"$an":{"shared":[],"default":[],"doc":["Returns a `Map` with the same keys as this map. For\nevery key, the item is the result of applying the\ngiven transformation function."]},"$nm":"mapItems"}},"$at":{"values":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Collection"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["Returns all the values stored in this `Map`. An \nelement can be stored under more than one key in \nthe map, and so it can be contained more than once \nin the resulting collection."]},"$nm":"values"},"inverse":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Item"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"}],"$pk":"ceylon.language","$nm":"Set"}],"$pk":"ceylon.language","$nm":"Map"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["Returns a `Map` in which every key is an `Item` in \nthis map, and every value is the set of keys that \nstored the `Item` in this map."]},"$nm":"inverse"},"keys":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"}],"$pk":"ceylon.language","$nm":"Set"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["Returns the set of keys contained in this `Map`."],"actual":[]},"$nm":"keys"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"}},"$nm":"Map"},"Numeric":{"of":[{"$nm":"Other"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Summable"},{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Invertable"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Other"}],"$pk":"ceylon.language","$nm":"Numeric"}],"$nm":"Other"}],"$an":{"shared":[],"see":["Integer","Float","Comparable"],"doc":["Abstraction of numeric types supporting addition,\nsubtraction, multiplication, and division, including\n`Integer` and `Float`. Additionally, a numeric type \nis expected to define a total order via an \nimplementation of `Comparable`."],"by":["Gavin"]},"$m":{"minus":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["The difference between this number and the given \nnumber."]},"$nm":"minus"},"times":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["The product of this number and the given number."]},"$nm":"times"},"divided":{"$t":{"$nm":"Other"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["Integral"],"doc":["The quotient obtained by dividing this number by \nthe given number. For integral numeric types, this \noperation results in a remainder."]},"$nm":"divided"}},"$nm":"Numeric","$st":"Other"},"throws":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$pt":"v","$nm":"type"},{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$mt":"prm","$pt":"v","$def":"1","$nm":"when"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to mark a program element that throws an \nexception."]},"$nm":"throws"},"Closeable":{"$mt":"ifc","$an":{"shared":[],"doc":["Abstract supertype of types which may appear\nas the expression type of a resource expression\nin a `try` statement."]},"$m":{"open":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Called before entry to a `try` block."]},"$nm":"open"},"close":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Exception"}]},"$mt":"prm","$pt":"v","$nm":"exception"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Called after completion of a `try` block."]},"$nm":"close"}},"$nm":"Closeable"},"byDecreasing":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Value","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"comparable"}],[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$tp":[{"$nm":"Element"},{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Value"}],"$an":{"shared":[],"see":["byIncreasing"],"doc":["A comparator which orders elements in decreasing order \naccording to the `Comparable` returned by the given \n`comparable()` function."]},"$nm":"byDecreasing"},"formal":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to mark a member whose implementation must \nbe provided by subtypes."]},"$nm":"formal"},"default":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to mark a member whose implementation may be \nrefined by subtypes. Non-`default` declarations may not \nbe refined."]},"$nm":"default"},"String":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"}],"$pk":"ceylon.language","$nm":"Sequential"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Comparable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Summable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Ranged"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"native":[],"see":["string"],"doc":["A string of characters. Each character in the string is \na 32-bit Unicode character. The internal UTF-16 \nencoding is hidden from clients.\n\nA string is a `Category` of its `Character`s, and of\nits substrings:\n\n    `w` in greeting \n    \"hello\" in greeting\n\nStrings are summable:\n\n    String greeting = \"hello\" + \" \" + \"world\";\n\nThey are efficiently iterable:\n\n    for (char in \"hello world\") { ... }\n\nThey are `List`s of `Character`s:\n\n    value char = \"hello world\"[5];\n\nThey are ranged:\n\n    String who = \"hello world\"[6...];\n\nNote that since `string[index]` evaluates to the \noptional type `Character?`, it is often more convenient\nto write `string[index..index]`, which evaluates to a\n`String` containing a single character, or to the empty\nstring \"\" if `index` refers to a position outside the\nstring.\n\nThe `string()` function makes it possible to use \ncomprehensions to transform strings:\n\n    string(for (s in \"hello world\") if (s.letter) s.uppercased)\n\nSince a `String` has an underlying UTF-16 encoding, \ncertain operations are expensive, requiring iteration\nof the characters of the string. In particular, `size`\nrequires iteration of the whole string, and `get()`,\n`span()`, and `segment()` require iteration from the \nbeginning of the string to the given index."],"by":["Gavin"]},"$m":{"plus":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Returns the concatenation of this string with the\ngiven string."],"actual":[]},"$nm":"plus"},"firstCharacterOccurrence":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["The first index at which the given character occurs\nwithin this string, or `null` if the character does\nnot occur in this string."]},"$nm":"firstCharacterOccurrence"},"startsWith":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Determines if this string starts with the given \nsubstring."]},"$nm":"startsWith"},"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Character"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Returns the character at the given index in the \nstring, or `null` if the index is past the end of\nstring. The first character in the string occurs at\nindex zero. The last character in the string occurs\nat index `string.size-1`."],"actual":[]},"$nm":"get"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Determines if the given object is a string, and if\nso, if this string has the same length, and the \nsame characters, in the same order, as the given \nstring."],"actual":[]},"$nm":"equals"},"segment":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Select the characters of this string beginning at \nthe given index, returning a string no longer than \nthe given length. If the portion of this string\nstarting at the given index is shorter than \nthe given length, return the portion of this string\nfrom the given index until the end of this string. \nOtherwise return a string of the given length. If \nthe start index is larger than the last index of the \nstring, return the empty string."],"actual":[]},"$nm":"segment"},"compare":{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Compare this string with the given string \nlexicographically, according to the Unicode values\nof the characters."],"actual":[]},"$nm":"compare"},"lastCharacterOccurrence":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["The last index at which the given character occurs\nwithin this string, or `null` if the character does\nnot occur in this string."]},"$nm":"lastCharacterOccurrence"},"longerThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["size"],"doc":["Determines if this string is longer than the given\nlength. This is a more efficient operation than\n`string.size>length`."]},"$nm":"longerThan"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Determines if the given object is a `String` and, \nif so, if it occurs as a substring of this string,\nor if the object is a `Character` that occurs in\nthis string. That is to say, a string is considered \na `Category` of its substrings and of its \ncharacters."],"actual":[]},"$nm":"contains"},"repeat":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"times"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Returns a string formed by repeating this string\nthe given number of times."]},"$nm":"repeat"},"join":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"strings"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Join the given strings, using this string as a \nseparator."]},"$nm":"join"},"replace":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"},{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"replacement"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Returns a string formed by replacing every \noccurrence in this string of the given substring\nwith the given replacement string, working from \nthe start of this string to the end."]},"$nm":"replace"},"firstOccurrence":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["The first index at which the given substring occurs\nwithin this string, or `null` if the substring does\nnot occur in this string."]},"$nm":"firstOccurrence"},"terminal":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Select the last characters of the string, \nreturning a string no longer than the given \nlength. If this string is shorter than the given\nlength, return this string. Otherwise return a\nstring of the given length."]},"$nm":"terminal"},"shorterThan":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["size"],"doc":["Determines if this string is shorter than the given\nlength. This is a more efficient operation than\n`string.size>length`."]},"$nm":"shorterThan"},"spanTo":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanTo"},"initial":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Select the first characters of this string, \nreturning a string no longer than the given \nlength. If this string is shorter than the given\nlength, return this string. Otherwise return a\nstring of the given length."]},"$nm":"initial"},"occurrences":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["The character indexes at which the given substring\noccurs within this string. Occurrences do not \noverlap."]},"$nm":"occurrences"},"lastOccurrence":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["The last index at which the given substring occurs\nwithin this string, or `null` if the substring does\nnot occur in this string."]},"$nm":"lastOccurrence"},"split":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"comp":"u","$ts":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Boolean"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Empty"}],"$pk":"ceylon.language","$nm":"Tuple"}],"$pk":"ceylon.language","$nm":"Callable"}]},"$mt":"prm","$pt":"v","$def":"1","$nm":"separator"},{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$pt":"v","$def":"1","$nm":"discardSeparators"},{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"prm","$pt":"v","$def":"1","$nm":"groupSeparators"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Split the string into tokens, using the given\npredicate to determine which characters are \nseparator characters."]},"$nm":"split"},"endsWith":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"substring"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Determines if this string ends with the given \nsubstring."]},"$nm":"endsWith"},"spanFrom":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanFrom"},"span":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Select the characters between the given indexes.\nIf the start index is the same as the end index,\nreturn a string with a single character.\nIf the start index is larger than the end index, \nreturn the characters in the reverse order from\nthe order in which they appear in this string.\nIf both the start index and the end index are \nlarger than the last index in the string, return \nthe empty string. Otherwise, if the last index is \nlarger than the last index in the sequence, return\nall characters from the start index to last \ncharacter of the string."],"actual":[]},"$nm":"span"}},"$at":{"normalized":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["This string, after collapsing strings of whitespace \ninto single space characters and discarding whitespace \nfrom the beginning and end of the string."]},"$nm":"normalized"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["An iterator for the characters of the string."],"actual":[]},"$nm":"iterator"},"lowercased":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["This string, with all characters in lowercase."]},"$nm":"lowercased"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"actual":[]},"$nm":"hash"},"uppercased":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["This string, with all characters in uppercase."]},"$nm":"uppercased"},"coalesced":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"doc":["Returns this string."],"actual":[]},"$nm":"coalesced"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"formal":[],"see":["longerThan","shorterThan"],"doc":["The length of the string (the number of characters\nit contains). In the case of the empty string, the\nstring has length zero. Note that this operation is\npotentially costly for long strings, since the\nunderlying representation of the characters uses a\nUTF-16 encoding."],"actual":[]},"$nm":"size"},"lastIndex":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$mt":"gttr","$an":{"shared":[],"doc":["The index of the last character in the string, or\n`null` if the string has no characters. Note that \nthis operation is potentially costly for long \nstrings, since the underlying representation of the \ncharacters uses a UTF-16 encoding."],"actual":[]},"$nm":"lastIndex"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"doc":["Returns the string itself."],"actual":[]},"$nm":"string"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"see":["size"],"doc":["Determines if this string has no characters, that\nis, if it has zero `size`. This is a more efficient \noperation than `string.size==0`."],"actual":[]},"$nm":"empty"},"lines":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"String"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Split the string into lines of text."]},"$nm":"lines"},"trimmed":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["This string, after discarding whitespace from the \nbeginning and end of the string."]},"$nm":"trimmed"},"reversed":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["This string, with the characters in reverse order."],"actual":[]},"$nm":"reversed"},"characters":{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Character"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The characters in this string."]},"$nm":"characters"}},"$nm":"String"},"late":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to disable definite initialization analysis\nfor a simple attribute."]},"$nm":"late"},"identical":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Identifiable"},"$mt":"prm","$pt":"v","$nm":"x"},{"$t":{"$pk":"ceylon.language","$nm":"Identifiable"},"$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"mthd","$an":{"shared":[],"see":["identityHash"],"doc":["Determine if the arguments are identical. Equivalent to\n`x===y`. Only instances of `Identifiable` have \nwell-defined identity."]},"$nm":"identical"},"integerRangeByIterable":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Range"},"$mt":"prm","$pt":"v","$nm":"range"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"step"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Ordinal"},{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Comparable"}],"$nm":"Element"}],"$an":{"native":[],"doc":["Provides an optimized implementation of `Range<Integer>.iterator`. \nThis is necessary because we need reified generics in order to write \nthe optimized version in pure Ceylon."]},"$nm":"integerRangeByIterable"},"emptyIterator":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Iterator"}],"$mt":"obj","$an":{"shared":[],"doc":["An iterator that returns no elements."]},"$nm":"emptyIterator"},"parseFloat":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Float"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["The `Float` value of the given string representation of \na decimal number or `null` if the string does not \nrepresent a decimal number.\n\nThe syntax accepted by this method is the same as the \nsyntax for a `Float` literal in the Ceylon language \nexcept that it may optionally begin with a sign \ncharacter (`+` or `-`)."]},"$nm":"parseFloat"},"Anything":{"abstract":"1","of":[{"$pk":"ceylon.language","$nm":"Object"},{"$pk":"ceylon.language","$nm":"Null"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["The abstract supertype of all types. A value of type \n`Anything` may be a definite value of type `Object`, or \nit may be the `null` value. A method declared `void` is \nconsidered to have the return type `Anything`.\n\nNote that the type `Nothing`, representing the \nintersection of all types, is a subtype of all types."],"by":["Gavin"]},"$nm":"Anything"},"Exception":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$hdn":"1","$mt":"prm","$pt":"v","$def":"1","$nm":"description"},{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Exception"}]},"$hdn":"1","$mt":"prm","$pt":"v","$def":"1","$nm":"cause"}],"$mt":"cls","$an":{"shared":[],"native":[],"doc":["The supertype of all exceptions. A subclass represents\na more specific kind of problem, and may define \nadditional attributes which propagate information about\nproblems of that kind."],"by":["Gavin","Tom"]},"$m":{"printStackTrace":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Print the stack trace to the standard error of\nthe virtual machine process."]},"$nm":"printStackTrace"}},"$at":{"message":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"default":[],"see":["description","cause"],"doc":["A message describing the problem. This default \nimplementation returns the description, if any, or \notherwise the message of the cause, if any."]},"$nm":"message"},"cause":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Exception"}]},"$mt":"attr","$an":{"shared":[],"doc":["The underlying cause of this exception."]},"$nm":"cause"},"description":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"String"}]},"$mt":"attr","$an":{"doc":["A description of the problem."]},"$nm":"description"},"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"string"}},"$nm":"Exception"},"internalSort":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"prm","$pt":"f","$nm":"comparing"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$tp":[{"$nm":"Element"}],"$an":{"native":[]},"$nm":"internalSort"},"OverflowException":{"super":{"$pk":"ceylon.language","$nm":"Exception"},"$mt":"cls","$an":{"shared":[],"doc":["Thrown when a mathematical operation caused a number to overflow from its bounds."]},"$nm":"OverflowException"},"parseInteger":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"prm","$pt":"v","$nm":"string"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["The `Integer` value of the given string representation \nof an integer, or `null` if the string does not represent \nan integer or if the mathematical integer it represents \nis too large in magnitude to be represented by an \n`Integer`.\n\nThe syntax accepted by this method is the same as the \nsyntax for an `Integer` literal in the Ceylon language \nexcept that it may optionally begin with a sign \ncharacter (`+` or `-`)."]},"$nm":"parseInteger"},"sum":{"$t":{"$nm":"Value"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Nothing"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Summable"}],"$nm":"Value"}],"$an":{"shared":[],"see":["product"],"doc":["Given a nonempty sequence of `Summable` values, return \nthe sum of the values."]},"$nm":"sum"},"infinity":{"$t":{"$pk":"ceylon.language","$nm":"Float"},"$mt":"attr","$an":{"shared":[],"doc":["An instance of `Float` representing positive infinity \n∞."]},"$nm":"infinity"},"smaller":{"super":{"$pk":"ceylon.language","$nm":"Comparison"},"$mt":"obj","$an":{"shared":[],"doc":["The value is smaller than the given value."],"by":["Gavin"]},"$nm":"smaller"},"flatten":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Return"},{"$mt":"tpm","$nm":"Args"}],"$pk":"ceylon.language","$nm":"Callable"},"$ps":[[{"$t":"Return","$ps":[[{"$t":"Args","$mt":"prm","$pt":"v","$nm":"tuple"}]],"$mt":"prm","$pt":"f","$nm":"tupleFunction"}]],"$mt":"mthd","$tp":[{"$nm":"Return"},{"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"}],"$nm":"Args"}],"$an":{"shared":[],"native":[]},"$nm":"flatten"},"Iterable":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Container"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$def":{"$pk":"ceylon.language","$nm":"Null"},"variance":"out","$nm":"Absent"}],"$an":{"shared":[],"native":[],"see":["Collection"],"doc":["Abstract supertype of containers whose elements may be \niterated. An iterable container need not be finite, but\nits elements must at least be countable. There may not\nbe a well-defined iteration order, and so the order of\niterated elements may not be stable.\n\nThe type `Iterable<Element,Null>`, usually abbreviated\n`{Element*}` represents a possibly-empty iterable \ncontainer. The type `Iterable<Element,Nothing>`, \nusually abbreviated `{Element+}` represents a nonempty \niterable container.\n\nAn instance of `Iterable` may be constructed by \nsurrounding a value list in braces:\n\n    {String+} words = { \"hello\", \"world\" };\n\nAn instance of `Iterable` may be iterated using a `for`\nloop:\n\n    for (c in \"hello world\") { ... }\n\n`Iterable` and its subtypes define various operations\nthat return other iterable objects. Such operations \ncome in two flavors:\n\n- _Lazy_ operations return a \"view\" of the receiving\n  iterable object. If the underlying iterable object is\n  mutable, then changes to the underlying object will\n  be reflected in the resulting view. Lazy operations\n  are usually efficient, avoiding memory allocation or\n  iteration of the receiving iterable object.\n  \n- _Eager_ operations return an immutable object. If the\n  receiving iterable object is mutable, changes to this\n  object will not be reflected in the resulting \n  immutable object. Eager operations are often \n  expensive, involving memory allocation and iteration\n  of the receiving iterable object.\n\nLazy operations are preferred, because they can be \nefficiently chained. For example:\n\n    string.filter((Character c) => c.letter)\n          .map((Character c) => c.uppercased)\n\nis much less expensive than:\n\n    string.select((Character c) => c.letter)\n          .collect((Character c) => c.uppercased)\n\nFurthermore, it is always easy to produce a new \nimmutable iterable object given the view produced by a\nlazy operation. For example:\n\n    [ string.filter((Character c) => c.letter)\n            .map((Character c) => c.uppercased)... ]\n\nLazy operations normally return an instance of \n`Iterable` or `Map`.\n\nHowever, there are certain scenarios where an eager \noperation is more useful, more convenient, or no more \nexpensive than a lazy operation, including:\n\n- sorting operations, which are eager by nature,\n- operations which preserve emptiness\/nonemptiness of\n  the receiving iterable object.\n\nEager operations normally return a sequence."],"by":["Gavin"]},"$m":{"sort":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Comparison"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"x"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"y"}]],"$mt":"prm","$pt":"f","$nm":"comparing"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["byIncreasing","byDecreasing"],"doc":["A sequence containing the elements of this\ncontainer, sorted according to a function \nimposing a partial order upon the elements.\n\nFor convenience, the functions `byIncreasing()` \nand `byDecreasing()` produce a suitable \ncomparison function:\n\n    \"Hello World!\".sort(byIncreasing((Character c) => c.lowercased))\n\nThis operation is eager by nature."]},"$nm":"sort"},"count":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Return the number of elements in this `Iterable` \nthat satisfy the predicate function."]},"$nm":"count"},"select":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["filter"],"doc":["A sequence containing the elements of this \ncontainer that satisfy the given predicate. An \neager counterpart to `filter()`."]},"$nm":"select"},"by":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"step"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"throws":["Exception","if the given step size is nonpositive, \ni.e. `step<1`"],"doc":["Produce an `Iterable` containing every `step`th \nelement of this iterable object. If the step size \nis `1`, the `Iterable` contains the same elements \nas this iterable object. The step size must be \ngreater than zero. The expression\n\n    (0..10).by(3)\n\nresults in an iterable object with the elements\n`0`, `3`, `6`, and `9` in that order."]},"$nm":"by"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"contains"},"fold":{"$t":{"$nm":"Result"},"$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"initial"},{"$t":"Result","$ps":[[{"$t":"Result","$mt":"prm","$pt":"v","$nm":"partial"},{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"accumulating"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"default":[],"doc":["The result of applying the accumulating function to \neach element of this container in turn."]},"$nm":"fold"},"every":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Return `true` if all elements satisfy the predicate\nfunction."]},"$nm":"every"},"defaultNullElements":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"comp":"i","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Object"}]},{"$nm":"Default"}]},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":"Default","$mt":"prm","$pt":"v","$nm":"defaultValue"}]],"$mt":"mthd","$tp":[{"$nm":"Default"}],"$an":{"shared":[],"default":[],"doc":["Returns an Iterable that contains this `Iterable`'s elements but that\nwill return `defaultValue` instead of `null` for `null` elements of\nthat `Iterable`.\n\nCalling this method on an `Iterable` that cannot have `null` values\nwill not change the `Iterable` behavior. This means that calling this\nmethod on an `Iterable` which has been obtained using this method will\nnot change the default value as there is no `null` value anymore."]},"$nm":"defaultNullElements"},"taking":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"take"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Produce an `Iterable` containing the first `take`\nelements of this iterable object. If the specified \nnumber of elements is larger than the number of \nelements of this iterable object, the `Iterable` \ncontains the same elements as this iterable object."]},"$nm":"taking"},"chain":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"other"}]],"$mt":"mthd","$tp":[{"$nm":"Other"}],"$an":{"shared":[],"default":[],"doc":["The elements of this iterable object, in their\noriginal order, followed by the elements of the \ngiven iterable object also in their original\norder."]},"$nm":"chain"},"any":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"e"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Return `true` if at least one element satisfies the\npredicate function."]},"$nm":"any"},"map":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Result"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"collecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"default":[],"see":["collect"],"doc":["An `Iterable` containing the results of applying\nthe given mapping to the elements of to this \ncontainer."]},"$nm":"map"},"findLast":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["The last element which satisfies the given\npredicate, if any, or `null` otherwise."]},"$nm":"findLast"},"filter":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["select"],"doc":["An `Iterable` containing the elements of this \ncontainer that satisfy the given predicate."]},"$nm":"filter"},"find":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["The first element which satisfies the given \npredicate, if any, or `null` otherwise."]},"$nm":"find"},"skipping":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"skip"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Produce an `Iterable` containing the elements of\nthis iterable object, after skipping the first \n`skip` elements. If this iterable object does not \ncontain more elements than the specified number of \nelements, the `Iterable` contains no elements."]},"$nm":"skipping"},"collect":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Result"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":"Result","$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"prm","$pt":"f","$nm":"collecting"}]],"$mt":"mthd","$tp":[{"$nm":"Result"}],"$an":{"shared":[],"default":[],"see":["map"],"doc":["A sequence containing the results of applying the\ngiven mapping to the elements of this container. An \neager counterpart to `map()`."]},"$nm":"collect"}},"$at":{"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["An iterator for the elements belonging to this \ncontainer."]},"$nm":"iterator"},"last":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Element"}]},"$mt":"gttr","$an":{"shared":[],"default":[],"doc":["The last element returned by the iterator, if any.\nIterables are potentially infinite, so calling this\nmight never return; also, this implementation will\niterate through all the elements, which might be\nvery time-consuming."],"actual":[]},"$nm":"last"},"indexed":{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Object"}]}],"$pk":"ceylon.language","$nm":"Entry"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"gttr","$an":{"shared":[],"default":[],"doc":["All entries of form `index->element` where `index` \nis the position at which `element` occurs, for every\nnon-null element of this `Iterable`, ordered by\nincreasing `index`. For a null element at a given\nposition in the original `Iterable`, there is no \nentry with the corresponding index in the resulting \niterable object. The expression \n\n    { \"hello\", null, \"world\" }.indexed\n    \nresults in an iterable object with the entries\n`0->\"hello\"` and `2->\"world\"`."]},"$nm":"indexed"},"sequence":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["A sequence containing the elements returned by the\niterator."]},"$nm":"sequence"},"coalesced":{"$t":{"$tp":[{"comp":"i","$mt":"tpm","$ts":[{"$nm":"Element"},{"$pk":"ceylon.language","$nm":"Object"}]},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["The non-null elements of this `Iterable`, in their\noriginal order. For null elements of the original \n`Iterable`, there is no entry in the resulting \niterable object."]},"$nm":"coalesced"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["Determines if the iterable object is empty, that is\nto say, if the iterator returns no elements."],"actual":[]},"$nm":"empty"},"rest":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["Returns an iterable object containing all but the \nfirst element of this container."]},"$nm":"rest"},"first":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["The first element returned by the iterator, if any.\nThis should always produce the same value as\n`iterable.iterator.head`."],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"default":[]},"$nm":"size"}},"$nm":"Iterable"},"LazyList":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elems"}],"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"}],"$mt":"cls","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"doc":["An implementation of List that wraps an `Iterable` of\nelements. All operations on this List are performed on \nthe Iterable."],"by":["Enrique Zamudio"]},"$m":{"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"get"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"equals"},"spanTo":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanTo"},"segment":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"length"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"segment"},"findLast":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":"Element","$mt":"prm","$pt":"v","$nm":"elem"}]],"$mt":"prm","$pt":"f","$nm":"selecting"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"actual":[]},"$nm":"findLast"},"spanFrom":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"spanFrom"},"span":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"from"},{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"to"}]],"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"span"}},"$at":{"lastIndex":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$mt":"gttr","$an":{"shared":[],"actual":[]},"$nm":"lastIndex"},"clone":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"clone"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"iterator"},"last":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"last"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$mt":"attr","$an":{"shared":[],"doc":["Returns a `List` with the elements of this `List` \nin reverse order. This operation will create copy \nthe elements to a new `List`, so changes to the \noriginal `Iterable` will no longer be reflected in \nthe new `List`."],"actual":[]},"$nm":"reversed"},"first":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"first"}},"$nm":"LazyList"},"className":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"obj"}]],"$mt":"mthd","$an":{"shared":[],"native":[],"doc":["Return the name of the concrete class of the given \nobject."]},"$nm":"className"},"List":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Collection"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Correspondence"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"}],"$pk":"ceylon.language","$nm":"Ranged"},{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"}],"$pk":"ceylon.language","$nm":"Cloneable"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"}],"$an":{"shared":[],"see":["Sequence","Empty","Array"],"doc":["Represents a collection in which every element has a \nunique non-negative integer index.\n\nA `List` is a `Collection` of its elements, and a \n`Correspondence` from indices to elements.\n\nDirect access to a list element by index produces a\nvalue of optional type. The following idiom may be\nused instead of upfront bounds-checking, as long as \nthe list element type is a non-`null` type:\n\n    value char = \"hello world\"[index];\n    if (exists char) { \/*do something*\/ }\n    else { \/*out of bounds*\/ }\n\nTo iterate the indexes of a `List`, use the following\nidiom:\n\n    for (i->char in \"hello world\".indexed) { ... }\n\n"]},"$m":{"withTrailing":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Sequence"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"$nm":"Other"}],"$an":{"shared":[],"default":[],"doc":["Returns a new `List` that contains the specified\nelement appended to the end of the elements of this \n`List`."]},"$nm":"withTrailing"},"defines":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Determines if the given index refers to an element\nof this sequence, that is, if\n`index<=sequence.lastIndex`."],"actual":[]},"$nm":"defines"},"get":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"prm","$pt":"v","$nm":"index"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"doc":["Returns the element of this sequence with the given\nindex, or `null` if the given index is past the end\nof the sequence, that is, if\n`index>sequence.lastIndex`. The first element of\nthe sequence has index `0`."],"actual":[]},"$nm":"get"},"equals":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"that"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"doc":["Two `List`s are considered equal iff they have the \nsame `size` and _entry sets_. The entry set of a \nlist `l` is the set of elements of `l.indexed`. \nThis definition is equivalent to the more intuitive \nnotion that two lists are equal iff they have the \nsame `size` and for every index either:\n\n- the lists both have the element `null`, or\n- the lists both have a non-null element, and the\n  two elements are equal."],"actual":[]},"$nm":"equals"},"withLeading":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Sequence"},"$ps":[[{"$t":"Other","$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$tp":[{"$nm":"Other"}],"$an":{"shared":[],"default":[],"doc":["Returns a new `List` that starts with the specified\nelement, followed by the elements of this `List`."]},"$nm":"withLeading"}},"$at":{"lastIndex":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$pk":"ceylon.language","$nm":"Integer"}]},"$mt":"attr","$an":{"shared":[],"formal":[],"see":["size"],"doc":["The index of the last element of the list, or\nnull if the list is empty."]},"$nm":"lastIndex"},"iterator":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"Iterator"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"iterator"},"last":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$mt":"gttr","$an":{"shared":[],"default":[],"doc":["Returns the last element of this `List`, if any."],"actual":[]},"$nm":"last"},"hash":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"gttr","$an":{"shared":[],"default":[],"actual":[]},"$nm":"hash"},"reversed":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"}],"$pk":"ceylon.language","$nm":"List"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Reverse this list, returning a new list."]},"$nm":"reversed"},"first":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"default":[],"doc":["Returns the first element of this `List`, if any."],"actual":[]},"$nm":"first"},"size":{"$t":{"$pk":"ceylon.language","$nm":"Integer"},"$mt":"attr","$an":{"shared":[],"default":[],"see":["lastIndex"],"doc":["The number of elements in this sequence, always\n`sequence.lastIndex+1`."],"actual":[]},"$nm":"size"}},"$nm":"List"},"Container":{"satisfies":[{"$pk":"ceylon.language","$nm":"Category"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Element"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$def":{"$pk":"ceylon.language","$nm":"Null"},"variance":"out","$nm":"Absent"}],"$an":{"shared":[],"deprecated":["Will be removed in Ceylon 1.0."],"see":["Category"],"doc":["Abstract supertype of objects which may or may not\ncontain one of more other values, called *elements*,\nand provide an operation for accessing the first \nelement, if any. A container which may or may not be \nempty is a `Container<Element,Null>`. A container which \nis always empty is a `Container<Nothing,Null>`. A \ncontainer which is never empty is a \n`Container<Element,Nothing>`."],"by":["Gavin"]},"$at":{"last":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The last element. Should produce `null` if the\ncontainer is empty, that is, for any instance for\nwhich `empty` evaluates to `true`."]},"$nm":"last"},"empty":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["Determine if the container is empty, that is, if\nit has no elements."]},"$nm":"empty"},"first":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Element"}]},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The first element. Should produce `null` if the \ncontainer is empty, that is, for any instance for\nwhich `empty` evaluates to `true`."]},"$nm":"first"}},"$nm":"Container"},"abstract":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to mark a class as abstract. An `abstract` \nclass may not be directly instantiated. An `abstract`\nclass may have enumerated cases."]},"$nm":"abstract"},"zip":{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$nm":"Item"}],"$pk":"ceylon.language","$nm":"Entry"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Key"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"keys"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Item"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"items"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Key"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Object"}],"$nm":"Item"}],"$an":{"shared":[],"doc":["Given two sequences, form a new sequence consisting of\nall entries where, for any given index in the resulting\nsequence, the key of the entry is the element occurring \nat the same index in the first sequence, and the item \nis the element occurring at the same index in the second \nsequence. The length of the resulting sequence is the \nlength of the shorter of the two given sequences. \n\nThus:\n\n    zip(xs,ys)[i]==xs[i]->ys[i]\n\nfor every `0<=i<min({xs.size,ys.size})`."]},"$nm":"zip"},"export":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[]},"$nm":"export"},"finished":{"super":{"$pk":"ceylon.language","$nm":"Finished"},"$mt":"obj","$an":{"shared":[],"see":["Iterator"],"doc":["A value that indicates that an `Iterator`\nis exhausted and has no more values to \nreturn."]},"$at":{"string":{"$t":{"$pk":"ceylon.language","$nm":"String"},"$mt":"attr","$an":{"shared":[],"actual":[]},"$nm":"string"}},"$nm":"finished"},"equal":{"super":{"$pk":"ceylon.language","$nm":"Comparison"},"$mt":"obj","$an":{"shared":[],"doc":["The value is exactly equal to the given value."],"by":["Gavin"]},"$nm":"equal"},"Boolean":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Basic"},"of":[{"$pk":"ceylon.language","$nm":"true"},{"$pk":"ceylon.language","$nm":"false"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["A type capable of representing the values true and\nfalse of Boolean logic."],"by":["Gavin"]},"$nm":"Boolean"},"print":{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Anything"},"$mt":"prm","$pt":"v","$nm":"line"}]],"$mt":"mthd","$an":{"shared":[],"see":["process.writeLine"],"doc":["Print a line to the standard output of the virtual \nmachine process, printing the given value's `string`, \nor `«null»` if the value is `null`.\n\nThis method is a shortcut for:\n\n    process.writeLine(line?.string else \"«null»\")\n\nand is intended mainly for debugging purposes."],"by":["Gavin"]},"$nm":"print"},"ChainedIterator":{"super":{"$pk":"ceylon.language","$nm":"Basic"},"$ps":[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Element"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"first"},{"$t":{"$tp":[{"$mt":"tpm","$nm":"Other"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"second"}],"satisfies":[{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Iterator"}],"$mt":"cls","$tp":[{"variance":"out","$nm":"Element"},{"variance":"out","$nm":"Other"}],"$an":{"shared":[],"doc":["An `Iterator` that returns the elements of two\n`Iterable`s, as if they were chained together."],"by":["Enrique Zamudio"]},"$m":{"next":{"$t":{"comp":"u","$ts":[{"$nm":"Element"},{"$nm":"Other"},{"$pk":"ceylon.language","$nm":"Finished"}]},"$mt":"mthd","$an":{"shared":[],"actual":[]},"$nm":"next"}},"$at":{"more":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"var":"1","$mt":"attr","$an":{"variable":[]},"$nm":"more"},"iter":{"$t":{"$tp":[{"comp":"u","$mt":"tpm","$ts":[{"$nm":"Element"},{"$nm":"Other"}]}],"$pk":"ceylon.language","$nm":"Iterator"},"var":"1","$mt":"attr","$an":{"variable":[]},"$nm":"iter"}},"$nm":"ChainedIterator"},"Basic":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$pk":"ceylon.language","$nm":"Identifiable"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["The default superclass when no superclass is explicitly\nspecified using `extends`. For the sake of convenience, \nthis class inherits a default definition of value\nequality from `Identifiable`."],"by":["Gavin"]},"$nm":"Basic"},"Category":{"$mt":"ifc","$an":{"shared":[],"see":["Container"],"doc":["Abstract supertype of objects that contain other \nvalues, called *elements*, where it is possible to \nefficiently determine if a given value is an element. \n`Category` does not satisfy `Container`, because it is \nconceptually possible to have a `Category` whose \nemptiness cannot be computed.\n\nThe `in` operator may be used to determine if a value\nbelongs to a `Category`:\n\n    if (\"hello\" in \"hello world\") { ... }\n    if (69 in 0..100) { ... }\n    if (key->value in { for (n in 0..100) n.string->n**2 }) { ... }\n\nOrdinarily, `x==y` implies that `x in cat == y in cat`.\nBut this contract is not required since it is possible\nto form a meaningful `Category` using a different\nequivalence relation. For example, an `IdentitySet` is\na meaningful `Category`."],"by":["Gavin"]},"$m":{"containsAny":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["contains"],"doc":["Determines if any one of the given values belongs \nto this `Category`"]},"$nm":"containsAny"},"contains":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language","$nm":"Object"},"$mt":"prm","$pt":"v","$nm":"element"}]],"$mt":"mthd","$an":{"shared":[],"formal":[],"see":["containsEvery","containsAny"],"doc":["Determines if the given value belongs to this\n`Category`, that is, if it is an element of this\n`Category`.\n\nFor most `Category`s, if `x==y`, then \n`category.contains(x)` evaluates to the same\nvalue as `category.contains(y)`. However, it is\npossible to form a `Category` consistent with some \nother equivalence relation, for example `===`. \nTherefore implementations of `contains()` which do \nnot satisfy this relationship are tolerated."]},"$nm":"contains"},"containsEvery":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Object"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Null"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"elements"}]],"$mt":"mthd","$an":{"shared":[],"default":[],"see":["contains"],"doc":["Determines if every one of the given values belongs\nto this `Category`."]},"$nm":"containsEvery"}},"$nm":"Category"},"see":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Anything"}],"$pk":"ceylon.language","$nm":"Sequential"},"$mt":"prm","seq":"1","$pt":"v","$nm":"programElements"}]],"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to specify API references to other related \nprogram elements."]},"$nm":"see"},"NegativeNumberException":{"super":{"$pk":"ceylon.language","$nm":"Exception"},"$mt":"cls","$an":{"shared":[],"doc":["Thrown when a negative number is not allowed."]},"$nm":"NegativeNumberException"},"actual":{"$t":{"$pk":"ceylon.language","$nm":"Null"},"$mt":"mthd","$an":{"shared":[],"doc":["Annotation to mark a member of a type as refining a \nmember of a supertype."]},"$nm":"actual"},"Integer":{"abstract":"1","super":{"$pk":"ceylon.language","$nm":"Object"},"satisfies":[{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"}],"$pk":"ceylon.language","$nm":"Scalar"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"}],"$pk":"ceylon.language","$nm":"Integral"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"}],"$pk":"ceylon.language","$nm":"Binary"},{"$tp":[{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"},{"$mt":"tpm","$pk":"ceylon.language","$nm":"Integer"}],"$pk":"ceylon.language","$nm":"Exponentiable"}],"$mt":"cls","$an":{"abstract":[],"shared":[],"doc":["A 64-bit integer (or the closest approximation to a \n64-bit integer provided by the underlying platform)."]},"$at":{"character":{"$t":{"$pk":"ceylon.language","$nm":"Character"},"$mt":"attr","$an":{"shared":[],"formal":[],"doc":["The UTF-32 character with this UCS code point."]},"$nm":"character"}},"$nm":"Integer"},"first":{"$t":{"comp":"u","$ts":[{"$nm":"Absent"},{"$nm":"Value"}]},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Absent"}],"$pk":"ceylon.language","$nm":"Iterable"},"$mt":"prm","$pt":"v","$nm":"values"}]],"$mt":"mthd","$tp":[{"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language","$nm":"Null"}],"$nm":"Absent"}],"$an":{"shared":[],"doc":["The first of the given elements (usually a comprehension),\nif any."]},"$nm":"first"}},"ceylon.language.metamodel":{"sequencedAnnotations":{"$t":{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Sequential"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"SequencedAnnotation"}],"$pk":"ceylon.language.metamodel","$nm":"Type"},"$mt":"prm","$pt":"v","$nm":"annotationType"},{"$t":"ProgramElement","$mt":"prm","$pt":"v","$nm":"programElement"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"SequencedAnnotation"}],"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"$nm":"ProgramElement"}],"$an":{"shared":[]},"$nm":"sequencedAnnotations"},"SequencedAnnotation":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language","$nm":"Sequential"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"ConstrainedAnnotation"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language.metamodel","$nm":"Annotation"}],"variance":"out","$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"variance":"in","$nm":"ProgramElement"}],"$an":{"shared":[],"doc":["An annotation that may occur multiple times\nat a single program element."]},"$nm":"SequencedAnnotation"},"optionalAnnotation":{"$t":{"comp":"u","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Value"}]},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"OptionalAnnotation"}],"$pk":"ceylon.language.metamodel","$nm":"Type"},"$mt":"prm","$pt":"v","$nm":"annotationType"},{"$t":"ProgramElement","$mt":"prm","$pt":"v","$nm":"programElement"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"OptionalAnnotation"}],"$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"$nm":"ProgramElement"}],"$an":{"shared":[]},"$nm":"optionalAnnotation"},"OptionalAnnotation":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"},{"comp":"u","$mt":"tpm","$ts":[{"$pk":"ceylon.language","$nm":"Null"},{"$nm":"Value"}]},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"ConstrainedAnnotation"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language.metamodel","$nm":"Annotation"}],"variance":"out","$nm":"Value"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"variance":"in","$nm":"ProgramElement"}],"$an":{"shared":[],"doc":["An annotation that may occur at most once\nat a single program element."]},"$nm":"OptionalAnnotation"},"Type":{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"$mt":"ifc","$tp":[{"variance":"out","$nm":"Instance"}],"$an":{"shared":[]},"$nm":"Type"},"Annotation":{"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language.metamodel","$nm":"Annotation"}],"variance":"out","$nm":"Value"}],"$an":{"shared":[],"doc":["An annotation."]},"$nm":"Annotation"},"ConstrainedAnnotation":{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language.metamodel","$nm":"Annotation"}],"$mt":"ifc","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"}],"$pk":"ceylon.language.metamodel","$nm":"Annotation"}],"variance":"out","$nm":"Value"},{"variance":"out","$nm":"Values"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"variance":"in","$nm":"ProgramElement"}],"$an":{"shared":[],"doc":["An annotation. This interface encodes\nconstraints upon the annotation in its\ntype arguments."]},"$m":{"occurs":{"$t":{"$pk":"ceylon.language","$nm":"Boolean"},"$ps":[[{"$t":{"$pk":"ceylon.language.metamodel","$nm":"Annotated"},"$mt":"prm","$pt":"v","$nm":"programElement"}]],"$mt":"mthd","$an":{"shared":[]},"$nm":"occurs"}},"$nm":"ConstrainedAnnotation"},"annotations":{"$t":{"$nm":"Values"},"$ps":[[{"$t":{"$tp":[{"$mt":"tpm","$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Values"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"ConstrainedAnnotation"}],"$pk":"ceylon.language.metamodel","$nm":"Type"},"$mt":"prm","$pt":"v","$nm":"annotationType"},{"$t":"ProgramElement","$mt":"prm","$pt":"v","$nm":"programElement"}]],"$mt":"mthd","$tp":[{"satisfies":[{"$tp":[{"$mt":"tpm","$nm":"Value"},{"$mt":"tpm","$nm":"Values"},{"$mt":"tpm","$nm":"ProgramElement"}],"$pk":"ceylon.language.metamodel","$nm":"ConstrainedAnnotation"}],"$nm":"Value"},{"$nm":"Values"},{"satisfies":[{"$pk":"ceylon.language.metamodel","$nm":"Annotated"}],"$nm":"ProgramElement"}],"$an":{"shared":[]},"$nm":"annotations"},"Annotated":{"$mt":"ifc","$an":{"shared":[],"doc":["A program element that can\nbe annotated."]},"$nm":"Annotated"}}};
 exports.$$metamodel$$=$$metamodel$$;
 //Hand-written implementations
-function getT$name() {return (this.$$||this.constructor).T$name;}
-function getT$all() {return (this.$$||this.constructor).T$all;}
+function getT$name() {return this.constructor.T$name;}
+function getT$all() {return this.constructor.T$all;}
 function initType(type, typeName) {
 var cons = function() {}
 type.$$ = cons;
@@ -46,7 +46,7 @@ proto.getT$all = getT$all;
 }
 function initExistingTypeProto(type, cons, typeName) {
 var args = [].slice.call(arguments, 0);
-args.push(Basic);
+args.push($init$Basic());
 initExistingType.apply(this, args);
 var proto = cons.prototype;
 if ((proto !== undefined) && (proto.getHash === undefined)) {
@@ -91,6 +91,8 @@ var Object$proto = Object$.$$.prototype;
 Object$proto.getString = function() { return String$(className(this) + "@" + this.getHash()); }
 //Object$proto.getString=function() { String$(Object.prototype.toString.apply(this)) };
 Object$proto.toString=function() { return this.getString().valueOf(); }
+function $init$Object$() { return Object$; }
+function $init$Object() { return Object$; }
 var BasicID=1;
 function $identityHash(x) {
 var hash = x.BasicID;
@@ -99,15 +101,12 @@ return (hash !== undefined)
 }
 function Identifiable(obj) {}
 initType(Identifiable, "ceylon.language::Identifiable");
+function $init$Identifiable() { return Identifiable; }
 var Identifiable$proto = Identifiable.$$.prototype;
 Identifiable$proto.equals = function(that) {
 return isOfType(that, {t:Identifiable}) && (that===this);
 }
 Identifiable$proto.getHash = function() { return $identityHash(this); }
-function Basic(obj) {
-return obj;
-}
-initTypeProto(Basic, 'ceylon.language::Basic', Object$, Identifiable);
 //INTERFACES
 function Callable(wat) {
 return wat;
@@ -137,354 +136,885 @@ return ArraySequence(rval);
 }
 exports.JsCallableList=JsCallableList;
 exports.JsCallable=JsCallable;
-function Iterable(wat) {
-return wat;
-}
-initTypeProto(Iterable, 'ceylon.language::Iterable', $init$Container());
-function $init$Iterable() { return Iterable; }
-var Iterable$proto=Iterable.$$.prototype;
-Iterable$proto.getEmpty = function() {
-return this.getIterator().next() === $finished;
-}
-Iterable$proto.getFirst = function() {
-var e = this.getIterator().next();
-return e === $finished ? null : e;
-}
-Iterable$proto.getRest = function() {
-return this.skipping(1);
-}
-Iterable$proto.getSequence = function() {
-var a = [];
-var iter = this.getIterator();
-var next;
-while ((next = iter.next()) !== $finished) {
-a.push(next);
-}
-return ArraySequence(a, this.$$targs$$);
-}
-Iterable$proto.$map = function(mapper) {
-var iter = this;
-return Comprehension(function() {
-var it = iter.getIterator();
-return function() {
-var e = it.next();
-if(e !== $finished) {return mapper(e);}
-return $finished;
-}
-});
-}
-Iterable$proto.$filter = function(select) {
-var iter = this;
-return Comprehension(function() {
-var it = iter.getIterator();
-return function() {
-do {
-var e = it.next();
-} while ((e !== $finished) && !select(e));
-return e;
-}
-});
-}
-Iterable$proto.fold = function(ini, accum) {
-var r = ini;
-var iter = this.getIterator();
-var e; while ((e = iter.next()) !== $finished) {
-r = accum(r, e);
-}
-return r;
-}
-Iterable$proto.find = function(select) {
-var iter = this.getIterator();
-var e; while ((e = iter.next()) !== $finished) {
-if (select(e)) {
-return e;
-}
-}
-return null;
-}
-Iterable$proto.findLast = function(select) {
-var iter = this.getIterator();
-var last = null;
-var e; while ((e = iter.next()) !== $finished) {
-if (select(e)) {
-last = e;
-}
-}
-return last;
-}
-Iterable$proto.$sort = function(/*Callable<Comparison?,Element,Element>*/comparing) {
-var a = [];
-var iter = this.getIterator();
-var e; while ((e = iter.next()) !== $finished) {
-a.push(e);
-}
-a.sort(function(x,y) {
-var r = comparing(x,y);
-if (r === larger) return 1;
-if (r === smaller) return -1;
-return 0;
-});
-return ArraySequence(a, this.$$targs$$);
-}
-Iterable$proto.any = function(/*Callable<Boolean,Element>*/selecting) {
-var iter = this.getIterator();
-var e; while ((e = iter.next()) !== $finished) {
-if (selecting(e)) {
-return true;
-}
-}
-return false;
-}
-Iterable$proto.$every = function(/*Callable<Boolean,Element>*/selecting) {
-var iter = this.getIterator();
-var e; while ((e = iter.next()) !== $finished) {
-if (!selecting(e)) {
-return false;
-}
-}
-return true;
-}
-Iterable$proto.skipping = function(skip) {
-function skip$iter(iter,skip){
-var $cmp$=new skip$iter.$$;
-Basic($cmp$);
-$cmp$.iter=iter;
-$cmp$.skip=skip;
-$cmp$.getIterator=function(){
-var iter = this.iter.getIterator();
-for (var i=0; i < this.skip; i++) {
-iter.next();
-}
-return iter;
-};
-return $cmp$;
-}
-initTypeProto(skip$iter, 'ceylon.language::SkipIterable', Basic, Iterable);
-return skip$iter(this,skip);
-}
-Iterable$proto.taking = function(take) {
-if (take <= 0) return empty;
-var iter = this;
-return Comprehension(function() {
-var it = iter.getIterator();
-var i = 0;
-return function() {
-if (i >= take) {return $finished;}
-++i;
-return it.next();
-}
-});
-}
-Iterable$proto.by = function(step) {
-if (step == 1) return this;
-if (step < 1) throw Exception(String$("Step must be positive"));
-var iter = this;
-return Comprehension(function() {
-var it = iter.getIterator();
-return function() {
-var e = it.next();
-for (var i=1; i<step && (it.next()!==$finished); i++);
-return e;
-}
-});
-}
-Iterable$proto.count = function(sel) {
-var c = 0;
-var iter = this.getIterator();
-var e; while ((e = iter.next()) !== $finished) {
-if (sel(e)) c++;
-}
-return c;
-}
-Iterable$proto.getCoalesced = function() {
-var iter = this;
-return Comprehension(function() {
-var it = iter.getIterator();
-return function() {
-var e;
-while ((e = it.next()) === null);
-return e;
-}
-});
-}
-Iterable$proto.getIndexed = function() {
-var iter = this;
-return Comprehension(function() {
-var it = iter.getIterator();
-var idx = 0;
-return function() {
-var e;
-while ((e = it.next()) === null) {idx++;}
-return e === $finished ? e : Entry(idx++, e);
-}
-});
-}
-Iterable$proto.getLast = function() {
-var iter = this.getIterator();
-var l=null;
-var e; while ((e = iter.next()) !== $finished) {
-l=e;
-}
-return l;
-}
-Iterable$proto.collect = function(collecting) {
-return this.$map(collecting).getSequence();
-}
-Iterable$proto.select = function(selecting) {
-return this.$filter(selecting).getSequence();
-}
-Iterable$proto.group = function(grouping, $$$mptypes) {
-var map = HashMap();
-var it = this.getIterator();
-var elem;
-var newSeq = ArraySequence([], this.$$targs$$);
-while ((elem=it.next()) !== $finished) {
-var key = grouping(elem);
-var seq = map.put(Entry(key, newSeq, [$$$mptypes[0], {t:Sequence, a:this.$$targs$$}]), true);
-if (seq === null) {
-seq = newSeq;
-newSeq = ArraySequence([], this.$$targs$$);
-}
-seq.push(elem);
-}
-return map;
-}
-Iterable$proto.chain = function(other, $$$mptypes) {
-return ChainedIterable(this, other, [this.$$targs$$[0], $$$mptypes[0]]);
-}
-Iterable$proto.getSize = function() {
-return this.count(function() { return true; });
-}
-exports.Iterable=Iterable;
-function ChainedIterable(first, second, $$targs$$, chained) {
-if (chained===undefined) {chained = new ChainedIterable.$$;}
-Basic(chained);
-chained.first = first;
-chained.second = second;
-chained.$$targs$$=$$targs$$;
-return chained;
-}
-initTypeProto(ChainedIterable, "ceylon.language::ChainedIterable",
-Basic, Iterable);
-var ChainedIterable$proto = ChainedIterable.$$.prototype;
-ChainedIterable$proto.getIterator = function() {
-return ChainedIterator(this.first, this.second);
-}
-function Sequential($$sequential) {
-return $$sequential;
-}
-function $init$Sequential() {
-if (Sequential.$$===undefined) {
-initTypeProto(Sequential, 'ceylon.language::Sequential', $init$List(), $init$Ranged(), $init$Cloneable());
-}
-return Sequential;
-}
-$init$Sequential();
-Sequential.$$.prototype.getString=function() {
-return this.getEmpty()?String$("[]",2) :
-StringBuilder().appendAll([String$("[ ",2),commaList(this),String$(" ]",2)]).getString();
-}
-exports.Sequential=Sequential;
-function Empty() {
-var that = new Empty.$$;
-that.value = [];
-that.$$targs$$=[{t:Nothing}];
-return that;
-}
-initTypeProto(Empty, 'ceylon.language::Empty', Sequential, $init$Ranged(), $init$Cloneable());
-var Empty$proto = Empty.$$.prototype;
-Empty$proto.getEmpty = function() { return true; }
-Empty$proto.defines = function(x) { return false; }
-Empty$proto.getKeys = function() { return TypeCategory(this, {t:Integer}); }
-Empty$proto.definesEvery = function(x) { return false; }
-Empty$proto.definesAny = function(x) { return false; }
-Empty$proto.items = function(x) { return this; }
-Empty$proto.getSize = function() { return 0; }
-Empty$proto.get = function(x) { return null; }
-Empty$proto.getFirst = function() { return null; }
-Empty$proto.segment = function(a,b) { return this; }
-Empty$proto.span = function(a,b) { return this; }
-Empty$proto.spanTo = function(a) { return this; }
-Empty$proto.spanFrom = function(a) { return this; }
-Empty$proto.getIterator = function() { return getEmptyIterator(); }
-Empty$proto.getString = function() { return String$("{}"); }
-Empty$proto.contains = function(x) { return false; }
-Empty$proto.getLastIndex = function() { return null; }
-Empty$proto.getClone = function() { return this; }
-Empty$proto.count = function(x) { return 0; }
-Empty$proto.getReversed = function() { return this; }
-Empty$proto.skipping = function(skip) { return this; }
-Empty$proto.taking = function(take) { return this; }
-Empty$proto.by = function(step) { return this; }
-Empty$proto.$every = function(f) { return false; }
-Empty$proto.any = function(f) { return false; }
-Empty$proto.$sort = function(f) { return this; }
-Empty$proto.$map = function(f) { return this; }
-Empty$proto.fold = function(i,r) { return i; }
-Empty$proto.find = function(f) { return null; }
-Empty$proto.findLast = function(f) { return null; }
-Empty$proto.$filter = function(f) { return this; }
-Empty$proto.getCoalesced = function() { return this; }
-Empty$proto.getIndexed = function() { return this; }
-Empty$proto.withLeading = function(other) {
-return new ArraySequence([other], [{t:other.getT$all()[other.getT$name()]}]);
-}
-Empty$proto.withTrailing = function(other) {
-return new ArraySequence([other], [{t:other.getT$all()[other.getT$name()]}]);
-}
-Empty$proto.chain = function(other) { return other; }
-var empty = Empty();
-empty.$$targs$$=[{t:Nothing},{t:Null}];
-exports.empty=empty;
-exports.Empty=Empty;
-function emptyIterator(){
-var $$emptyIterator=new emptyIterator.$$;
-Iterator($$emptyIterator);
-$$emptyIterator.$$targs$$=[{t:Nothing}];
-return $$emptyIterator;
-}
-function $init$emptyIterator(){
-if (emptyIterator.$$===undefined){
-initTypeProto(emptyIterator,'ceylon.language::emptyIterator',Basic,$init$Iterator());
-}
-return emptyIterator;
-}
-exports.$init$emptyIterator=$init$emptyIterator;
-$init$emptyIterator();
-(function($$emptyIterator){
-$$emptyIterator.next=function (){
-var $$emptyIterator=this;
-return $finished;
-};
-})(emptyIterator.$$.prototype);
-var emptyIterator$2=emptyIterator();
-var getEmptyIterator=function(){
-return emptyIterator$2;
-}
-exports.getEmptyIterator=getEmptyIterator;
 function Comprehension(makeNextFunc, $$targs$$, compr) {
+$init$Comprehension();
 if (compr===undefined) {compr = new Comprehension.$$;}
 Basic(compr);
 compr.makeNextFunc = makeNextFunc;
 compr.$$targs$$=$$targs$$;
 return compr;
 }
-initTypeProto(Comprehension, 'ceylon.language::Comprehension', Basic, Iterable);
+function $init$Comprehension() {
+if (Comprehension.$$===undefined) {
+initTypeProto(Comprehension, 'ceylon.language::Comprehension', $init$Basic(), $init$Iterable());
+}
+return Comprehension;
+}
+$init$Comprehension();
 var Comprehension$proto = Comprehension.$$.prototype;
 Comprehension$proto.getIterator = function() {
 return ComprehensionIterator(this.makeNextFunc(), this.$$targs$$);
 }
+Comprehension$proto.getSequence = function() {
+var sb = SequenceBuilder(this.$$targs$$);
+sb.appendAll(this);
+return sb.getSequence();
+}
 exports.Comprehension=Comprehension;
 function ComprehensionIterator(nextFunc, $$targs$$, it) {
+$init$ComprehensionIterator();
 if (it===undefined) {it = new ComprehensionIterator.$$;}
 it.$$targs$$=$$targs$$;
 Basic(it);
 it.next = nextFunc;
 return it;
 }
+function $init$ComprehensionIterator() {
+if (ComprehensionIterator.$$===undefined) {
 initTypeProto(ComprehensionIterator, 'ceylon.language::ComprehensionIterator',
-Basic, $init$Iterator());
+$init$Basic(), $init$Iterator());
+}
+return ComprehensionIterator;
+}
+$init$ComprehensionIterator();
 //Compiled from Ceylon sources
+function Basic($$basic){
+    $init$Basic();
+    if ($$basic===undefined)$$basic=new Basic.$$;
+    Object$($$basic);
+    Identifiable($$basic);
+    return $$basic;
+}
+exports.Basic=Basic;
+function $init$Basic(){
+    if (Basic.$$===undefined){
+        initTypeProto(Basic,'ceylon.language::Basic',Object$,$init$Identifiable());
+    }
+    return Basic;
+}
+exports.$init$Basic=$init$Basic;
+$init$Basic();
+function Iterable($$iterable){
+    Container($$iterable);
+}
+exports.Iterable=Iterable;
+function $init$Iterable(){
+    if (Iterable.$$===undefined){
+        initTypeProto(Iterable,'ceylon.language::Iterable',$init$Container());
+        (function($$iterable){
+            $$iterable.getEmpty=function getEmpty(){
+                var $$iterable=this;
+                return isOfType($$iterable.getIterator().next(),{t:Finished});
+            };
+            $$iterable.getSize=function getSize(){
+                var $$iterable=this;
+                return $$iterable.count(function (e$1){
+                    var $$iterable=this;
+                    return true;
+                });
+            };
+            $$iterable.contains=function (element$2){
+                var $$iterable=this;
+                return $$iterable.any(ifExists((opt$3=element$2,JsCallable(opt$3,opt$3!==null?opt$3.equals:null))));
+            };
+            $$iterable.getFirst=function getFirst(){
+                var $$iterable=this;
+                return internalFirst($$iterable,{Value:$$iterable.$$targs$$.Element,Absent:$$iterable.$$targs$$.Absent});
+            };
+            $$iterable.getLast=function getLast(){
+                var $$iterable=this;
+                var e$4=$$iterable.getFirst();
+                var setE$4=function(e$5){return e$4=e$5;};
+                var it$6 = $$iterable.getIterator();
+                var x$7;while ((x$7=it$6.next())!==getFinished()){
+                    e$4=x$7;
+                }
+                return e$4;
+            };$$iterable.getRest=function getRest(){
+                var $$iterable=this;
+                return $$iterable.skipping((1));
+            };
+            $$iterable.getSequence=function getSequence(){
+                var $$iterable=this;
+                return Comprehension(function(){
+                    var it$8=$$iterable.getIterator();
+                    var x$9=getFinished();
+                    var next$x$9=function(){return x$9=it$8.next();}
+                    next$x$9();
+                    return function(){
+                        if(x$9!==getFinished()){
+                            var x$9$10=x$9;
+                            function getX$9(){return x$9$10;}
+                            var tmpvar$11=getX$9();
+                            next$x$9();
+                            return tmpvar$11;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:$$iterable.$$targs$$.Element}).getSequence();
+            };
+            $$iterable.$map=function (collecting$12,$$$mptypes){
+                var $$iterable=this;
+                return Comprehension(function(){
+                    var it$13=$$iterable.getIterator();
+                    var elem$14=getFinished();
+                    var next$elem$14=function(){return elem$14=it$13.next();}
+                    next$elem$14();
+                    return function(){
+                        if(elem$14!==getFinished()){
+                            var elem$14$15=elem$14;
+                            function getElem$14(){return elem$14$15;}
+                            var tmpvar$16=collecting$12(getElem$14());
+                            next$elem$14();
+                            return tmpvar$16;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:$$$mptypes.Result});
+            };
+            $$iterable.$filter=function (selecting$17){
+                var $$iterable=this;
+                return Comprehension(function(){
+                    var it$18=$$iterable.getIterator();
+                    var elem$19=getFinished();
+                    var next$elem$19=function(){
+                        while((elem$19=it$18.next())!==getFinished()){
+                            if(selecting$17(elem$19)){
+                                return elem$19;
+                            }
+                        }
+                        return getFinished();
+                    }
+                    next$elem$19();
+                    return function(){
+                        if(elem$19!==getFinished()){
+                            var elem$19$20=elem$19;
+                            function getElem$19(){return elem$19$20;}
+                            var tmpvar$21=getElem$19();
+                            next$elem$19();
+                            return tmpvar$21;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:$$iterable.$$targs$$.Element});
+            };
+            $$iterable.fold=function fold(initial$22,accumulating$23,$$$mptypes){
+                var $$iterable=this;
+                var r$24=initial$22;
+                var setR$24=function(r$25){return r$24=r$25;};
+                var it$26 = $$iterable.getIterator();
+                var e$27;while ((e$27=it$26.next())!==getFinished()){
+                    r$24=accumulating$23(r$24,e$27);
+                }
+                return r$24;
+            };$$iterable.find=function find(selecting$28){
+                var $$iterable=this;
+                var it$29 = $$iterable.getIterator();
+                var e$30;while ((e$30=it$29.next())!==getFinished()){
+                    if(selecting$28(e$30)){
+                        return e$30;
+                    }
+                }
+                return null;
+            };$$iterable.findLast=function findLast(selecting$31){
+                var $$iterable=this;
+                var last$32=null;
+                var setLast$32=function(last$33){return last$32=last$33;};
+                var it$34 = $$iterable.getIterator();
+                var e$35;while ((e$35=it$34.next())!==getFinished()){
+                    if(selecting$31(e$35)){
+                        last$32=e$35;
+                    }
+                }
+                return last$32;
+            };$$iterable.$sort=function (comparing$36){
+                var $$iterable=this;
+                return internalSort(comparing$36,$$iterable,{Element:$$iterable.$$targs$$.Element});
+            };
+            $$iterable.collect=function (collecting$37,$$$mptypes){
+                var $$iterable=this;
+                return $$iterable.$map(collecting$37,{Result:$$$mptypes.Result}).getSequence();
+            };
+            $$iterable.select=function (selecting$38){
+                var $$iterable=this;
+                return $$iterable.$filter(selecting$38).getSequence();
+            };
+            $$iterable.any=function any(selecting$39){
+                var $$iterable=this;
+                var it$40 = $$iterable.getIterator();
+                var e$41;while ((e$41=it$40.next())!==getFinished()){
+                    if(selecting$39(e$41)){
+                        return true;
+                    }
+                }
+                return false;
+            };$$iterable.$every=function $every(selecting$42){
+                var $$iterable=this;
+                var it$43 = $$iterable.getIterator();
+                var e$44;while ((e$44=it$43.next())!==getFinished()){
+                    if((!selecting$42(e$44))){
+                        return false;
+                    }
+                }
+                return true;
+            };$$iterable.skipping=function skipping(skip$45){
+                var $$iterable=this;
+                if((skip$45.compare((0))!==getLarger())){
+                    return $$iterable;
+                }else {
+                    var cntvar$46=false;
+                    var brkvar$48=false;
+                    var retvar$47=(function(){
+                        function iterable$49($$targs$$){
+                            var $$iterable$49=new iterable$49.$$;
+                            $$iterable$49.$$targs$$=$$targs$$;
+                            Iterable($$iterable$49);
+                            add_type_arg($$iterable$49,'Absent',{t:Null});
+                            return $$iterable$49;
+                        }
+                        function $init$iterable$49(){
+                            if (iterable$49.$$===undefined){
+                                initTypeProto(iterable$49,'ceylon.language::Iterable.skipping.iterable',Basic,$init$Iterable());
+                            }
+                            return iterable$49;
+                        }
+                        $init$iterable$49();
+                        (function($$iterable$49){
+                            $$iterable$49.getIterator=function getIterator(){
+                                var $$iterable$49=this;
+                                var iter$50=$$iterable.getIterator();
+                                var i$51=(0);
+                                var setI$51=function(i$52){return i$51=i$52;};
+                                while(((oldi$53=i$51,i$51=oldi$53.getSuccessor(),oldi$53).compare(skip$45).equals(getSmaller())&&(!isOfType(iter$50.next(),{t:Finished})))){}
+                                var oldi$53;
+                                return iter$50;
+                            };$$iterable$49.getFirst=function getFirst(){
+                                var $$iterable$49=this;
+                                var first$54;
+                                if(!isOfType((first$54=$$iterable$49.getIterator().next()),{t:Finished})){
+                                    return first$54;
+                                }else {
+                                    return null;
+                                }
+                            };$$iterable$49.getLast=function getLast(){
+                                var $$iterable$49=this;
+                                return $$iterable.getLast();
+                            };
+                        })(iterable$49.$$.prototype);
+                        var iterable$55=iterable$49({Absent:{t:Null},Element:$$iterable.$$targs$$.Element});
+                        var getIterable$55=function(){
+                            return iterable$55;
+                        }
+                        return getIterable$55();
+                    }());if(retvar$47!==undefined){return retvar$47;}
+                }
+            };$$iterable.taking=function taking(take$56){
+                var $$iterable=this;
+                if((take$56.compare((0))!==getLarger())){
+                    return getEmpty();
+                }else {
+                    var cntvar$57=false;
+                    var brkvar$59=false;
+                    var retvar$58=(function(){
+                        function iterable$60($$targs$$){
+                            var $$iterable$60=new iterable$60.$$;
+                            $$iterable$60.$$targs$$=$$targs$$;
+                            Iterable($$iterable$60);
+                            add_type_arg($$iterable$60,'Absent',{t:Null});
+                            return $$iterable$60;
+                        }
+                        function $init$iterable$60(){
+                            if (iterable$60.$$===undefined){
+                                initTypeProto(iterable$60,'ceylon.language::Iterable.taking.iterable',Basic,$init$Iterable());
+                            }
+                            return iterable$60;
+                        }
+                        $init$iterable$60();
+                        (function($$iterable$60){
+                            $$iterable$60.getIterator=function getIterator(){
+                                var $$iterable$60=this;
+                                var iter$61=$$iterable.getIterator();
+                                function iterator$62($$targs$$){
+                                    var $$iterator$62=new iterator$62.$$;
+                                    $$iterator$62.$$targs$$=$$targs$$;
+                                    Iterator($$iterator$62);
+                                    $$iterator$62.i$63=(0);
+                                    return $$iterator$62;
+                                }
+                                function $init$iterator$62(){
+                                    if (iterator$62.$$===undefined){
+                                        initTypeProto(iterator$62,'ceylon.language::Iterable.taking.iterable.iterator.iterator',Basic,$init$Iterator());
+                                    }
+                                    return iterator$62;
+                                }
+                                $init$iterator$62();
+                                (function($$iterator$62){
+                                    $$iterator$62.getI$63=function getI$63(){
+                                        return this.i$63;
+                                    };
+                                    $$iterator$62.setI$63=function setI$63(i$64){
+                                        return this.i$63=i$64;
+                                    };
+                                    $$iterator$62.next=function next(){
+                                        var $$iterator$62=this;
+                                        return (opt$65=(($$iterator$62.setI$63($$iterator$62.getI$63().getSuccessor())).compare(take$56).equals(getLarger())?getFinished():null),opt$65!==null?opt$65:iter$61.next());
+                                        var opt$65;
+                                    };
+                                })(iterator$62.$$.prototype);
+                                var iterator$66=iterator$62({Element:$$iterable.$$targs$$.Element});
+                                var getIterator$66=function(){
+                                    return iterator$66;
+                                }
+                                return getIterator$66();
+                            };$$iterable$60.getFirst=function getFirst(){
+                                var $$iterable$60=this;
+                                return $$iterable.getFirst();
+                            };
+                            $$iterable$60.getLast=function getLast(){
+                                var $$iterable$60=this;
+                                return $$iterable.getLast();
+                            };
+                        })(iterable$60.$$.prototype);
+                        var iterable$67=iterable$60({Absent:{t:Null},Element:$$iterable.$$targs$$.Element});
+                        var getIterable$67=function(){
+                            return iterable$67;
+                        }
+                        return getIterable$67();
+                    }());if(retvar$58!==undefined){return retvar$58;}
+                }
+            };$$iterable.by=function by(step$68){
+                var $$iterable=this;
+                //assert at Iterable.ceylon (317:8-318:25)
+                if (!(step$68.compare((0)).equals(getLarger()))) { throw AssertionException('step size must be greater than zero: \'step > 0\' at Iterable.ceylon (318:15-318:24)'); }
+                if(step$68.equals((1))){
+                    return $$iterable;
+                }else {
+                    var cntvar$69=false;
+                    var brkvar$71=false;
+                    var retvar$70=(function(){
+                        function iterable$72($$targs$$){
+                            var $$iterable$72=new iterable$72.$$;
+                            $$iterable$72.$$targs$$=$$targs$$;
+                            Iterable($$iterable$72);
+                            return $$iterable$72;
+                        }
+                        function $init$iterable$72(){
+                            if (iterable$72.$$===undefined){
+                                initTypeProto(iterable$72,'ceylon.language::Iterable.by.iterable',Basic,$init$Iterable());
+                            }
+                            return iterable$72;
+                        }
+                        $init$iterable$72();
+                        (function($$iterable$72){
+                            $$iterable$72.getIterator=function getIterator(){
+                                var $$iterable$72=this;
+                                var iter$73=$$iterable.getIterator();
+                                function iterator$74($$targs$$){
+                                    var $$iterator$74=new iterator$74.$$;
+                                    $$iterator$74.$$targs$$=$$targs$$;
+                                    Iterator($$iterator$74);
+                                    return $$iterator$74;
+                                }
+                                function $init$iterator$74(){
+                                    if (iterator$74.$$===undefined){
+                                        initTypeProto(iterator$74,'ceylon.language::Iterable.by.iterable.iterator.iterator',Basic,$init$Iterator());
+                                    }
+                                    return iterator$74;
+                                }
+                                $init$iterator$74();
+                                (function($$iterator$74){
+                                    $$iterator$74.next=function next(){
+                                        var $$iterator$74=this;
+                                        var next$75=iter$73.next();
+                                        var i$76=(0);
+                                        var setI$76=function(i$77){return i$76=i$77;};
+                                        while(((i$76=i$76.getSuccessor()).compare(step$68).equals(getSmaller())&&(!isOfType(iter$73.next(),{t:Finished})))){}
+                                        return next$75;
+                                    };
+                                })(iterator$74.$$.prototype);
+                                var iterator$78=iterator$74({Element:$$iterable.$$targs$$.Element});
+                                var getIterator$78=function(){
+                                    return iterator$78;
+                                }
+                                return getIterator$78();
+                            };
+                        })(iterable$72.$$.prototype);
+                        var iterable$79=iterable$72({Absent:$$iterable.$$targs$$.Absent,Element:$$iterable.$$targs$$.Element});
+                        var getIterable$79=function(){
+                            return iterable$79;
+                        }
+                        return getIterable$79();
+                    }());if(retvar$70!==undefined){return retvar$70;}
+                }
+            };$$iterable.count=function count(selecting$80){
+                var $$iterable=this;
+                var count$81=(0);
+                var setCount$81=function(count$82){return count$81=count$82;};
+                var it$83 = $$iterable.getIterator();
+                var elem$84;while ((elem$84=it$83.next())!==getFinished()){
+                    var elem$85;
+                    if((elem$85=elem$84)!==null){
+                        if(selecting$80(elem$85)){
+                            (oldcount$86=count$81,count$81=oldcount$86.getSuccessor(),oldcount$86);
+                            var oldcount$86;
+                        }
+                    }
+                }
+                return count$81;
+            };$$iterable.getCoalesced=function getCoalesced(){
+                var $$iterable=this;
+                return Comprehension(function(){
+                    var e$89;
+                    var it$87=$$iterable.getIterator();
+                    var e$88=getFinished();
+                    var e$89;
+                    var next$e$88=function(){
+                        while((e$88=it$87.next())!==getFinished()){
+                            if((e$89=e$88)!==null){
+                                return e$88;
+                            }
+                        }
+                        return getFinished();
+                    }
+                    next$e$88();
+                    return function(){
+                        if(e$88!==getFinished()){
+                            var e$88$90=e$88;
+                            function getE$88(){return e$88$90;}
+                            var tmpvar$91=e$89;
+                            next$e$88();
+                            return tmpvar$91;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:{ t:'i', l:[$$iterable.$$targs$$.Element,{t:Object$}]}});
+            };
+            $$iterable.getIndexed=function getIndexed(){
+                var $$iterable=this;
+                function indexes$92($$targs$$){
+                    var $$indexes$92=new indexes$92.$$;
+                    $$indexes$92.$$targs$$=$$targs$$;
+                    Iterable($$indexes$92);
+                    add_type_arg($$indexes$92,'Absent',{t:Null});
+                    add_type_arg($$indexes$92,'Element',{t:Entry,a:{Key:{t:Integer},Item:{ t:'i', l:[$$iterable.$$targs$$.Element,{t:Object$}]}}});
+                    $$indexes$92.orig$93=$$iterable;
+                    return $$indexes$92;
+                }
+                function $init$indexes$92(){
+                    if (indexes$92.$$===undefined){
+                        initTypeProto(indexes$92,'ceylon.language::Iterable.indexed.indexes',Basic,$init$Iterable());
+                    }
+                    return indexes$92;
+                }
+                $init$indexes$92();
+                (function($$indexes$92){
+                    $$indexes$92.getOrig$93=function getOrig$93(){
+                        return this.orig$93;
+                    };
+                    $$indexes$92.getIterator=function getIterator(){
+                        var $$indexes$92=this;
+                        function iterator$94($$targs$$){
+                            var $$iterator$94=new iterator$94.$$;
+                            $$iterator$94.$$targs$$=$$targs$$;
+                            Iterator($$iterator$94);
+                            add_type_arg($$iterator$94,'Element',{t:Entry,a:{Key:{t:Integer},Item:{ t:'i', l:[$$iterable.$$targs$$.Element,{t:Object$}]}}});
+                            $$iterator$94.iter$95=$$indexes$92.getOrig$93().getIterator();
+                            $$iterator$94.i$96=(0);
+                            return $$iterator$94;
+                        }
+                        function $init$iterator$94(){
+                            if (iterator$94.$$===undefined){
+                                initTypeProto(iterator$94,'ceylon.language::Iterable.indexed.indexes.iterator.iterator',Basic,$init$Iterator());
+                            }
+                            return iterator$94;
+                        }
+                        $init$iterator$94();
+                        (function($$iterator$94){
+                            $$iterator$94.getIter$95=function getIter$95(){
+                                return this.iter$95;
+                            };
+                            $$iterator$94.getI$96=function getI$96(){
+                                return this.i$96;
+                            };
+                            $$iterator$94.setI$96=function setI$96(i$97){
+                                return this.i$96=i$97;
+                            };
+                            $$iterator$94.next=function next(){
+                                var $$iterator$94=this;
+                                var next$98=$$iterator$94.getIter$95().next();
+                                var setNext$98=function(next$99){return next$98=next$99;};
+                                while((!exists(next$98))){
+                                    (oldi$100=$$iterator$94.getI$96(),$$iterator$94.setI$96(oldi$100.getSuccessor()),oldi$100);
+                                    var oldi$100;
+                                    next$98=$$iterator$94.getIter$95().next();
+                                }
+                                var n$101;
+                                var n$102;
+                                if(!isOfType((n$101=next$98),{t:Finished})&&(n$102=n$101)!==null){
+                                    return Entry((oldi$103=$$iterator$94.getI$96(),$$iterator$94.setI$96(oldi$103.getSuccessor()),oldi$103),n$102,{Key:{t:Integer},Item:{ t:'i', l:[$$iterable.$$targs$$.Element,{t:Object$}]}});
+                                    var oldi$103;
+                                }else {
+                                    return getFinished();
+                                }
+                            };
+                        })(iterator$94.$$.prototype);
+                        var iterator$104=iterator$94({Element:{t:Entry,a:{Key:{t:Integer},Item:{ t:'i', l:[$$iterable.$$targs$$.Element,{t:Object$}]}}}});
+                        var getIterator$104=function(){
+                            return iterator$104;
+                        }
+                        return getIterator$104();
+                    };
+                })(indexes$92.$$.prototype);
+                var indexes$105=indexes$92({Absent:{t:Null},Element:{t:Entry,a:{Key:{t:Integer},Item:{ t:'i', l:[$$iterable.$$targs$$.Element,{t:Object$}]}}}});
+                var getIndexes$105=function(){
+                    return indexes$105;
+                }
+                return getIndexes$105();
+            };$$iterable.chain=function chain(other$106,$$$mptypes){
+                var $$iterable=this;
+                function chained$107($$targs$$){
+                    var $$chained$107=new chained$107.$$;
+                    $$chained$107.$$targs$$=$$targs$$;
+                    Iterable($$chained$107);
+                    add_type_arg($$chained$107,'Absent',{t:Null});
+                    return $$chained$107;
+                }
+                function $init$chained$107(){
+                    if (chained$107.$$===undefined){
+                        initTypeProto(chained$107,'ceylon.language::Iterable.chain.chained',Basic,$init$Iterable());
+                    }
+                    return chained$107;
+                }
+                $init$chained$107();
+                (function($$chained$107){
+                    $$chained$107.getIterator=function getIterator(){
+                        var $$chained$107=this;
+                        return ChainedIterator($$iterable,other$106,{Other:$$$mptypes.Other,Element:$$iterable.$$targs$$.Element});
+                    };
+                })(chained$107.$$.prototype);
+                var chained$108=chained$107({Absent:{t:Null},Element:{ t:'u', l:[$$iterable.$$targs$$.Element,$$$mptypes.Other]}});
+                var getChained$108=function(){
+                    return chained$108;
+                }
+                return getChained$108();
+            };$$iterable.defaultNullElements=function (defaultValue$109,$$$mptypes){
+                var $$iterable=this;
+                return Comprehension(function(){
+                    var it$110=$$iterable.getIterator();
+                    var elem$111=getFinished();
+                    var next$elem$111=function(){return elem$111=it$110.next();}
+                    next$elem$111();
+                    return function(){
+                        if(elem$111!==getFinished()){
+                            var elem$111$112=elem$111;
+                            function getElem$111(){return elem$111$112;}
+                            var tmpvar$113=(opt$114=getElem$111(),opt$114!==null?opt$114:defaultValue$109);
+                            next$elem$111();
+                            return tmpvar$113;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:{ t:'u', l:[$$$mptypes.Default,{ t:'i', l:[$$iterable.$$targs$$.Element,{t:Object$}]}]}});
+            };
+        })(Iterable.$$.prototype);
+    }
+    return Iterable;
+}
+exports.$init$Iterable=$init$Iterable;
+$init$Iterable();
+var opt$3,opt$114;
+function ifExists(predicate$115){
+    return function(val$116){
+        var val$117;
+        if((val$117=val$116)!==null){
+            return predicate$115(val$117);
+        }else {
+            return false;
+        }
+    }
+};
+function Sequence($$sequence){
+    Sequential($$sequence);
+    Iterable($$sequence);
+    Cloneable($$sequence);
+    add_type_arg($$sequence,'Clone',{t:Sequence,a:{Element:$$sequence.$$targs$$.Element}});
+}
+exports.Sequence=Sequence;
+function $init$Sequence(){
+    if (Sequence.$$===undefined){
+        initTypeProto(Sequence,'ceylon.language::Sequence',$init$Sequential(),$init$Iterable(),$init$Cloneable());
+        (function($$sequence){
+            $$sequence.getEmpty=function getEmpty(){
+                var $$sequence=this;
+                return false;
+            };
+            $$sequence.getSequence=function getSequence(){
+                var $$sequence=this;
+                return $$sequence;
+            };
+            $$sequence.$sort=function $sort(comparing$118){
+                var $$sequence=this;
+                var s$119=internalSort(comparing$118,$$sequence,{Element:$$sequence.$$targs$$.Element});
+                //assert at Sequence.ceylon (63:8-63:27)
+                var s$120;
+                if (!(nonempty((s$120=s$119)))) { throw AssertionException('Assertion failed: \'nonempty s\' at Sequence.ceylon (63:15-63:26)'); }
+                return s$120;
+            };$$sequence.collect=function collect(collecting$121,$$$mptypes){
+                var $$sequence=this;
+                var s$122=$$sequence.$map(collecting$121,{Result:$$$mptypes.Result}).getSequence();
+                //assert at Sequence.ceylon (74:8-74:27)
+                var s$123;
+                if (!(nonempty((s$123=s$122)))) { throw AssertionException('Assertion failed: \'nonempty s\' at Sequence.ceylon (74:15-74:26)'); }
+                return s$123;
+            };$$sequence.getClone=function getClone(){
+                var $$sequence=this;
+                return $$sequence;
+            };
+        })(Sequence.$$.prototype);
+    }
+    return Sequence;
+}
+exports.$init$Sequence=$init$Sequence;
+$init$Sequence();
+function Empty($$empty){
+    Sequential($$empty);
+    Ranged($$empty);
+    add_type_arg($$empty,'Index',{t:Integer});
+    add_type_arg($$empty,'Span',{t:Empty});
+    Cloneable($$empty);
+    add_type_arg($$empty,'Clone',{t:Empty});
+}
+exports.Empty=Empty;
+function $init$Empty(){
+    if (Empty.$$===undefined){
+        initTypeProto(Empty,'ceylon.language::Empty',$init$Sequential(),$init$Ranged(),$init$Cloneable());
+        (function($$empty){
+            $$empty.getIterator=function getIterator(){
+                var $$empty=this;
+                return getEmptyIterator();
+            };
+            $$empty.get=function (index$124){
+                var $$empty=this;
+                return null;
+            };
+            $$empty.segment=function (from$125,length$126){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.span=function (from$127,to$128){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.spanTo=function (to$129){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.spanFrom=function (from$130){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.getEmpty=function getEmpty(){
+                var $$empty=this;
+                return true;
+            };
+            $$empty.getSize=function getSize(){
+                var $$empty=this;
+                return (0);
+            };
+            $$empty.getReversed=function getReversed(){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.getSequence=function getSequence(){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.getString=function getString(){
+                var $$empty=this;
+                return String$("{}",2);
+            };
+            $$empty.getLastIndex=function getLastIndex(){
+                var $$empty=this;
+                return null;
+            };
+            $$empty.getFirst=function getFirst(){
+                var $$empty=this;
+                return null;
+            };
+            $$empty.getLast=function getLast(){
+                var $$empty=this;
+                return null;
+            };
+            $$empty.getRest=function getRest(){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.getClone=function getClone(){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.getCoalesced=function getCoalesced(){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.getIndexed=function getIndexed(){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.chain=function (other$131,$$$mptypes){
+                var $$empty=this;
+                return other$131;
+            };
+            $$empty.contains=function (element$132){
+                var $$empty=this;
+                return false;
+            };
+            $$empty.count=function (selecting$133){
+                var $$empty=this;
+                return (0);
+            };
+            $$empty.defines=function (index$134){
+                var $$empty=this;
+                return false;
+            };
+            $$empty.$map=function (collecting$135,$$$mptypes){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.$filter=function (selecting$136){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.fold=function (initial$137,accumulating$138,$$$mptypes){
+                var $$empty=this;
+                return initial$137;
+            };
+            $$empty.find=function (selecting$139){
+                var $$empty=this;
+                return null;
+            };
+            $$empty.$sort=function (comparing$140){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.collect=function (collecting$141,$$$mptypes){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.select=function (selecting$142){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.any=function (selecting$143){
+                var $$empty=this;
+                return false;
+            };
+            $$empty.$every=function (selecting$144){
+                var $$empty=this;
+                return false;
+            };
+            $$empty.skipping=function (skip$145){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.taking=function (take$146){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.by=function (step$147){
+                var $$empty=this;
+                return $$empty;
+            };
+            $$empty.withLeading=function (element$148,$$$mptypes){
+                var $$empty=this;
+                return Tuple(element$148,getEmpty(),{Rest:{t:Empty},First:$$$mptypes.Element,Element:$$$mptypes.Element});
+            };
+            $$empty.withTrailing=function (element$149,$$$mptypes){
+                var $$empty=this;
+                return Tuple(element$149,getEmpty(),{Rest:{t:Empty},First:$$$mptypes.Element,Element:$$$mptypes.Element});
+            };
+        })(Empty.$$.prototype);
+    }
+    return Empty;
+}
+exports.$init$Empty=$init$Empty;
+$init$Empty();
+function empty(){
+    var $$empty=new empty.$$;
+    Object$($$empty);
+    Empty($$empty);
+    return $$empty;
+}
+function $init$empty(){
+    if (empty.$$===undefined){
+        initTypeProto(empty,'ceylon.language::empty',Object$,$init$Empty());
+    }
+    return empty;
+}
+exports.$init$empty=$init$empty;
+$init$empty();
+var empty$150=empty();
+var getEmpty=function(){
+    return empty$150;
+}
+exports.getEmpty=getEmpty;
+function emptyIterator($$targs$$){
+    var $$emptyIterator=new emptyIterator.$$;
+    $$emptyIterator.$$targs$$=$$targs$$;
+    Iterator($$emptyIterator);
+    return $$emptyIterator;
+}
+function $init$emptyIterator(){
+    if (emptyIterator.$$===undefined){
+        initTypeProto(emptyIterator,'ceylon.language::emptyIterator',Basic,$init$Iterator());
+    }
+    return emptyIterator;
+}
+exports.$init$emptyIterator=$init$emptyIterator;
+$init$emptyIterator();
+(function($$emptyIterator){
+    $$emptyIterator.next=function (){
+        var $$emptyIterator=this;
+        return getFinished();
+    };
+})(emptyIterator.$$.prototype);
+var emptyIterator$151=emptyIterator({Element:{t:Nothing}});
+var getEmptyIterator=function(){
+    return emptyIterator$151;
+}
+exports.getEmptyIterator=getEmptyIterator;
+function Sequential($$sequential){
+    List($$sequential);
+    Ranged($$sequential);
+    add_type_arg($$sequential,'Index',{t:Integer});
+    add_type_arg($$sequential,'Span',{t:Sequential,a:{Element:$$sequential.$$targs$$.Element}});
+    Cloneable($$sequential);
+    add_type_arg($$sequential,'Clone',{t:Sequential,a:{Element:$$sequential.$$targs$$.Element}});
+}
+exports.Sequential=Sequential;
+function $init$Sequential(){
+    if (Sequential.$$===undefined){
+        initTypeProto(Sequential,'ceylon.language::Sequential',$init$List(),$init$Ranged(),$init$Cloneable());
+        (function($$sequential){
+            $$sequential.getSequence=function getSequence(){
+                var $$sequential=this;
+                return $$sequential;
+            };
+            $$sequential.getClone=function getClone(){
+                var $$sequential=this;
+                return $$sequential;
+            };
+            $$sequential.getString=function getString(){
+                var $$sequential=this;
+                return (opt$152=($$sequential.getEmpty()?String$("[]",2):null),opt$152!==null?opt$152:StringBuilder().appendAll([String$("[",1),commaList($$sequential).getString(),String$("]",1)]).getString());
+            };
+        })(Sequential.$$.prototype);
+    }
+    return Sequential;
+}
+exports.$init$Sequential=$init$Sequential;
+$init$Sequential();
+var opt$152;
 function Correspondence($$correspondence){
 }
 exports.Correspondence=Correspondence;
@@ -492,52 +1022,54 @@ function $init$Correspondence(){
     if (Correspondence.$$===undefined){
         initTypeProto(Correspondence,'ceylon.language::Correspondence');
         (function($$correspondence){
-            $$correspondence.defines=function (key$1){
+            $$correspondence.defines=function (key$153){
                 var $$correspondence=this;
-                return exists($$correspondence.get(key$1));
+                return exists($$correspondence.get(key$153));
             };
             $$correspondence.getKeys=function getKeys(){
                 var $$correspondence=this;
-                return Keys($$correspondence,[$$correspondence.$$targs$$[0],$$correspondence.$$targs$$[1]]);
+                return Keys($$correspondence,{Key:$$correspondence.$$targs$$.Key,Item:$$correspondence.$$targs$$.Item});
             };
-            $$correspondence.definesEvery=function definesEvery(keys$2){
+            $$correspondence.definesEvery=function definesEvery(keys$154){
                 var $$correspondence=this;
-                var it$3 = keys$2.getIterator();
-                var key$4;while ((key$4=it$3.next())!==getFinished()){
-                    if((!$$correspondence.defines(key$4))){
+                var it$155 = keys$154.getIterator();
+                var key$156;while ((key$156=it$155.next())!==getFinished()){
+                    if((!$$correspondence.defines(key$156))){
                         return false;
                     }
                 }
-                if (getFinished() === key$4){
+                if (getFinished() === key$156){
                     return true;
                 }
-            };$$correspondence.definesAny=function definesAny(keys$5){
+            };$$correspondence.definesAny=function definesAny(keys$157){
                 var $$correspondence=this;
-                var it$6 = keys$5.getIterator();
-                var key$7;while ((key$7=it$6.next())!==getFinished()){
-                    if($$correspondence.defines(key$7)){
+                var it$158 = keys$157.getIterator();
+                var key$159;while ((key$159=it$158.next())!==getFinished()){
+                    if($$correspondence.defines(key$159)){
                         return true;
                     }
                 }
-                if (getFinished() === key$7){
+                if (getFinished() === key$159){
                     return false;
                 }
-            };$$correspondence.items=function (keys$8){
+            };$$correspondence.items=function (keys$160){
                 var $$correspondence=this;
                 return Comprehension(function(){
-                    var it$9=keys$8.getIterator();
-                    var key$10=getFinished();
-                    var next$key$10=function(){return key$10=it$9.next();}
-                    next$key$10();
+                    var it$161=keys$160.getIterator();
+                    var key$162=getFinished();
+                    var next$key$162=function(){return key$162=it$161.next();}
+                    next$key$162();
                     return function(){
-                        if(key$10!==getFinished()){
-                            var tmpvar$11=$$correspondence.get(key$10);
-                            next$key$10();
-                            return tmpvar$11;
+                        if(key$162!==getFinished()){
+                            var key$162$163=key$162;
+                            function getKey$162(){return key$162$163;}
+                            var tmpvar$164=$$correspondence.get(getKey$162());
+                            next$key$162();
+                            return tmpvar$164;
                         }
                         return getFinished();
                     }
-                },[{ t:'u', l:[{t:Null},$$correspondence.$$targs$$[1]]},{t:Null}]).getSequence();
+                },{Absent:{t:Anything},Element:{ t:'u', l:[{t:Null},$$correspondence.$$targs$$.Item]}}).getSequence();
             };
         })(Correspondence.$$.prototype);
     }
@@ -545,11 +1077,11 @@ function $init$Correspondence(){
 }
 exports.$init$Correspondence=$init$Correspondence;
 $init$Correspondence();
-function Keys(correspondence$12, $$targs$$,$$keys){
+function Keys(correspondence$165, $$targs$$,$$keys){
     $init$Keys();
     if ($$keys===undefined)$$keys=new Keys.$$;
-    $$keys.$$targs$$=$$targs$$;
-    $$keys.correspondence$12=correspondence$12;
+    set_type_args($$keys,$$targs$$);
+    $$keys.correspondence$165=correspondence$165;
     Category($$keys);
     return $$keys;
 }
@@ -557,11 +1089,11 @@ function $init$Keys(){
     if (Keys.$$===undefined){
         initTypeProto(Keys,'ceylon.language::Keys',Basic,$init$Category());
         (function($$keys){
-            $$keys.contains=function contains(key$13){
+            $$keys.contains=function contains(key$166){
                 var $$keys=this;
-                var key$14;
-                if(isOfType((key$14=key$13),$$keys.$$targs$$[0])){
-                    return $$keys.correspondence$12.defines(key$14);
+                var key$167;
+                if(isOfType((key$167=key$166),$$keys.$$targs$$.Key)){
+                    return $$keys.correspondence$165.defines(key$167);
                 }else {
                     return false;
                 }
@@ -572,6 +1104,44 @@ function $init$Keys(){
 }
 exports.$init$Keys=$init$Keys;
 $init$Keys();
+function Finished($$finished){
+    $init$Finished();
+    if ($$finished===undefined)$$finished=new Finished.$$;
+    return $$finished;
+}
+exports.Finished=Finished;
+function $init$Finished(){
+    if (Finished.$$===undefined){
+        initTypeProto(Finished,'ceylon.language::Finished',Basic);
+    }
+    return Finished;
+}
+exports.$init$Finished=$init$Finished;
+$init$Finished();
+function finished(){
+    var $$finished=new finished.$$;
+    Finished($$finished);
+    return $$finished;
+}
+function $init$finished(){
+    if (finished.$$===undefined){
+        initTypeProto(finished,'ceylon.language::finished',Finished);
+    }
+    return finished;
+}
+exports.$init$finished=$init$finished;
+$init$finished();
+(function($$finished){
+    $$finished.getString=function getString(){
+        var $$finished=this;
+        return String$("finished",8);
+    };
+})(finished.$$.prototype);
+var finished$168=finished();
+var getFinished=function(){
+    return finished$168;
+}
+exports.getFinished=getFinished;
 function Ranged($$ranged){
 }
 exports.Ranged=Ranged;
@@ -585,152 +1155,19 @@ function $init$Ranged(){
 }
 exports.$init$Ranged=$init$Ranged;
 $init$Ranged();
-function Closeable($$closeable){
+function Iterator($$iterator){
 }
-exports.Closeable=Closeable;
-function $init$Closeable(){
-    if (Closeable.$$===undefined){
-        initTypeProto(Closeable,'ceylon.language::Closeable');
-        (function($$closeable){
-        })(Closeable.$$.prototype);
+exports.Iterator=Iterator;
+function $init$Iterator(){
+    if (Iterator.$$===undefined){
+        initTypeProto(Iterator,'ceylon.language::Iterator');
+        (function($$iterator){
+        })(Iterator.$$.prototype);
     }
-    return Closeable;
+    return Iterator;
 }
-exports.$init$Closeable=$init$Closeable;
-$init$Closeable();
-function Binary($$binary){
-}
-exports.Binary=Binary;
-function $init$Binary(){
-    if (Binary.$$===undefined){
-        initTypeProto(Binary,'ceylon.language::Binary');
-        (function($$binary){
-            $$binary.clear=function clear(index$15){
-                var $$binary=this;
-                return $$binary.set(index$15,false);
-            };
-        })(Binary.$$.prototype);
-    }
-    return Binary;
-}
-exports.$init$Binary=$init$Binary;
-$init$Binary();
-function Castable($$castable){
-}
-exports.Castable=Castable;
-function $init$Castable(){
-    if (Castable.$$===undefined){
-        initTypeProto(Castable,'ceylon.language::Castable');
-        (function($$castable){
-        })(Castable.$$.prototype);
-    }
-    return Castable;
-}
-exports.$init$Castable=$init$Castable;
-$init$Castable();
-function Cloneable($$cloneable){
-}
-exports.Cloneable=Cloneable;
-function $init$Cloneable(){
-    if (Cloneable.$$===undefined){
-        initTypeProto(Cloneable,'ceylon.language::Cloneable');
-        (function($$cloneable){
-        })(Cloneable.$$.prototype);
-    }
-    return Cloneable;
-}
-exports.$init$Cloneable=$init$Cloneable;
-$init$Cloneable();
-function Collection($$collection){
-    Iterable($$collection);
-    Category($$collection);
-    Cloneable($$collection);
-}
-exports.Collection=Collection;
-function $init$Collection(){
-    if (Collection.$$===undefined){
-        initTypeProto(Collection,'ceylon.language::Collection',$init$Iterable(),$init$Category(),$init$Cloneable());
-        (function($$collection){
-            $$collection.getEmpty=function getEmpty(){
-                var $$collection=this;
-                return $$collection.getSize().equals((0));
-            };
-            $$collection.contains=function contains(element$16){
-                var $$collection=this;
-                var it$17 = $$collection.getIterator();
-                var elem$18;while ((elem$18=it$17.next())!==getFinished()){
-                    var elem$19;
-                    if((elem$19=elem$18)!==null&&elem$19.equals(element$16)){
-                        return true;
-                    }
-                }
-                if (getFinished() === elem$18){
-                    return false;
-                }
-            };$$collection.getString=function getString(){
-                var $$collection=this;
-                return (opt$20=($$collection.getEmpty()?String$("{}",2):null),opt$20!==null?opt$20:StringBuilder().appendAll([String$("{ ",2),commaList($$collection).getString(),String$(" }",2)]).getString());
-            };
-        })(Collection.$$.prototype);
-    }
-    return Collection;
-}
-exports.$init$Collection=$init$Collection;
-$init$Collection();
-var opt$20;
-var commaList=function (elements$21){
-    return String$(", ",2).join(Comprehension(function(){
-        var it$22=elements$21.getIterator();
-        var element$23=getFinished();
-        var next$element$23=function(){return element$23=it$22.next();}
-        next$element$23();
-        return function(){
-            if(element$23!==getFinished()){
-                var tmpvar$24=(opt$25=(opt$26=element$23,opt$26!==null?opt$26.getString():null),opt$25!==null?opt$25:String$("null",4));
-                next$element$23();
-                return tmpvar$24;
-            }
-            return getFinished();
-        }
-    },[{t:String$},{t:Null}]));
-};
-var opt$25,opt$26;
-function Category($$category){
-}
-exports.Category=Category;
-function $init$Category(){
-    if (Category.$$===undefined){
-        initTypeProto(Category,'ceylon.language::Category');
-        (function($$category){
-            $$category.containsEvery=function containsEvery(elements$27){
-                var $$category=this;
-                var it$28 = elements$27.getIterator();
-                var element$29;while ((element$29=it$28.next())!==getFinished()){
-                    if((!$$category.contains(element$29))){
-                        return false;
-                    }
-                }
-                if (getFinished() === element$29){
-                    return true;
-                }
-            };$$category.containsAny=function containsAny(elements$30){
-                var $$category=this;
-                var it$31 = elements$30.getIterator();
-                var element$32;while ((element$32=it$31.next())!==getFinished()){
-                    if($$category.contains(element$32)){
-                        return true;
-                    }
-                }
-                if (getFinished() === element$32){
-                    return false;
-                }
-            };
-        })(Category.$$.prototype);
-    }
-    return Category;
-}
-exports.$init$Category=$init$Category;
-$init$Category();
+exports.$init$Iterator=$init$Iterator;
+$init$Iterator();
 function Container($$container){
     Category($$container);
 }
@@ -745,165 +1182,199 @@ function $init$Container(){
 }
 exports.$init$Container=$init$Container;
 $init$Container();
-function Iterator($$iterator){
+function Closeable($$closeable){
 }
-exports.Iterator=Iterator;
-function $init$Iterator(){
-    if (Iterator.$$===undefined){
-        initTypeProto(Iterator,'ceylon.language::Iterator');
-        (function($$iterator){
-        })(Iterator.$$.prototype);
+exports.Closeable=Closeable;
+function $init$Closeable(){
+    if (Closeable.$$===undefined){
+        initTypeProto(Closeable,'ceylon.language::Closeable');
+        (function($$closeable){
+        })(Closeable.$$.prototype);
     }
-    return Iterator;
+    return Closeable;
 }
-exports.$init$Iterator=$init$Iterator;
-$init$Iterator();
-function Tuple(first$33, rest$34, $$targs$$,$$tuple){
-    $init$Tuple();
-    if ($$tuple===undefined)$$tuple=new Tuple.$$;
-    $$tuple.$$targs$$=$$targs$$;
-    Object$($$tuple);
-    Sequence($$tuple);
-    Cloneable($$tuple);
-    $$tuple.first$35=first$33;
-    $$tuple.rest$36=rest$34;
-    return $$tuple;
+exports.$init$Closeable=$init$Closeable;
+$init$Closeable();
+function Collection($$collection){
+    Iterable($$collection);
+    add_type_arg($$collection,'Absent',{t:Null});
+    Category($$collection);
+    Cloneable($$collection);
+    add_type_arg($$collection,'Clone',{t:Collection,a:{Element:$$collection.$$targs$$.Element}});
 }
-exports.Tuple=Tuple;
-function $init$Tuple(){
-    if (Tuple.$$===undefined){
-        initTypeProto(Tuple,'ceylon.language::Tuple',Object$,$init$Sequence(),$init$Cloneable());
-        (function($$tuple){
-            $$tuple.getFirst=function getFirst(){
-                return this.first$35;
+exports.Collection=Collection;
+function $init$Collection(){
+    if (Collection.$$===undefined){
+        initTypeProto(Collection,'ceylon.language::Collection',$init$Iterable(),$init$Category(),$init$Cloneable());
+        (function($$collection){
+            $$collection.getEmpty=function getEmpty(){
+                var $$collection=this;
+                return $$collection.getSize().equals((0));
             };
-            $$tuple.getRest=function getRest(){
-                return this.rest$36;
-            };
-            $$tuple.getSize=function getSize(){
-                var $$tuple=this;
-                return (1).plus($$tuple.getRest().getSize());
-            };
-            $$tuple.get=function get(index$37){
-                var $$tuple=this;
-                
-                var switch$38=index$37.compare((0));
-                if (switch$38===getSmaller()) {
-                    return null;
-                }else if (switch$38===getEqual()) {
-                    return $$tuple.getFirst();
-                }else if (switch$38===getLarger()) {
-                    return $$tuple.getRest().get(index$37.minus((1)));
-                }
-            };$$tuple.getLastIndex=function getLastIndex(){
-                var $$tuple=this;
-                var restLastIndex$39;
-                if((restLastIndex$39=$$tuple.getRest().getLastIndex())!==null){
-                    return restLastIndex$39.plus((1));
-                }else {
-                    return (0);
-                }
-            };$$tuple.getLast=function getLast(){
-                var $$tuple=this;
-                var rest$40;
-                if(nonempty((rest$40=$$tuple.getRest()))){
-                    return rest$40.getLast();
-                }else {
-                    return $$tuple.getFirst();
-                }
-            };$$tuple.getReversed=function getReversed(){
-                var $$tuple=this;
-                return $$tuple.getRest().getReversed().withTrailing($$tuple.getFirst(),[$$tuple.$$targs$$[1]]);
-            };
-            $$tuple.segment=function segment(from$41,length$42){
-                var $$tuple=this;
-                if(length$42.compare((0)).equals(getSmaller())){
-                    return empty;
-                }
-                var realFrom$43=(opt$44=(from$41.compare((0)).equals(getSmaller())?(0):null),opt$44!==null?opt$44:from$41);
-                var opt$44;
-                if(realFrom$43.equals((0))){
-                    return (opt$45=(length$42.equals((1))?Tuple($$tuple.getFirst(),empty,[$$tuple.$$targs$$[1],$$tuple.$$targs$$[1],{t:Empty}]):null),opt$45!==null?opt$45:$$tuple.getRest().segment((0),length$42.plus(realFrom$43).minus((1))).withLeading($$tuple.getFirst(),[$$tuple.$$targs$$[1]]));
-                    var opt$45;
-                }
-                return $$tuple.getRest().segment(realFrom$43.minus((1)),length$42);
-            };$$tuple.span=function span(from$46,end$47){
-                var $$tuple=this;
-                var realFrom$48=(opt$49=(from$46.compare((0)).equals(getSmaller())?(0):null),opt$49!==null?opt$49:from$46);
-                var opt$49;
-                return (opt$50=((realFrom$48.compare(end$47)!==getLarger())?$$tuple.segment(from$46,end$47.minus(realFrom$48).plus((1))):null),opt$50!==null?opt$50:$$tuple.segment(end$47,realFrom$48.minus(end$47).plus((1))).getReversed().getSequence());
-                var opt$50;
-            };$$tuple.spanTo=function (to$51){
-                var $$tuple=this;
-                return (opt$52=(to$51.compare((0)).equals(getSmaller())?empty:null),opt$52!==null?opt$52:$$tuple.span((0),to$51));
-            };
-            $$tuple.spanFrom=function (from$53){
-                var $$tuple=this;
-                return $$tuple.span(from$53,$$tuple.getSize());
-            };
-            $$tuple.getClone=function getClone(){
-                var $$tuple=this;
-                return $$tuple;
-            };
-            $$tuple.getIterator=function getIterator(){
-                var $$tuple=this;
-                function iterator$54(){
-                    var $$iterator$54=new iterator$54.$$;
-                    Iterator($$iterator$54);
-                    $$iterator$54.current$55=$$tuple;
-                    return $$iterator$54;
-                }
-                function $init$iterator$54(){
-                    if (iterator$54.$$===undefined){
-                        initTypeProto(iterator$54,'ceylon.language::Tuple.iterator.iterator',Basic,$init$Iterator());
+            $$collection.contains=function contains(element$169){
+                var $$collection=this;
+                var it$170 = $$collection.getIterator();
+                var elem$171;while ((elem$171=it$170.next())!==getFinished()){
+                    var elem$172;
+                    if((elem$172=elem$171)!==null&&elem$172.equals(element$169)){
+                        return true;
                     }
-                    return iterator$54;
                 }
-                $init$iterator$54();
-                (function($$iterator$54){
-                    $$iterator$54.getCurrent$55=function getCurrent$55(){
-                        return this.current$55;
-                    };
-                    $$iterator$54.setCurrent$55=function setCurrent$55(current$56){
-                        return this.current$55=current$56;
-                    };
-                    $$iterator$54.next=function next(){
-                        var $$iterator$54=this;
-                        var c$57;
-                        if(nonempty((c$57=$$iterator$54.getCurrent$55()))){
-                            $$iterator$54.setCurrent$55(c$57.getRest());
-                            return c$57.getFirst();
-                        }else {
-                            return getFinished();
-                        }
-                    };
-                })(iterator$54.$$.prototype);
-                var iterator$58=iterator$54(new iterator$54.$$);
-                var getIterator$58=function(){
-                    return iterator$58;
+                if (getFinished() === elem$171){
+                    return false;
                 }
-                return getIterator$58();
-            };$$tuple.contains=function contains(element$59){
-                var $$tuple=this;
-                var first$60;
-                if((first$60=$$tuple.getFirst())!==null&&first$60.equals(element$59)){
+            };$$collection.getString=function getString(){
+                var $$collection=this;
+                return (opt$173=($$collection.getEmpty()?String$("{}",2):null),opt$173!==null?opt$173:StringBuilder().appendAll([String$("{ ",2),commaList($$collection).getString(),String$(" }",2)]).getString());
+            };
+        })(Collection.$$.prototype);
+    }
+    return Collection;
+}
+exports.$init$Collection=$init$Collection;
+$init$Collection();
+var opt$173;
+var commaList=function (elements$174){
+    return String$(", ",2).join(Comprehension(function(){
+        var it$175=elements$174.getIterator();
+        var element$176=getFinished();
+        var next$element$176=function(){return element$176=it$175.next();}
+        next$element$176();
+        return function(){
+            if(element$176!==getFinished()){
+                var element$176$177=element$176;
+                function getElement$176(){return element$176$177;}
+                var tmpvar$178=(opt$179=(opt$180=getElement$176(),opt$180!==null?opt$180.getString():null),opt$179!==null?opt$179:String$("null",4));
+                next$element$176();
+                return tmpvar$178;
+            }
+            return getFinished();
+        }
+    },{Absent:{t:Anything},Element:{t:String$}}));
+};
+var opt$179,opt$180;
+function Binary($$binary){
+}
+exports.Binary=Binary;
+function $init$Binary(){
+    if (Binary.$$===undefined){
+        initTypeProto(Binary,'ceylon.language::Binary');
+        (function($$binary){
+            $$binary.clear=function clear(index$181){
+                var $$binary=this;
+                return $$binary.set(index$181,false);
+            };
+        })(Binary.$$.prototype);
+    }
+    return Binary;
+}
+exports.$init$Binary=$init$Binary;
+$init$Binary();
+function Category($$category){
+}
+exports.Category=Category;
+function $init$Category(){
+    if (Category.$$===undefined){
+        initTypeProto(Category,'ceylon.language::Category');
+        (function($$category){
+            $$category.containsEvery=function containsEvery(elements$182){
+                var $$category=this;
+                var it$183 = elements$182.getIterator();
+                var element$184;while ((element$184=it$183.next())!==getFinished()){
+                    if((!$$category.contains(element$184))){
+                        return false;
+                    }
+                }
+                if (getFinished() === element$184){
                     return true;
-                }else {
-                    return $$tuple.getRest().contains(element$59);
+                }
+            };$$category.containsAny=function containsAny(elements$185){
+                var $$category=this;
+                var it$186 = elements$185.getIterator();
+                var element$187;while ((element$187=it$186.next())!==getFinished()){
+                    if($$category.contains(element$187)){
+                        return true;
+                    }
+                }
+                if (getFinished() === element$187){
+                    return false;
                 }
             };
-        })(Tuple.$$.prototype);
+        })(Category.$$.prototype);
     }
-    return Tuple;
+    return Category;
 }
-exports.$init$Tuple=$init$Tuple;
-$init$Tuple();
-var opt$52;
+exports.$init$Category=$init$Category;
+$init$Category();
+function Cloneable($$cloneable){
+}
+exports.Cloneable=Cloneable;
+function $init$Cloneable(){
+    if (Cloneable.$$===undefined){
+        initTypeProto(Cloneable,'ceylon.language::Cloneable');
+        (function($$cloneable){
+        })(Cloneable.$$.prototype);
+    }
+    return Cloneable;
+}
+exports.$init$Cloneable=$init$Cloneable;
+$init$Cloneable();
+function ChainedIterator(first$188, second$189, $$targs$$,$$chainedIterator){
+    $init$ChainedIterator();
+    if ($$chainedIterator===undefined)$$chainedIterator=new ChainedIterator.$$;
+    set_type_args($$chainedIterator,$$targs$$);
+    $$chainedIterator.second$189=second$189;
+    Iterator($$chainedIterator);
+    $$chainedIterator.iter$190=first$188.getIterator();
+    $$chainedIterator.more$191=true;
+    return $$chainedIterator;
+}
+exports.ChainedIterator=ChainedIterator;
+function $init$ChainedIterator(){
+    if (ChainedIterator.$$===undefined){
+        initTypeProto(ChainedIterator,'ceylon.language::ChainedIterator',Basic,$init$Iterator());
+        (function($$chainedIterator){
+            $$chainedIterator.getIter$190=function getIter$190(){
+                return this.iter$190;
+            };
+            $$chainedIterator.setIter$190=function setIter$190(iter$192){
+                return this.iter$190=iter$192;
+            };
+            $$chainedIterator.getMore$191=function getMore$191(){
+                return this.more$191;
+            };
+            $$chainedIterator.setMore$191=function setMore$191(more$193){
+                return this.more$191=more$193;
+            };
+            $$chainedIterator.next=function next(){
+                var $$chainedIterator=this;
+                var e$194=$$chainedIterator.getIter$190().next();
+                var setE$194=function(e$195){return e$194=e$195;};
+                var f$196;
+                if(isOfType((f$196=e$194),{t:Finished})){
+                    if($$chainedIterator.getMore$191()){
+                        $$chainedIterator.setIter$190($$chainedIterator.second$189.getIterator());
+                        $$chainedIterator.setMore$191(false);
+                        e$194=$$chainedIterator.getIter$190().next();
+                    }
+                }
+                return e$194;
+            };
+        })(ChainedIterator.$$.prototype);
+    }
+    return ChainedIterator;
+}
+exports.$init$ChainedIterator=$init$ChainedIterator;
+$init$ChainedIterator();
 function List($$list){
     Collection($$list);
     Correspondence($$list);
+    add_type_arg($$list,'Key',{t:Integer});
     Ranged($$list);
+    add_type_arg($$list,'Index',{t:Integer});
+    add_type_arg($$list,'Span',{t:List,a:{Element:$$list.$$targs$$.Element}});
     Cloneable($$list);
+    add_type_arg($$list,'Clone',{t:List,a:{Element:$$list.$$targs$$.Element}});
 }
 exports.List=List;
 function $init$List(){
@@ -912,81 +1383,81 @@ function $init$List(){
         (function($$list){
             $$list.getSize=function getSize(){
                 var $$list=this;
-                return (opt$61=$$list.getLastIndex(),opt$61!==null?opt$61:(-(1))).plus((1));
+                return (opt$197=$$list.getLastIndex(),opt$197!==null?opt$197:(-(1))).plus((1));
             };
-            $$list.defines=function (index$62){
+            $$list.defines=function (index$198){
                 var $$list=this;
-                return (index$62.compare((opt$63=$$list.getLastIndex(),opt$63!==null?opt$63:(-(1))))!==getLarger());
+                return (index$198.compare((opt$199=$$list.getLastIndex(),opt$199!==null?opt$199:(-(1))))!==getLarger());
             };
             $$list.getIterator=function getIterator(){
                 var $$list=this;
-                function listIterator$64(){
-                    var $$listIterator$64=new listIterator$64.$$;
-                    Iterator($$listIterator$64);
-                    $$listIterator$64.index$65=(0);
-                    return $$listIterator$64;
+                function listIterator$200($$targs$$){
+                    var $$listIterator$200=new listIterator$200.$$;
+                    $$listIterator$200.$$targs$$=$$targs$$;
+                    Iterator($$listIterator$200);
+                    $$listIterator$200.index$201=(0);
+                    return $$listIterator$200;
                 }
-                function $init$listIterator$64(){
-                    if (listIterator$64.$$===undefined){
-                        initTypeProto(listIterator$64,'ceylon.language::List.iterator.listIterator',Basic,$init$Iterator());
+                function $init$listIterator$200(){
+                    if (listIterator$200.$$===undefined){
+                        initTypeProto(listIterator$200,'ceylon.language::List.iterator.listIterator',Basic,$init$Iterator());
                     }
-                    return listIterator$64;
+                    return listIterator$200;
                 }
-                $init$listIterator$64();
-                (function($$listIterator$64){
-                    $$listIterator$64.getIndex$65=function getIndex$65(){
-                        return this.index$65;
+                $init$listIterator$200();
+                (function($$listIterator$200){
+                    $$listIterator$200.getIndex$201=function getIndex$201(){
+                        return this.index$201;
                     };
-                    $$listIterator$64.setIndex$65=function setIndex$65(index$66){
-                        return this.index$65=index$66;
+                    $$listIterator$200.setIndex$201=function setIndex$201(index$202){
+                        return this.index$201=index$202;
                     };
-                    $$listIterator$64.next=function next(){
-                        var $$listIterator$64=this;
-                        if(($$listIterator$64.getIndex$65().compare((opt$67=$$list.getLastIndex(),opt$67!==null?opt$67:(-(1))))!==getLarger())){
-                            var elem$68=$$list.get((oldindex$69=$$listIterator$64.getIndex$65(),$$listIterator$64.setIndex$65(oldindex$69.getSuccessor()),oldindex$69));
-                            var oldindex$69;
-                            //assert at List.ceylon (59:20-59:40)
-                            var elem$70;
-                            if (!((elem$70=elem$68)!==null)) { throw Exception('Assertion failed: \'exists elem\' at List.ceylon (59:27-59:39)'); }
-                            return elem$70;
+                    $$listIterator$200.next=function next(){
+                        var $$listIterator$200=this;
+                        if(($$listIterator$200.getIndex$201().compare((opt$203=$$list.getLastIndex(),opt$203!==null?opt$203:(-(1))))!==getLarger())){
+                            //assert at List.ceylon (58:20-58:61)
+                            var elem$204;
+                            if (!((elem$204=$$list.get((oldindex$205=$$listIterator$200.getIndex$201(),$$listIterator$200.setIndex$201(oldindex$205.getSuccessor()),oldindex$205)))!==null)) { throw AssertionException('Assertion failed: \'exists elem = outer.get(index++)\' at List.ceylon (58:27-58:60)'); }
+                            var oldindex$205;
+                            return elem$204;
                         }else {
                             return getFinished();
                         }
-                        var opt$67;
+                        var opt$203;
                     };
-                })(listIterator$64.$$.prototype);
-                var listIterator$71=listIterator$64(new listIterator$64.$$);
-                var getListIterator$71=function(){
-                    return listIterator$71;
+                })(listIterator$200.$$.prototype);
+                var listIterator$206=listIterator$200({Element:$$list.$$targs$$.Element});
+                var getListIterator$206=function(){
+                    return listIterator$206;
                 }
-                return getListIterator$71();
-            };$$list.equals=function equals(that$72){
+                return getListIterator$206();
+            };$$list.equals=function equals(that$207){
                 var $$list=this;
-                var that$73;
-                if(isOfType((that$73=that$72),{t:List,a:[{t:Anything}]})){
-                    if(that$73.getSize().equals($$list.getSize())){
-                        var it$74 = Range((0),$$list.getSize().minus((1)),[{t:Integer}]).getIterator();
-                        var i$75;while ((i$75=it$74.next())!==getFinished()){
-                            var x$76=$$list.get(i$75);
-                            var y$77=that$73.get(i$75);
-                            var x$78;
-                            if((x$78=x$76)!==null){
-                                var y$79;
-                                if((y$79=y$77)!==null){
-                                    if((!x$78.equals(y$79))){
+                var that$208;
+                if(isOfType((that$208=that$207),{t:List,a:{Element:{t:Anything}}})){
+                    if(that$208.getSize().equals($$list.getSize())){
+                        var it$209 = Range((0),$$list.getSize().minus((1)),{Element:{t:Integer}}).getIterator();
+                        var i$210;while ((i$210=it$209.next())!==getFinished()){
+                            var x$211=$$list.get(i$210);
+                            var y$212=that$208.get(i$210);
+                            var x$213;
+                            if((x$213=x$211)!==null){
+                                var y$214;
+                                if((y$214=y$212)!==null){
+                                    if((!x$213.equals(y$214))){
                                         return false;
                                     }
                                 }else {
                                     return false;
                                 }
                             }else {
-                                var y$80;
-                                if((y$80=y$77)!==null){
+                                var y$215;
+                                if((y$215=y$212)!==null){
                                     return false;
                                 }
                             }
                         }
-                        if (getFinished() === i$75){
+                        if (getFinished() === i$210){
                             return true;
                         }
                     }
@@ -994,50 +1465,50 @@ function $init$List(){
                 return false;
             };$$list.getHash=function getHash(){
                 var $$list=this;
-                var hash$81=(1);
-                var setHash$81=function(hash$82){return hash$81=hash$82;};
-                var it$83 = $$list.getIterator();
-                var elem$84;while ((elem$84=it$83.next())!==getFinished()){
-                    (hash$81=hash$81.times((31)));
-                    var elem$85;
-                    if((elem$85=elem$84)!==null){
-                        (hash$81=hash$81.plus(elem$85.getHash()));
+                var hash$216=(1);
+                var setHash$216=function(hash$217){return hash$216=hash$217;};
+                var it$218 = $$list.getIterator();
+                var elem$219;while ((elem$219=it$218.next())!==getFinished()){
+                    (hash$216=hash$216.times((31)));
+                    var elem$220;
+                    if((elem$220=elem$219)!==null){
+                        (hash$216=hash$216.plus(elem$220.getHash()));
                     }
                 }
-                return hash$81;
+                return hash$216;
             };$$list.getFirst=function getFirst(){
                 var $$list=this;
                 return $$list.get((0));
             };
             $$list.getLast=function getLast(){
                 var $$list=this;
-                var i$86;
-                if((i$86=$$list.getLastIndex())!==null){
-                    return $$list.get(i$86);
+                var i$221;
+                if((i$221=$$list.getLastIndex())!==null){
+                    return $$list.get(i$221);
                 }
                 return null;
-            };$$list.withLeading=function withLeading(element$87,$$$mptypes){
+            };$$list.withLeading=function withLeading(element$222,$$$mptypes){
                 var $$list=this;
-                var sb$88=SequenceBuilder([{ t:'u', l:[$$list.$$targs$$[0],$$$mptypes[0]]}]);
-                sb$88.append(element$87);
+                var sb$223=SequenceBuilder({Element:{ t:'u', l:[$$list.$$targs$$.Element,$$$mptypes.Other]}});
+                sb$223.append(element$222);
                 if((!$$list.getEmpty())){
-                    sb$88.appendAll($$list.getSequence());
+                    sb$223.appendAll($$list.getSequence());
                 }
-                //assert at List.ceylon (160:8-160:41)
-                var seq$89;
-                if (!(nonempty((seq$89=sb$88.getSequence())))) { throw Exception('Assertion failed: \'nonempty seq=sb.sequence\' at List.ceylon (160:15-160:40)'); }
-                return seq$89;
-            };$$list.withTrailing=function withTrailing(element$90,$$$mptypes){
+                //assert at List.ceylon (159:8-159:41)
+                var seq$224;
+                if (!(nonempty((seq$224=sb$223.getSequence())))) { throw AssertionException('Assertion failed: \'nonempty seq=sb.sequence\' at List.ceylon (159:15-159:40)'); }
+                return seq$224;
+            };$$list.withTrailing=function withTrailing(element$225,$$$mptypes){
                 var $$list=this;
-                var sb$91=SequenceBuilder([{ t:'u', l:[$$list.$$targs$$[0],$$$mptypes[0]]}]);
+                var sb$226=SequenceBuilder({Element:{ t:'u', l:[$$list.$$targs$$.Element,$$$mptypes.Other]}});
                 if((!$$list.getEmpty())){
-                    sb$91.appendAll($$list.getSequence());
+                    sb$226.appendAll($$list.getSequence());
                 }
-                sb$91.append(element$90);
-                //assert at List.ceylon (175:8-175:41)
-                var seq$92;
-                if (!(nonempty((seq$92=sb$91.getSequence())))) { throw Exception('Assertion failed: \'nonempty seq=sb.sequence\' at List.ceylon (175:15-175:40)'); }
-                return seq$92;
+                sb$226.append(element$225);
+                //assert at List.ceylon (174:8-174:41)
+                var seq$227;
+                if (!(nonempty((seq$227=sb$226.getSequence())))) { throw AssertionException('Assertion failed: \'nonempty seq=sb.sequence\' at List.ceylon (174:15-174:40)'); }
+                return seq$227;
             };
         })(List.$$.prototype);
     }
@@ -1045,61 +1516,217 @@ function $init$List(){
 }
 exports.$init$List=$init$List;
 $init$List();
-var opt$61,opt$63;
-function ChainedIterator(first$93, second$94, $$targs$$,$$chainedIterator){
-    $init$ChainedIterator();
-    if ($$chainedIterator===undefined)$$chainedIterator=new ChainedIterator.$$;
-    $$chainedIterator.$$targs$$=$$targs$$;
-    $$chainedIterator.second$94=second$94;
-    Iterator($$chainedIterator);
-    $$chainedIterator.iter$95=first$93.getIterator();
-    $$chainedIterator.more$96=true;
-    return $$chainedIterator;
+var opt$197,opt$199;
+function Tuple(first$228, rest$229, $$targs$$,$$tuple){
+    $init$Tuple();
+    if ($$tuple===undefined)$$tuple=new Tuple.$$;
+    set_type_args($$tuple,$$targs$$);
+    Object$($$tuple);
+    Sequence($$tuple);
+    Cloneable($$tuple);
+    add_type_arg($$tuple,'Clone',{t:Tuple,a:{Rest:$$tuple.$$targs$$.Rest,First:$$tuple.$$targs$$.First,Element:$$tuple.$$targs$$.Element}});
+    $$tuple.first$230=first$228;
+    $$tuple.rest$231=rest$229;
+    return $$tuple;
 }
-exports.ChainedIterator=ChainedIterator;
-function $init$ChainedIterator(){
-    if (ChainedIterator.$$===undefined){
-        initTypeProto(ChainedIterator,'ceylon.language::ChainedIterator',Basic,$init$Iterator());
-        (function($$chainedIterator){
-            $$chainedIterator.getIter$95=function getIter$95(){
-                return this.iter$95;
+exports.Tuple=Tuple;
+function $init$Tuple(){
+    if (Tuple.$$===undefined){
+        initTypeProto(Tuple,'ceylon.language::Tuple',Object$,$init$Sequence(),$init$Cloneable());
+        (function($$tuple){
+            $$tuple.getFirst=function getFirst(){
+                return this.first$230;
             };
-            $$chainedIterator.setIter$95=function setIter$95(iter$97){
-                return this.iter$95=iter$97;
+            $$tuple.getRest=function getRest(){
+                return this.rest$231;
             };
-            $$chainedIterator.getMore$96=function getMore$96(){
-                return this.more$96;
+            $$tuple.getSize=function getSize(){
+                var $$tuple=this;
+                return (1).plus($$tuple.getRest().getSize());
             };
-            $$chainedIterator.setMore$96=function setMore$96(more$98){
-                return this.more$96=more$98;
-            };
-            $$chainedIterator.next=function next(){
-                var $$chainedIterator=this;
-                var e$99=$$chainedIterator.getIter$95().next();
-                var setE$99=function(e$100){return e$99=e$100;};
-                var f$101;
-                if(isOfType((f$101=e$99),{t:Finished})){
-                    if($$chainedIterator.getMore$96()){
-                        $$chainedIterator.setIter$95($$chainedIterator.second$94.getIterator());
-                        $$chainedIterator.setMore$96(false);
-                        e$99=$$chainedIterator.getIter$95().next();
-                    }
+            $$tuple.get=function get(index$232){
+                var $$tuple=this;
+                
+                var case$233=index$232.compare((0));
+                if (case$233===getSmaller()) {
+                    return null;
+                }else if (case$233===getEqual()) {
+                    return $$tuple.getFirst();
+                }else if (case$233===getLarger()) {
+                    return $$tuple.getRest().get(index$232.minus((1)));
                 }
-                return e$99;
+            };$$tuple.getLastIndex=function getLastIndex(){
+                var $$tuple=this;
+                var restLastIndex$234;
+                if((restLastIndex$234=$$tuple.getRest().getLastIndex())!==null){
+                    return restLastIndex$234.plus((1));
+                }else {
+                    return (0);
+                }
+            };$$tuple.getLast=function getLast(){
+                var $$tuple=this;
+                var rest$235;
+                if(nonempty((rest$235=$$tuple.getRest()))){
+                    return rest$235.getLast();
+                }else {
+                    return $$tuple.getFirst();
+                }
+            };$$tuple.getReversed=function getReversed(){
+                var $$tuple=this;
+                return $$tuple.getRest().getReversed().withTrailing($$tuple.getFirst(),{Other:$$tuple.$$targs$$.First});
             };
-        })(ChainedIterator.$$.prototype);
+            $$tuple.segment=function segment(from$236,length$237){
+                var $$tuple=this;
+                if(length$237.compare((0)).equals(getSmaller())){
+                    return getEmpty();
+                }
+                var realFrom$238=(opt$239=(from$236.compare((0)).equals(getSmaller())?(0):null),opt$239!==null?opt$239:from$236);
+                var opt$239;
+                if(realFrom$238.equals((0))){
+                    return (opt$240=(length$237.equals((1))?Tuple($$tuple.getFirst(),getEmpty(),{Rest:{t:Empty},First:$$tuple.$$targs$$.First,Element:$$tuple.$$targs$$.First}):null),opt$240!==null?opt$240:$$tuple.getRest().segment((0),length$237.plus(realFrom$238).minus((1))).withLeading($$tuple.getFirst(),{Other:$$tuple.$$targs$$.First}));
+                    var opt$240;
+                }
+                return $$tuple.getRest().segment(realFrom$238.minus((1)),length$237);
+            };$$tuple.span=function span(from$241,end$242){
+                var $$tuple=this;
+                if((from$241.compare((0)).equals(getSmaller())&&end$242.compare((0)).equals(getSmaller()))){
+                    return getEmpty();
+                }
+                var realFrom$243=(opt$244=(from$241.compare((0)).equals(getSmaller())?(0):null),opt$244!==null?opt$244:from$241);
+                var opt$244;
+                var realEnd$245=(opt$246=(end$242.compare((0)).equals(getSmaller())?(0):null),opt$246!==null?opt$246:end$242);
+                var opt$246;
+                return (opt$247=((realFrom$243.compare(realEnd$245)!==getLarger())?$$tuple.segment(from$241,realEnd$245.minus(realFrom$243).plus((1))):null),opt$247!==null?opt$247:$$tuple.segment(realEnd$245,realFrom$243.minus(realEnd$245).plus((1))).getReversed().getSequence());
+                var opt$247;
+            };$$tuple.spanTo=function (to$248){
+                var $$tuple=this;
+                return (opt$249=(to$248.compare((0)).equals(getSmaller())?getEmpty():null),opt$249!==null?opt$249:$$tuple.span((0),to$248));
+            };
+            $$tuple.spanFrom=function (from$250){
+                var $$tuple=this;
+                return $$tuple.span(from$250,$$tuple.getSize());
+            };
+            $$tuple.getClone=function getClone(){
+                var $$tuple=this;
+                return $$tuple;
+            };
+            $$tuple.getIterator=function getIterator(){
+                var $$tuple=this;
+                function iterator$251($$targs$$){
+                    var $$iterator$251=new iterator$251.$$;
+                    $$iterator$251.$$targs$$=$$targs$$;
+                    Iterator($$iterator$251);
+                    $$iterator$251.current$252=$$tuple;
+                    return $$iterator$251;
+                }
+                function $init$iterator$251(){
+                    if (iterator$251.$$===undefined){
+                        initTypeProto(iterator$251,'ceylon.language::Tuple.iterator.iterator',Basic,$init$Iterator());
+                    }
+                    return iterator$251;
+                }
+                $init$iterator$251();
+                (function($$iterator$251){
+                    $$iterator$251.getCurrent$252=function getCurrent$252(){
+                        return this.current$252;
+                    };
+                    $$iterator$251.setCurrent$252=function setCurrent$252(current$253){
+                        return this.current$252=current$253;
+                    };
+                    $$iterator$251.next=function next(){
+                        var $$iterator$251=this;
+                        var c$254;
+                        if(nonempty((c$254=$$iterator$251.getCurrent$252()))){
+                            $$iterator$251.setCurrent$252(c$254.getRest());
+                            return c$254.getFirst();
+                        }else {
+                            return getFinished();
+                        }
+                    };
+                })(iterator$251.$$.prototype);
+                var iterator$255=iterator$251({Element:$$tuple.$$targs$$.Element});
+                var getIterator$255=function(){
+                    return iterator$255;
+                }
+                return getIterator$255();
+            };$$tuple.contains=function contains(element$256){
+                var $$tuple=this;
+                var first$257;
+                if((first$257=$$tuple.getFirst())!==null&&first$257.equals(element$256)){
+                    return true;
+                }else {
+                    return $$tuple.getRest().contains(element$256);
+                }
+            };
+        })(Tuple.$$.prototype);
     }
-    return ChainedIterator;
+    return Tuple;
 }
-exports.$init$ChainedIterator=$init$ChainedIterator;
-$init$ChainedIterator();
-function Entry(key$102, item$103, $$targs$$,$$entry){
+exports.$init$Tuple=$init$Tuple;
+$init$Tuple();
+var opt$249;
+function Exponentiable($$exponentiable){
+    Numeric($$exponentiable);
+}
+exports.Exponentiable=Exponentiable;
+function $init$Exponentiable(){
+    if (Exponentiable.$$===undefined){
+        initTypeProto(Exponentiable,'ceylon.language::Exponentiable',$init$Numeric());
+        (function($$exponentiable){
+        })(Exponentiable.$$.prototype);
+    }
+    return Exponentiable;
+}
+exports.$init$Exponentiable=$init$Exponentiable;
+$init$Exponentiable();
+function Summable($$summable){
+}
+exports.Summable=Summable;
+function $init$Summable(){
+    if (Summable.$$===undefined){
+        initTypeProto(Summable,'ceylon.language::Summable');
+        (function($$summable){
+        })(Summable.$$.prototype);
+    }
+    return Summable;
+}
+exports.$init$Summable=$init$Summable;
+$init$Summable();
+function Comparable($$comparable){
+}
+exports.Comparable=Comparable;
+function $init$Comparable(){
+    if (Comparable.$$===undefined){
+        initTypeProto(Comparable,'ceylon.language::Comparable');
+        (function($$comparable){
+        })(Comparable.$$.prototype);
+    }
+    return Comparable;
+}
+exports.$init$Comparable=$init$Comparable;
+$init$Comparable();
+function Numeric($$numeric){
+    Summable($$numeric);
+    Invertable($$numeric);
+}
+exports.Numeric=Numeric;
+function $init$Numeric(){
+    if (Numeric.$$===undefined){
+        initTypeProto(Numeric,'ceylon.language::Numeric',$init$Summable(),$init$Invertable());
+        (function($$numeric){
+        })(Numeric.$$.prototype);
+    }
+    return Numeric;
+}
+exports.$init$Numeric=$init$Numeric;
+$init$Numeric();
+function Entry(key$258, item$259, $$targs$$,$$entry){
     $init$Entry();
     if ($$entry===undefined)$$entry=new Entry.$$;
-    $$entry.$$targs$$=$$targs$$;
+    set_type_args($$entry,$$targs$$);
     Object$($$entry);
-    $$entry.key$104=key$102;
-    $$entry.item$105=item$103;
+    $$entry.key$260=key$258;
+    $$entry.item$261=item$259;
     return $$entry;
 }
 exports.Entry=Entry;
@@ -1108,16 +1735,16 @@ function $init$Entry(){
         initTypeProto(Entry,'ceylon.language::Entry',Object$);
         (function($$entry){
             $$entry.getKey=function getKey(){
-                return this.key$104;
+                return this.key$260;
             };
             $$entry.getItem=function getItem(){
-                return this.item$105;
+                return this.item$261;
             };
-            $$entry.equals=function equals(that$106){
+            $$entry.equals=function equals(that$262){
                 var $$entry=this;
-                var that$107;
-                if(isOfType((that$107=that$106),{t:Entry,a:[{t:Object$},{t:Object$}]})){
-                    return ($$entry.getKey().equals(that$107.getKey())&&$$entry.getItem().equals(that$107.getItem()));
+                var that$263;
+                if(isOfType((that$263=that$262),{t:Entry,a:{Key:{t:Object$},Item:{t:Object$}}})){
+                    return ($$entry.getKey().equals(that$263.getKey())&&$$entry.getItem().equals(that$263.getItem()));
                 }else {
                     return false;
                 }
@@ -1127,7 +1754,7 @@ function $init$Entry(){
             };
             $$entry.getString=function getString(){
                 var $$entry=this;
-                return $$entry.getKey().getString().plus(String$("->",2)).plus($$entry.getItem().getString());
+                return StringBuilder().appendAll([$$entry.getKey().getString(),String$("->",2),$$entry.getItem().getString()]).getString();
             };
         })(Entry.$$.prototype);
     }
@@ -1150,6 +1777,35 @@ function $init$Integral(){
 }
 exports.$init$Integral=$init$Integral;
 $init$Integral();
+function Scalar($$scalar){
+    Numeric($$scalar);
+    Comparable($$scalar);
+    Number($$scalar);
+}
+exports.Scalar=Scalar;
+function $init$Scalar(){
+    if (Scalar.$$===undefined){
+        initTypeProto(Scalar,'ceylon.language::Scalar',$init$Numeric(),$init$Comparable(),$init$Number$());
+        (function($$scalar){
+        })(Scalar.$$.prototype);
+    }
+    return Scalar;
+}
+exports.$init$Scalar=$init$Scalar;
+$init$Scalar();
+function Invertable($$invertable){
+}
+exports.Invertable=Invertable;
+function $init$Invertable(){
+    if (Invertable.$$===undefined){
+        initTypeProto(Invertable,'ceylon.language::Invertable');
+        (function($$invertable){
+        })(Invertable.$$.prototype);
+    }
+    return Invertable;
+}
+exports.$init$Invertable=$init$Invertable;
+$init$Invertable();
 function Ordinal($$ordinal){
 }
 exports.Ordinal=Ordinal;
@@ -1177,125 +1833,6 @@ function $init$Enumerable(){
 }
 exports.$init$Enumerable=$init$Enumerable;
 $init$Enumerable();
-function Numeric($$numeric){
-    Summable($$numeric);
-    Invertable($$numeric);
-}
-exports.Numeric=Numeric;
-function $init$Numeric(){
-    if (Numeric.$$===undefined){
-        initTypeProto(Numeric,'ceylon.language::Numeric',$init$Summable(),$init$Invertable());
-        (function($$numeric){
-        })(Numeric.$$.prototype);
-    }
-    return Numeric;
-}
-exports.$init$Numeric=$init$Numeric;
-$init$Numeric();
-function Exponentiable($$exponentiable){
-    Numeric($$exponentiable);
-}
-exports.Exponentiable=Exponentiable;
-function $init$Exponentiable(){
-    if (Exponentiable.$$===undefined){
-        initTypeProto(Exponentiable,'ceylon.language::Exponentiable',$init$Numeric());
-        (function($$exponentiable){
-        })(Exponentiable.$$.prototype);
-    }
-    return Exponentiable;
-}
-exports.$init$Exponentiable=$init$Exponentiable;
-$init$Exponentiable();
-function Comparable($$comparable){
-}
-exports.Comparable=Comparable;
-function $init$Comparable(){
-    if (Comparable.$$===undefined){
-        initTypeProto(Comparable,'ceylon.language::Comparable');
-        (function($$comparable){
-        })(Comparable.$$.prototype);
-    }
-    return Comparable;
-}
-exports.$init$Comparable=$init$Comparable;
-$init$Comparable();
-function Invertable($$invertable){
-}
-exports.Invertable=Invertable;
-function $init$Invertable(){
-    if (Invertable.$$===undefined){
-        initTypeProto(Invertable,'ceylon.language::Invertable');
-        (function($$invertable){
-        })(Invertable.$$.prototype);
-    }
-    return Invertable;
-}
-exports.$init$Invertable=$init$Invertable;
-$init$Invertable();
-function Scalar($$scalar){
-    Numeric($$scalar);
-    Comparable($$scalar);
-    Number($$scalar);
-}
-exports.Scalar=Scalar;
-function $init$Scalar(){
-    if (Scalar.$$===undefined){
-        initTypeProto(Scalar,'ceylon.language::Scalar',$init$Numeric(),$init$Comparable(),$init$Number$());
-        (function($$scalar){
-        })(Scalar.$$.prototype);
-    }
-    return Scalar;
-}
-exports.$init$Scalar=$init$Scalar;
-$init$Scalar();
-function Summable($$summable){
-}
-exports.Summable=Summable;
-function $init$Summable(){
-    if (Summable.$$===undefined){
-        initTypeProto(Summable,'ceylon.language::Summable');
-        (function($$summable){
-        })(Summable.$$.prototype);
-    }
-    return Summable;
-}
-exports.$init$Summable=$init$Summable;
-$init$Summable();
-function Exception(description$108, cause$109, $$exception){
-    $init$Exception();
-    if ($$exception===undefined)$$exception=new Exception.$$;
-    if(description$108===undefined){description$108=null;}
-    if(cause$109===undefined){cause$109=null;}
-    $$exception.cause$110=cause$109;
-    $$exception.description$111=description$108;
-    return $$exception;
-}
-exports.Exception=Exception;
-function $init$Exception(){
-    if (Exception.$$===undefined){
-        initTypeProto(Exception,'ceylon.language::Exception',Basic);
-        (function($$exception){
-            $$exception.getCause=function getCause(){
-                return this.cause$110;
-            };
-            $$exception.getDescription$111=function getDescription$111(){
-                return this.description$111;
-            };
-            $$exception.getMessage=function getMessage(){
-                var $$exception=this;
-                return (opt$112=(opt$113=$$exception.getDescription$111(),opt$113!==null?opt$113:(opt$114=$$exception.getCause(),opt$114!==null?opt$114.getMessage():null)),opt$112!==null?opt$112:String$("",0));
-            };
-            $$exception.getString=function getString(){
-                var $$exception=this;
-                return className($$exception).plus(StringBuilder().appendAll([String$(" \"",2),$$exception.getMessage().getString(),String$("\"",1)]).getString());
-            };
-        })(Exception.$$.prototype);
-    }
-    return Exception;
-}
-exports.$init$Exception=$init$Exception;
-$init$Exception();
-var opt$112,opt$113,opt$114;
 function RecursiveInitializationException($$recursiveInitializationException){
     $init$RecursiveInitializationException();
     if ($$recursiveInitializationException===undefined)$$recursiveInitializationException=new RecursiveInitializationException.$$;
@@ -1311,6 +1848,41 @@ function $init$RecursiveInitializationException(){
 }
 exports.$init$RecursiveInitializationException=$init$RecursiveInitializationException;
 $init$RecursiveInitializationException();
+function Exception(description$264, cause$265, $$exception){
+    $init$Exception();
+    if ($$exception===undefined)$$exception=new Exception.$$;
+    if(description$264===undefined){description$264=null;}
+    if(cause$265===undefined){cause$265=null;}
+    $$exception.cause$266=cause$265;
+    $$exception.description$267=description$264;
+    return $$exception;
+}
+exports.Exception=Exception;
+function $init$Exception(){
+    if (Exception.$$===undefined){
+        initTypeProto(Exception,'ceylon.language::Exception',Basic);
+        (function($$exception){
+            $$exception.getCause=function getCause(){
+                return this.cause$266;
+            };
+            $$exception.getDescription$267=function getDescription$267(){
+                return this.description$267;
+            };
+            $$exception.getMessage=function getMessage(){
+                var $$exception=this;
+                return (opt$268=(opt$269=$$exception.getDescription$267(),opt$269!==null?opt$269:(opt$270=$$exception.getCause(),opt$270!==null?opt$270.getMessage():null)),opt$268!==null?opt$268:String$("",0));
+            };
+            $$exception.getString=function getString(){
+                var $$exception=this;
+                return className($$exception).plus(String$(" \"\' message \'\"",14));
+            };
+        })(Exception.$$.prototype);
+    }
+    return Exception;
+}
+exports.$init$Exception=$init$Exception;
+$init$Exception();
+var opt$268,opt$269,opt$270;
 function NegativeNumberException($$negativeNumberException){
     $init$NegativeNumberException();
     if ($$negativeNumberException===undefined)$$negativeNumberException=new NegativeNumberException.$$;
@@ -1341,15 +1913,30 @@ function $init$OverflowException(){
 }
 exports.$init$OverflowException=$init$OverflowException;
 $init$OverflowException();
-function Range(first$115, last$116, $$targs$$,$$range){
+function AssertionException(message$271, $$assertionException){
+    $init$AssertionException();
+    if ($$assertionException===undefined)$$assertionException=new AssertionException.$$;
+    Exception(message$271,undefined,$$assertionException);
+    return $$assertionException;
+}
+exports.AssertionException=AssertionException;
+function $init$AssertionException(){
+    if (AssertionException.$$===undefined){
+        initTypeProto(AssertionException,'ceylon.language::AssertionException',Exception);
+    }
+    return AssertionException;
+}
+exports.$init$AssertionException=$init$AssertionException;
+$init$AssertionException();
+function Range(first$272, last$273, $$targs$$,$$range){
     $init$Range();
     if ($$range===undefined)$$range=new Range.$$;
-    $$range.$$targs$$=$$targs$$;
+    set_type_args($$range,$$targs$$);
     Object$($$range);
     Sequence($$range);
     Category($$range);
-    $$range.first$117=first$115;
-    $$range.last$118=last$116;
+    $$range.first$274=first$272;
+    $$range.last$275=last$273;
     return $$range;
 }
 exports.Range=Range;
@@ -1358,10 +1945,10 @@ function $init$Range(){
         initTypeProto(Range,'ceylon.language::Range',Object$,$init$Sequence(),$init$Category());
         (function($$range){
             $$range.getFirst=function getFirst(){
-                return this.first$117;
+                return this.first$274;
             };
             $$range.getLast=function getLast(){
-                return this.last$118;
+                return this.last$275;
             };
             $$range.getString=function getString(){
                 var $$range=this;
@@ -1371,27 +1958,27 @@ function $init$Range(){
                 var $$range=this;
                 return $$range.getLast().compare($$range.getFirst()).equals(getSmaller());
             };
-            $$range.next$119=function (x$120){
+            $$range.next$276=function (x$277){
                 var $$range=this;
-                return (opt$121=($$range.getDecreasing()?x$120.getPredecessor():null),opt$121!==null?opt$121:x$120.getSuccessor());
+                return (opt$278=($$range.getDecreasing()?x$277.getPredecessor():null),opt$278!==null?opt$278:x$277.getSuccessor());
             };
             $$range.getSize=function getSize(){
                 var $$range=this;
-                var last$122;
-                var first$123;
-                if(isOfType((last$122=$$range.getLast()),{t:Enumerable,a:[{t:Anything}]})&&isOfType((first$123=$$range.getFirst()),{t:Enumerable,a:[{t:Anything}]})){
-                    return last$122.getIntegerValue().minus(first$123.getIntegerValue()).getMagnitude().plus((1));
+                var last$279;
+                var first$280;
+                if(isOfType((last$279=$$range.getLast()),{t:Enumerable,a:{Other:{t:Anything}}})&&isOfType((first$280=$$range.getFirst()),{t:Enumerable,a:{Other:{t:Anything}}})){
+                    return last$279.getIntegerValue().minus(first$280.getIntegerValue()).getMagnitude().plus((1));
                 }else {
-                    var size$124=(1);
-                    var setSize$124=function(size$125){return size$124=size$125;};
-                    var current$126=$$range.getFirst();
-                    var setCurrent$126=function(current$127){return current$126=current$127;};
-                    while((!current$126.equals($$range.getLast()))){
-                        (oldsize$128=size$124,size$124=oldsize$128.getSuccessor(),oldsize$128);
-                        var oldsize$128;
-                        current$126=$$range.next$119(current$126);
+                    var size$281=(1);
+                    var setSize$281=function(size$282){return size$281=size$282;};
+                    var current$283=$$range.getFirst();
+                    var setCurrent$283=function(current$284){return current$283=current$284;};
+                    while((!current$283.equals($$range.getLast()))){
+                        (oldsize$285=size$281,size$281=oldsize$285.getSuccessor(),oldsize$285);
+                        var oldsize$285;
+                        current$283=$$range.next$276(current$283);
                     }
-                    return size$124;
+                    return size$281;
                 }
             };$$range.getLastIndex=function getLastIndex(){
                 var $$range=this;
@@ -1400,204 +1987,217 @@ function $init$Range(){
             $$range.getRest=function getRest(){
                 var $$range=this;
                 if($$range.getSize().equals((1))){
-                    return empty;
+                    return getEmpty();
                 }
-                var n$129=$$range.next$119($$range.getFirst());
-                return (opt$130=(n$129.equals($$range.getLast())?empty:null),opt$130!==null?opt$130:Range(n$129,$$range.getLast(),[$$range.$$targs$$[0]]));
-                var opt$130;
-            };$$range.get=function get(n$131){
+                var n$286=$$range.next$276($$range.getFirst());
+                return (opt$287=(n$286.equals($$range.getLast())?getEmpty():null),opt$287!==null?opt$287:Range(n$286,$$range.getLast(),{Element:$$range.$$targs$$.Element}));
+                var opt$287;
+            };$$range.get=function get(n$288){
                 var $$range=this;
-                var index$132=(0);
-                var setIndex$132=function(index$133){return index$132=index$133;};
-                var x$134=$$range.getFirst();
-                var setX$134=function(x$135){return x$134=x$135;};
-                while(index$132.compare(n$131).equals(getSmaller())){
-                    if(x$134.equals($$range.getLast())){
+                var index$289=(0);
+                var setIndex$289=function(index$290){return index$289=index$290;};
+                var x$291=$$range.getFirst();
+                var setX$291=function(x$292){return x$291=x$292;};
+                while(index$289.compare(n$288).equals(getSmaller())){
+                    if(x$291.equals($$range.getLast())){
                         return null;
                     }else {
-                        (index$132=index$132.getSuccessor());
-                        x$134=$$range.next$119(x$134);
+                        (index$289=index$289.getSuccessor());
+                        x$291=$$range.next$276(x$291);
                     }
                 }
-                return x$134;
+                return x$291;
             };$$range.getIterator=function getIterator(){
                 var $$range=this;
-                function RangeIterator$136($$rangeIterator$136){
-                    $init$RangeIterator$136();
-                    if ($$rangeIterator$136===undefined)$$rangeIterator$136=new RangeIterator$136.$$;
-                    $$rangeIterator$136.$$targs$$=[$$range.$$targs$$[0]];
-                    Iterator($$rangeIterator$136);
-                    $$rangeIterator$136.current$137=$$range.getFirst();
-                    return $$rangeIterator$136;
+                function RangeIterator$293($$rangeIterator$293){
+                    $init$RangeIterator$293();
+                    if ($$rangeIterator$293===undefined)$$rangeIterator$293=new RangeIterator$293.$$;
+                    $$rangeIterator$293.$$targs$$={Element:$$range.$$targs$$.Element};
+                    Iterator($$rangeIterator$293);
+                    $$rangeIterator$293.current$294=$$range.getFirst();
+                    return $$rangeIterator$293;
                 }
-                function $init$RangeIterator$136(){
-                    if (RangeIterator$136.$$===undefined){
-                        initTypeProto(RangeIterator$136,'ceylon.language::Range.iterator.RangeIterator',Basic,$init$Iterator());
-                        (function($$rangeIterator$136){
-                            $$rangeIterator$136.getCurrent$137=function getCurrent$137(){
-                                return this.current$137;
+                function $init$RangeIterator$293(){
+                    if (RangeIterator$293.$$===undefined){
+                        initTypeProto(RangeIterator$293,'ceylon.language::Range.iterator.RangeIterator',Basic,$init$Iterator());
+                        (function($$rangeIterator$293){
+                            $$rangeIterator$293.getCurrent$294=function getCurrent$294(){
+                                return this.current$294;
                             };
-                            $$rangeIterator$136.setCurrent$137=function setCurrent$137(current$138){
-                                return this.current$137=current$138;
+                            $$rangeIterator$293.setCurrent$294=function setCurrent$294(current$295){
+                                return this.current$294=current$295;
                             };
-                            $$rangeIterator$136.next=function next(){
-                                var $$rangeIterator$136=this;
-                                var result$139=$$rangeIterator$136.getCurrent$137();
-                                var curr$140;
-                                if(!isOfType((curr$140=$$rangeIterator$136.getCurrent$137()),{t:Finished})){
-                                    if((opt$141=($$range.getDecreasing()?(curr$140.compare($$range.getLast())!==getLarger()):null),opt$141!==null?opt$141:(curr$140.compare($$range.getLast())!==getSmaller()))){
-                                        $$rangeIterator$136.setCurrent$137(getFinished());
+                            $$rangeIterator$293.next=function next(){
+                                var $$rangeIterator$293=this;
+                                var result$296=$$rangeIterator$293.getCurrent$294();
+                                var curr$297;
+                                if(!isOfType((curr$297=$$rangeIterator$293.getCurrent$294()),{t:Finished})){
+                                    if((opt$298=($$range.getDecreasing()?(curr$297.compare($$range.getLast())!==getLarger()):null),opt$298!==null?opt$298:(curr$297.compare($$range.getLast())!==getSmaller()))){
+                                        $$rangeIterator$293.setCurrent$294(getFinished());
                                     }else {
-                                        $$rangeIterator$136.setCurrent$137($$range.next$119(curr$140));
+                                        $$rangeIterator$293.setCurrent$294($$range.next$276(curr$297));
                                     }
-                                    var opt$141;
+                                    var opt$298;
                                 }
-                                return result$139;
-                            };$$rangeIterator$136.getString=function getString(){
-                                var $$rangeIterator$136=this;
+                                return result$296;
+                            };$$rangeIterator$293.getString=function getString(){
+                                var $$rangeIterator$293=this;
                                 return String$("RangeIterator",13);
                             };
-                        })(RangeIterator$136.$$.prototype);
+                        })(RangeIterator$293.$$.prototype);
                     }
-                    return RangeIterator$136;
+                    return RangeIterator$293;
                 }
-                $init$RangeIterator$136();
-                return RangeIterator$136();
-            };$$range.contains=function contains(element$142){
+                $init$RangeIterator$293();
+                return RangeIterator$293();
+            };$$range.by=function by(step$299){
                 var $$range=this;
-                var it$143 = $$range.getIterator();
-                var e$144;while ((e$144=it$143.next())!==getFinished()){
-                    if(e$144.equals(element$142)){
+                //assert at Range.ceylon (112:8-113:25)
+                if (!(step$299.compare((0)).equals(getLarger()))) { throw AssertionException('step size must be greater than zero: \'step > 0\' at Range.ceylon (113:15-113:24)'); }
+                if(step$299.equals((1))){
+                    return $$range;
+                }
+                var first$300;
+                var last$301;
+                if(isOfType((first$300=$$range.getFirst()),{t:Integer})&&isOfType((last$301=$$range.getLast()),{t:Integer})){
+                    return integerRangeByIterable($$range,step$299,{Element:$$range.$$targs$$.Element});
+                }
+                return $$range.getT$all()['ceylon.language::Iterable'].$$.prototype.by.call(this,step$299);
+            };$$range.contains=function contains(element$302){
+                var $$range=this;
+                var it$303 = $$range.getIterator();
+                var e$304;while ((e$304=it$303.next())!==getFinished()){
+                    if(e$304.equals(element$302)){
                         return true;
                     }
                 }
-                if (getFinished() === e$144){
+                if (getFinished() === e$304){
                     return false;
                 }
-            };$$range.count=function count(selecting$145){
+            };$$range.count=function count(selecting$305){
                 var $$range=this;
-                var e$146=$$range.getFirst();
-                var setE$146=function(e$147){return e$146=e$147;};
-                var c$148=(0);
-                var setC$148=function(c$149){return c$148=c$149;};
-                while($$range.includes(e$146)){
-                    if(selecting$145(e$146)){
-                        (oldc$150=c$148,c$148=oldc$150.getSuccessor(),oldc$150);
-                        var oldc$150;
+                var e$306=$$range.getFirst();
+                var setE$306=function(e$307){return e$306=e$307;};
+                var c$308=(0);
+                var setC$308=function(c$309){return c$308=c$309;};
+                while($$range.includes(e$306)){
+                    if(selecting$305(e$306)){
+                        (oldc$310=c$308,c$308=oldc$310.getSuccessor(),oldc$310);
+                        var oldc$310;
                     }
-                    e$146=$$range.next$119(e$146);
+                    e$306=$$range.next$276(e$306);
                 }
-                return c$148;
-            };$$range.includes=function (x$151){
+                return c$308;
+            };$$range.includes=function (x$311){
                 var $$range=this;
-                return (opt$152=($$range.getDecreasing()?((x$151.compare($$range.getFirst())!==getLarger())&&(x$151.compare($$range.getLast())!==getSmaller())):null),opt$152!==null?opt$152:((x$151.compare($$range.getFirst())!==getSmaller())&&(x$151.compare($$range.getLast())!==getLarger())));
+                return (opt$312=($$range.getDecreasing()?((x$311.compare($$range.getFirst())!==getLarger())&&(x$311.compare($$range.getLast())!==getSmaller())):null),opt$312!==null?opt$312:((x$311.compare($$range.getFirst())!==getSmaller())&&(x$311.compare($$range.getLast())!==getLarger())));
             };
             $$range.getClone=function getClone(){
                 var $$range=this;
                 return $$range;
             };
-            $$range.segment=function segment(from$153,length$154){
+            $$range.segment=function segment(from$313,length$314){
                 var $$range=this;
-                if(((length$154.compare((0))!==getLarger())||from$153.compare($$range.getLastIndex()).equals(getLarger()))){
-                    return empty;
+                if(((length$314.compare((0))!==getLarger())||from$313.compare($$range.getLastIndex()).equals(getLarger()))){
+                    return getEmpty();
                 }
-                var x$155=$$range.getFirst();
-                var setX$155=function(x$156){return x$155=x$156;};
-                var i$157=(0);
-                var setI$157=function(i$158){return i$157=i$158;};
-                while((oldi$159=i$157,i$157=oldi$159.getSuccessor(),oldi$159).compare(from$153).equals(getSmaller())){
-                    x$155=$$range.next$119(x$155);
+                var x$315=$$range.getFirst();
+                var setX$315=function(x$316){return x$315=x$316;};
+                var i$317=(0);
+                var setI$317=function(i$318){return i$317=i$318;};
+                while((oldi$319=i$317,i$317=oldi$319.getSuccessor(),oldi$319).compare(from$313).equals(getSmaller())){
+                    x$315=$$range.next$276(x$315);
                 }
-                var oldi$159;
-                var y$160=x$155;
-                var setY$160=function(y$161){return y$160=y$161;};
-                var j$162=(1);
-                var setJ$162=function(j$163){return j$162=j$163;};
-                while(((oldj$164=j$162,j$162=oldj$164.getSuccessor(),oldj$164).compare(length$154).equals(getSmaller())&&y$160.compare($$range.getLast()).equals(getSmaller()))){
-                    y$160=$$range.next$119(y$160);
+                var oldi$319;
+                var y$320=x$315;
+                var setY$320=function(y$321){return y$320=y$321;};
+                var j$322=(1);
+                var setJ$322=function(j$323){return j$322=j$323;};
+                while(((oldj$324=j$322,j$322=oldj$324.getSuccessor(),oldj$324).compare(length$314).equals(getSmaller())&&y$320.compare($$range.getLast()).equals(getSmaller()))){
+                    y$320=$$range.next$276(y$320);
                 }
-                var oldj$164;
-                return Range(x$155,y$160,[$$range.$$targs$$[0]]);
-            };$$range.span=function span(from$165,to$166){
+                var oldj$324;
+                return Range(x$315,y$320,{Element:$$range.$$targs$$.Element});
+            };$$range.span=function span(from$325,to$326){
                 var $$range=this;
-                var toIndex$167=to$166;
-                var setToIndex$167=function(toIndex$168){return toIndex$167=toIndex$168;};
-                var fromIndex$169=from$165;
-                var setFromIndex$169=function(fromIndex$170){return fromIndex$169=fromIndex$170;};
-                if(toIndex$167.compare((0)).equals(getSmaller())){
-                    if(fromIndex$169.compare((0)).equals(getSmaller())){
-                        return empty;
+                var toIndex$327=to$326;
+                var setToIndex$327=function(toIndex$328){return toIndex$327=toIndex$328;};
+                var fromIndex$329=from$325;
+                var setFromIndex$329=function(fromIndex$330){return fromIndex$329=fromIndex$330;};
+                if(toIndex$327.compare((0)).equals(getSmaller())){
+                    if(fromIndex$329.compare((0)).equals(getSmaller())){
+                        return getEmpty();
                     }
-                    toIndex$167=(0);
+                    toIndex$327=(0);
                 }else {
-                    if(toIndex$167.compare($$range.getLastIndex()).equals(getLarger())){
-                        if(fromIndex$169.compare($$range.getLastIndex()).equals(getLarger())){
-                            return empty;
+                    if(toIndex$327.compare($$range.getLastIndex()).equals(getLarger())){
+                        if(fromIndex$329.compare($$range.getLastIndex()).equals(getLarger())){
+                            return getEmpty();
                         }
-                        toIndex$167=$$range.getLastIndex();
+                        toIndex$327=$$range.getLastIndex();
                     }
                 }
-                if(fromIndex$169.compare((0)).equals(getSmaller())){
-                    fromIndex$169=(0);
+                if(fromIndex$329.compare((0)).equals(getSmaller())){
+                    fromIndex$329=(0);
                 }else {
-                    if(fromIndex$169.compare($$range.getLastIndex()).equals(getLarger())){
-                        fromIndex$169=$$range.getLastIndex();
+                    if(fromIndex$329.compare($$range.getLastIndex()).equals(getLarger())){
+                        fromIndex$329=$$range.getLastIndex();
                     }
                 }
-                var x$171=$$range.getFirst();
-                var setX$171=function(x$172){return x$171=x$172;};
-                var i$173=(0);
-                var setI$173=function(i$174){return i$173=i$174;};
-                while((oldi$175=i$173,i$173=oldi$175.getSuccessor(),oldi$175).compare(fromIndex$169).equals(getSmaller())){
-                    x$171=$$range.next$119(x$171);
+                var x$331=$$range.getFirst();
+                var setX$331=function(x$332){return x$331=x$332;};
+                var i$333=(0);
+                var setI$333=function(i$334){return i$333=i$334;};
+                while((oldi$335=i$333,i$333=oldi$335.getSuccessor(),oldi$335).compare(fromIndex$329).equals(getSmaller())){
+                    x$331=$$range.next$276(x$331);
                 }
-                var oldi$175;
-                var y$176=$$range.getFirst();
-                var setY$176=function(y$177){return y$176=y$177;};
-                var j$178=(0);
-                var setJ$178=function(j$179){return j$178=j$179;};
-                while((oldj$180=j$178,j$178=oldj$180.getSuccessor(),oldj$180).compare(toIndex$167).equals(getSmaller())){
-                    y$176=$$range.next$119(y$176);
+                var oldi$335;
+                var y$336=$$range.getFirst();
+                var setY$336=function(y$337){return y$336=y$337;};
+                var j$338=(0);
+                var setJ$338=function(j$339){return j$338=j$339;};
+                while((oldj$340=j$338,j$338=oldj$340.getSuccessor(),oldj$340).compare(toIndex$327).equals(getSmaller())){
+                    y$336=$$range.next$276(y$336);
                 }
-                var oldj$180;
-                return Range(x$171,y$176,[$$range.$$targs$$[0]]);
-            };$$range.spanTo=function spanTo(to$181){
+                var oldj$340;
+                return Range(x$331,y$336,{Element:$$range.$$targs$$.Element});
+            };$$range.spanTo=function spanTo(to$341){
                 var $$range=this;
-                return (opt$182=(to$181.compare((0)).equals(getSmaller())?empty:null),opt$182!==null?opt$182:$$range.span((0),to$181));
-                var opt$182;
-            };$$range.spanFrom=function spanFrom(from$183){
+                return (opt$342=(to$341.compare((0)).equals(getSmaller())?getEmpty():null),opt$342!==null?opt$342:$$range.span((0),to$341));
+                var opt$342;
+            };$$range.spanFrom=function spanFrom(from$343){
                 var $$range=this;
-                return $$range.span(from$183,$$range.getSize());
+                return $$range.span(from$343,$$range.getSize());
             };$$range.getReversed=function getReversed(){
                 var $$range=this;
-                return Range($$range.getLast(),$$range.getFirst(),[$$range.$$targs$$[0]]);
+                return Range($$range.getLast(),$$range.getFirst(),{Element:$$range.$$targs$$.Element});
             };
-            $$range.skipping=function skipping(skip$184){
+            $$range.skipping=function skipping(skip$344){
                 var $$range=this;
-                var x$185=(0);
-                var setX$185=function(x$186){return x$185=x$186;};
-                var e$187=$$range.getFirst();
-                var setE$187=function(e$188){return e$187=e$188;};
-                while((oldx$189=x$185,x$185=oldx$189.getSuccessor(),oldx$189).compare(skip$184).equals(getSmaller())){
-                    e$187=$$range.next$119(e$187);
+                var x$345=(0);
+                var setX$345=function(x$346){return x$345=x$346;};
+                var e$347=$$range.getFirst();
+                var setE$347=function(e$348){return e$347=e$348;};
+                while((oldx$349=x$345,x$345=oldx$349.getSuccessor(),oldx$349).compare(skip$344).equals(getSmaller())){
+                    e$347=$$range.next$276(e$347);
                 }
-                var oldx$189;
-                return (opt$190=($$range.includes(e$187)?Range(e$187,$$range.getLast(),[$$range.$$targs$$[0]]):null),opt$190!==null?opt$190:empty);
-                var opt$190;
-            };$$range.taking=function taking(take$191){
+                var oldx$349;
+                return (opt$350=($$range.includes(e$347)?Range(e$347,$$range.getLast(),{Element:$$range.$$targs$$.Element}):null),opt$350!==null?opt$350:getEmpty());
+                var opt$350;
+            };$$range.taking=function taking(take$351){
                 var $$range=this;
-                if(take$191.equals((0))){
-                    return empty;
+                if(take$351.equals((0))){
+                    return getEmpty();
                 }
-                var x$192=(0);
-                var setX$192=function(x$193){return x$192=x$193;};
-                var e$194=$$range.getFirst();
-                var setE$194=function(e$195){return e$194=e$195;};
-                while((x$192=x$192.getSuccessor()).compare(take$191).equals(getSmaller())){
-                    e$194=$$range.next$119(e$194);
+                var x$352=(0);
+                var setX$352=function(x$353){return x$352=x$353;};
+                var e$354=$$range.getFirst();
+                var setE$354=function(e$355){return e$354=e$355;};
+                while((x$352=x$352.getSuccessor()).compare(take$351).equals(getSmaller())){
+                    e$354=$$range.next$276(e$354);
                 }
-                return (opt$196=($$range.includes(e$194)?Range($$range.getFirst(),e$194,[$$range.$$targs$$[0]]):null),opt$196!==null?opt$196:$$range);
-                var opt$196;
+                return (opt$356=($$range.includes(e$354)?Range($$range.getFirst(),e$354,{Element:$$range.$$targs$$.Element}):null),opt$356!==null?opt$356:$$range);
+                var opt$356;
             };$$range.getCoalesced=function getCoalesced(){
                 var $$range=this;
                 return $$range;
@@ -1612,63 +2212,64 @@ function $init$Range(){
 }
 exports.$init$Range=$init$Range;
 $init$Range();
-var opt$121,opt$152;
+var opt$278,opt$312;
 function Set($$set){
     Collection($$set);
     Cloneable($$set);
+    add_type_arg($$set,'Clone',{t:Set,a:{Element:$$set.$$targs$$.Element}});
 }
 exports.Set=Set;
 function $init$Set(){
     if (Set.$$===undefined){
         initTypeProto(Set,'ceylon.language::Set',$init$Collection(),$init$Cloneable());
         (function($$set){
-            $$set.superset=function superset(set$197){
+            $$set.superset=function superset(set$357){
                 var $$set=this;
-                var it$198 = set$197.getIterator();
-                var element$199;while ((element$199=it$198.next())!==getFinished()){
-                    if((!$$set.contains(element$199))){
+                var it$358 = set$357.getIterator();
+                var element$359;while ((element$359=it$358.next())!==getFinished()){
+                    if((!$$set.contains(element$359))){
                         return false;
                     }
                 }
-                if (getFinished() === element$199){
+                if (getFinished() === element$359){
                     return true;
                 }
-            };$$set.subset=function subset(set$200){
+            };$$set.subset=function subset(set$360){
                 var $$set=this;
-                var it$201 = $$set.getIterator();
-                var element$202;while ((element$202=it$201.next())!==getFinished()){
-                    if((!set$200.contains(element$202))){
+                var it$361 = $$set.getIterator();
+                var element$362;while ((element$362=it$361.next())!==getFinished()){
+                    if((!set$360.contains(element$362))){
                         return false;
                     }
                 }
-                if (getFinished() === element$202){
+                if (getFinished() === element$362){
                     return true;
                 }
-            };$$set.equals=function equals(that$203){
+            };$$set.equals=function equals(that$363){
                 var $$set=this;
-                var that$204;
-                if(isOfType((that$204=that$203),{t:Set,a:[{t:Object$}]})&&that$204.getSize().equals($$set.getSize())){
-                    var it$205 = $$set.getIterator();
-                    var element$206;while ((element$206=it$205.next())!==getFinished()){
-                        if((!that$204.contains(element$206))){
+                var that$364;
+                if(isOfType((that$364=that$363),{t:Set,a:{Element:{t:Object$}}})&&that$364.getSize().equals($$set.getSize())){
+                    var it$365 = $$set.getIterator();
+                    var element$366;while ((element$366=it$365.next())!==getFinished()){
+                        if((!that$364.contains(element$366))){
                             return false;
                         }
                     }
-                    if (getFinished() === element$206){
+                    if (getFinished() === element$366){
                         return true;
                     }
                 }
                 return false;
             };$$set.getHash=function getHash(){
                 var $$set=this;
-                var hashCode$207=(1);
-                var setHashCode$207=function(hashCode$208){return hashCode$207=hashCode$208;};
-                var it$209 = $$set.getIterator();
-                var elem$210;while ((elem$210=it$209.next())!==getFinished()){
-                    (hashCode$207=hashCode$207.times((31)));
-                    (hashCode$207=hashCode$207.plus(elem$210.getHash()));
+                var hashCode$367=(1);
+                var setHashCode$367=function(hashCode$368){return hashCode$367=hashCode$368;};
+                var it$369 = $$set.getIterator();
+                var elem$370;while ((elem$370=it$369.next())!==getFinished()){
+                    (hashCode$367=hashCode$367.times((31)));
+                    (hashCode$367=hashCode$367.plus(elem$370.getHash()));
                 }
-                return hashCode$207;
+                return hashCode$367;
             };
         })(Set.$$.prototype);
     }
@@ -1676,402 +2277,11 @@ function $init$Set(){
 }
 exports.$init$Set=$init$Set;
 $init$Set();
-function LazyList(elems$211, $$targs$$,$$lazyList){
-    $init$LazyList();
-    if ($$lazyList===undefined)$$lazyList=new LazyList.$$;
-    $$lazyList.$$targs$$=$$targs$$;
-    $$lazyList.elems$211=elems$211;
-    List($$lazyList);
-    return $$lazyList;
-}
-exports.LazyList=LazyList;
-function $init$LazyList(){
-    if (LazyList.$$===undefined){
-        initTypeProto(LazyList,'ceylon.language::LazyList',Basic,$init$List());
-        (function($$lazyList){
-            $$lazyList.getLastIndex=function getLastIndex(){
-                var $$lazyList=this;
-                var size$212=$$lazyList.elems$211.getSize();
-                return (opt$213=(size$212.compare((0)).equals(getLarger())?size$212.minus((1)):null),opt$213!==null?opt$213:null);
-                var opt$213;
-            };$$lazyList.get=function get(index$214){
-                var $$lazyList=this;
-                if(index$214.equals((0))){
-                    return $$lazyList.elems$211.getFirst();
-                }else {
-                    return $$lazyList.elems$211.skipping(index$214).getFirst();
-                }
-            };$$lazyList.getIterator=function getIterator(){
-                var $$lazyList=this;
-                return $$lazyList.elems$211.getIterator();
-            };
-            $$lazyList.getReversed=function getReversed(){
-                var $$lazyList=this;
-                return $$lazyList.elems$211.getSequence().getReversed();
-            };
-            $$lazyList.getClone=function getClone(){
-                var $$lazyList=this;
-                return $$lazyList;
-            };
-            $$lazyList.span=function span(from$215,to$216){
-                var $$lazyList=this;
-                if((to$216.compare((0)).equals(getSmaller())&&from$215.compare((0)).equals(getSmaller()))){
-                    return empty;
-                }
-                var toIndex$217=largest(to$216,(0),[{t:Integer}]);
-                var fromIndex$218=largest(from$215,(0),[{t:Integer}]);
-                if((toIndex$217.compare(fromIndex$218)!==getSmaller())){
-                    var els$219=(opt$220=(fromIndex$218.compare((0)).equals(getLarger())?$$lazyList.elems$211.skipping(fromIndex$218):null),opt$220!==null?opt$220:$$lazyList.elems$211);
-                    var opt$220;
-                    return LazyList(els$219.taking(toIndex$217.minus(fromIndex$218).plus((1))),[$$lazyList.$$targs$$[0]]);
-                }else {
-                    var seq$221=(opt$222=(toIndex$217.compare((0)).equals(getLarger())?$$lazyList.elems$211.skipping(toIndex$217):null),opt$222!==null?opt$222:$$lazyList.elems$211);
-                    var opt$222;
-                    return seq$221.taking(fromIndex$218.minus(toIndex$217).plus((1))).getSequence().getReversed();
-                }
-            };$$lazyList.spanTo=function (to$223){
-                var $$lazyList=this;
-                return (opt$224=(to$223.compare((0)).equals(getSmaller())?empty:null),opt$224!==null?opt$224:LazyList($$lazyList.elems$211.taking(to$223.plus((1))),[$$lazyList.$$targs$$[0]]));
-            };
-            $$lazyList.spanFrom=function (from$225){
-                var $$lazyList=this;
-                return (opt$226=(from$225.compare((0)).equals(getLarger())?LazyList($$lazyList.elems$211.skipping(from$225),[$$lazyList.$$targs$$[0]]):null),opt$226!==null?opt$226:$$lazyList);
-            };
-            $$lazyList.segment=function segment(from$227,length$228){
-                var $$lazyList=this;
-                if(length$228.compare((0)).equals(getLarger())){
-                    var els$229=(opt$230=(from$227.compare((0)).equals(getLarger())?$$lazyList.elems$211.skipping(from$227):null),opt$230!==null?opt$230:$$lazyList.elems$211);
-                    var opt$230;
-                    return LazyList(els$229.taking(length$228),[$$lazyList.$$targs$$[0]]);
-                }else {
-                    return empty;
-                }
-            };$$lazyList.equals=function equals(that$231){
-                var $$lazyList=this;
-                var that$232;
-                if(isOfType((that$232=that$231),{t:List,a:[{t:Anything}]})){
-                    var size$233=$$lazyList.elems$211.getSize();
-                    if(that$232.getSize().equals(size$233)){
-                        var it$234 = Range((0),size$233.minus((1)),[{t:Integer}]).getIterator();
-                        var i$235;while ((i$235=it$234.next())!==getFinished()){
-                            var x$236=$$lazyList.get(i$235);
-                            var y$237=that$232.get(i$235);
-                            var x$238;
-                            if((x$238=x$236)!==null){
-                                var y$239;
-                                if((y$239=y$237)!==null){
-                                    if((!x$238.equals(y$239))){
-                                        return false;
-                                    }
-                                }else {
-                                    return false;
-                                }
-                            }else {
-                                var y$240;
-                                if((y$240=y$237)!==null){
-                                    return false;
-                                }
-                            }
-                        }
-                        if (getFinished() === i$235){
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            };$$lazyList.getHash=function getHash(){
-                var $$lazyList=this;
-                var hash$241=(1);
-                var setHash$241=function(hash$242){return hash$241=hash$242;};
-                var it$243 = $$lazyList.elems$211.getIterator();
-                var elem$244;while ((elem$244=it$243.next())!==getFinished()){
-                    (hash$241=hash$241.times((31)));
-                    var elem$245;
-                    if((elem$245=elem$244)!==null){
-                        (hash$241=hash$241.plus(elem$245.getHash()));
-                    }
-                }
-                return hash$241;
-            };$$lazyList.findLast=function (selecting$246){
-                var $$lazyList=this;
-                return $$lazyList.elems$211.findLast(selecting$246);
-            };
-            $$lazyList.getFirst=function getFirst(){
-                var $$lazyList=this;
-                return $$lazyList.elems$211.getFirst();
-            };
-            $$lazyList.getLast=function getLast(){
-                var $$lazyList=this;
-                return $$lazyList.elems$211.getLast();
-            };
-        })(LazyList.$$.prototype);
-    }
-    return LazyList;
-}
-exports.$init$LazyList=$init$LazyList;
-$init$LazyList();
-var opt$224,opt$226;
-function LazySet(elems$247, $$targs$$,$$lazySet){
-    $init$LazySet();
-    if ($$lazySet===undefined)$$lazySet=new LazySet.$$;
-    $$lazySet.$$targs$$=$$targs$$;
-    $$lazySet.elems$247=elems$247;
-    Set($$lazySet);
-    return $$lazySet;
-}
-exports.LazySet=LazySet;
-function $init$LazySet(){
-    if (LazySet.$$===undefined){
-        initTypeProto(LazySet,'ceylon.language::LazySet',Basic,$init$Set());
-        (function($$lazySet){
-            $$lazySet.getClone=function getClone(){
-                var $$lazySet=this;
-                return $$lazySet;
-            };
-            $$lazySet.getSize=function getSize(){
-                var $$lazySet=this;
-                var c$248=(0);
-                var setC$248=function(c$249){return c$248=c$249;};
-                var sorted$250=$$lazySet.elems$247.$sort(byIncreasing(function (e$251){
-                    var $$lazySet=this;
-                    return e$251.getHash();
-                },[$$lazySet.$$targs$$[0],{t:Integer}]));
-                var l$252;
-                if((l$252=sorted$250.getFirst())!==null){
-                    c$248=(1);
-                    var last$253=l$252;
-                    var setLast$253=function(last$254){return last$253=last$254;};
-                    var it$255 = sorted$250.getRest().getIterator();
-                    var e$256;while ((e$256=it$255.next())!==getFinished()){
-                        if((!e$256.equals(last$253))){
-                            (oldc$257=c$248,c$248=oldc$257.getSuccessor(),oldc$257);
-                            var oldc$257;
-                            last$253=e$256;
-                        }
-                    }
-                }
-                return c$248;
-            };$$lazySet.getIterator=function getIterator(){
-                var $$lazySet=this;
-                return $$lazySet.elems$247.getIterator();
-            };
-            $$lazySet.union=function (set$258,$$$mptypes){
-                var $$lazySet=this;
-                return LazySet($$lazySet.elems$247.chain(set$258,[$$$mptypes[0]]),[{ t:'u', l:[$$lazySet.$$targs$$[0],$$$mptypes[0]]}]);
-            };
-            $$lazySet.intersection=function (set$259,$$$mptypes){
-                var $$lazySet=this;
-                return LazySet(Comprehension(function(){
-                    var e$262;
-                    var it$260=set$259.getIterator();
-                    var e$261=getFinished();
-                    var e$262;
-                    var next$e$261=function(){
-                        while((e$261=it$260.next())!==getFinished()){
-                            if(isOfType((e$262=e$261),$$lazySet.$$targs$$[0])&&$$lazySet.contains(e$262)){
-                                return e$261;
-                            }
-                        }
-                        return getFinished();
-                    }
-                    next$e$261();
-                    return function(){
-                        if(e$261!==getFinished()){
-                            var tmpvar$263=e$262;
-                            next$e$261();
-                            return tmpvar$263;
-                        }
-                        return getFinished();
-                    }
-                },[{ t:'i', l:[$$$mptypes[0],$$lazySet.$$targs$$[0]]},{t:Null}]),[{ t:'i', l:[$$$mptypes[0],$$lazySet.$$targs$$[0]]}]);
-            };
-            $$lazySet.exclusiveUnion=function exclusiveUnion(other$264,$$$mptypes){
-                var $$lazySet=this;
-                var hereNotThere$265=Comprehension(function(){
-                    var it$266=$$lazySet.elems$247.getIterator();
-                    var e$267=getFinished();
-                    var next$e$267=function(){
-                        while((e$267=it$266.next())!==getFinished()){
-                            if((!other$264.contains(e$267))){
-                                return e$267;
-                            }
-                        }
-                        return getFinished();
-                    }
-                    next$e$267();
-                    return function(){
-                        if(e$267!==getFinished()){
-                            var tmpvar$268=e$267;
-                            next$e$267();
-                            return tmpvar$268;
-                        }
-                        return getFinished();
-                    }
-                },[$$lazySet.$$targs$$[0],{t:Null}]);
-                var thereNotHere$269=Comprehension(function(){
-                    var it$270=other$264.getIterator();
-                    var e$271=getFinished();
-                    var next$e$271=function(){
-                        while((e$271=it$270.next())!==getFinished()){
-                            if((!$$lazySet.contains(e$271))){
-                                return e$271;
-                            }
-                        }
-                        return getFinished();
-                    }
-                    next$e$271();
-                    return function(){
-                        if(e$271!==getFinished()){
-                            var tmpvar$272=e$271;
-                            next$e$271();
-                            return tmpvar$272;
-                        }
-                        return getFinished();
-                    }
-                },[$$$mptypes[0],{t:Null}]);
-                return LazySet(hereNotThere$265.chain(thereNotHere$269,[$$$mptypes[0]]),[{ t:'u', l:[$$lazySet.$$targs$$[0],$$$mptypes[0]]}]);
-            };$$lazySet.complement=function (set$273,$$$mptypes){
-                var $$lazySet=this;
-                return LazySet(Comprehension(function(){
-                    var it$274=$$lazySet.getIterator();
-                    var e$275=getFinished();
-                    var next$e$275=function(){
-                        while((e$275=it$274.next())!==getFinished()){
-                            if((!set$273.contains(e$275))){
-                                return e$275;
-                            }
-                        }
-                        return getFinished();
-                    }
-                    next$e$275();
-                    return function(){
-                        if(e$275!==getFinished()){
-                            var tmpvar$276=e$275;
-                            next$e$275();
-                            return tmpvar$276;
-                        }
-                        return getFinished();
-                    }
-                },[$$lazySet.$$targs$$[0],{t:Null}]),[$$lazySet.$$targs$$[0]]);
-            };
-            $$lazySet.equals=function equals(that$277){
-                var $$lazySet=this;
-                var that$278;
-                if(isOfType((that$278=that$277),{t:Set,a:[{t:Object$}]})){
-                    if(that$278.getSize().equals($$lazySet.getSize())){
-                        var it$279 = $$lazySet.elems$247.getIterator();
-                        var element$280;while ((element$280=it$279.next())!==getFinished()){
-                            if((!that$278.contains(element$280))){
-                                return false;
-                            }
-                        }
-                        if (getFinished() === element$280){
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            };$$lazySet.getHash=function getHash(){
-                var $$lazySet=this;
-                var hashCode$281=(1);
-                var setHashCode$281=function(hashCode$282){return hashCode$281=hashCode$282;};
-                var it$283 = $$lazySet.elems$247.getIterator();
-                var elem$284;while ((elem$284=it$283.next())!==getFinished()){
-                    (hashCode$281=hashCode$281.times((31)));
-                    (hashCode$281=hashCode$281.plus(elem$284.getHash()));
-                }
-                return hashCode$281;
-            };
-        })(LazySet.$$.prototype);
-    }
-    return LazySet;
-}
-exports.$init$LazySet=$init$LazySet;
-$init$LazySet();
-function LazyMap(entries$285, $$targs$$,$$lazyMap){
-    $init$LazyMap();
-    if ($$lazyMap===undefined)$$lazyMap=new LazyMap.$$;
-    $$lazyMap.$$targs$$=$$targs$$;
-    $$lazyMap.entries$285=entries$285;
-    Map($$lazyMap);
-    return $$lazyMap;
-}
-exports.LazyMap=LazyMap;
-function $init$LazyMap(){
-    if (LazyMap.$$===undefined){
-        initTypeProto(LazyMap,'ceylon.language::LazyMap',Basic,$init$Map());
-        (function($$lazyMap){
-            $$lazyMap.getFirst=function getFirst(){
-                var $$lazyMap=this;
-                return $$lazyMap.entries$285.getFirst();
-            };
-            $$lazyMap.getLast=function getLast(){
-                var $$lazyMap=this;
-                return $$lazyMap.entries$285.getLast();
-            };
-            $$lazyMap.getClone=function getClone(){
-                var $$lazyMap=this;
-                return $$lazyMap;
-            };
-            $$lazyMap.getSize=function getSize(){
-                var $$lazyMap=this;
-                return $$lazyMap.entries$285.getSize();
-            };
-            $$lazyMap.get=function (key$286){
-                var $$lazyMap=this;
-                return (opt$287=$$lazyMap.entries$285.find(function (e$288){
-                    var $$lazyMap=this;
-                    return e$288.getKey().equals(key$286);
-                }),opt$287!==null?opt$287.getItem():null);
-            };
-            $$lazyMap.getIterator=function getIterator(){
-                var $$lazyMap=this;
-                return $$lazyMap.entries$285.getIterator();
-            };
-            $$lazyMap.equals=function equals(that$289){
-                var $$lazyMap=this;
-                var that$290;
-                if(isOfType((that$290=that$289),{t:Map,a:[{t:Object$},{t:Object$}]})){
-                    if(that$290.getSize().equals($$lazyMap.getSize())){
-                        var it$291 = $$lazyMap.getIterator();
-                        var entry$292;while ((entry$292=it$291.next())!==getFinished()){
-                            var item$293;
-                            if((item$293=that$290.get(entry$292.getKey()))!==null){
-                                if(item$293.equals(entry$292.getItem())){
-                                    continue;
-                                }
-                            }
-                            return false;
-                        }
-                        if (getFinished() === entry$292){
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            };$$lazyMap.getHash=function getHash(){
-                var $$lazyMap=this;
-                var hashCode$294=(1);
-                var setHashCode$294=function(hashCode$295){return hashCode$294=hashCode$295;};
-                var it$296 = $$lazyMap.entries$285.getIterator();
-                var elem$297;while ((elem$297=it$296.next())!==getFinished()){
-                    (hashCode$294=hashCode$294.times((31)));
-                    (hashCode$294=hashCode$294.plus(elem$297.getHash()));
-                }
-                return hashCode$294;
-            };
-        })(LazyMap.$$.prototype);
-    }
-    return LazyMap;
-}
-exports.$init$LazyMap=$init$LazyMap;
-$init$LazyMap();
-var opt$287;
-function Singleton(element$298, $$targs$$,$$singleton){
+function Singleton(element$371, $$targs$$,$$singleton){
     $init$Singleton();
     if ($$singleton===undefined)$$singleton=new Singleton.$$;
-    $$singleton.$$targs$$=$$targs$$;
-    $$singleton.element$298=element$298;
+    set_type_args($$singleton,$$targs$$);
+    $$singleton.element$371=element$371;
     Object$($$singleton);
     Sequence($$singleton);
     return $$singleton;
@@ -2091,20 +2301,20 @@ function $init$Singleton(){
             };
             $$singleton.getFirst=function getFirst(){
                 var $$singleton=this;
-                return $$singleton.element$298;
+                return $$singleton.element$371;
             };
             $$singleton.getLast=function getLast(){
                 var $$singleton=this;
-                return $$singleton.element$298;
+                return $$singleton.element$371;
             };
             $$singleton.getRest=function getRest(){
                 var $$singleton=this;
-                return empty;
+                return getEmpty();
             };
-            $$singleton.get=function get(index$299){
+            $$singleton.get=function get(index$372){
                 var $$singleton=this;
-                if(index$299.equals((0))){
-                    return $$singleton.element$298;
+                if(index$372.equals((0))){
+                    return $$singleton.element$371;
                 }else {
                     return null;
                 }
@@ -2114,129 +2324,129 @@ function $init$Singleton(){
             };
             $$singleton.getIterator=function getIterator(){
                 var $$singleton=this;
-                function SingletonIterator$300($$singletonIterator$300){
-                    $init$SingletonIterator$300();
-                    if ($$singletonIterator$300===undefined)$$singletonIterator$300=new SingletonIterator$300.$$;
-                    $$singletonIterator$300.$$targs$$=[$$singleton.$$targs$$[0]];
-                    Iterator($$singletonIterator$300);
-                    $$singletonIterator$300.done$301=false;
-                    return $$singletonIterator$300;
+                function SingletonIterator$373($$singletonIterator$373){
+                    $init$SingletonIterator$373();
+                    if ($$singletonIterator$373===undefined)$$singletonIterator$373=new SingletonIterator$373.$$;
+                    $$singletonIterator$373.$$targs$$={Element:$$singleton.$$targs$$.Element};
+                    Iterator($$singletonIterator$373);
+                    $$singletonIterator$373.done$374=false;
+                    return $$singletonIterator$373;
                 }
-                function $init$SingletonIterator$300(){
-                    if (SingletonIterator$300.$$===undefined){
-                        initTypeProto(SingletonIterator$300,'ceylon.language::Singleton.iterator.SingletonIterator',Basic,$init$Iterator());
-                        (function($$singletonIterator$300){
-                            $$singletonIterator$300.getDone$301=function getDone$301(){
-                                return this.done$301;
+                function $init$SingletonIterator$373(){
+                    if (SingletonIterator$373.$$===undefined){
+                        initTypeProto(SingletonIterator$373,'ceylon.language::Singleton.iterator.SingletonIterator',Basic,$init$Iterator());
+                        (function($$singletonIterator$373){
+                            $$singletonIterator$373.getDone$374=function getDone$374(){
+                                return this.done$374;
                             };
-                            $$singletonIterator$300.setDone$301=function setDone$301(done$302){
-                                return this.done$301=done$302;
+                            $$singletonIterator$373.setDone$374=function setDone$374(done$375){
+                                return this.done$374=done$375;
                             };
-                            $$singletonIterator$300.next=function next(){
-                                var $$singletonIterator$300=this;
-                                if($$singletonIterator$300.getDone$301()){
+                            $$singletonIterator$373.next=function next(){
+                                var $$singletonIterator$373=this;
+                                if($$singletonIterator$373.getDone$374()){
                                     return getFinished();
                                 }else {
-                                    $$singletonIterator$300.setDone$301(true);
-                                    return $$singleton.element$298;
+                                    $$singletonIterator$373.setDone$374(true);
+                                    return $$singleton.element$371;
                                 }
-                            };$$singletonIterator$300.getString=function getString(){
-                                var $$singletonIterator$300=this;
+                            };$$singletonIterator$373.getString=function getString(){
+                                var $$singletonIterator$373=this;
                                 return String$("SingletonIterator",17);
                             };
-                        })(SingletonIterator$300.$$.prototype);
+                        })(SingletonIterator$373.$$.prototype);
                     }
-                    return SingletonIterator$300;
+                    return SingletonIterator$373;
                 }
-                $init$SingletonIterator$300();
-                return SingletonIterator$300();
+                $init$SingletonIterator$373();
+                return SingletonIterator$373();
             };$$singleton.getString=function getString(){
                 var $$singleton=this;
-                return StringBuilder().appendAll([String$("[ ",2),$$singleton.getFirst().getString().getString(),String$(" ]",2)]).getString();
+                return StringBuilder().appendAll([String$("[",1),$$singleton.element$371.getString().getString(),String$("]",1)]).getString();
             };
-            $$singleton.segment=function (from$303,length$304){
+            $$singleton.segment=function (from$376,length$377){
                 var $$singleton=this;
-                return (opt$305=(((from$303.compare((0))!==getLarger())&&from$303.plus(length$304).compare((0)).equals(getLarger()))?$$singleton:null),opt$305!==null?opt$305:empty);
+                return (opt$378=(((from$376.compare((0))!==getLarger())&&from$376.plus(length$377).compare((0)).equals(getLarger()))?$$singleton:null),opt$378!==null?opt$378:getEmpty());
             };
-            $$singleton.span=function (from$306,to$307){
+            $$singleton.span=function (from$379,to$380){
                 var $$singleton=this;
-                return (opt$308=((((from$306.compare((0))!==getLarger())&&(to$307.compare((0))!==getSmaller()))||((from$306.compare((0))!==getSmaller())&&(to$307.compare((0))!==getLarger())))?$$singleton:null),opt$308!==null?opt$308:empty);
+                return (opt$381=((((from$379.compare((0))!==getLarger())&&(to$380.compare((0))!==getSmaller()))||((from$379.compare((0))!==getSmaller())&&(to$380.compare((0))!==getLarger())))?$$singleton:null),opt$381!==null?opt$381:getEmpty());
             };
-            $$singleton.spanTo=function (to$309){
+            $$singleton.spanTo=function (to$382){
                 var $$singleton=this;
-                return (opt$310=(to$309.compare((0)).equals(getSmaller())?empty:null),opt$310!==null?opt$310:$$singleton);
+                return (opt$383=(to$382.compare((0)).equals(getSmaller())?getEmpty():null),opt$383!==null?opt$383:$$singleton);
             };
-            $$singleton.spanFrom=function (from$311){
+            $$singleton.spanFrom=function (from$384){
                 var $$singleton=this;
-                return (opt$312=(from$311.compare((0)).equals(getLarger())?empty:null),opt$312!==null?opt$312:$$singleton);
+                return (opt$385=(from$384.compare((0)).equals(getLarger())?getEmpty():null),opt$385!==null?opt$385:$$singleton);
             };
             $$singleton.getReversed=function getReversed(){
                 var $$singleton=this;
                 return $$singleton;
             };
-            $$singleton.equals=function equals(that$313){
+            $$singleton.equals=function equals(that$386){
                 var $$singleton=this;
-                var that$314;
-                if(isOfType((that$314=that$313),{t:List,a:[{t:Anything}]})){
-                    if(that$314.getSize().equals((1))){
-                        var elem$315;
-                        if((elem$315=that$314.getFirst())!==null){
-                            return elem$315.equals($$singleton.element$298);
+                var that$387;
+                if(isOfType((that$387=that$386),{t:List,a:{Element:{t:Anything}}})){
+                    if(that$387.getSize().equals((1))){
+                        var elem$388;
+                        if((elem$388=that$387.getFirst())!==null){
+                            return elem$388.equals($$singleton.element$371);
                         }
                     }
                 }
                 return false;
             };$$singleton.getHash=function getHash(){
                 var $$singleton=this;
-                return (31).plus($$singleton.element$298.getHash());
+                return (31).plus($$singleton.element$371.getHash());
             };
-            $$singleton.contains=function (element$316){
+            $$singleton.contains=function (element$389){
                 var $$singleton=this;
-                return $$singleton.element$298.equals(element$316);
+                return $$singleton.element$371.equals(element$389);
             };
-            $$singleton.count=function (selecting$317){
+            $$singleton.count=function (selecting$390){
                 var $$singleton=this;
-                return (opt$318=(selecting$317($$singleton.element$298)?(1):null),opt$318!==null?opt$318:(0));
+                return (opt$391=(selecting$390($$singleton.element$371)?(1):null),opt$391!==null?opt$391:(0));
             };
-            $$singleton.$map=function (selecting$319,$$$mptypes){
+            $$singleton.$map=function (selecting$392,$$$mptypes){
                 var $$singleton=this;
-                return Tuple(selecting$319($$singleton.element$298),empty,[$$$mptypes[0],$$$mptypes[0],{t:Empty}]);
+                return Tuple(selecting$392($$singleton.element$371),getEmpty(),{Rest:{t:Empty},First:$$$mptypes.Result,Element:$$$mptypes.Result});
             };
-            $$singleton.$filter=function (selecting$320){
+            $$singleton.$filter=function (selecting$393){
                 var $$singleton=this;
-                return (opt$321=(selecting$320($$singleton.element$298)?$$singleton:null),opt$321!==null?opt$321:empty);
+                return (opt$394=(selecting$393($$singleton.element$371)?$$singleton:null),opt$394!==null?opt$394:getEmpty());
             };
-            $$singleton.fold=function (initial$322,accumulating$323,$$$mptypes){
+            $$singleton.fold=function (initial$395,accumulating$396,$$$mptypes){
                 var $$singleton=this;
-                return accumulating$323(initial$322,$$singleton.element$298);
+                return accumulating$396(initial$395,$$singleton.element$371);
             };
-            $$singleton.find=function (selecting$324){
+            $$singleton.find=function (selecting$397){
                 var $$singleton=this;
-                return (selecting$324($$singleton.element$298)?$$singleton.element$298:null);
+                return (selecting$397($$singleton.element$371)?$$singleton.element$371:null);
             };
-            $$singleton.findLast=function (selecting$325){
+            $$singleton.findLast=function (selecting$398){
                 var $$singleton=this;
-                return $$singleton.find(selecting$325);
+                return $$singleton.find(selecting$398);
             };
-            $$singleton.$sort=function (comparing$326){
+            $$singleton.$sort=function (comparing$399){
                 var $$singleton=this;
                 return $$singleton;
             };
-            $$singleton.any=function (selecting$327){
+            $$singleton.any=function (selecting$400){
                 var $$singleton=this;
-                return selecting$327($$singleton.element$298);
+                return selecting$400($$singleton.element$371);
             };
-            $$singleton.$every=function (selecting$328){
+            $$singleton.$every=function (selecting$401){
                 var $$singleton=this;
-                return selecting$328($$singleton.element$298);
+                return selecting$401($$singleton.element$371);
             };
-            $$singleton.skipping=function (skip$329){
+            $$singleton.skipping=function (skip$402){
                 var $$singleton=this;
-                return (opt$330=(skip$329.compare((1)).equals(getSmaller())?$$singleton:null),opt$330!==null?opt$330:empty);
+                return (opt$403=(skip$402.compare((1)).equals(getSmaller())?$$singleton:null),opt$403!==null?opt$403:getEmpty());
             };
-            $$singleton.taking=function (take$331){
+            $$singleton.taking=function (take$404){
                 var $$singleton=this;
-                return (opt$332=(take$331.compare((0)).equals(getLarger())?$$singleton:null),opt$332!==null?opt$332:empty);
+                return (opt$405=(take$404.compare((0)).equals(getLarger())?$$singleton:null),opt$405!==null?opt$405:getEmpty());
             };
             $$singleton.getCoalesced=function getCoalesced(){
                 var $$singleton=this;
@@ -2248,725 +2458,987 @@ function $init$Singleton(){
 }
 exports.$init$Singleton=$init$Singleton;
 $init$Singleton();
-var opt$305,opt$308,opt$310,opt$312,opt$318,opt$321,opt$330,opt$332;
-var byIncreasing=function (comparable$333,$$$mptypes){
-    return function(x$334,y$335,$$$mptypes){{
-        return comparable$333(x$334).compare(comparable$333(y$335));
+var opt$378,opt$381,opt$383,opt$385,opt$391,opt$394,opt$403,opt$405;
+function LazySet(elems$406, $$targs$$,$$lazySet){
+    $init$LazySet();
+    if ($$lazySet===undefined)$$lazySet=new LazySet.$$;
+    set_type_args($$lazySet,$$targs$$);
+    $$lazySet.elems$406=elems$406;
+    Set($$lazySet);
+    return $$lazySet;
+}
+exports.LazySet=LazySet;
+function $init$LazySet(){
+    if (LazySet.$$===undefined){
+        initTypeProto(LazySet,'ceylon.language::LazySet',Basic,$init$Set());
+        (function($$lazySet){
+            $$lazySet.getClone=function getClone(){
+                var $$lazySet=this;
+                return $$lazySet;
+            };
+            $$lazySet.getSize=function getSize(){
+                var $$lazySet=this;
+                var c$407=(0);
+                var setC$407=function(c$408){return c$407=c$408;};
+                var sorted$409=$$lazySet.elems$406.$sort(byIncreasing(function (e$410){
+                    var $$lazySet=this;
+                    return e$410.getHash();
+                },{Value:{t:Integer},Element:$$lazySet.$$targs$$.Element}));
+                var l$411;
+                if((l$411=sorted$409.getFirst())!==null){
+                    c$407=(1);
+                    var last$412=l$411;
+                    var setLast$412=function(last$413){return last$412=last$413;};
+                    var it$414 = sorted$409.getRest().getIterator();
+                    var e$415;while ((e$415=it$414.next())!==getFinished()){
+                        if((!e$415.equals(last$412))){
+                            (oldc$416=c$407,c$407=oldc$416.getSuccessor(),oldc$416);
+                            var oldc$416;
+                            last$412=e$415;
+                        }
+                    }
+                }
+                return c$407;
+            };$$lazySet.getIterator=function getIterator(){
+                var $$lazySet=this;
+                return $$lazySet.elems$406.getIterator();
+            };
+            $$lazySet.union=function (set$417,$$$mptypes){
+                var $$lazySet=this;
+                return LazySet($$lazySet.elems$406.chain(set$417,{Other:$$$mptypes.Other}),{Element:{ t:'u', l:[$$lazySet.$$targs$$.Element,$$$mptypes.Other]}});
+            };
+            $$lazySet.intersection=function (set$418,$$$mptypes){
+                var $$lazySet=this;
+                return LazySet(Comprehension(function(){
+                    var e$421;
+                    var it$419=set$418.getIterator();
+                    var e$420=getFinished();
+                    var e$421;
+                    var next$e$420=function(){
+                        while((e$420=it$419.next())!==getFinished()){
+                            if(isOfType((e$421=e$420),$$lazySet.$$targs$$.Element)&&$$lazySet.contains(e$421)){
+                                return e$420;
+                            }
+                        }
+                        return getFinished();
+                    }
+                    next$e$420();
+                    return function(){
+                        if(e$420!==getFinished()){
+                            var e$420$422=e$420;
+                            function getE$420(){return e$420$422;}
+                            var tmpvar$423=e$421;
+                            next$e$420();
+                            return tmpvar$423;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:{ t:'i', l:[$$$mptypes.Other,$$lazySet.$$targs$$.Element]}}),{Element:{ t:'i', l:[$$$mptypes.Other,$$lazySet.$$targs$$.Element]}});
+            };
+            $$lazySet.exclusiveUnion=function exclusiveUnion(other$424,$$$mptypes){
+                var $$lazySet=this;
+                var hereNotThere$425=Comprehension(function(){
+                    var it$426=$$lazySet.elems$406.getIterator();
+                    var e$427=getFinished();
+                    var next$e$427=function(){
+                        while((e$427=it$426.next())!==getFinished()){
+                            if((!other$424.contains(e$427))){
+                                return e$427;
+                            }
+                        }
+                        return getFinished();
+                    }
+                    next$e$427();
+                    return function(){
+                        if(e$427!==getFinished()){
+                            var e$427$428=e$427;
+                            function getE$427(){return e$427$428;}
+                            var tmpvar$429=getE$427();
+                            next$e$427();
+                            return tmpvar$429;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:$$lazySet.$$targs$$.Element});
+                var thereNotHere$430=Comprehension(function(){
+                    var it$431=other$424.getIterator();
+                    var e$432=getFinished();
+                    var next$e$432=function(){
+                        while((e$432=it$431.next())!==getFinished()){
+                            if((!$$lazySet.contains(e$432))){
+                                return e$432;
+                            }
+                        }
+                        return getFinished();
+                    }
+                    next$e$432();
+                    return function(){
+                        if(e$432!==getFinished()){
+                            var e$432$433=e$432;
+                            function getE$432(){return e$432$433;}
+                            var tmpvar$434=getE$432();
+                            next$e$432();
+                            return tmpvar$434;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:$$$mptypes.Other});
+                return LazySet(hereNotThere$425.chain(thereNotHere$430,{Other:$$$mptypes.Other}),{Element:{ t:'u', l:[$$lazySet.$$targs$$.Element,$$$mptypes.Other]}});
+            };$$lazySet.complement=function (set$435,$$$mptypes){
+                var $$lazySet=this;
+                return LazySet(Comprehension(function(){
+                    var it$436=$$lazySet.getIterator();
+                    var e$437=getFinished();
+                    var next$e$437=function(){
+                        while((e$437=it$436.next())!==getFinished()){
+                            if((!set$435.contains(e$437))){
+                                return e$437;
+                            }
+                        }
+                        return getFinished();
+                    }
+                    next$e$437();
+                    return function(){
+                        if(e$437!==getFinished()){
+                            var e$437$438=e$437;
+                            function getE$437(){return e$437$438;}
+                            var tmpvar$439=getE$437();
+                            next$e$437();
+                            return tmpvar$439;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:$$lazySet.$$targs$$.Element}),{Element:$$lazySet.$$targs$$.Element});
+            };
+            $$lazySet.equals=function equals(that$440){
+                var $$lazySet=this;
+                var that$441;
+                if(isOfType((that$441=that$440),{t:Set,a:{Element:{t:Object$}}})){
+                    if(that$441.getSize().equals($$lazySet.getSize())){
+                        var it$442 = $$lazySet.elems$406.getIterator();
+                        var element$443;while ((element$443=it$442.next())!==getFinished()){
+                            if((!that$441.contains(element$443))){
+                                return false;
+                            }
+                        }
+                        if (getFinished() === element$443){
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            };$$lazySet.getHash=function getHash(){
+                var $$lazySet=this;
+                var hashCode$444=(1);
+                var setHashCode$444=function(hashCode$445){return hashCode$444=hashCode$445;};
+                var it$446 = $$lazySet.elems$406.getIterator();
+                var elem$447;while ((elem$447=it$446.next())!==getFinished()){
+                    (hashCode$444=hashCode$444.times((31)));
+                    (hashCode$444=hashCode$444.plus(elem$447.getHash()));
+                }
+                return hashCode$444;
+            };
+        })(LazySet.$$.prototype);
+    }
+    return LazySet;
+}
+exports.$init$LazySet=$init$LazySet;
+$init$LazySet();
+function LazyList(elems$448, $$targs$$,$$lazyList){
+    $init$LazyList();
+    if ($$lazyList===undefined)$$lazyList=new LazyList.$$;
+    set_type_args($$lazyList,$$targs$$);
+    $$lazyList.elems$448=elems$448;
+    List($$lazyList);
+    return $$lazyList;
+}
+exports.LazyList=LazyList;
+function $init$LazyList(){
+    if (LazyList.$$===undefined){
+        initTypeProto(LazyList,'ceylon.language::LazyList',Basic,$init$List());
+        (function($$lazyList){
+            $$lazyList.getLastIndex=function getLastIndex(){
+                var $$lazyList=this;
+                var size$449=$$lazyList.elems$448.getSize();
+                return (opt$450=(size$449.compare((0)).equals(getLarger())?size$449.minus((1)):null),opt$450!==null?opt$450:null);
+                var opt$450;
+            };$$lazyList.get=function get(index$451){
+                var $$lazyList=this;
+                if(index$451.equals((0))){
+                    return $$lazyList.elems$448.getFirst();
+                }else {
+                    return $$lazyList.elems$448.skipping(index$451).getFirst();
+                }
+            };$$lazyList.getIterator=function getIterator(){
+                var $$lazyList=this;
+                return $$lazyList.elems$448.getIterator();
+            };
+            $$lazyList.getReversed=function getReversed(){
+                var $$lazyList=this;
+                return $$lazyList.elems$448.getSequence().getReversed();
+            };
+            $$lazyList.getClone=function getClone(){
+                var $$lazyList=this;
+                return $$lazyList;
+            };
+            $$lazyList.span=function span(from$452,to$453){
+                var $$lazyList=this;
+                if((to$453.compare((0)).equals(getSmaller())&&from$452.compare((0)).equals(getSmaller()))){
+                    return getEmpty();
+                }
+                var toIndex$454=largest(to$453,(0),{Element:{t:Integer}});
+                var fromIndex$455=largest(from$452,(0),{Element:{t:Integer}});
+                if((toIndex$454.compare(fromIndex$455)!==getSmaller())){
+                    var els$456=(opt$457=(fromIndex$455.compare((0)).equals(getLarger())?$$lazyList.elems$448.skipping(fromIndex$455):null),opt$457!==null?opt$457:$$lazyList.elems$448);
+                    var opt$457;
+                    return LazyList(els$456.taking(toIndex$454.minus(fromIndex$455).plus((1))),{Element:$$lazyList.$$targs$$.Element});
+                }else {
+                    var seq$458=(opt$459=(toIndex$454.compare((0)).equals(getLarger())?$$lazyList.elems$448.skipping(toIndex$454):null),opt$459!==null?opt$459:$$lazyList.elems$448);
+                    var opt$459;
+                    return seq$458.taking(fromIndex$455.minus(toIndex$454).plus((1))).getSequence().getReversed();
+                }
+            };$$lazyList.spanTo=function (to$460){
+                var $$lazyList=this;
+                return (opt$461=(to$460.compare((0)).equals(getSmaller())?getEmpty():null),opt$461!==null?opt$461:LazyList($$lazyList.elems$448.taking(to$460.plus((1))),{Element:$$lazyList.$$targs$$.Element}));
+            };
+            $$lazyList.spanFrom=function (from$462){
+                var $$lazyList=this;
+                return (opt$463=(from$462.compare((0)).equals(getLarger())?LazyList($$lazyList.elems$448.skipping(from$462),{Element:$$lazyList.$$targs$$.Element}):null),opt$463!==null?opt$463:$$lazyList);
+            };
+            $$lazyList.segment=function segment(from$464,length$465){
+                var $$lazyList=this;
+                if(length$465.compare((0)).equals(getLarger())){
+                    var els$466=(opt$467=(from$464.compare((0)).equals(getLarger())?$$lazyList.elems$448.skipping(from$464):null),opt$467!==null?opt$467:$$lazyList.elems$448);
+                    var opt$467;
+                    return LazyList(els$466.taking(length$465),{Element:$$lazyList.$$targs$$.Element});
+                }else {
+                    return getEmpty();
+                }
+            };$$lazyList.equals=function equals(that$468){
+                var $$lazyList=this;
+                var that$469;
+                if(isOfType((that$469=that$468),{t:List,a:{Element:{t:Anything}}})){
+                    var size$470=$$lazyList.elems$448.getSize();
+                    if(that$469.getSize().equals(size$470)){
+                        var it$471 = Range((0),size$470.minus((1)),{Element:{t:Integer}}).getIterator();
+                        var i$472;while ((i$472=it$471.next())!==getFinished()){
+                            var x$473=$$lazyList.get(i$472);
+                            var y$474=that$469.get(i$472);
+                            var x$475;
+                            if((x$475=x$473)!==null){
+                                var y$476;
+                                if((y$476=y$474)!==null){
+                                    if((!x$475.equals(y$476))){
+                                        return false;
+                                    }
+                                }else {
+                                    return false;
+                                }
+                            }else {
+                                var y$477;
+                                if((y$477=y$474)!==null){
+                                    return false;
+                                }
+                            }
+                        }
+                        if (getFinished() === i$472){
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            };$$lazyList.getHash=function getHash(){
+                var $$lazyList=this;
+                var hash$478=(1);
+                var setHash$478=function(hash$479){return hash$478=hash$479;};
+                var it$480 = $$lazyList.elems$448.getIterator();
+                var elem$481;while ((elem$481=it$480.next())!==getFinished()){
+                    (hash$478=hash$478.times((31)));
+                    var elem$482;
+                    if((elem$482=elem$481)!==null){
+                        (hash$478=hash$478.plus(elem$482.getHash()));
+                    }
+                }
+                return hash$478;
+            };$$lazyList.findLast=function (selecting$483){
+                var $$lazyList=this;
+                return $$lazyList.elems$448.findLast(selecting$483);
+            };
+            $$lazyList.getFirst=function getFirst(){
+                var $$lazyList=this;
+                return $$lazyList.elems$448.getFirst();
+            };
+            $$lazyList.getLast=function getLast(){
+                var $$lazyList=this;
+                return $$lazyList.elems$448.getLast();
+            };
+        })(LazyList.$$.prototype);
+    }
+    return LazyList;
+}
+exports.$init$LazyList=$init$LazyList;
+$init$LazyList();
+var opt$461,opt$463;
+function Map($$map){
+    Collection($$map);
+    add_type_arg($$map,'Element',{t:Entry,a:{Key:$$map.$$targs$$.Key,Item:$$map.$$targs$$.Item}});
+    Correspondence($$map);
+    add_type_arg($$map,'Key',{t:Object$});
+    Cloneable($$map);
+    add_type_arg($$map,'Clone',{t:Map,a:{Key:$$map.$$targs$$.Key,Item:$$map.$$targs$$.Item}});
+}
+exports.Map=Map;
+function $init$Map(){
+    if (Map.$$===undefined){
+        initTypeProto(Map,'ceylon.language::Map',$init$Collection(),$init$Correspondence(),$init$Cloneable());
+        (function($$map){
+            $$map.equals=function equals(that$484){
+                var $$map=this;
+                var that$485;
+                if(isOfType((that$485=that$484),{t:Map,a:{Key:{t:Object$},Item:{t:Object$}}})&&that$485.getSize().equals($$map.getSize())){
+                    var it$486 = $$map.getIterator();
+                    var entry$487;while ((entry$487=it$486.next())!==getFinished()){
+                        var item$488;
+                        if((item$488=that$485.get(entry$487.getKey()))!==null&&item$488.equals(entry$487.getItem())){
+                            continue;
+                        }else {
+                            return false;
+                        }
+                    }
+                    if (getFinished() === entry$487){
+                        return true;
+                    }
+                }else {
+                    return false;
+                }
+            };$$map.getHash=function getHash(){
+                var $$map=this;
+                var hashCode$489=(1);
+                var setHashCode$489=function(hashCode$490){return hashCode$489=hashCode$490;};
+                var it$491 = $$map.getIterator();
+                var elem$492;while ((elem$492=it$491.next())!==getFinished()){
+                    (hashCode$489=hashCode$489.times((31)));
+                    (hashCode$489=hashCode$489.plus(elem$492.getHash()));
+                }
+                return hashCode$489;
+            };$$map.getKeys=function getKeys(){
+                var $$map=this;
+                return LazySet(Comprehension(function(){
+                    var it$493=$$map.getIterator();
+                    var k$494,v$495;
+                    var next$v$495=function(){
+                        var entry$496;
+                        if((entry$496=it$493.next())!==getFinished()){
+                            k$494=entry$496.getKey();
+                            v$495=entry$496.getItem();
+                            return entry$496;
+                        }
+                        v$495=undefined;
+                        return getFinished();
+                    }
+                    next$v$495();
+                    return function(){
+                        if(v$495!==undefined){
+                            var k$494$497=k$494;
+                            function getK$494(){return k$494$497;}
+                            var v$495$498=v$495;
+                            function getV$495(){return v$495$498;}
+                            var tmpvar$499=getK$494();
+                            next$v$495();
+                            return tmpvar$499;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:$$map.$$targs$$.Key}),{Element:$$map.$$targs$$.Key});
+            };
+            $$map.getValues=function getValues(){
+                var $$map=this;
+                return LazyList(Comprehension(function(){
+                    var it$500=$$map.getIterator();
+                    var k$501,v$502;
+                    var next$v$502=function(){
+                        var entry$503;
+                        if((entry$503=it$500.next())!==getFinished()){
+                            k$501=entry$503.getKey();
+                            v$502=entry$503.getItem();
+                            return entry$503;
+                        }
+                        v$502=undefined;
+                        return getFinished();
+                    }
+                    next$v$502();
+                    return function(){
+                        if(v$502!==undefined){
+                            var k$501$504=k$501;
+                            function getK$501(){return k$501$504;}
+                            var v$502$505=v$502;
+                            function getV$502(){return v$502$505;}
+                            var tmpvar$506=getV$502();
+                            next$v$502();
+                            return tmpvar$506;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:$$map.$$targs$$.Item}),{Element:$$map.$$targs$$.Item});
+            };
+            $$map.getInverse=function getInverse(){
+                var $$map=this;
+                return LazyMap(Comprehension(function(){
+                    var it$507=$$map.getIterator();
+                    var key$508,item$509;
+                    var next$item$509=function(){
+                        var entry$510;
+                        if((entry$510=it$507.next())!==getFinished()){
+                            key$508=entry$510.getKey();
+                            item$509=entry$510.getItem();
+                            return entry$510;
+                        }
+                        item$509=undefined;
+                        return getFinished();
+                    }
+                    next$item$509();
+                    return function(){
+                        if(item$509!==undefined){
+                            var key$508$511=key$508;
+                            function getKey$508(){return key$508$511;}
+                            var item$509$512=item$509;
+                            function getItem$509(){return item$509$512;}
+                            var tmpvar$513=Entry(getItem$509(),LazySet(Comprehension(function(){
+                                var it$514=$$map.getIterator();
+                                var k$515,i$516;
+                                var next$i$516=function(){
+                                    var entry$517;
+                                    while((entry$517=it$514.next())!==getFinished()){
+                                        k$515=entry$517.getKey();
+                                        i$516=entry$517.getItem();
+                                        if(i$516.equals(getItem$509())){
+                                            return entry$517;
+                                        }
+                                    }
+                                    i$516=undefined;
+                                    return getFinished();
+                                }
+                                next$i$516();
+                                return function(){
+                                    if(i$516!==undefined){
+                                        var k$515$518=k$515;
+                                        function getK$515(){return k$515$518;}
+                                        var i$516$519=i$516;
+                                        function getI$516(){return i$516$519;}
+                                        var tmpvar$520=getK$515();
+                                        next$i$516();
+                                        return tmpvar$520;
+                                    }
+                                    return getFinished();
+                                }
+                            },{Absent:{t:Anything},Element:$$map.$$targs$$.Key}),{Element:$$map.$$targs$$.Key}),{Key:$$map.$$targs$$.Item,Item:{t:LazySet,a:{Element:$$map.$$targs$$.Key}}});
+                            next$item$509();
+                            return tmpvar$513;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:{t:Entry,a:{Key:$$map.$$targs$$.Item,Item:{t:LazySet,a:{Element:$$map.$$targs$$.Key}}}}}),{Key:$$map.$$targs$$.Item,Item:{t:LazySet,a:{Element:$$map.$$targs$$.Key}}});
+            };
+            $$map.mapItems=function (mapping$521,$$$mptypes){
+                var $$map=this;
+                return LazyMap(Comprehension(function(){
+                    var it$522=$$map.getIterator();
+                    var key$523,item$524;
+                    var next$item$524=function(){
+                        var entry$525;
+                        if((entry$525=it$522.next())!==getFinished()){
+                            key$523=entry$525.getKey();
+                            item$524=entry$525.getItem();
+                            return entry$525;
+                        }
+                        item$524=undefined;
+                        return getFinished();
+                    }
+                    next$item$524();
+                    return function(){
+                        if(item$524!==undefined){
+                            var key$523$526=key$523;
+                            function getKey$523(){return key$523$526;}
+                            var item$524$527=item$524;
+                            function getItem$524(){return item$524$527;}
+                            var tmpvar$528=Entry(getKey$523(),mapping$521(getKey$523(),getItem$524()),{Key:$$map.$$targs$$.Key,Item:$$$mptypes.Result});
+                            next$item$524();
+                            return tmpvar$528;
+                        }
+                        return getFinished();
+                    }
+                },{Absent:{t:Anything},Element:{t:Entry,a:{Key:$$map.$$targs$$.Key,Item:$$$mptypes.Result}}}),{Key:$$map.$$targs$$.Key,Item:$$$mptypes.Result});
+            };
+        })(Map.$$.prototype);
+    }
+    return Map;
+}
+exports.$init$Map=$init$Map;
+$init$Map();
+function LazyMap(entries$529, $$targs$$,$$lazyMap){
+    $init$LazyMap();
+    if ($$lazyMap===undefined)$$lazyMap=new LazyMap.$$;
+    set_type_args($$lazyMap,$$targs$$);
+    $$lazyMap.entries$529=entries$529;
+    Map($$lazyMap);
+    return $$lazyMap;
+}
+exports.LazyMap=LazyMap;
+function $init$LazyMap(){
+    if (LazyMap.$$===undefined){
+        initTypeProto(LazyMap,'ceylon.language::LazyMap',Basic,$init$Map());
+        (function($$lazyMap){
+            $$lazyMap.getFirst=function getFirst(){
+                var $$lazyMap=this;
+                return $$lazyMap.entries$529.getFirst();
+            };
+            $$lazyMap.getLast=function getLast(){
+                var $$lazyMap=this;
+                return $$lazyMap.entries$529.getLast();
+            };
+            $$lazyMap.getClone=function getClone(){
+                var $$lazyMap=this;
+                return $$lazyMap;
+            };
+            $$lazyMap.getSize=function getSize(){
+                var $$lazyMap=this;
+                return $$lazyMap.entries$529.getSize();
+            };
+            $$lazyMap.get=function (key$530){
+                var $$lazyMap=this;
+                return (opt$531=$$lazyMap.entries$529.find(function (e$532){
+                    var $$lazyMap=this;
+                    return e$532.getKey().equals(key$530);
+                }),opt$531!==null?opt$531.getItem():null);
+            };
+            $$lazyMap.getIterator=function getIterator(){
+                var $$lazyMap=this;
+                return $$lazyMap.entries$529.getIterator();
+            };
+            $$lazyMap.equals=function equals(that$533){
+                var $$lazyMap=this;
+                var that$534;
+                if(isOfType((that$534=that$533),{t:Map,a:{Key:{t:Object$},Item:{t:Object$}}})){
+                    if(that$534.getSize().equals($$lazyMap.getSize())){
+                        var it$535 = $$lazyMap.getIterator();
+                        var entry$536;while ((entry$536=it$535.next())!==getFinished()){
+                            var item$537;
+                            if((item$537=that$534.get(entry$536.getKey()))!==null){
+                                if(item$537.equals(entry$536.getItem())){
+                                    continue;
+                                }
+                            }
+                            return false;
+                        }
+                        if (getFinished() === entry$536){
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            };$$lazyMap.getHash=function getHash(){
+                var $$lazyMap=this;
+                var hashCode$538=(1);
+                var setHashCode$538=function(hashCode$539){return hashCode$538=hashCode$539;};
+                var it$540 = $$lazyMap.entries$529.getIterator();
+                var elem$541;while ((elem$541=it$540.next())!==getFinished()){
+                    (hashCode$538=hashCode$538.times((31)));
+                    (hashCode$538=hashCode$538.plus(elem$541.getHash()));
+                }
+                return hashCode$538;
+            };
+        })(LazyMap.$$.prototype);
+    }
+    return LazyMap;
+}
+exports.$init$LazyMap=$init$LazyMap;
+$init$LazyMap();
+var opt$531;
+var byDecreasing=function (comparable$542,$$$mptypes){
+    return function(x$543,y$544){{
+        return comparable$542(y$544).compare(comparable$542(x$543));
     }
 }
 }
 ;
-exports.byIncreasing=byIncreasing;
-var coalesce=function (values$336,$$$mptypes){
-    return values$336.getCoalesced();
-};
-exports.coalesce=coalesce;
-var equalTo=function (val$337,$$$mptypes){
-    return function(element$338,$$$mptypes){{
-        return element$338.equals(val$337);
+exports.byDecreasing=byDecreasing;
+var byItem=function (comparing$545,$$$mptypes){
+    return function(x$546,y$547){{
+        return comparing$545(x$546.getItem(),y$547.getItem());
     }
 }
 }
 ;
-exports.equalTo=equalTo;
-var entries=function (elements$339,$$$mptypes){
-    return elements$339.getIndexed();
-};
-exports.entries=entries;
-function any(values$340){
-    var it$341 = values$340.getIterator();
-    var val$342;while ((val$342=it$341.next())!==getFinished()){
-        if(val$342){
+exports.byItem=byItem;
+function any(values$548){
+    var it$549 = values$548.getIterator();
+    var val$550;while ((val$550=it$549.next())!==getFinished()){
+        if(val$550){
             return true;
         }
     }
     return false;
 }
 exports.any=any;
-var byKey=function (comparing$343){
-    return function(x$344,y$345,$$$mptypes){{
-        return comparing$343(x$344.getKey(),y$345.getKey());
+var equalTo=function (val$551,$$$mptypes){
+    return function(element$552){{
+        return element$552.equals(val$551);
     }
 }
 }
 ;
-exports.byKey=byKey;
-function count(values$346){
-    var count$347=(0);
-    var setCount$347=function(count$348){return count$347=count$348;};
-    var it$349 = values$346.getIterator();
-    var val$350;while ((val$350=it$349.next())!==getFinished()){
-        if(val$350){
-            (oldcount$351=count$347,count$347=oldcount$351.getSuccessor(),oldcount$351);
-            var oldcount$351;
+exports.equalTo=equalTo;
+function emptyOrSingleton(element$553,$$$mptypes){
+    var element$554;
+    if((element$554=element$553)!==null){
+        return Singleton(element$554,{Element:$$$mptypes.Element});
+    }else {
+        return getEmpty();
+    }
+}
+exports.emptyOrSingleton=emptyOrSingleton;
+var entries=function (elements$555,$$$mptypes){
+    return elements$555.getIndexed();
+};
+exports.entries=entries;
+var byIncreasing=function (comparable$556,$$$mptypes){
+    return function(x$557,y$558){{
+        return comparable$556(x$557).compare(comparable$556(y$558));
+    }
+}
+}
+;
+exports.byIncreasing=byIncreasing;
+function count(values$559){
+    var count$560=(0);
+    var setCount$560=function(count$561){return count$560=count$561;};
+    var it$562 = values$559.getIterator();
+    var val$563;while ((val$563=it$562.next())!==getFinished()){
+        if(val$563){
+            (oldcount$564=count$560,count$560=oldcount$564.getSuccessor(),oldcount$564);
+            var oldcount$564;
         }
     }
-    return count$347;
+    return count$560;
 }
 exports.count=count;
-var byDecreasing=function (comparable$352,$$$mptypes){
-    return function(x$353,y$354,$$$mptypes){{
-        return comparable$352(y$354).compare(comparable$352(x$353));
-    }
-}
-}
-;
-exports.byDecreasing=byDecreasing;
-var byItem=function (comparing$355){
-    return function(x$356,y$357,$$$mptypes){{
-        return comparing$355(x$356.getItem(),y$357.getItem());
-    }
-}
-}
-;
-exports.byItem=byItem;
-var curry=function (f$358,$$$mptypes){
-    return function(first$359,$$$mptypes){{
-        return flatten(function (args$360){
-            return unflatten(f$358,[$$$mptypes[0],{t:Tuple,a:[$$$mptypes[0],$$$mptypes[0],$$$mptypes[0]]}])(Tuple(first$359,args$360,[$$$mptypes[0],$$$mptypes[0],$$$mptypes[0]]));
-        },[$$$mptypes[0],$$$mptypes[0]]);
+var curry=function (f$565,$$$mptypes){
+    return function(first$566){{
+        return flatten(function (args$567){
+            return unflatten(f$565,{Args:{t:Tuple,a:{Rest:$$$mptypes.Rest,First:$$$mptypes.First,Element:$$$mptypes.Argument}},Return:$$$mptypes.Return})(Tuple(first$566,args$567,{Rest:$$$mptypes.Rest,First:$$$mptypes.First,Element:$$$mptypes.Argument}));
+        },{Args:$$$mptypes.Rest,Return:$$$mptypes.Return});
     }
 }
 }
 ;
 exports.curry=curry;
-var uncurry=function (f$361,$$$mptypes){
-return flatten(function (args$362){
-    return unflatten(f$361(args$362.getFirst()),[$$$mptypes[0],$$$mptypes[0]])(args$362.getRest());
-},[$$$mptypes[0],{t:Tuple,a:[$$$mptypes[0],$$$mptypes[0],$$$mptypes[0]]}]);
+var uncurry=function (f$568,$$$mptypes){
+return flatten(function (args$569){
+    return unflatten(f$568(args$569.getFirst()),{Args:$$$mptypes.Rest,Return:$$$mptypes.Return})(args$569.getRest());
+},{Args:{t:Tuple,a:{Rest:$$$mptypes.Rest,First:$$$mptypes.First,Element:$$$mptypes.Argument}},Return:$$$mptypes.Return});
 };
 exports.uncurry=uncurry;
-function emptyOrSingleton(element$363,$$$mptypes){
-    var element$364;
-    if((element$364=element$363)!==null){
-        return Singleton(element$364,[$$$mptypes[0]]);
-    }else {
-        return empty;
-    }
-}
-exports.emptyOrSingleton=emptyOrSingleton;
-function zip(keys$365,items$366,$$$mptypes){
-    var iter$367=items$366.getIterator();
-    return Comprehension(function(){
-        var item$370;
-        var it$368=keys$365.getIterator();
-        var key$369=getFinished();
-        var item$370;
-        var next$key$369=function(){
-            while((key$369=it$368.next())!==getFinished()){
-                if(!isOfType((item$370=iter$367.next()),{t:Finished})){
-                    return key$369;
-                }
-            }
-            return getFinished();
-        }
-        next$key$369();
-        return function(){
-            if(key$369!==getFinished()){
-                var tmpvar$371=Entry(key$369,item$370,[$$$mptypes[0],$$$mptypes[1]]);
-                next$key$369();
-                return tmpvar$371;
-            }
-            return getFinished();
-        }
-    },[{t:Entry,a:[$$$mptypes[0],$$$mptypes[1]]},{t:Null}]).getSequence();
-}
-exports.zip=zip;
-function max(values$372,$$$mptypes){
-    var first$373=values$372.getFirst();
-    var first$374;
-    if((first$374=first$373)!==null){
-        var max$375=first$374;
-        var setMax$375=function(max$376){return max$375=max$376;};
-        var it$377 = values$372.getRest().getIterator();
-        var val$378;while ((val$378=it$377.next())!==getFinished()){
-            if(val$378.compare(max$375).equals(getLarger())){
-                max$375=val$378;
-            }
-        }
-        return max$375;
-    }else {
-        return first$373;
-    }
-}
-exports.max=max;
-var smallest=function (x$379,y$380,$$$mptypes){
-    return (opt$381=(x$379.compare(y$380).equals(getSmaller())?x$379:null),opt$381!==null?opt$381:y$380);
+var coalesce=function (values$570,$$$mptypes){
+    return values$570.getCoalesced();
 };
-exports.smallest=smallest;
-var opt$381;
-var forItem=function (resulting$382,$$$mptypes){
-    return function(entry$383,$$$mptypes){{
-        return resulting$382(entry$383.getItem());
+exports.coalesce=coalesce;
+var byKey=function (comparing$571,$$$mptypes){
+    return function(x$572,y$573){{
+        return comparing$571(x$572.getKey(),y$573.getKey());
     }
 }
 }
 ;
-exports.forItem=forItem;
-var lessThan=function (val$384,$$$mptypes){
-    return function(element$385,$$$mptypes){{
-        return element$385.compare(val$384).equals(getSmaller());
+exports.byKey=byKey;
+var smallest=function (x$574,y$575,$$$mptypes){
+    return (opt$576=(x$574.compare(y$575).equals(getSmaller())?x$574:null),opt$576!==null?opt$576:y$575);
+};
+exports.smallest=smallest;
+var opt$576;
+var first=function (values$577,$$$mptypes){
+    return internalFirst(values$577,{Value:$$$mptypes.Value,Absent:$$$mptypes.Absent});
+};
+exports.first=first;
+var getNothing=function(){
+    throw Exception();
+}
+exports.getNothing=getNothing;
+function print(line$578){
+    getProcess().writeLine((opt$579=(opt$580=line$578,opt$580!==null?opt$580.getString():null),opt$579!==null?opt$579:String$("«null»",6)));
+    var opt$579,opt$580;
+}
+exports.print=print;
+function max(values$581,$$$mptypes){
+    var first$582=values$581.getFirst();
+    var first$583;
+    if((first$583=first$582)!==null){
+        var max$584=first$583;
+        var setMax$584=function(max$585){return max$584=max$585;};
+        var it$586 = values$581.getRest().getIterator();
+        var val$587;while ((val$587=it$586.next())!==getFinished()){
+            if(val$587.compare(max$584).equals(getLarger())){
+                max$584=val$587;
+            }
+        }
+        return max$584;
+    }else {
+        return first$582;
+    }
+}
+exports.max=max;
+var largest=function (x$588,y$589,$$$mptypes){
+    return (opt$590=(x$588.compare(y$589).equals(getLarger())?x$588:null),opt$590!==null?opt$590:y$589);
+};
+exports.largest=largest;
+var opt$590;
+function zip(keys$591,items$592,$$$mptypes){
+    var iter$593=items$592.getIterator();
+    return Comprehension(function(){
+        var item$596;
+        var it$594=keys$591.getIterator();
+        var key$595=getFinished();
+        var item$596;
+        var next$key$595=function(){
+            while((key$595=it$594.next())!==getFinished()){
+                if(!isOfType((item$596=iter$593.next()),{t:Finished})){
+                    return key$595;
+                }
+            }
+            return getFinished();
+        }
+        next$key$595();
+        return function(){
+            if(key$595!==getFinished()){
+                var key$595$597=key$595;
+                function getKey$595(){return key$595$597;}
+                var tmpvar$598=Entry(getKey$595(),item$596,{Key:$$$mptypes.Key,Item:$$$mptypes.Item});
+                next$key$595();
+                return tmpvar$598;
+            }
+            return getFinished();
+        }
+    },{Absent:{t:Anything},Element:{t:Entry,a:{Key:$$$mptypes.Key,Item:$$$mptypes.Item}}}).getSequence();
+}
+exports.zip=zip;
+var lessThan=function (val$599,$$$mptypes){
+    return function(element$600){{
+        return element$600.compare(val$599).equals(getSmaller());
     }
 }
 }
 ;
 exports.lessThan=lessThan;
-var forKey=function (resulting$386,$$$mptypes){
-    return function(entry$387,$$$mptypes){{
-        return resulting$386(entry$387.getKey());
+function product(values$601,$$$mptypes){
+    var product$602=values$601.getFirst();
+    var setProduct$602=function(product$603){return product$602=product$603;};
+    var it$604 = values$601.getRest().getIterator();
+    var val$605;while ((val$605=it$604.next())!==getFinished()){
+        (product$602=product$602.times(val$605));
+    }
+    return product$602;
+}
+exports.product=product;
+var forItem=function (resulting$606,$$$mptypes){
+    return function(entry$607){{
+        return resulting$606(entry$607.getItem());
+    }
+}
+}
+;
+exports.forItem=forItem;
+var forKey=function (resulting$608,$$$mptypes){
+    return function(entry$609){{
+        return resulting$608(entry$609.getKey());
     }
 }
 }
 ;
 exports.forKey=forKey;
-var join=function (iterables$388,$$$mptypes){
-    if(iterables$388===undefined){iterables$388=empty;}
-    return Comprehension(function(){
-        var it$389=iterables$388.getIterator();
-        var it$390=getFinished();
-        var next$it$390=function(){
-            if((it$390=it$389.next())!==getFinished()){
-                it$391=it$390.getIterator();
-                next$val$392();
-                return it$390;
-            }
-            return getFinished();
-        }
-        var it$391;
-        var val$392=getFinished();
-        var next$val$392=function(){return val$392=it$391.next();}
-        next$it$390();
-        return function(){
-            do{
-                if(val$392!==getFinished()){
-                    var tmpvar$393=val$392;
-                    next$val$392();
-                    return tmpvar$393;
-                }
-            }while(next$it$390()!==getFinished());
-            return getFinished();
-        }
-    },[$$$mptypes[0],{t:Null}]).getSequence();
-};
-exports.join=join;
-function sum(values$394,$$$mptypes){
-    var sum$395=values$394.getFirst();
-    var setSum$395=function(sum$396){return sum$395=sum$396;};
-    var it$397 = values$394.getRest().getIterator();
-    var val$398;while ((val$398=it$397.next())!==getFinished()){
-        (sum$395=sum$395.plus(val$398));
-    }
-    return sum$395;
-}
-exports.sum=sum;
-function print(line$399){
-    getProcess().writeLine((opt$400=(opt$401=line$399,opt$401!==null?opt$401.getString():null),opt$400!==null?opt$400:String$("«null»",6)));
-    var opt$400,opt$401;
-}
-exports.print=print;
-function product(values$402,$$$mptypes){
-    var product$403=values$402.getFirst();
-    var setProduct$403=function(product$404){return product$403=product$404;};
-    var it$405 = values$402.getRest().getIterator();
-    var val$406;while ((val$406=it$405.next())!==getFinished()){
-        (product$403=product$403.times(val$406));
-    }
-    return product$403;
-}
-exports.product=product;
-function min(values$407,$$$mptypes){
-    var first$408=values$407.getFirst();
-    var first$409;
-    if((first$409=first$408)!==null){
-        var min$410=first$409;
-        var setMin$410=function(min$411){return min$410=min$411;};
-        var it$412 = values$407.getRest().getIterator();
-        var val$413;while ((val$413=it$412.next())!==getFinished()){
-            if(val$413.compare(min$410).equals(getSmaller())){
-                min$410=val$413;
+function min(values$610,$$$mptypes){
+    var first$611=values$610.getFirst();
+    var first$612;
+    if((first$612=first$611)!==null){
+        var min$613=first$612;
+        var setMin$613=function(min$614){return min$613=min$614;};
+        var it$615 = values$610.getRest().getIterator();
+        var val$616;while ((val$616=it$615.next())!==getFinished()){
+            if(val$616.compare(min$613).equals(getSmaller())){
+                min$613=val$616;
             }
         }
-        return min$410;
+        return min$613;
     }else {
-        return first$408;
+        return first$611;
     }
 }
 exports.min=min;
-var greaterThan=function (val$414,$$$mptypes){
-    return function(element$415,$$$mptypes){{
-        return element$415.compare(val$414).equals(getLarger());
-    }
-}
-}
-;
-exports.greaterThan=greaterThan;
-var getNothing=function(){
-    throw Exception();
-}
-exports.getNothing=getNothing;
-var largest=function (x$416,y$417,$$$mptypes){
-    return (opt$418=(x$416.compare(y$417).equals(getLarger())?x$416:null),opt$418!==null?opt$418:y$417);
-};
-exports.largest=largest;
-var opt$418;
-var first=function (values$419,$$$mptypes){
-    return internalFirst(values$419,[$$$mptypes[0],$$$mptypes[0]]);
-};
-exports.first=first;
-function every(values$420){
-    var it$421 = values$420.getIterator();
-    var val$422;while ((val$422=it$421.next())!==getFinished()){
-        if((!val$422)){
+function every(values$617){
+    var it$618 = values$617.getIterator();
+    var val$619;while ((val$619=it$618.next())!==getFinished()){
+        if((!val$619)){
             return false;
         }
     }
     return true;
 }
 exports.every=every;
-var times=function (x$423,y$424,$$$mptypes){
-    return x$423.times(y$424);
-};
-exports.times=times;
-var plus=function (x$425,y$426,$$$mptypes){
-    return x$425.plus(y$426);
-};
-exports.plus=plus;
-function internalFirst(values$427,$$$mptypes){
-    var first$428;
-    var next$429;
-    if(!isOfType((next$429=values$427.getIterator().next()),{t:Finished})){
-        first$428=next$429;
-    }else {
-        first$428=null;
+function sum(values$620,$$$mptypes){
+    var sum$621=values$620.getFirst();
+    var setSum$621=function(sum$622){return sum$621=sum$622;};
+    var it$623 = values$620.getRest().getIterator();
+    var val$624;while ((val$624=it$623.next())!==getFinished()){
+        (sum$621=sum$621.plus(val$624));
     }
-    //assert at internalFirst.ceylon (10:4-10:34)
-    var first$430;
-    if (!(isOfType((first$430=first$428),{ t:'u', l:[$$$mptypes[0],$$$mptypes[0]]}))) { throw Exception('Assertion failed: \'is Absent|Value first\' at internalFirst.ceylon (10:11-10:33)'); }
-    return first$430;
+    return sum$621;
 }
-exports.internalFirst=internalFirst;
-function combine(combination$431,elements$432,otherElements$433,$$$mptypes){
-    function CombineIterable$434($$combineIterable$434){
-        $init$CombineIterable$434();
-        if ($$combineIterable$434===undefined)$$combineIterable$434=new CombineIterable$434.$$;
-        $$combineIterable$434.$$targs$$=[$$$mptypes[0],$$$mptypes[1]];
-        Iterable($$combineIterable$434);
-        return $$combineIterable$434;
+exports.sum=sum;
+var greaterThan=function (val$625,$$$mptypes){
+    return function(element$626){{
+        return element$626.compare(val$625).equals(getLarger());
     }
-    function $init$CombineIterable$434(){
-        if (CombineIterable$434.$$===undefined){
-            initTypeProto(CombineIterable$434,'ceylon.language::combine.CombineIterable',Basic,$init$Iterable());
-            (function($$combineIterable$434){
-                $$combineIterable$434.getIterator=function getIterator(){
-                    var $$combineIterable$434=this;
-                    function CombineIterator$435($$combineIterator$435){
-                        $init$CombineIterator$435();
-                        if ($$combineIterator$435===undefined)$$combineIterator$435=new CombineIterator$435.$$;
-                        $$combineIterator$435.$$targs$$=[$$$mptypes[0]];
-                        Iterator($$combineIterator$435);
-                        $$combineIterator$435.iter$436=elements$432.getIterator();
-                        $$combineIterator$435.otherIter$437=otherElements$433.getIterator();
-                        return $$combineIterator$435;
+}
+}
+;
+exports.greaterThan=greaterThan;
+var join=function (iterables$627,$$$mptypes){
+    if(iterables$627===undefined){iterables$627=getEmpty();}
+    return Comprehension(function(){
+        var it$628=iterables$627.getIterator();
+        var it$629=getFinished();
+        var next$it$629=function(){
+            if((it$629=it$628.next())!==getFinished()){
+                it$630=it$629.getIterator();
+                next$val$631();
+                return it$629;
+            }
+            return getFinished();
+        }
+        var it$630;
+        var val$631=getFinished();
+        var next$val$631=function(){return val$631=it$630.next();}
+        next$it$629();
+        return function(){
+            do{
+                if(val$631!==getFinished()){
+                    var val$631$632=val$631;
+                    function getVal$631(){return val$631$632;}
+                    var tmpvar$633=getVal$631();
+                    next$val$631();
+                    return tmpvar$633;
+                }
+            }while(next$it$629()!==getFinished());
+            return getFinished();
+        }
+    },{Absent:{t:Anything},Element:$$$mptypes.Element}).getSequence();
+};
+exports.join=join;
+function combine(combination$634,elements$635,otherElements$636,$$$mptypes){
+    function CombineIterable$637($$combineIterable$637){
+        $init$CombineIterable$637();
+        if ($$combineIterable$637===undefined)$$combineIterable$637=new CombineIterable$637.$$;
+        $$combineIterable$637.$$targs$$={Absent:$$$mptypes.Absent,Element:$$$mptypes.Result};
+        Iterable($$combineIterable$637);
+        return $$combineIterable$637;
+    }
+    function $init$CombineIterable$637(){
+        if (CombineIterable$637.$$===undefined){
+            initTypeProto(CombineIterable$637,'ceylon.language::combine.CombineIterable',Basic,$init$Iterable());
+            (function($$combineIterable$637){
+                $$combineIterable$637.getIterator=function getIterator(){
+                    var $$combineIterable$637=this;
+                    function CombineIterator$638($$combineIterator$638){
+                        $init$CombineIterator$638();
+                        if ($$combineIterator$638===undefined)$$combineIterator$638=new CombineIterator$638.$$;
+                        $$combineIterator$638.$$targs$$={Element:$$$mptypes.Result};
+                        Iterator($$combineIterator$638);
+                        $$combineIterator$638.iter$639=elements$635.getIterator();
+                        $$combineIterator$638.otherIter$640=otherElements$636.getIterator();
+                        return $$combineIterator$638;
                     }
-                    function $init$CombineIterator$435(){
-                        if (CombineIterator$435.$$===undefined){
-                            initTypeProto(CombineIterator$435,'ceylon.language::combine.CombineIterable.iterator.CombineIterator',Basic,$init$Iterator());
-                            (function($$combineIterator$435){
-                                $$combineIterator$435.getIter$436=function getIter$436(){
-                                    return this.iter$436;
+                    function $init$CombineIterator$638(){
+                        if (CombineIterator$638.$$===undefined){
+                            initTypeProto(CombineIterator$638,'ceylon.language::combine.CombineIterable.iterator.CombineIterator',Basic,$init$Iterator());
+                            (function($$combineIterator$638){
+                                $$combineIterator$638.getIter$639=function getIter$639(){
+                                    return this.iter$639;
                                 };
-                                $$combineIterator$435.getOtherIter$437=function getOtherIter$437(){
-                                    return this.otherIter$437;
+                                $$combineIterator$638.getOtherIter$640=function getOtherIter$640(){
+                                    return this.otherIter$640;
                                 };
-                                $$combineIterator$435.next=function next(){
-                                    var $$combineIterator$435=this;
-                                    var elem$438=$$combineIterator$435.getIter$436().next();
-                                    var otherElem$439=$$combineIterator$435.getOtherIter$437().next();
-                                    var elem$440;
-                                    var otherElem$441;
-                                    if(!isOfType((elem$440=elem$438),{t:Finished})&&!isOfType((otherElem$441=otherElem$439),{t:Finished})){
-                                        return combination$431(elem$440,otherElem$441);
+                                $$combineIterator$638.next=function next(){
+                                    var $$combineIterator$638=this;
+                                    var elem$641=$$combineIterator$638.getIter$639().next();
+                                    var otherElem$642=$$combineIterator$638.getOtherIter$640().next();
+                                    var elem$643;
+                                    var otherElem$644;
+                                    if(!isOfType((elem$643=elem$641),{t:Finished})&&!isOfType((otherElem$644=otherElem$642),{t:Finished})){
+                                        return combination$634(elem$643,otherElem$644);
                                     }else {
                                         return getFinished();
                                     }
                                 };
-                            })(CombineIterator$435.$$.prototype);
+                            })(CombineIterator$638.$$.prototype);
                         }
-                        return CombineIterator$435;
+                        return CombineIterator$638;
                     }
-                    $init$CombineIterator$435();
-                    return CombineIterator$435();
+                    $init$CombineIterator$638();
+                    return CombineIterator$638();
                 };
-            })(CombineIterable$434.$$.prototype);
+            })(CombineIterable$637.$$.prototype);
         }
-        return CombineIterable$434;
+        return CombineIterable$637;
     }
-    $init$CombineIterable$434();
-    return CombineIterable$434();
+    $init$CombineIterable$637();
+    return CombineIterable$637();
 }
 exports.combine=combine;
-var sort=function (elements$442,$$$mptypes){
-    return internalSort(byIncreasing(function (e$443){
-        return e$443;
-    },[$$$mptypes[0],$$$mptypes[0]]),elements$442,[$$$mptypes[0]]);
-};
-exports.sort=sort;
-var identical=function (x$444,y$445){
-    return (x$444===y$445);
-};
-exports.identical=identical;
-var compose=function (x$446,y$447,$$$mptypes){
-    return flatten(function (args$448){
-        return x$446(unflatten(y$447,[$$$mptypes[0],$$$mptypes[1]])(args$448));
-    },[$$$mptypes[0],$$$mptypes[1]]);
+function internalFirst(values$645,$$$mptypes){
+    var first$646;
+    var next$647;
+    if(!isOfType((next$647=values$645.getIterator().next()),{t:Finished})){
+        first$646=next$647;
+    }else {
+        first$646=null;
+    }
+    //assert at internalFirst.ceylon (10:4-10:34)
+    var first$648;
+    if (!(isOfType((first$648=first$646),{ t:'u', l:[$$$mptypes.Absent,$$$mptypes.Value]}))) { throw AssertionException('Assertion failed: \'is Absent|Value first\' at internalFirst.ceylon (10:11-10:33)'); }
+    return first$648;
+}
+exports.internalFirst=internalFirst;
+var compose=function (x$649,y$650,$$$mptypes){
+    return flatten(function (args$651){
+        return x$649(unflatten(y$650,{Args:$$$mptypes.Args,Return:$$$mptypes.Y})(args$651));
+    },{Args:$$$mptypes.Args,Return:$$$mptypes.X});
 };
 exports.compose=compose;
-var shuffle=function (f$449,$$$mptypes){
-    return flatten(function (secondArgs$450){
-        return flatten(function (firstArgs$451){
-            return unflatten(unflatten(f$449,[{t:Callable,a:[$$$mptypes[0],$$$mptypes[0]]},$$$mptypes[0]])(firstArgs$451),[$$$mptypes[0],$$$mptypes[0]])(secondArgs$450);
-        },[$$$mptypes[0],$$$mptypes[0]]);
-    },[{t:Callable,a:[$$$mptypes[0],$$$mptypes[0]]},$$$mptypes[0]]);
+var shuffle=function (f$652,$$$mptypes){
+    return flatten(function (secondArgs$653){
+        return flatten(function (firstArgs$654){
+            return unflatten(unflatten(f$652,{Args:$$$mptypes.FirstArgs,Return:{t:Callable,a:{Arguments:$$$mptypes.SecondArgs,Return:$$$mptypes.Result}}})(firstArgs$654),{Args:$$$mptypes.SecondArgs,Return:$$$mptypes.Result})(secondArgs$653);
+        },{Args:$$$mptypes.FirstArgs,Return:$$$mptypes.Result});
+    },{Args:$$$mptypes.SecondArgs,Return:{t:Callable,a:{Arguments:$$$mptypes.FirstArgs,Return:$$$mptypes.Result}}});
 };
 exports.shuffle=shuffle;
-//Ends compiled from Ceylon sources
-/****************************************************************
-* Overwriting of some methods not yet working in compiled code *
-****************************************************************/
-//Singleton.$$.prototype.getKeys = function() { return TypeCategory(this, {t:Integer}); }
-function Map(wat) {
-return wat;
-}
-function $init$Map() {
-if (Map.$$===undefined) {
-initTypeProto(Map, 'ceylon.language::Map', Collection, $init$Correspondence(), Cloneable);
-}
-return Map;
-}
-$init$Map();
-var Map$proto = Map.$$.prototype;
-Map$proto.equals = function(other) {
-if (isOfType(other, {t:Map}) && other.getSize().equals(this.getSize())) {
-var iter = this.getIterator();
-var entry; while ((entry = iter.next()) !== $finished) {
-var oi = other.get(entry.getKey());
-if (oi === null || !entry.getItem().equals(oi)) {
-return false;
-}
-}
-return true;
-}
-return false;
-}
-Map$proto.getHash = function() {
-var hc=1;
-var iter=this.getIterator();
-var elem; while((elem=iter.next())!=$finished) {
-hc*=31;
-hc += elem.getHash();
-}
-return hc;
-}
-Map$proto.getValues = function() { return MapValues(this); }
-function MapValues(map, $$targs$$) {
-var val = new MapValues.$$;
-val.map = map;
-val.$$targs$$=$$targs$$;
-return val;
-}
-initTypeProto(MapValues, 'ceylon.language::MapValues', Basic, Collection);
-var MapValues$proto = MapValues.$$.prototype;
-MapValues$proto.getSize = function() { return this.map.getSize(); }
-MapValues$proto.getEmpty = function() { return this.map.getEmpty(); }
-MapValues$proto.getClone = function() { return this; }
-MapValues$proto.getIterator = function() { return MapValuesIterator(this.map); }
-function MapValuesIterator(map) {
-var iter = new MapValuesIterator.$$;
-iter.it = map.getIterator();
-iter.$$targs$$=[map.$$targs$$[1]];
-return iter;
-}
-initTypeProto(MapValuesIterator, 'ceylon.language::MapValuesIterator', Basic, Iterator);
-MapValuesIterator.$$.prototype.next = function() {
-var entry = this.it.next();
-return (entry!==$finished) ? entry.getItem() : $finished;
-}
-Map$proto.getKeys = function() { return KeySet(this); }
-function KeySet(map, $$targs$$) {
-var set = new KeySet.$$;
-set.map = map;
-set.$$targs$$=[map.$$targs$$[0]];
-return set;
-}
-initTypeProto(KeySet, 'ceylon.language::KeySet', Basic, Set);
-var KeySet$proto = KeySet.$$.prototype;
-KeySet$proto.getSize = function() { return this.map.getSize(); }
-KeySet$proto.getEmpty = function() { return this.map.getEmpty(); }
-KeySet$proto.contains = function(elem) { return this.map.defines(elem); }
-KeySet$proto.getClone = function() { return this; }
-KeySet$proto.getIterator = function() { return KeySetIterator(this.map); }
-function KeySetIterator(map) {
-var iter = new KeySetIterator.$$;
-iter.it = map.getIterator();
-iter.$$targs$$=[map.$$targs$$[0]];
-return iter;
-}
-initTypeProto(KeySetIterator, 'ceylon.language::KeySetIterator', Basic, Iterator);
-KeySetIterator.$$.prototype.next = function() {
-var entry = this.it.next();
-return (entry!==$finished) ? entry.getKey() : $finished;
-}
-KeySet$proto.union = function(other, $$$mptypes) {
-var set = hashSetFromMap(this.map);
-set.addAll(other);
-return set;
-}
-KeySet$proto.intersection = function(other, $$$mptypes) {
-var set = HashSet(undefined, [{t:'i', l:[this.$$targs$$[0], $$$mptypes[0]]}]);
-var it = this.map.getIterator();
-var entry;
-while ((entry=it.next()) !== $finished) {
-var key = entry.getKey();
-if (other.contains(key)) { set.add(key); }
-}
-return set;
-}
-KeySet$proto.exclusiveUnion = function(other, $$$mptypes) {
-var set = this.complement(other, $$$mptypes);
-var it = other.getIterator();
-var elem;
-while ((elem=it.next()) !== $finished) {
-if (!this.map.defines(elem)) { set.add(elem); }
-}
-return set;
-}
-KeySet$proto.complement = function(other, $$$mptypes) {
-var set = HashSet(undefined, [{t:'u', l:[this.$$targs$$[0], $$$mptypes[0]]}]);
-var it = this.map.getIterator();
-var entry;
-while ((entry=it.next()) !== $finished) {
-var key = entry.getKey();
-if (!other.contains(key)) { set.add(key); }
-}
-return set;
-}
-Map$proto.getInverse = function() {
-var inv = HashMap(undefined, [this.$$targs$$[1], {t:Set, a:[this.$$targs$$[0]]}]);
-var it = this.getIterator();
-var entry;
-var newSet = HashSet(undefined, [this.$$targs$$[0]]);
-while ((entry=it.next()) !== $finished) {
-var item = entry.getItem();
-var set = inv.put(Entry(item, newSet, [this.$$targs$$[1], {t:Set, a:[this.$$targs$$[0]]}]), true);
-if (set === null) {
-set = newSet;
-newSet = HashSet(undefined, [this.$$targs$$[0]]);
-}
-set.add(entry.getKey());
-}
-return inv;
-}
-Map$proto.mapItems = function(mapping, $$$mptypes) {
-function EmptyMap(orig, $$targs$$) {
-var em = new EmptyMap.$$;
-em.$$targs$$=$$targs$$;
-Basic(em);
-em.orig=orig;
-em.clone=function() { return this; }
-em.getItem=function() { return null; }
-em.getIterator=function() {
-function miter(iter, $$targs1$$) {
-var $i = new miter.$$;
-$i.iter = iter;
-$i.$$targs$$=$$targs1$$;
-$i.next = function() {
-var e = this.iter.next();
-return e===$finished ? e : Entry(e.getKey(), mapping(e.getKey(), e.getItem()), this.$$targs$$);
+var identical=function (x$655,y$656){
+    return (x$655===y$656);
 };
-return $i;
-}
-initTypeProto(miter, 'ceylon.language::MappedIterator', Basic, Iterator);
-return miter(orig.getIterator(), [{t:Entry, a:em.$$targs$$}]);
-}
-em.getSize=function() { return this.orig.getSize(); }
-em.getString=function() { return String$('',0); }
-return em;
-}
-initTypeProto(EmptyMap, 'ceylon.language::EmptyMap', Basic, Map);
-return EmptyMap(this, [this.$$targs$$[0], $$$mptypes[0]]);
-}
-exports.Map=Map;
-function HashMap(entries, $$targs$$, map) {
-if (map===undefined) { map = new HashMap.$$; }
-Basic(map);
-map.$$targs$$=$$targs$$;
-map.map = {};
-map.size = 0;
-if (entries !== undefined) { map.putAll(entries); }
-return map;
-}
-initTypeProto(HashMap, 'ceylon.language::HashMap', Basic, Map);
-function copyHashMap(orig) {
-var map = HashMap(undefined, orig.$$targs$$);
-for (var hash in Object.keys(orig.map)) {
-map.map[hash] = orig.map[hash].slice(0);
-}
-map.size = orig.size;
-return map;
-}
-var HashMap$proto = HashMap.$$.prototype;
-HashMap$proto.put = function(entry, keepOldItem) {
-var key = entry.getKey();
-var hash = key.getHash();
-var arr = this.map[hash];
-if (arr === undefined) {
-arr = [];
-this.map[hash] = arr;
-}
-for (var i=0; i<arr.length; ++i) {
-var e = arr[i];
-if (e.getKey().equals(key)) {
-if (!keepOldItem) { arr[i] = entry; }
-return e.getItem();
-}
-}
-arr.push(entry);
-++this.size;
-return null;
-}
-HashMap$proto.putAll = function(entries) {
-var it = entries.getIterator();
-var entry;
-while ((entry=it.next()) !== $finished) { this.put(entry); }
-}
-HashMap$proto.getSize = function() { return this.size; }
-HashMap$proto.getEmpty = function() { return this.size===0; }
-HashMap$proto.getLast = function() {
-var hashs = Object.keys(this.map);
-if (hashs.length === 0) { return null; }
-var arr = this.map[hashs[hashs.length - 1]];
-return arr[arr.length - 1];
-}
-HashMap$proto.getIterator = function() { return HashMapIterator(this.map); }
-HashMap$proto.getClone = function() { return this; }
-HashMap$proto.get = function(key) {
-var hash = key.getHash();
-var arr = this.map[hash];
-if (arr !== undefined) {
-for (var i=0; i<arr.length; ++i) {
-var entry = arr[i];
-if (entry.getKey().equals(key)) { return entry.getItem(); }
-}
-}
-return null;
-}
-HashMap$proto.contains = function(elem) {
-if (isOfType(elem, {t:Entry})) {
-var item = this.get(elem.getKey());
-if (item !== null) { return item.equals(elem.getItem()); }
-}
-return false;
-}
-HashMap$proto.defines = function(key) { return this.get(key) !== null; }
-function HashSet(elems, $$targs$$, set) {
-if (set===undefined) { set = new HashSet.$$; }
-Basic(set);
-set.$$targs$$=$$targs$$;
-set.map = HashMap(undefined, [$$targs$$[0], {t:Boolean$}]);
-if (elems !== undefined) { set.addAll(elems); }
-return set;
-}
-initTypeProto(HashSet, 'ceylon.language::HashSet', Basic, Set);
-function hashSetFromMap(map) {
-var set = new HashSet.$$;
-Basic(set);
-set.map = this;
-set.$$targs$$=[map.$$targs$$[0]];
-return set;
-}
-var HashSet$proto = HashSet.$$.prototype;
-HashSet$proto.add = function(elem) { this.map.put(Entry(elem, true, [this.$$targs$$[0], {t:Boolean$}])); }
-HashSet$proto.addAll = function(elems) {
-var it = elems.getIterator();
-var elem;
-while ((elem=it.next()) !== $finished) { this.map.put(Entry(elem, true, [this.$$targs$$[0], {t:Boolean$}])); }
-}
-HashSet$proto.getSize = function() { return this.map.size; }
-HashSet$proto.getEmpty = function() { return this.map.size===0; }
-HashSet$proto.getLast = function() {
-var entry = this.map.getLast();
-return (entry !== null) ? entry.getKey() : null;
-}
-HashSet$proto.getIterator = function() { return HashSetIterator(this.map, this.$$targs$$); }
-HashSet$proto.getClone = function() { return this; }
-HashSet$proto.contains = function(elem) { return this.map.get(elem) !== null; }
-HashSet$proto.union = function(other, $$$mptypes) {
-var set = hashSetFromMap(copyHashMap(this.map));
-set.$$targs$$=[{t:'u', l:[this.$$targs$$[0], $$$mptypes[0]]}];
-set.addAll(other);
-return set;
-}
-HashSet$proto.intersection = function(other, $$$mptypes) {
-var set = HashSet(undefined, [{t:'i', l:[this.$$targs$$[0], $$$mptypes[0]]}]);
-var it = this.getIterator();
-var elem;
-while ((elem=it.next()) !== $finished) {
-if (other.contains(elem)) { set.map.put(Entry(elem, true)); }
-}
-return set;
-}
-HashSet$proto.exclusiveUnion = function(other) {
-var set = this.complement(other);
-var it = other.getIterator();
-var elem;
-while ((elem=it.next()) !== $finished) {
-if (this.map.get(elem) === null) { set.map.put(Entry(elem, true)); }
-}
-return set;
-}
-HashSet$proto.complement = function(other) {
-var set = HashSet(undfined, [{t:'u', l:[this.$$targs$$[0], $$$mptypes[0]]}]);
-var it = this.getIterator();
-var elem;
-while ((elem=it.next()) !== $finished) {
-if (!other.contains(elem)) { set.map.put(Entry(elem, true)); }
-}
-return set;
-}
-function HashMapIterator(map, $$targs$$) {
-var it = new HashMapIterator.$$;
-it.map = map;
-it.$$targs$$=$$targs$$;
-it.hashs = Object.keys(map);
-it.hashIndex = 0;
-it.arrIndex = 0;
-return it;
-}
-initTypeProto(HashMapIterator, 'ceylon.language::HashMapIterator', Basic, Iterator);
-HashMapIterator.$$.prototype.next = function() {
-var hash = this.hashs[this.hashIndex];
-if (hash !== undefined) {
-var arr = this.map[hash];
-var entry = arr[this.arrIndex++];
-if (this.arrIndex >= arr.length) {
-++this.hashIndex;
-this.arrIndex = 0;
-}
-return entry;
-}
-return $finished;
-}
-function HashSetIterator(map, $$targs$$) {
-var it = new HashSetIterator.$$;
-it.mapIt = map.getIterator();
-it.$$targs$$=$$targs$$;
-return it;
-}
-initTypeProto(HashSetIterator, 'ceylon.language::HashSetIterator', Basic, Iterator);
-HashSetIterator.$$.prototype.next = function() {
-var entry = this.mapIt.next();
-return (entry !== $finished) ? entry.getKey() : $finished;
-}
+exports.identical=identical;
+var times=function (x$657,y$658,$$$mptypes){
+    return x$657.times(y$658);
+};
+exports.times=times;
+var sort=function (elements$659,$$$mptypes){
+    return internalSort(byIncreasing(function (e$660){
+        return e$660;
+    },{Value:$$$mptypes.Element,Element:$$$mptypes.Element}),elements$659,{Element:$$$mptypes.Element});
+};
+exports.sort=sort;
+var plus=function (x$661,y$662,$$$mptypes){
+    return x$661.plus(y$662);
+};
+exports.plus=plus;
+//Ends compiled from Ceylon sources
 function Number$(wat) {
 return wat;
 }
@@ -2981,16 +3453,16 @@ return Number$;
 function JSNumber(value) { return Number(value); }
 initExistingType(JSNumber, Number, 'ceylon.language::JSNumber');
 var origNumToString = Number.prototype.toString;
-inheritProto(JSNumber, Object$, Scalar, Castable, $init$Integral(), Exponentiable);
+inheritProto(JSNumber, Object$, Scalar, $init$Integral(), Exponentiable);
 function Integer(value) { return Number(value); }
-initTypeProto(Integer, 'ceylon.language::Integer', Object$, Scalar, Castable,
+initTypeProto(Integer, 'ceylon.language::Integer', Object$, Scalar,
 $init$Integral(), Exponentiable, Binary);
 function Float(value) {
 var that = new Number(value);
 that.$float = true;
 return that;
 }
-initTypeProto(Float, 'ceylon.language::Float', Object$, Scalar, Castable, Exponentiable);
+initTypeProto(Float, 'ceylon.language::Float', Object$, Scalar, Exponentiable);
 var JSNum$proto = Number.prototype;
 JSNum$proto.getT$all = function() {
 return (this.$float ? Float : Integer).$$.T$all;
@@ -3133,16 +3605,16 @@ that.codePoints = size;
 return that;
 }
 initExistingType(String$, String, 'ceylon.language::String', Object$, Sequential, Comparable,
-Ranged, Summable, Castable, Cloneable);
+Ranged, Summable, Cloneable);
 var origStrToString = String.prototype.toString;
-inheritProto(String$, Object$, Sequential, Comparable, Ranged, Summable, Castable,
+inheritProto(String$, Object$, Sequential, Comparable, Ranged, Summable,
 Cloneable);
 function SequenceString() {}
 initType(SequenceString, "ceylon.language::SequenceString", String$, Sequence);
 function EmptyString() {}
 initType(EmptyString, "ceylon.language::EmptyString", String$, Empty);
 var String$proto = String$.$$.prototype;
-String$proto.$$targs$$=[{t:Character}, {t:Null}];
+String$proto.$$targs$$={Element:{t:Character}, Absent:{t:Null}};
 String$proto.getT$name = function() {
 return ((this.length!==0)?SequenceString:EmptyString).$$.T$name;
 }
@@ -3155,7 +3627,19 @@ String$proto.plus = function(other) {
 var size = this.codePoints + other.codePoints;
 return String$(this+other, isNaN(size)?undefined:size);
 }
-String$proto.equals = function(other) { return other.constructor===String && other.valueOf()===this.valueOf(); }
+String$proto.equals = function(other) {
+if (other.constructor===String) {
+return other.valueOf()===this.valueOf();
+} else if (isOfType(other, {t:Iterable, a:{Element:{t:Character}}})) {
+if (other.getSize()===this.getSize()) {
+for (var i=0;i<this.getSize();i++) {
+if (!this.get(i).equals(other.get(i))) return false;
+}
+return true;
+}
+}
+return false;
+}
 String$proto.compare = function(other) {
 var cmp = this.localeCompare(other);
 return cmp===0 ? equal : (cmp<0 ? smaller:larger);
@@ -3385,23 +3869,23 @@ this.codePoints = count;
 return null;
 }
 String$proto.getCharacters = function() {
-return this.length>0 ? this:empty;
+return this.length>0 ? this:getEmpty();
 }
 String$proto.getFirst = function() { return this.getSize()>0?this.get(0):null; }
 String$proto.getLast = function() { return this.getSize()>0?this.get(this.getSize().getPredecessor()):null; }
 String$proto.getKeys = function() {
 //TODO implement!!!
-return this.getSize() > 0 ? Range(0, this.getSize().getPredecessor(), [{t:Integer}]) : empty;
+return this.getSize() > 0 ? Range(0, this.getSize().getPredecessor(), [{t:Integer}]) : getEmpty();
 }
 String$proto.join = function(strings) {
 if (strings === undefined) {return String$("", 0)}
 var it = strings.getIterator();
 var str = it.next();
-if (str === $finished) {return String$("", 0);}
+if (str === getFinished()) {return String$("", 0);}
 if (this.codePoints === undefined) {this.codePoints = countCodepoints(this)}
 var result = str;
 var len = str.codePoints;
-while ((str = it.next()) !== $finished) {
+while ((str = it.next()) !== getFinished()) {
 result += this;
 result += str;
 len += this.codePoints + str.codePoints;
@@ -3428,7 +3912,7 @@ tokens.push(String$(value.substring(tokenBegin, tokenEnd), count-tokenBeginCount
 if (isOfType(sep, {t:Iterable})) {
 var sepChars = {}
 var it = sep.getIterator();
-var c; while ((c=it.next()) !== $finished) {sepChars[c.value] = true}
+var c; while ((c=it.next()) !== getFinished()) {sepChars[c.value] = true}
 for (var i=0; i<this.length;) {
 var j = i;
 var cp = this.charCodeAt(i++);
@@ -3555,7 +4039,7 @@ ocs.push(count);
 i+=sub.length;
 } else if ((this.charCodeAt(i++)&0xfc00) === 0xd800) {++i;}
 }
-return ocs.length > 0 ? ocs : empty;
+return ocs.length > 0 ? ocs : getEmpty();
 }
 String$proto.$filter = function(f) {
 var r = Iterable.$$.prototype.$filter.apply(this, [f]);
@@ -3566,7 +4050,7 @@ if (skip==0) return this;
 return this.segment(skip, this.getSize());
 }
 String$proto.taking = function(take) {
-if (take==0) return empty;
+if (take==0) return getEmpty();
 return this.segment(0, take);
 }
 String$proto.by = function(step) {
@@ -3584,11 +4068,11 @@ that.string = string;
 that.index = 0;
 return that;
 }
-initTypeProto(StringIterator, 'ceylon.language::StringIterator', Basic, Iterator);
+initTypeProto(StringIterator, 'ceylon.language::StringIterator', $init$Basic(), Iterator);
 var StringIterator$proto = StringIterator.$$.prototype;
-StringIterator$proto.$$targs$$=[{t:Character}, {t:Null}];
+StringIterator$proto.$$targs$$={Element:{t:Character}, Absent:{t:Null}};
 StringIterator$proto.next = function() {
-if (this.index >= this.string.length) { return $finished }
+if (this.index >= this.string.length) { return getFinished(); }
 var first = this.string.charCodeAt(this.index++);
 if ((first&0xfc00) !== 0xd800 || this.index >= this.string.length) {
 return Character(first);
@@ -3719,7 +4203,7 @@ var that = new StringBuilder.$$;
 that.value = "";
 return that;
 }
-initTypeProto(StringBuilder, 'ceylon.language::StringBuilder', Basic);
+initTypeProto(StringBuilder, 'ceylon.language::StringBuilder', $init$Basic());
 var StringBuilder$proto = StringBuilder.$$.prototype;
 StringBuilder$proto.getString = function() { return String$(this.value); }
 StringBuilder$proto.append = function(s) {
@@ -3795,18 +4279,12 @@ function getTrue() {return true}
 function getFalse() {return false}
 var $true = true;
 var $false = false;
-function Finished() {}
-initTypeProto(Finished, 'ceylon.language::Finished', Basic);
-var $finished = new Finished.$$;
-$finished.string = String$("exhausted", 9);
-$finished.getString = function() { return this.string; }
-function getFinished() { return $finished; }
 function Comparison(name) {
 var that = new Comparison.$$;
 that.name = String$(name);
 return that;
 }
-initTypeProto(Comparison, 'ceylon.language::Comparison', Basic);
+initTypeProto(Comparison, 'ceylon.language::Comparison', $init$Basic());
 var Comparison$proto = Comparison.$$.prototype;
 Comparison$proto.getString = function() { return this.name; }
 var larger = Comparison("larger");
@@ -3851,6 +4329,9 @@ function isOfTypes(obj, types) {
 if (obj===null) {
 for (var i=0; i < types.l.length; i++) {
 if(types.l[i].t===Null || types.l[i].t===Anything) return true;
+else if (types.l[i].t==='u') {
+if (isOfTypes(null, types.l[i])) return true;
+}
 }
 return false;
 }
@@ -3934,40 +4415,56 @@ return tn;
 if (obj === null) return String$('ceylon.language::Null');
 var tn = obj.getT$name();
 if (obj.$$targs$$) {
-tn += '<';
+/*tn += '<';
 for (var i=0; i < obj.$$targs$$.length; i++) {
 if (i>0) { tn += ','; }
 tn += _typename(obj.$$targs$$[i]);
 }
-tn += '>';
+tn += '>';*/
 }
 return String$(tn);
 }
 function identityHash(obj) {
 return obj.BasicID;
 }
+function set_type_args(obj, targs) {
+if (obj.$$targs$$ === undefined) {
+obj.$$targs$$=targs;
+} else {
+for (x in targs) {
+obj.$$targs$$[x] = targs[x];
+}
+}
+}
+function add_type_arg(obj, name, type) {
+if (obj.$$targs$$ === undefined) {
+obj.$$targs$$={};
+}
+obj.$$targs$$[name]=type;
+}
+exports.set_type_args=set_type_args;
+exports.add_type_arg=add_type_arg;
 exports.exists=exists;
 exports.nonempty=nonempty;
 exports.isOfType=isOfType;
 exports.className=className;
 exports.identityHash=identityHash;
-//More functions, related to comprehensions and iterables
 function string(/*Iterable<Character>*/chars) {
 if (chars === undefined) return String$('',0);
 var s = StringBuilder();
 var iter = chars.getIterator();
-var c; while ((c = iter.next()) !== $finished) {
+var c; while ((c = iter.next()) !== getFinished()) {
 s.appendCharacter(c);
 }
 return s.getString();
 }
 function internalSort(comp, elems, $$$mptypes) {
-if (elems===undefined) {return empty;}
+if (elems===undefined) {return getEmpty();}
 var arr = [];
 var it = elems.getIterator();
 var e;
-while ((e=it.next()) !== $finished) {arr.push(e);}
-if (arr.length === 0) {return empty;}
+while ((e=it.next()) !== getFinished()) {arr.push(e);}
+if (arr.length === 0) {return getEmpty();}
 arr.sort(function(a, b) {
 var cmp = comp(a,b);
 return (cmp===larger) ? 1 : ((cmp===smaller) ? -1 : 0);
@@ -3977,26 +4474,50 @@ return ArraySequence(arr, $$$mptypes);
 exports.string=string;
 function flatten(tf, $$$mptypes) {
 var rf = function() {
-var t = empty;
-for (var i=0; i < arguments.length; i++) {
+var t = getEmpty();
+var e = null;
+var argc = arguments.length;
+var last = argc>0 ? arguments[argc-1] : undefined;
+if (typeof(last) === 'object' && typeof(last.Args) === 'object' && typeof(last.Args.t) === 'function') {
+argc--;
+}
+for (var i=0; i < argc; i++) {
 var c = arguments[i]===null ? Null :
+arguments[i] === undefined ? Empty :
 arguments[i].getT$all ? arguments[i].getT$all() :
 Anything;
-t = Tuple(arguments[i], t, [c, t.getT$all()[0]]);
+if (e === null) {
+e = c;
+} else if (e.t === 'u' && e.l.length > 0) {
+var l = [c];
+for (var j=0; j < e.l.length; j++) {
+l[j+1] = e.l[j];
+}
+} else {
+e = {t:'u', l:[e, c]};
+}
+var rest;
+if (t === getEmpty()) {
+rest={t:Empty};
+} else {
+rest={t:Tuple, a:t.$$$targs$$$};
+}
+t = Tuple(arguments[i], t, {First:c, Element:e, Rest:rest});
 }
 return tf(t, t.$$targs$$);
-}
+};
 rf.$$targs$$=$$$mptypes;
 return rf;
 }
 function unflatten(ff, $$$mptypes) {
-var ru = function ru() {
+var ru = function ru(seq) {
+if (seq===undefined || seq.getSize() === 0) { return ff(); }
 var a = [];
-for (var i = 0; i < arguments.length; i++) {
-a[i] = arguments[i];
+for (var i = 0; i < seq.getSize(); i++) {
+a[i] = seq.get(i);
 }
-a[i]=this.$$targs$$;
-return ff.apply(this, a);
+a[i]=ru.$$targs$$;
+return ff.apply(ru, a);
 }
 ru.$$targs$$=$$$mptypes;
 return ru;
@@ -4005,31 +4526,31 @@ return ru;
 function toTuple(iterable) {
 var seq = iterable.getSequence();
 return Tuple(seq.getFirst(), seq.getRest().getSequence(),
-[seq.$$targs$$[0], seq.$$targs$$[0], {t:Sequential, a:seq.$$targs$$}]);
+{First:seq.$$targs$$.Element, Element:seq.$$targs$$.Element, Rest:{t:Sequential, a:seq.$$targs$$}});
 }
 exports.toTuple=toTuple;
-function Sequence($$sequence) {
-return $$sequence;
+function integerRangeByIterable(range, step, $$$mptypes) {
+return Comprehension(function(){
+var a = range.getFirst();
+var b = range.getLast();
+if (a>b) {
+a += step;
+return function() {
+a -= step;
+return a<b ? getFinished() : a;
 }
-function $init$Sequence() {
-if (Sequence.$$===undefined) {
-initTypeProto(Sequence, 'ceylon.language::Sequence', $init$Sequential(),
-$init$Container(), $init$Cloneable());
 }
-return Sequence;
+a-=step;
+return function() {
+a += step;
+return a>b ? getFinished() : a;
 }
-$init$Sequence();
-var Sequence$proto = Sequence.$$.prototype;
-Sequence$proto.getEmpty = function() { return false; }
-Sequence$proto.sort = function(comp) {
-return internalSort(comp, this, this.$$targs$$);
+}, {Element:range.$$targs$$.Element, Absent:range.$$targs$$.Absent});
 }
-Sequence$proto.collect = function(f, $$$mptypes) {
-return this.map(f, $$$mptypes).getSequence();
-}
-Sequence$proto.getClone = function() { return this; }
+exports.integerRangeByIterable=integerRangeByIterable;
 function Array$() {
 var that = new Array$.$$;
+List(that);
 return that;
 }
 initExistingType(Array$, Array, 'ceylon.language::Array', Object$,
@@ -4054,9 +4575,10 @@ initTypeProto(ArrayList, 'ceylon.language::ArrayList', Array$, $init$List());
 function ArraySequence(/* js array */value, $$targs$$) {
 value.$seq = true;
 value.$$targs$$=$$targs$$;
+this.$$targs$$=$$targs$$;
 return value;
 }
-initTypeProto(ArraySequence, 'ceylon.language::ArraySequence', Basic, Sequence);
+initTypeProto(ArraySequence, 'ceylon.language::ArraySequence', $init$Basic(), Sequence);
 Array$proto.getT$name = function() {
 return (this.$seq ? ArraySequence : (this.length>0?ArrayList:EmptyArray)).$$.T$name;
 }
@@ -4090,10 +4612,10 @@ return Iterable.$$.prototype.chain.call(this, other, $$$mptypes);
 Array$proto.getFirst = function() { return this.length>0 ? this[0] : null; }
 Array$proto.getLast = function() { return this.length>0 ? this[this.length-1] : null; }
 Array$proto.segment = function(from, len) {
-if (len <= 0) { return empty; }
+if (len <= 0) { return getEmpty(); }
 var stop = from + len;
 var seq = this.slice((from>=0)?from:0, (stop>=0)?stop:0);
-return (seq.length > 0) ? ArraySequence(seq,this.$$targs$$) : empty;
+return (seq.length > 0) ? ArraySequence(seq,this.$$targs$$) : getEmpty();
 }
 Array$proto.span = function(from, to) {
 if (from > to) {
@@ -4104,16 +4626,16 @@ return arr.reifyCeylonType(this.$$targs$$);
 return this.segment(from, to-from+1);
 }
 Array$proto.spanTo = function(to) {
-return to < 0 ? empty : this.span(0, to);
+return to < 0 ? getEmpty() : this.span(0, to);
 }
 Array$proto.spanFrom = function(from) {
 return this.span(from, 0x7fffffff);
 }
 Array$proto.getRest = function() {
-return this.length<=1 ? empty : ArraySequence(this.slice(1),this.$$targs$$);
+return this.length<=1 ? getEmpty() : ArraySequence(this.slice(1),this.$$targs$$);
 }
 Array$proto.items = function(keys) {
-if (keys === undefined) return empty;
+if (keys === undefined) return getEmpty();
 var seq = [];
 for (var i = 0; i < keys.getSize(); i++) {
 var key = keys.get(i);
@@ -4134,7 +4656,7 @@ Array$proto.getIterator = function() {
 var $$$index$$$ = 0;
 var $$$arr$$$ = this;
 return new ComprehensionIterator(function() {
-return ($$$index$$$ === $$$arr$$$.length) ? $finished : $$$arr$$$[$$$index$$$++];
+return ($$$index$$$ === $$$arr$$$.length) ? getFinished() : $$$arr$$$[$$$index$$$++];
 }, this.$$targs$$);
 }
 exports.ArrayList=ArrayList;
@@ -4142,7 +4664,7 @@ exports.array=function(elems, $$$ptypes) {
 var e=[];
 if (!(elems === null || elems === undefined)) {
 var iter=elems.getIterator();
-var item;while((item=iter.next())!==$finished) {
+var item;while((item=iter.next())!==getFinished()) {
 e.push(item);
 }
 }
@@ -4165,7 +4687,7 @@ that.type = type;
 that.seq = seq;
 return that;
 }
-initTypeProto(TypeCategory, 'ceylon.language::TypeCategory', Basic, Category);
+initTypeProto(TypeCategory, 'ceylon.language::TypeCategory', $init$Basic(), Category);
 var TypeCategory$proto = TypeCategory.$$.prototype;
 TypeCategory$proto.contains = function(k) {
 return isOfType(k, this.type) && this.seq.defines(k);
@@ -4176,16 +4698,16 @@ that.seq = [];
 that.$$targs$$=$$targs$$;
 return that;
 }
-initTypeProto(SequenceBuilder, 'ceylon.language::SequenceBuilder', Basic);
+initTypeProto(SequenceBuilder, 'ceylon.language::SequenceBuilder', $init$Basic());
 var SequenceBuilder$proto = SequenceBuilder.$$.prototype;
 SequenceBuilder$proto.getSequence = function() {
-return (this.seq.length > 0) ? ArraySequence(this.seq,this.$$targs$$) : empty;
+return (this.seq.length > 0) ? ArraySequence(this.seq,this.$$targs$$) : getEmpty();
 }
 SequenceBuilder$proto.append = function(e) { this.seq.push(e); }
 SequenceBuilder$proto.appendAll = function(/*Iterable*/arr) {
 if (arr === undefined) return;
 var iter = arr.getIterator();
-var e; while ((e = iter.next()) !== $finished) {
+var e; while ((e = iter.next()) !== getFinished()) {
 this.seq.push(e);
 }
 }
@@ -4208,7 +4730,7 @@ var lang = new languageClass.$$;
 Basic(lang);
 return lang;
 }
-initTypeProto(languageClass, "ceylon.language::language", Basic);
+initTypeProto(languageClass, "ceylon.language::language", $init$Basic());
 var lang$proto=languageClass.$$.prototype;
 lang$proto.getVersion=function() {
 return String$("0.5",3);
@@ -4217,7 +4739,7 @@ lang$proto.getMajorVersion=function() { return 0; }
 lang$proto.getMinorVersion=function() { return 5; }
 lang$proto.getReleaseVersion=function() { return 0; }
 lang$proto.getVersionName=function() { return String$("Analytical Engine",11); }
-lang$proto.getMajorVersionBinary=function() { return 3; }
+lang$proto.getMajorVersionBinary=function() { return 4; }
 lang$proto.getMinorVersionBinary=function() { return 0; }
 var languageString = String$("language", 7);
 lang$proto.getString = function() {
@@ -4231,9 +4753,9 @@ var proc = new processClass.$$;
 Basic(proc);
 return proc;
 }
-initTypeProto(processClass, "ceylon.language::process", Basic);
+initTypeProto(processClass, "ceylon.language::process", $init$Basic());
 var process$proto = processClass.$$.prototype;
-var argv = empty;
+var argv = getEmpty();
 var namedArgs = {};
 if ((typeof process !== "undefined") && (process.argv !== undefined)) {
 // parse command line arguments
@@ -4416,7 +4938,6 @@ exports.by=function(){};
 exports.tagged=function(){};
 exports.Identifiable=Identifiable;
 exports.identityHash=$identityHash;
-exports.Basic=Basic;
 exports.Object=Object$;
 exports.Anything=Anything;
 exports.Null=Null;
@@ -4426,8 +4947,6 @@ exports.Comparison=Comparison;
 exports.getNull=getNull;
 exports.getTrue=getTrue;
 exports.getFalse=getFalse;
-exports.Finished=Finished;
-exports.getFinished=getFinished;
 });
 }(typeof define==='function' && define.amd ?
 define : function (factory) {
